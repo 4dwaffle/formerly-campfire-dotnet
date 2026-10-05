@@ -1,0 +1,175 @@
+{
+  "assertions": 12,
+  "passed": 12,
+  "failed": 0,
+  "checks": [
+    {
+      "app": "dotnet",
+      "name": "responses",
+      "passed": true,
+      "expected": {
+        "create-index-fault": 500,
+        "update-index-fault": 500,
+        "delete-index-fault": 500,
+        "boost-create-index-fault": 500,
+        "boost-delete-index-fault": 500
+      },
+      "actual": {
+        "create-index-fault": 500,
+        "update-index-fault": 500,
+        "delete-index-fault": 500,
+        "boost-create-index-fault": 500,
+        "boost-delete-index-fault": 500
+      }
+    },
+    {
+      "app": "dotnet",
+      "name": "messages",
+      "passed": true,
+      "expected": [
+        {
+          "client_message_id": "parity-ftsfault-target-update",
+          "body": "parity-ftsfault-update",
+          "indexed_body": "original-update"
+        },
+        {
+          "client_message_id": "parity-ftsfault-create",
+          "body": "parity-ftsfault-create",
+          "indexed_body": null
+        }
+      ],
+      "actual": [
+        {
+          "client_message_id": "parity-ftsfault-target-update",
+          "body": "parity-ftsfault-update",
+          "indexed_body": "original-update"
+        },
+        {
+          "client_message_id": "parity-ftsfault-create",
+          "body": "parity-ftsfault-create",
+          "indexed_body": null
+        }
+      ]
+    },
+    {
+      "app": "dotnet",
+      "name": "deleted_index",
+      "passed": true,
+      "expected": [
+        {
+          "body": "original-delete"
+        }
+      ],
+      "actual": [
+        {
+          "body": "original-delete"
+        }
+      ]
+    },
+    {
+      "app": "dotnet",
+      "name": "unread_unchanged_on_index_failure",
+      "passed": true,
+      "expected": true,
+      "actual": true
+    },
+    {
+      "app": "dotnet",
+      "name": "room_touch_committed",
+      "passed": true,
+      "expected": true,
+      "actual": true
+    },
+    {
+      "app": "dotnet",
+      "name": "boost_removed",
+      "passed": true,
+      "expected": true,
+      "actual": true
+    },
+    {
+      "app": "aot",
+      "name": "responses",
+      "passed": true,
+      "expected": {
+        "create-index-fault": 500,
+        "update-index-fault": 500,
+        "delete-index-fault": 500,
+        "boost-create-index-fault": 500,
+        "boost-delete-index-fault": 500
+      },
+      "actual": {
+        "create-index-fault": 500,
+        "update-index-fault": 500,
+        "delete-index-fault": 500,
+        "boost-create-index-fault": 500,
+        "boost-delete-index-fault": 500
+      }
+    },
+    {
+      "app": "aot",
+      "name": "messages",
+      "passed": true,
+      "expected": [
+        {
+          "client_message_id": "parity-ftsfault-target-update",
+          "body": "parity-ftsfault-update",
+          "indexed_body": "original-update"
+        },
+        {
+          "client_message_id": "parity-ftsfault-create",
+          "body": "parity-ftsfault-create",
+          "indexed_body": null
+        }
+      ],
+      "actual": [
+        {
+          "client_message_id": "parity-ftsfault-target-update",
+          "body": "parity-ftsfault-update",
+          "indexed_body": "original-update"
+        },
+        {
+          "client_message_id": "parity-ftsfault-create",
+          "body": "parity-ftsfault-create",
+          "indexed_body": null
+        }
+      ]
+    },
+    {
+      "app": "aot",
+      "name": "deleted_index",
+      "passed": true,
+      "expected": [
+        {
+          "body": "original-delete"
+        }
+      ],
+      "actual": [
+        {
+          "body": "original-delete"
+        }
+      ]
+    },
+    {
+      "app": "aot",
+      "name": "unread_unchanged_on_index_failure",
+      "passed": true,
+      "expected": true,
+      "actual": true
+    },
+    {
+      "app": "aot",
+      "name": "room_touch_committed",
+      "passed": true,
+      "expected": true,
+      "actual": true
+    },
+    {
+      "app": "aot",
+      "name": "boost_removed",
+      "passed": true,
+      "expected": true,
+      "actual": true
+    }
+  ]
+}

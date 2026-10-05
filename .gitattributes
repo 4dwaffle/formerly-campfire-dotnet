@@ -1,0 +1,23 @@
+* text=auto
+*.sh text eol=lf
+hooks/* text eol=lf
+Dockerfile* text eol=lf
+*.cs text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.encoded binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.mp3 binary
+*.woff binary
+*.woff2 binary
+
+# Preserve pinned assets and recorded response bytes exactly.
+src/Campfire/wwwroot/** -text -whitespace
+bench/results/** -text -whitespace
+bench/parity/**/*.json -text -whitespace
+bench/parity/realtime_media/fragment-proxy-vs-rack.source.txt -text -whitespace

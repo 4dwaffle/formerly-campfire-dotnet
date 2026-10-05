@@ -1,0 +1,9 @@
+{
+  "image": "sha256:cc31950cd07db9e7b35494609534209ad4d51cf95fe5ab1f9f6caa1e62a7ab74",
+  "source_sha256": "22ef929470d104401d24985d0760455a7137e55ce3e965ae4e3e7ed5fe2273f2",
+  "compiler": "libvips8.15.1; cc -O2 -Wall -Werror=incompatible-pointer-types",
+  "command": "docker run --rm campfire-owned-vips-tests",
+  "exit_code": 0,
+  "stdout": "PASS native libvips: option parsing, real PNG80x40, mild convolution, rotate40x80, alpha, inferred saver filtering and blocked BMP loader",
+  "captured_from": "Tool run ca3ae2 on 2026-10-05; standalone disposable Linux utility check, not app HTTP"
+}

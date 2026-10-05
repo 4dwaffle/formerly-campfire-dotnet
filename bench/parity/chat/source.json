@@ -1,0 +1,2163 @@
+{
+  "date_utc": "2026-10-05T05:34:59.751760+00:00",
+  "rails_revision": "6c7f8fa15f8c39478af64a483dcdf6223527ed22",
+  "rails_worktree_status": "",
+  "assets_compared": 210,
+  "asset_matches": 208,
+  "asset_differences": [
+    {
+      "logical": "controllers/copy_to_clipboard_controller.js",
+      "source": "upstream/app/javascript/controllers/copy_to_clipboard_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/copy_to_clipboard_controller-62ea12e6.js",
+      "source_sha256": "1e634df5d0797a297aebaa3371734c7bf3164484ad80e072241751b7beba3e0f",
+      "expected_compiled_sha256": "1e634df5d0797a297aebaa3371734c7bf3164484ad80e072241751b7beba3e0f",
+      "served_sha256": "a3b035a5397c7ae4ea81d6db6b02ee38c5bd7e2d8bea44c24d0e4646074721ff",
+      "status": "different",
+      "diff": "--- upstream/app/javascript/controllers/copy_to_clipboard_controller.js\n+++ src/Campfire/wwwroot/assets/controllers/copy_to_clipboard_controller-62ea12e6.js\n@@ -1,7 +1,7 @@\n import { Controller } from \"@hotwired/stimulus\"\n \n export default class extends Controller {\n-  static values = { content: String }\n+  static values = { content: String, url: String }\n   static classes = [ \"success\" ]\n \n   async copy(event) {\n@@ -9,7 +9,7 @@\n     this.reset()\n \n     try {\n-      await navigator.clipboard.writeText(this.contentValue)\n+      await navigator.clipboard.writeText(this.#text)\n       this.element.classList.add(this.successClass)\n     } catch {}\n   }\n@@ -19,6 +19,12 @@\n     this.#forceReflow()\n   }\n \n+  // A url value is a path, made absolute against the page it's on, so cached markup that is\n+  // shared by every request doesn't have to carry the request's host.\n+  get #text() {\n+    return this.hasUrlValue ? new URL(this.urlValue, document.baseURI).href : this.contentValue\n+  }\n+\n   #forceReflow() {\n     this.element.offsetWidth\n   }"
+    },
+    {
+      "logical": "lib/autocomplete/base_autocomplete_handler.js",
+      "source": "upstream/app/javascript/lib/autocomplete/base_autocomplete_handler.js",
+      "served": "src/Campfire/wwwroot/assets/lib/autocomplete/base_autocomplete_handler-51cdc033.js",
+      "source_sha256": "77f99ffc93c45f6321e0a282827facefcf2297b8983f23e89fe7d375004baa79",
+      "expected_compiled_sha256": "77f99ffc93c45f6321e0a282827facefcf2297b8983f23e89fe7d375004baa79",
+      "served_sha256": "1129eb46d246fc8e4b7bca37f0f818ee385c496b882f27e0d7c7016282ce346c",
+      "status": "different",
+      "diff": "--- upstream/app/javascript/lib/autocomplete/base_autocomplete_handler.js\n+++ src/Campfire/wwwroot/assets/lib/autocomplete/base_autocomplete_handler-51cdc033.js\n@@ -120,7 +120,7 @@\n \n   #fetchAutocompletables(url) {\n     if (url) {\n-      return fetch(url, { as: \"json\" }).then(response => response.json())\n+      return fetch(url, { headers: { Accept: \"application/json\" } }).then(response => response.json())\n     } else {\n       return Promise.resolve()\n     }"
+    }
+  ],
+  "assets": [
+    {
+      "logical": "application.js",
+      "source": "upstream/app/javascript/application.js",
+      "served": "src/Campfire/wwwroot/assets/application-c1222e24.js",
+      "source_sha256": "03d3e9975f44fb9c34674deae190935f2c16f830570b7982130d5913c272d2a5",
+      "expected_compiled_sha256": "03d3e9975f44fb9c34674deae190935f2c16f830570b7982130d5913c272d2a5",
+      "served_sha256": "03d3e9975f44fb9c34674deae190935f2c16f830570b7982130d5913c272d2a5",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/application.js",
+      "source": "upstream/app/javascript/controllers/application.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/application-4829a1eb.js",
+      "source_sha256": "a04a53f849ff0e70cea07ebcb6764a6502609a8bece25fb07acfb5c327bd499a",
+      "expected_compiled_sha256": "a04a53f849ff0e70cea07ebcb6764a6502609a8bece25fb07acfb5c327bd499a",
+      "served_sha256": "a04a53f849ff0e70cea07ebcb6764a6502609a8bece25fb07acfb5c327bd499a",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/auto_submit_controller.js",
+      "source": "upstream/app/javascript/controllers/auto_submit_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/auto_submit_controller-de2015e6.js",
+      "source_sha256": "b7521374353ce7c49c15b9b9f98e1b4925e11310247643640c46d87361ef44e1",
+      "expected_compiled_sha256": "b7521374353ce7c49c15b9b9f98e1b4925e11310247643640c46d87361ef44e1",
+      "served_sha256": "b7521374353ce7c49c15b9b9f98e1b4925e11310247643640c46d87361ef44e1",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/autocomplete_controller.js",
+      "source": "upstream/app/javascript/controllers/autocomplete_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/autocomplete_controller-b9f4c609.js",
+      "source_sha256": "43136705b11dd4d3c23be8dcb2457ef7b8775ee1481775f32e9cfb533ed0807d",
+      "expected_compiled_sha256": "43136705b11dd4d3c23be8dcb2457ef7b8775ee1481775f32e9cfb533ed0807d",
+      "served_sha256": "43136705b11dd4d3c23be8dcb2457ef7b8775ee1481775f32e9cfb533ed0807d",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/badge_dot_controller.js",
+      "source": "upstream/app/javascript/controllers/badge_dot_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/badge_dot_controller-fb58b64d.js",
+      "source_sha256": "afbb143502d11c630ea67d5489273becf08f15ade73831441621a0ffaa877c53",
+      "expected_compiled_sha256": "afbb143502d11c630ea67d5489273becf08f15ade73831441621a0ffaa877c53",
+      "served_sha256": "afbb143502d11c630ea67d5489273becf08f15ade73831441621a0ffaa877c53",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/boost_delete_controller.js",
+      "source": "upstream/app/javascript/controllers/boost_delete_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/boost_delete_controller-0a4a84e1.js",
+      "source_sha256": "85e6ddf6c84c25edb1d35ce9f92e7b079712cad021d0fa0e81cfd34daed04618",
+      "expected_compiled_sha256": "85e6ddf6c84c25edb1d35ce9f92e7b079712cad021d0fa0e81cfd34daed04618",
+      "served_sha256": "85e6ddf6c84c25edb1d35ce9f92e7b079712cad021d0fa0e81cfd34daed04618",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/composer_controller.js",
+      "source": "upstream/app/javascript/controllers/composer_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/composer_controller-04ab27db.js",
+      "source_sha256": "ed4211d5a329ddb6473024e11ffbd9fb6d7780f6f3d9b64844e45613c9f5bba8",
+      "expected_compiled_sha256": "ed4211d5a329ddb6473024e11ffbd9fb6d7780f6f3d9b64844e45613c9f5bba8",
+      "served_sha256": "ed4211d5a329ddb6473024e11ffbd9fb6d7780f6f3d9b64844e45613c9f5bba8",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/copy_to_clipboard_controller.js",
+      "source": "upstream/app/javascript/controllers/copy_to_clipboard_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/copy_to_clipboard_controller-62ea12e6.js",
+      "source_sha256": "1e634df5d0797a297aebaa3371734c7bf3164484ad80e072241751b7beba3e0f",
+      "expected_compiled_sha256": "1e634df5d0797a297aebaa3371734c7bf3164484ad80e072241751b7beba3e0f",
+      "served_sha256": "a3b035a5397c7ae4ea81d6db6b02ee38c5bd7e2d8bea44c24d0e4646074721ff",
+      "status": "different"
+    },
+    {
+      "logical": "controllers/drop_target_controller.js",
+      "source": "upstream/app/javascript/controllers/drop_target_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/drop_target_controller-94a6188d.js",
+      "source_sha256": "2af25539530d57d47ccb355be9bbf581fbaf905de0e707465d1a9f6d8f20463d",
+      "expected_compiled_sha256": "2af25539530d57d47ccb355be9bbf581fbaf905de0e707465d1a9f6d8f20463d",
+      "served_sha256": "2af25539530d57d47ccb355be9bbf581fbaf905de0e707465d1a9f6d8f20463d",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/element_removal_controller.js",
+      "source": "upstream/app/javascript/controllers/element_removal_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/element_removal_controller-a41c34a0.js",
+      "source_sha256": "34a3e0e8e94beafbbcdfcc2eaf7717ac78d319b5c4fa2b39073cb766b21ed6d5",
+      "expected_compiled_sha256": "34a3e0e8e94beafbbcdfcc2eaf7717ac78d319b5c4fa2b39073cb766b21ed6d5",
+      "served_sha256": "34a3e0e8e94beafbbcdfcc2eaf7717ac78d319b5c4fa2b39073cb766b21ed6d5",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/filter_controller.js",
+      "source": "upstream/app/javascript/controllers/filter_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/filter_controller-ae7ac78e.js",
+      "source_sha256": "431725aa973a652f85c607a0dfdcb729cab095757b77f1fcd6fad4eb9b28dd0a",
+      "expected_compiled_sha256": "431725aa973a652f85c607a0dfdcb729cab095757b77f1fcd6fad4eb9b28dd0a",
+      "served_sha256": "431725aa973a652f85c607a0dfdcb729cab095757b77f1fcd6fad4eb9b28dd0a",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/form_controller.js",
+      "source": "upstream/app/javascript/controllers/form_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/form_controller-d4113ec2.js",
+      "source_sha256": "fa316d6f55a35c89b2d53d49b7cced524b9098ce77dfa90f247bb81617f64c87",
+      "expected_compiled_sha256": "fa316d6f55a35c89b2d53d49b7cced524b9098ce77dfa90f247bb81617f64c87",
+      "served_sha256": "fa316d6f55a35c89b2d53d49b7cced524b9098ce77dfa90f247bb81617f64c87",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/index.js",
+      "source": "upstream/app/javascript/controllers/index.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/index-688ee74b.js",
+      "source_sha256": "5e97192666b00cdf014b51a3a841effbb60c9eedd936106b21e0725c681fcabb",
+      "expected_compiled_sha256": "5e97192666b00cdf014b51a3a841effbb60c9eedd936106b21e0725c681fcabb",
+      "served_sha256": "5e97192666b00cdf014b51a3a841effbb60c9eedd936106b21e0725c681fcabb",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/lightbox_controller.js",
+      "source": "upstream/app/javascript/controllers/lightbox_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/lightbox_controller-d490b49f.js",
+      "source_sha256": "3f376717b76dd7ca4c78a75fb82e37cf455fa887b455557e4cf156e5c9235fec",
+      "expected_compiled_sha256": "3f376717b76dd7ca4c78a75fb82e37cf455fa887b455557e4cf156e5c9235fec",
+      "served_sha256": "3f376717b76dd7ca4c78a75fb82e37cf455fa887b455557e4cf156e5c9235fec",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/local_time_controller.js",
+      "source": "upstream/app/javascript/controllers/local_time_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/local_time_controller-8178306e.js",
+      "source_sha256": "93ab2203c384e5f2055adaebeafd63fe5a00135a2f9d729a089e98890ce362dc",
+      "expected_compiled_sha256": "93ab2203c384e5f2055adaebeafd63fe5a00135a2f9d729a089e98890ce362dc",
+      "served_sha256": "93ab2203c384e5f2055adaebeafd63fe5a00135a2f9d729a089e98890ce362dc",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/maintain_scroll_controller.js",
+      "source": "upstream/app/javascript/controllers/maintain_scroll_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/maintain_scroll_controller-f59fd6a3.js",
+      "source_sha256": "bf28e6bb547d07dae442a1be3f725860a6e8aa1215b7eb494975d1bb78687b6b",
+      "expected_compiled_sha256": "bf28e6bb547d07dae442a1be3f725860a6e8aa1215b7eb494975d1bb78687b6b",
+      "served_sha256": "bf28e6bb547d07dae442a1be3f725860a6e8aa1215b7eb494975d1bb78687b6b",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/messages_controller.js",
+      "source": "upstream/app/javascript/controllers/messages_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/messages_controller-249a3db5.js",
+      "source_sha256": "7213d5aee646d56c4539a65659594b8a61f94e69c6bcac797d165febd051ea77",
+      "expected_compiled_sha256": "7213d5aee646d56c4539a65659594b8a61f94e69c6bcac797d165febd051ea77",
+      "served_sha256": "7213d5aee646d56c4539a65659594b8a61f94e69c6bcac797d165febd051ea77",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/notifications_controller.js",
+      "source": "upstream/app/javascript/controllers/notifications_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/notifications_controller-2c644753.js",
+      "source_sha256": "8c22954b1d23de79c32b41cc95b7ee7dcd6ba5c95854f80c76a009cf4c93cb79",
+      "expected_compiled_sha256": "8c22954b1d23de79c32b41cc95b7ee7dcd6ba5c95854f80c76a009cf4c93cb79",
+      "served_sha256": "8c22954b1d23de79c32b41cc95b7ee7dcd6ba5c95854f80c76a009cf4c93cb79",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/popup_controller.js",
+      "source": "upstream/app/javascript/controllers/popup_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/popup_controller-f7a116cb.js",
+      "source_sha256": "e9b3cac82e87524a69e0dd14a51afd7e10acb0e170c7670a153c8aef8a352edd",
+      "expected_compiled_sha256": "e9b3cac82e87524a69e0dd14a51afd7e10acb0e170c7670a153c8aef8a352edd",
+      "served_sha256": "e9b3cac82e87524a69e0dd14a51afd7e10acb0e170c7670a153c8aef8a352edd",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/presence_controller.js",
+      "source": "upstream/app/javascript/controllers/presence_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/presence_controller-681ac8b9.js",
+      "source_sha256": "9b73dac845c4e6741a81b4c41c03b489a70ae404fe0600c3e4c1da572f1909e4",
+      "expected_compiled_sha256": "9b73dac845c4e6741a81b4c41c03b489a70ae404fe0600c3e4c1da572f1909e4",
+      "served_sha256": "9b73dac845c4e6741a81b4c41c03b489a70ae404fe0600c3e4c1da572f1909e4",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/pwa_install_controller.js",
+      "source": "upstream/app/javascript/controllers/pwa_install_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/pwa_install_controller-4a37cb7d.js",
+      "source_sha256": "62b9b9ca7b0f4c4f464f3b9a36fc6ec75861d3ac29a0a6428bf018d9f3adf36d",
+      "expected_compiled_sha256": "62b9b9ca7b0f4c4f464f3b9a36fc6ec75861d3ac29a0a6428bf018d9f3adf36d",
+      "served_sha256": "62b9b9ca7b0f4c4f464f3b9a36fc6ec75861d3ac29a0a6428bf018d9f3adf36d",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/read_rooms_controller.js",
+      "source": "upstream/app/javascript/controllers/read_rooms_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/read_rooms_controller-b34ef388.js",
+      "source_sha256": "a57c92afce55a48ec1d2fd4607917b322eb6b892fd80795d0b1126a707c6fd20",
+      "expected_compiled_sha256": "a57c92afce55a48ec1d2fd4607917b322eb6b892fd80795d0b1126a707c6fd20",
+      "served_sha256": "a57c92afce55a48ec1d2fd4607917b322eb6b892fd80795d0b1126a707c6fd20",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/refresh_room_controller.js",
+      "source": "upstream/app/javascript/controllers/refresh_room_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/refresh_room_controller-ca549014.js",
+      "source_sha256": "4b8898f4f2e1a7af5e3eacb5bd52282d23ed03af682c8b400ed337aee5972a0e",
+      "expected_compiled_sha256": "4b8898f4f2e1a7af5e3eacb5bd52282d23ed03af682c8b400ed337aee5972a0e",
+      "served_sha256": "4b8898f4f2e1a7af5e3eacb5bd52282d23ed03af682c8b400ed337aee5972a0e",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/reply_controller.js",
+      "source": "upstream/app/javascript/controllers/reply_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/reply_controller-ffe1ac3f.js",
+      "source_sha256": "98b539b981a349618e46d86c372d0024eaf68e23a5e893a04ab3f78fa87a639e",
+      "expected_compiled_sha256": "98b539b981a349618e46d86c372d0024eaf68e23a5e893a04ab3f78fa87a639e",
+      "served_sha256": "98b539b981a349618e46d86c372d0024eaf68e23a5e893a04ab3f78fa87a639e",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/rooms_list_controller.js",
+      "source": "upstream/app/javascript/controllers/rooms_list_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/rooms_list_controller-33fa3410.js",
+      "source_sha256": "b83dc7475e13d45d01819c585631f8d0bfd8048851323268959ea293d33b76aa",
+      "expected_compiled_sha256": "b83dc7475e13d45d01819c585631f8d0bfd8048851323268959ea293d33b76aa",
+      "served_sha256": "b83dc7475e13d45d01819c585631f8d0bfd8048851323268959ea293d33b76aa",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/scroll_into_view_controller.js",
+      "source": "upstream/app/javascript/controllers/scroll_into_view_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/scroll_into_view_controller-de794689.js",
+      "source_sha256": "36c0af582c7fd72fd413220edebd6eb721d0347c9376fbb8b96e478d493c172b",
+      "expected_compiled_sha256": "36c0af582c7fd72fd413220edebd6eb721d0347c9376fbb8b96e478d493c172b",
+      "served_sha256": "36c0af582c7fd72fd413220edebd6eb721d0347c9376fbb8b96e478d493c172b",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/search_results_controller.js",
+      "source": "upstream/app/javascript/controllers/search_results_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/search_results_controller-39751fcb.js",
+      "source_sha256": "9bb1c0321f1ab1761d8bb05e87433280f57753b6e998e81f99a5fec6a9920469",
+      "expected_compiled_sha256": "9bb1c0321f1ab1761d8bb05e87433280f57753b6e998e81f99a5fec6a9920469",
+      "served_sha256": "9bb1c0321f1ab1761d8bb05e87433280f57753b6e998e81f99a5fec6a9920469",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/sessions_controller.js",
+      "source": "upstream/app/javascript/controllers/sessions_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/sessions_controller-94915d37.js",
+      "source_sha256": "99a6fd5d51617de0c7bda8e604319fc2202b072f8f763f83c10fbb2a40089caa",
+      "expected_compiled_sha256": "99a6fd5d51617de0c7bda8e604319fc2202b072f8f763f83c10fbb2a40089caa",
+      "served_sha256": "99a6fd5d51617de0c7bda8e604319fc2202b072f8f763f83c10fbb2a40089caa",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/soft_keyboard_controller.js",
+      "source": "upstream/app/javascript/controllers/soft_keyboard_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/soft_keyboard_controller-cab975c3.js",
+      "source_sha256": "74413da396446acb0182bded924d3754f10145ac491c78744c4c8c1bf03bc467",
+      "expected_compiled_sha256": "74413da396446acb0182bded924d3754f10145ac491c78744c4c8c1bf03bc467",
+      "served_sha256": "74413da396446acb0182bded924d3754f10145ac491c78744c4c8c1bf03bc467",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/sorted_list_controller.js",
+      "source": "upstream/app/javascript/controllers/sorted_list_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/sorted_list_controller-3d37eb73.js",
+      "source_sha256": "6cfb321b3fa02b3ffcbb02c2c51b8ad8238b303c83221a6fd727d3c1f70724ae",
+      "expected_compiled_sha256": "6cfb321b3fa02b3ffcbb02c2c51b8ad8238b303c83221a6fd727d3c1f70724ae",
+      "served_sha256": "6cfb321b3fa02b3ffcbb02c2c51b8ad8238b303c83221a6fd727d3c1f70724ae",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/sound_controller.js",
+      "source": "upstream/app/javascript/controllers/sound_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/sound_controller-e9c5b2f9.js",
+      "source_sha256": "32296885247a910a19c8423f3368a07323820c1ce88bbf6b1a7bd62f08679c09",
+      "expected_compiled_sha256": "32296885247a910a19c8423f3368a07323820c1ce88bbf6b1a7bd62f08679c09",
+      "served_sha256": "32296885247a910a19c8423f3368a07323820c1ce88bbf6b1a7bd62f08679c09",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/toggle_class_controller.js",
+      "source": "upstream/app/javascript/controllers/toggle_class_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/toggle_class_controller-97496fed.js",
+      "source_sha256": "ccaa0222488b861c9510c3863779fee21b57d8c8ea6d4f325cf79a4744691046",
+      "expected_compiled_sha256": "ccaa0222488b861c9510c3863779fee21b57d8c8ea6d4f325cf79a4744691046",
+      "served_sha256": "ccaa0222488b861c9510c3863779fee21b57d8c8ea6d4f325cf79a4744691046",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/turbo_frame_controller.js",
+      "source": "upstream/app/javascript/controllers/turbo_frame_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/turbo_frame_controller-62d40ee3.js",
+      "source_sha256": "74b8fdf4a24d8f1839728af8742e07e3ca95be7914433eafc830e0d087427455",
+      "expected_compiled_sha256": "74b8fdf4a24d8f1839728af8742e07e3ca95be7914433eafc830e0d087427455",
+      "served_sha256": "74b8fdf4a24d8f1839728af8742e07e3ca95be7914433eafc830e0d087427455",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/turbo_streaming_controller.js",
+      "source": "upstream/app/javascript/controllers/turbo_streaming_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/turbo_streaming_controller-0851123f.js",
+      "source_sha256": "81efad8669f3d91a72562035013aedce2a47092b19c24cf346b079a8d963c559",
+      "expected_compiled_sha256": "81efad8669f3d91a72562035013aedce2a47092b19c24cf346b079a8d963c559",
+      "served_sha256": "81efad8669f3d91a72562035013aedce2a47092b19c24cf346b079a8d963c559",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/typing_notifications_controller.js",
+      "source": "upstream/app/javascript/controllers/typing_notifications_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/typing_notifications_controller-ad7c9212.js",
+      "source_sha256": "3d870b92d6fc6c0faea63d8fa6afbca09a54cb7cf2e4f298c56b667aea881b18",
+      "expected_compiled_sha256": "3d870b92d6fc6c0faea63d8fa6afbca09a54cb7cf2e4f298c56b667aea881b18",
+      "served_sha256": "3d870b92d6fc6c0faea63d8fa6afbca09a54cb7cf2e4f298c56b667aea881b18",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/unfurl_controller.js",
+      "source": "upstream/app/javascript/controllers/unfurl_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/unfurl_controller-78803746.js",
+      "source_sha256": "28637a0df8dfbddfb7ffe719b0deba5aa19e723b66be72338b4a992892473505",
+      "expected_compiled_sha256": "28637a0df8dfbddfb7ffe719b0deba5aa19e723b66be72338b4a992892473505",
+      "served_sha256": "28637a0df8dfbddfb7ffe719b0deba5aa19e723b66be72338b4a992892473505",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/upload_preview_controller.js",
+      "source": "upstream/app/javascript/controllers/upload_preview_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/upload_preview_controller-9cc6e3d8.js",
+      "source_sha256": "7fc761500d322f0c239d9fba1e241099ba5058a1d489b13570a77c6a4b5dcaf2",
+      "expected_compiled_sha256": "7fc761500d322f0c239d9fba1e241099ba5058a1d489b13570a77c6a4b5dcaf2",
+      "served_sha256": "7fc761500d322f0c239d9fba1e241099ba5058a1d489b13570a77c6a4b5dcaf2",
+      "status": "match"
+    },
+    {
+      "logical": "controllers/web_share_controller.js",
+      "source": "upstream/app/javascript/controllers/web_share_controller.js",
+      "served": "src/Campfire/wwwroot/assets/controllers/web_share_controller-65c12c24.js",
+      "source_sha256": "7fb7bf1951c4f5372c7213307fdb458642d18ee170ad44b5d163ef78804855e6",
+      "expected_compiled_sha256": "7fb7bf1951c4f5372c7213307fdb458642d18ee170ad44b5d163ef78804855e6",
+      "served_sha256": "7fb7bf1951c4f5372c7213307fdb458642d18ee170ad44b5d163ef78804855e6",
+      "status": "match"
+    },
+    {
+      "logical": "helpers/dom_helpers.js",
+      "source": "upstream/app/javascript/helpers/dom_helpers.js",
+      "served": "src/Campfire/wwwroot/assets/helpers/dom_helpers-7615c8ce.js",
+      "source_sha256": "621e5ea9a886ef5b111d201a5b3d78d8014e6b5c1ee409acc32f04fbc550e124",
+      "expected_compiled_sha256": "621e5ea9a886ef5b111d201a5b3d78d8014e6b5c1ee409acc32f04fbc550e124",
+      "served_sha256": "621e5ea9a886ef5b111d201a5b3d78d8014e6b5c1ee409acc32f04fbc550e124",
+      "status": "match"
+    },
+    {
+      "logical": "helpers/navigator_helpers.js",
+      "source": "upstream/app/javascript/helpers/navigator_helpers.js",
+      "served": "src/Campfire/wwwroot/assets/helpers/navigator_helpers-2aa5524d.js",
+      "source_sha256": "fe23df1fa1dd0c6fed80d895b0cdde627b7e1a620797f3969b932dc1e4c76d57",
+      "expected_compiled_sha256": "fe23df1fa1dd0c6fed80d895b0cdde627b7e1a620797f3969b932dc1e4c76d57",
+      "served_sha256": "fe23df1fa1dd0c6fed80d895b0cdde627b7e1a620797f3969b932dc1e4c76d57",
+      "status": "match"
+    },
+    {
+      "logical": "helpers/string_helpers.js",
+      "source": "upstream/app/javascript/helpers/string_helpers.js",
+      "served": "src/Campfire/wwwroot/assets/helpers/string_helpers-09abc2a1.js",
+      "source_sha256": "c5279be609b5891f8fd446e02b4c389027e7b8be333886339fe2ae0e03b462e4",
+      "expected_compiled_sha256": "c5279be609b5891f8fd446e02b4c389027e7b8be333886339fe2ae0e03b462e4",
+      "served_sha256": "c5279be609b5891f8fd446e02b4c389027e7b8be333886339fe2ae0e03b462e4",
+      "status": "match"
+    },
+    {
+      "logical": "helpers/timing_helpers.js",
+      "source": "upstream/app/javascript/helpers/timing_helpers.js",
+      "served": "src/Campfire/wwwroot/assets/helpers/timing_helpers-ee6d273d.js",
+      "source_sha256": "5425baebe8e43fffa35beb8451669d5cda939cbcb02906b41b03ea9166d6af06",
+      "expected_compiled_sha256": "5425baebe8e43fffa35beb8451669d5cda939cbcb02906b41b03ea9166d6af06",
+      "served_sha256": "5425baebe8e43fffa35beb8451669d5cda939cbcb02906b41b03ea9166d6af06",
+      "status": "match"
+    },
+    {
+      "logical": "helpers/turbo_helpers.js",
+      "source": "upstream/app/javascript/helpers/turbo_helpers.js",
+      "served": "src/Campfire/wwwroot/assets/helpers/turbo_helpers-ad38812b.js",
+      "source_sha256": "7f44759bb2dffe47eff1c5f89deadba282cf6032fadd52577e7ba3296c2cc794",
+      "expected_compiled_sha256": "7f44759bb2dffe47eff1c5f89deadba282cf6032fadd52577e7ba3296c2cc794",
+      "served_sha256": "7f44759bb2dffe47eff1c5f89deadba282cf6032fadd52577e7ba3296c2cc794",
+      "status": "match"
+    },
+    {
+      "logical": "initializers/autocomplete.js",
+      "source": "upstream/app/javascript/initializers/autocomplete.js",
+      "served": "src/Campfire/wwwroot/assets/initializers/autocomplete-9b1130c2.js",
+      "source_sha256": "6c05bcd48cdd8a34444cc789bb6e6e200449d96210e16f51210d9da8eac473d9",
+      "expected_compiled_sha256": "6c05bcd48cdd8a34444cc789bb6e6e200449d96210e16f51210d9da8eac473d9",
+      "served_sha256": "6c05bcd48cdd8a34444cc789bb6e6e200449d96210e16f51210d9da8eac473d9",
+      "status": "match"
+    },
+    {
+      "logical": "initializers/current.js",
+      "source": "upstream/app/javascript/initializers/current.js",
+      "served": "src/Campfire/wwwroot/assets/initializers/current-47705337.js",
+      "source_sha256": "613c15016205ee23e3b47fea4a5d722e41e64a9a8af99155902cbd57189b5c33",
+      "expected_compiled_sha256": "613c15016205ee23e3b47fea4a5d722e41e64a9a8af99155902cbd57189b5c33",
+      "served_sha256": "613c15016205ee23e3b47fea4a5d722e41e64a9a8af99155902cbd57189b5c33",
+      "status": "match"
+    },
+    {
+      "logical": "initializers/highlight.js",
+      "source": "upstream/app/javascript/initializers/highlight.js",
+      "served": "src/Campfire/wwwroot/assets/initializers/highlight-11c71b0c.js",
+      "source_sha256": "258f3affa5053e27d97c8619caaf87198e2084a2eb829b3ae8d691365303f96e",
+      "expected_compiled_sha256": "258f3affa5053e27d97c8619caaf87198e2084a2eb829b3ae8d691365303f96e",
+      "served_sha256": "258f3affa5053e27d97c8619caaf87198e2084a2eb829b3ae8d691365303f96e",
+      "status": "match"
+    },
+    {
+      "logical": "initializers/index.js",
+      "source": "upstream/app/javascript/initializers/index.js",
+      "served": "src/Campfire/wwwroot/assets/initializers/index-8c215149.js",
+      "source_sha256": "70887877c58d20b583d62347ea7d56dcfd8eac023645a42fd764ce2c50b50765",
+      "expected_compiled_sha256": "70887877c58d20b583d62347ea7d56dcfd8eac023645a42fd764ce2c50b50765",
+      "served_sha256": "70887877c58d20b583d62347ea7d56dcfd8eac023645a42fd764ce2c50b50765",
+      "status": "match"
+    },
+    {
+      "logical": "initializers/rich_text.js",
+      "source": "upstream/app/javascript/initializers/rich_text.js",
+      "served": "src/Campfire/wwwroot/assets/initializers/rich_text-a4365f57.js",
+      "source_sha256": "8a3baeb400d35900eb3af4724b59cf9db7a5c83667cf82882fffd32a013839d1",
+      "expected_compiled_sha256": "8a3baeb400d35900eb3af4724b59cf9db7a5c83667cf82882fffd32a013839d1",
+      "served_sha256": "8a3baeb400d35900eb3af4724b59cf9db7a5c83667cf82882fffd32a013839d1",
+      "status": "match"
+    },
+    {
+      "logical": "lib/autocomplete/autocomplete_handler.js",
+      "source": "upstream/app/javascript/lib/autocomplete/autocomplete_handler.js",
+      "served": "src/Campfire/wwwroot/assets/lib/autocomplete/autocomplete_handler-cf59fed0.js",
+      "source_sha256": "9185524d9817374f398bec35522bba93e9733356d51a669a16c08166f903eb38",
+      "expected_compiled_sha256": "9185524d9817374f398bec35522bba93e9733356d51a669a16c08166f903eb38",
+      "served_sha256": "9185524d9817374f398bec35522bba93e9733356d51a669a16c08166f903eb38",
+      "status": "match"
+    },
+    {
+      "logical": "lib/autocomplete/base_autocomplete_handler.js",
+      "source": "upstream/app/javascript/lib/autocomplete/base_autocomplete_handler.js",
+      "served": "src/Campfire/wwwroot/assets/lib/autocomplete/base_autocomplete_handler-51cdc033.js",
+      "source_sha256": "77f99ffc93c45f6321e0a282827facefcf2297b8983f23e89fe7d375004baa79",
+      "expected_compiled_sha256": "77f99ffc93c45f6321e0a282827facefcf2297b8983f23e89fe7d375004baa79",
+      "served_sha256": "1129eb46d246fc8e4b7bca37f0f818ee385c496b882f27e0d7c7016282ce346c",
+      "status": "different"
+    },
+    {
+      "logical": "lib/autocomplete/collection.js",
+      "source": "upstream/app/javascript/lib/autocomplete/collection.js",
+      "served": "src/Campfire/wwwroot/assets/lib/autocomplete/collection-5d359364.js",
+      "source_sha256": "e36f224ef1c36dd50e06c2589a5d91a713757d214e9a37c1cd9c9a67a18e414b",
+      "expected_compiled_sha256": "e36f224ef1c36dd50e06c2589a5d91a713757d214e9a37c1cd9c9a67a18e414b",
+      "served_sha256": "e36f224ef1c36dd50e06c2589a5d91a713757d214e9a37c1cd9c9a67a18e414b",
+      "status": "match"
+    },
+    {
+      "logical": "lib/autocomplete/constants.js",
+      "source": "upstream/app/javascript/lib/autocomplete/constants.js",
+      "served": "src/Campfire/wwwroot/assets/lib/autocomplete/constants-a1847912.js",
+      "source_sha256": "7f33bb98f5b6c683eea0862fa2dec5680e90d746eb21a018c26d1bb6497d1d8e",
+      "expected_compiled_sha256": "7f33bb98f5b6c683eea0862fa2dec5680e90d746eb21a018c26d1bb6497d1d8e",
+      "served_sha256": "7f33bb98f5b6c683eea0862fa2dec5680e90d746eb21a018c26d1bb6497d1d8e",
+      "status": "match"
+    },
+    {
+      "logical": "lib/autocomplete/custom_elements/suggestion_option.js",
+      "source": "upstream/app/javascript/lib/autocomplete/custom_elements/suggestion_option.js",
+      "served": "src/Campfire/wwwroot/assets/lib/autocomplete/custom_elements/suggestion_option-324a4e31.js",
+      "source_sha256": "4e056e5b411bf160196d4b712325a749088942fd25dd0334a5ab6cd6e7a68ee8",
+      "expected_compiled_sha256": "4e056e5b411bf160196d4b712325a749088942fd25dd0334a5ab6cd6e7a68ee8",
+      "served_sha256": "4e056e5b411bf160196d4b712325a749088942fd25dd0334a5ab6cd6e7a68ee8",
+      "status": "match"
+    },
+    {
+      "logical": "lib/autocomplete/custom_elements/suggestion_select.js",
+      "source": "upstream/app/javascript/lib/autocomplete/custom_elements/suggestion_select.js",
+      "served": "src/Campfire/wwwroot/assets/lib/autocomplete/custom_elements/suggestion_select-aeccaa3e.js",
+      "source_sha256": "44f07f6d0e855056d21173f9004b003821dc2b0f6955f25031e038ffb4b50eb2",
+      "expected_compiled_sha256": "44f07f6d0e855056d21173f9004b003821dc2b0f6955f25031e038ffb4b50eb2",
+      "served_sha256": "44f07f6d0e855056d21173f9004b003821dc2b0f6955f25031e038ffb4b50eb2",
+      "status": "match"
+    },
+    {
+      "logical": "lib/autocomplete/helpers.js",
+      "source": "upstream/app/javascript/lib/autocomplete/helpers.js",
+      "served": "src/Campfire/wwwroot/assets/lib/autocomplete/helpers-28003ae7.js",
+      "source_sha256": "a949a02c67cd320fb8d2070cbd450f255d1d270d2da87b2df7da789fe3fe3dcc",
+      "expected_compiled_sha256": "a949a02c67cd320fb8d2070cbd450f255d1d270d2da87b2df7da789fe3fe3dcc",
+      "served_sha256": "a949a02c67cd320fb8d2070cbd450f255d1d270d2da87b2df7da789fe3fe3dcc",
+      "status": "match"
+    },
+    {
+      "logical": "lib/autocomplete/renderer.js",
+      "source": "upstream/app/javascript/lib/autocomplete/renderer.js",
+      "served": "src/Campfire/wwwroot/assets/lib/autocomplete/renderer-33e2e525.js",
+      "source_sha256": "8febbedd209811d4bca2d669eed354146cb6051530d2a7f2933f3c56a4cfa1fb",
+      "expected_compiled_sha256": "8febbedd209811d4bca2d669eed354146cb6051530d2a7f2933f3c56a4cfa1fb",
+      "served_sha256": "8febbedd209811d4bca2d669eed354146cb6051530d2a7f2933f3c56a4cfa1fb",
+      "status": "match"
+    },
+    {
+      "logical": "lib/autocomplete/selection.js",
+      "source": "upstream/app/javascript/lib/autocomplete/selection.js",
+      "served": "src/Campfire/wwwroot/assets/lib/autocomplete/selection-2f745095.js",
+      "source_sha256": "0b2c6422eaca60fbb696d28731c12922b352bf34000b4d48aa7906b1b94eb5c8",
+      "expected_compiled_sha256": "0b2c6422eaca60fbb696d28731c12922b352bf34000b4d48aa7906b1b94eb5c8",
+      "served_sha256": "0b2c6422eaca60fbb696d28731c12922b352bf34000b4d48aa7906b1b94eb5c8",
+      "status": "match"
+    },
+    {
+      "logical": "lib/autocomplete/suggestion_context.js",
+      "source": "upstream/app/javascript/lib/autocomplete/suggestion_context.js",
+      "served": "src/Campfire/wwwroot/assets/lib/autocomplete/suggestion_context-dd271200.js",
+      "source_sha256": "5f4a4e5a3f1875ede6823a100b80544a9eae1a4e55d4b406cd0fab810459b03a",
+      "expected_compiled_sha256": "5f4a4e5a3f1875ede6823a100b80544a9eae1a4e55d4b406cd0fab810459b03a",
+      "served_sha256": "5f4a4e5a3f1875ede6823a100b80544a9eae1a4e55d4b406cd0fab810459b03a",
+      "status": "match"
+    },
+    {
+      "logical": "lib/autocomplete/suggestion_controller.js",
+      "source": "upstream/app/javascript/lib/autocomplete/suggestion_controller.js",
+      "served": "src/Campfire/wwwroot/assets/lib/autocomplete/suggestion_controller-def09836.js",
+      "source_sha256": "4ce9cee4b41330442c0a08284a88df9a82fa94746c06d01e01276939f48987e4",
+      "expected_compiled_sha256": "4ce9cee4b41330442c0a08284a88df9a82fa94746c06d01e01276939f48987e4",
+      "served_sha256": "4ce9cee4b41330442c0a08284a88df9a82fa94746c06d01e01276939f48987e4",
+      "status": "match"
+    },
+    {
+      "logical": "lib/autocomplete/suggestion_results_controller.js",
+      "source": "upstream/app/javascript/lib/autocomplete/suggestion_results_controller.js",
+      "served": "src/Campfire/wwwroot/assets/lib/autocomplete/suggestion_results_controller-e4854017.js",
+      "source_sha256": "5307a876e378bdfd90eec3fe5b99158c8ccaf72c2baf121e668bfd4e9cacb299",
+      "expected_compiled_sha256": "5307a876e378bdfd90eec3fe5b99158c8ccaf72c2baf121e668bfd4e9cacb299",
+      "served_sha256": "5307a876e378bdfd90eec3fe5b99158c8ccaf72c2baf121e668bfd4e9cacb299",
+      "status": "match"
+    },
+    {
+      "logical": "lib/autocomplete/utils.js",
+      "source": "upstream/app/javascript/lib/autocomplete/utils.js",
+      "served": "src/Campfire/wwwroot/assets/lib/autocomplete/utils-b2de125b.js",
+      "source_sha256": "4f60be57d088f17dd03e80f453083638b35e169b880926089efdb7c680cf4e57",
+      "expected_compiled_sha256": "4f60be57d088f17dd03e80f453083638b35e169b880926089efdb7c680cf4e57",
+      "served_sha256": "4f60be57d088f17dd03e80f453083638b35e169b880926089efdb7c680cf4e57",
+      "status": "match"
+    },
+    {
+      "logical": "lib/cookie.js",
+      "source": "upstream/app/javascript/lib/cookie.js",
+      "served": "src/Campfire/wwwroot/assets/lib/cookie-fcdc91bf.js",
+      "source_sha256": "0ea3a6b98906194151ef80372e821b1976e58dc51c3af0b74f648248b2246e14",
+      "expected_compiled_sha256": "0ea3a6b98906194151ef80372e821b1976e58dc51c3af0b74f648248b2246e14",
+      "served_sha256": "0ea3a6b98906194151ef80372e821b1976e58dc51c3af0b74f648248b2246e14",
+      "status": "match"
+    },
+    {
+      "logical": "lib/rich_text/campfire_extension.js",
+      "source": "upstream/app/javascript/lib/rich_text/campfire_extension.js",
+      "served": "src/Campfire/wwwroot/assets/lib/rich_text/campfire_extension-03df1bf1.js",
+      "source_sha256": "0ec5d198e4b7fd2fecc355a75aaba611bd53d6d8392d305f08d12a51ae046cc2",
+      "expected_compiled_sha256": "0ec5d198e4b7fd2fecc355a75aaba611bd53d6d8392d305f08d12a51ae046cc2",
+      "served_sha256": "0ec5d198e4b7fd2fecc355a75aaba611bd53d6d8392d305f08d12a51ae046cc2",
+      "status": "match"
+    },
+    {
+      "logical": "lib/rich_text/cite_node.js",
+      "source": "upstream/app/javascript/lib/rich_text/cite_node.js",
+      "served": "src/Campfire/wwwroot/assets/lib/rich_text/cite_node-e2098b0b.js",
+      "source_sha256": "eb7b69c1feb8831f0bb78f4da5c21c6cee401019bef08a662b59b67ea5632564",
+      "expected_compiled_sha256": "eb7b69c1feb8831f0bb78f4da5c21c6cee401019bef08a662b59b67ea5632564",
+      "served_sha256": "eb7b69c1feb8831f0bb78f4da5c21c6cee401019bef08a662b59b67ea5632564",
+      "status": "match"
+    },
+    {
+      "logical": "models/client_message.js",
+      "source": "upstream/app/javascript/models/client_message.js",
+      "served": "src/Campfire/wwwroot/assets/models/client_message-ab4045eb.js",
+      "source_sha256": "bb7c19b271587443dad0826b72646015be08af6f1401dc1f3ff133904f538d0d",
+      "expected_compiled_sha256": "bb7c19b271587443dad0826b72646015be08af6f1401dc1f3ff133904f538d0d",
+      "served_sha256": "bb7c19b271587443dad0826b72646015be08af6f1401dc1f3ff133904f538d0d",
+      "status": "match"
+    },
+    {
+      "logical": "models/file_uploader.js",
+      "source": "upstream/app/javascript/models/file_uploader.js",
+      "served": "src/Campfire/wwwroot/assets/models/file_uploader-b2ecca7e.js",
+      "source_sha256": "ff8a65a6cb63dfa6767802ca3157d03d99203febeb48259a0e4bed15ad11a9da",
+      "expected_compiled_sha256": "ff8a65a6cb63dfa6767802ca3157d03d99203febeb48259a0e4bed15ad11a9da",
+      "served_sha256": "ff8a65a6cb63dfa6767802ca3157d03d99203febeb48259a0e4bed15ad11a9da",
+      "status": "match"
+    },
+    {
+      "logical": "models/message_formatter.js",
+      "source": "upstream/app/javascript/models/message_formatter.js",
+      "served": "src/Campfire/wwwroot/assets/models/message_formatter-2654df65.js",
+      "source_sha256": "3c06fd8cb1913c5f3c053329f5676d741076851aeb3f064b62046ced2fb5b3d9",
+      "expected_compiled_sha256": "3c06fd8cb1913c5f3c053329f5676d741076851aeb3f064b62046ced2fb5b3d9",
+      "served_sha256": "3c06fd8cb1913c5f3c053329f5676d741076851aeb3f064b62046ced2fb5b3d9",
+      "status": "match"
+    },
+    {
+      "logical": "models/message_paginator.js",
+      "source": "upstream/app/javascript/models/message_paginator.js",
+      "served": "src/Campfire/wwwroot/assets/models/message_paginator-2fae1ab5.js",
+      "source_sha256": "3ecdf631bad198fb8fabb9902e8797be3decb89ab808f302d199e815d874914e",
+      "expected_compiled_sha256": "3ecdf631bad198fb8fabb9902e8797be3decb89ab808f302d199e815d874914e",
+      "served_sha256": "3ecdf631bad198fb8fabb9902e8797be3decb89ab808f302d199e815d874914e",
+      "status": "match"
+    },
+    {
+      "logical": "models/scroll_manager.js",
+      "source": "upstream/app/javascript/models/scroll_manager.js",
+      "served": "src/Campfire/wwwroot/assets/models/scroll_manager-2e800955.js",
+      "source_sha256": "4c553da88d27b4320aa9d3d1b0d2dbe71f36972b4ea93ffe0535a157438064f2",
+      "expected_compiled_sha256": "4c553da88d27b4320aa9d3d1b0d2dbe71f36972b4ea93ffe0535a157438064f2",
+      "served_sha256": "4c553da88d27b4320aa9d3d1b0d2dbe71f36972b4ea93ffe0535a157438064f2",
+      "status": "match"
+    },
+    {
+      "logical": "models/typing_tracker.js",
+      "source": "upstream/app/javascript/models/typing_tracker.js",
+      "served": "src/Campfire/wwwroot/assets/models/typing_tracker-de08b2be.js",
+      "source_sha256": "dc9137d7d98703bc6d6e22b854107e23e54848bbc02f25e449932865d51e7cc2",
+      "expected_compiled_sha256": "dc9137d7d98703bc6d6e22b854107e23e54848bbc02f25e449932865d51e7cc2",
+      "served_sha256": "dc9137d7d98703bc6d6e22b854107e23e54848bbc02f25e449932865d51e7cc2",
+      "status": "match"
+    },
+    {
+      "logical": "_reset.css",
+      "source": "upstream/app/assets/stylesheets/_reset.css",
+      "served": "src/Campfire/wwwroot/assets/_reset-5dd093a2.css",
+      "source_sha256": "e1e0fb3410b7960f828164fdb48314a3117807d66ea8355c0d72967544146bd5",
+      "expected_compiled_sha256": "e1e0fb3410b7960f828164fdb48314a3117807d66ea8355c0d72967544146bd5",
+      "served_sha256": "e1e0fb3410b7960f828164fdb48314a3117807d66ea8355c0d72967544146bd5",
+      "status": "match"
+    },
+    {
+      "logical": "actiontext.css",
+      "source": "upstream/app/assets/stylesheets/actiontext.css",
+      "served": "src/Campfire/wwwroot/assets/actiontext-cf2ec0fd.css",
+      "source_sha256": "666000e0b79f48867edd44f11533a6a7657e0bff6d9493fd8cd6a4f6358d7030",
+      "expected_compiled_sha256": "666000e0b79f48867edd44f11533a6a7657e0bff6d9493fd8cd6a4f6358d7030",
+      "served_sha256": "666000e0b79f48867edd44f11533a6a7657e0bff6d9493fd8cd6a4f6358d7030",
+      "status": "match"
+    },
+    {
+      "logical": "animation.css",
+      "source": "upstream/app/assets/stylesheets/animation.css",
+      "served": "src/Campfire/wwwroot/assets/animation-e412abb2.css",
+      "source_sha256": "5f06e9a364301dc02c934e8764a14e468ced977d50145177e87586d0ee7055bd",
+      "expected_compiled_sha256": "5f06e9a364301dc02c934e8764a14e468ced977d50145177e87586d0ee7055bd",
+      "served_sha256": "5f06e9a364301dc02c934e8764a14e468ced977d50145177e87586d0ee7055bd",
+      "status": "match"
+    },
+    {
+      "logical": "autocomplete.css",
+      "source": "upstream/app/assets/stylesheets/autocomplete.css",
+      "served": "src/Campfire/wwwroot/assets/autocomplete-ac89c527.css",
+      "source_sha256": "8c8884063b0561797eab8e029baafccc9ccb02e7f49ca05b2ee4c2c0a6089347",
+      "expected_compiled_sha256": "8c8884063b0561797eab8e029baafccc9ccb02e7f49ca05b2ee4c2c0a6089347",
+      "served_sha256": "8c8884063b0561797eab8e029baafccc9ccb02e7f49ca05b2ee4c2c0a6089347",
+      "status": "match"
+    },
+    {
+      "logical": "avatars.css",
+      "source": "upstream/app/assets/stylesheets/avatars.css",
+      "served": "src/Campfire/wwwroot/assets/avatars-be84c402.css",
+      "source_sha256": "2d6e6b4d5b901741b4aa63f3b75005bab63df860179d447ba999f5a0d131e29a",
+      "expected_compiled_sha256": "90d865c98bf0872ffb314710e8608a8ae57e3afe5a3eaf1936d3872fd890d288",
+      "served_sha256": "90d865c98bf0872ffb314710e8608a8ae57e3afe5a3eaf1936d3872fd890d288",
+      "status": "match"
+    },
+    {
+      "logical": "base.css",
+      "source": "upstream/app/assets/stylesheets/base.css",
+      "served": "src/Campfire/wwwroot/assets/base-71874102.css",
+      "source_sha256": "3e773c11e2e28ab25c58d7053a34dd5e3d1de68d0a37fc9d573f5bdb3019ef70",
+      "expected_compiled_sha256": "3e773c11e2e28ab25c58d7053a34dd5e3d1de68d0a37fc9d573f5bdb3019ef70",
+      "served_sha256": "3e773c11e2e28ab25c58d7053a34dd5e3d1de68d0a37fc9d573f5bdb3019ef70",
+      "status": "match"
+    },
+    {
+      "logical": "boosts.css",
+      "source": "upstream/app/assets/stylesheets/boosts.css",
+      "served": "src/Campfire/wwwroot/assets/boosts-faf3cc9d.css",
+      "source_sha256": "722c6cd1160e134bf5a3fa12c35ce5f0dfb3bb40cf6cf7a331185e043535c7df",
+      "expected_compiled_sha256": "722c6cd1160e134bf5a3fa12c35ce5f0dfb3bb40cf6cf7a331185e043535c7df",
+      "served_sha256": "722c6cd1160e134bf5a3fa12c35ce5f0dfb3bb40cf6cf7a331185e043535c7df",
+      "status": "match"
+    },
+    {
+      "logical": "buttons.css",
+      "source": "upstream/app/assets/stylesheets/buttons.css",
+      "served": "src/Campfire/wwwroot/assets/buttons-afe03b4d.css",
+      "source_sha256": "51963993197fc3f4c61e7a8cfb32124a2eb012c00b4317386d3e78279d8e293e",
+      "expected_compiled_sha256": "51963993197fc3f4c61e7a8cfb32124a2eb012c00b4317386d3e78279d8e293e",
+      "served_sha256": "51963993197fc3f4c61e7a8cfb32124a2eb012c00b4317386d3e78279d8e293e",
+      "status": "match"
+    },
+    {
+      "logical": "code.css",
+      "source": "upstream/app/assets/stylesheets/code.css",
+      "served": "src/Campfire/wwwroot/assets/code-d769e140.css",
+      "source_sha256": "45b74b1b4e834d3fd985e5b01702a9957abc5939ba7f02add998724800c76358",
+      "expected_compiled_sha256": "45b74b1b4e834d3fd985e5b01702a9957abc5939ba7f02add998724800c76358",
+      "served_sha256": "45b74b1b4e834d3fd985e5b01702a9957abc5939ba7f02add998724800c76358",
+      "status": "match"
+    },
+    {
+      "logical": "colorize.css",
+      "source": "upstream/app/assets/stylesheets/colorize.css",
+      "served": "src/Campfire/wwwroot/assets/colorize-80ea040e.css",
+      "source_sha256": "a50726cecd36896805d1a703b2eae2ae3cb40baa60be6864732619f0543fc271",
+      "expected_compiled_sha256": "a50726cecd36896805d1a703b2eae2ae3cb40baa60be6864732619f0543fc271",
+      "served_sha256": "a50726cecd36896805d1a703b2eae2ae3cb40baa60be6864732619f0543fc271",
+      "status": "match"
+    },
+    {
+      "logical": "colors.css",
+      "source": "upstream/app/assets/stylesheets/colors.css",
+      "served": "src/Campfire/wwwroot/assets/colors-d9b4f47f.css",
+      "source_sha256": "07e554766153362b823aee656635de814bd9aa7cedd6a0aad671965bdefce385",
+      "expected_compiled_sha256": "07e554766153362b823aee656635de814bd9aa7cedd6a0aad671965bdefce385",
+      "served_sha256": "07e554766153362b823aee656635de814bd9aa7cedd6a0aad671965bdefce385",
+      "status": "match"
+    },
+    {
+      "logical": "composer.css",
+      "source": "upstream/app/assets/stylesheets/composer.css",
+      "served": "src/Campfire/wwwroot/assets/composer-d74c1b6a.css",
+      "source_sha256": "93bafcc1acceb44064cbc03bf8cb3b1dfa34f5479a6a0580a75809dd8a2b85d3",
+      "expected_compiled_sha256": "92b0b922226285710cc17beeb818ec7ab2e1599e43b1806c83d7a4ab0708a0d0",
+      "served_sha256": "92b0b922226285710cc17beeb818ec7ab2e1599e43b1806c83d7a4ab0708a0d0",
+      "status": "match"
+    },
+    {
+      "logical": "embeds.css",
+      "source": "upstream/app/assets/stylesheets/embeds.css",
+      "served": "src/Campfire/wwwroot/assets/embeds-3b2b5300.css",
+      "source_sha256": "c8afb3e8479a24393fa2d173a9de58b0f1d7c3c4f4197d95138240a8c66dab6a",
+      "expected_compiled_sha256": "c8afb3e8479a24393fa2d173a9de58b0f1d7c3c4f4197d95138240a8c66dab6a",
+      "served_sha256": "c8afb3e8479a24393fa2d173a9de58b0f1d7c3c4f4197d95138240a8c66dab6a",
+      "status": "match"
+    },
+    {
+      "logical": "filters.css",
+      "source": "upstream/app/assets/stylesheets/filters.css",
+      "served": "src/Campfire/wwwroot/assets/filters-f6cf6d71.css",
+      "source_sha256": "9fdc59a558569d13e9883ab4fa555b5d9c6aa5f029b602a2d300af84d9c0a1c8",
+      "expected_compiled_sha256": "9fdc59a558569d13e9883ab4fa555b5d9c6aa5f029b602a2d300af84d9c0a1c8",
+      "served_sha256": "9fdc59a558569d13e9883ab4fa555b5d9c6aa5f029b602a2d300af84d9c0a1c8",
+      "status": "match"
+    },
+    {
+      "logical": "flash.css",
+      "source": "upstream/app/assets/stylesheets/flash.css",
+      "served": "src/Campfire/wwwroot/assets/flash-1da5ab3d.css",
+      "source_sha256": "6dbfa8b9eba694525cdcafcb9de07ae61c92c4ab69eeefd85bc519e038bf48ac",
+      "expected_compiled_sha256": "6dbfa8b9eba694525cdcafcb9de07ae61c92c4ab69eeefd85bc519e038bf48ac",
+      "served_sha256": "6dbfa8b9eba694525cdcafcb9de07ae61c92c4ab69eeefd85bc519e038bf48ac",
+      "status": "match"
+    },
+    {
+      "logical": "inputs.css",
+      "source": "upstream/app/assets/stylesheets/inputs.css",
+      "served": "src/Campfire/wwwroot/assets/inputs-bbbd5c03.css",
+      "source_sha256": "6ad2803377cb849d5b755477cf4506d772c3924527663a0505eb9d78e8e59c31",
+      "expected_compiled_sha256": "6ad2803377cb849d5b755477cf4506d772c3924527663a0505eb9d78e8e59c31",
+      "served_sha256": "6ad2803377cb849d5b755477cf4506d772c3924527663a0505eb9d78e8e59c31",
+      "status": "match"
+    },
+    {
+      "logical": "layout.css",
+      "source": "upstream/app/assets/stylesheets/layout.css",
+      "served": "src/Campfire/wwwroot/assets/layout-a93d6a45.css",
+      "source_sha256": "0b9c12db4af96dabfd295f8d0def43735b30bf9ee2f81c4b5cb7af06565121ba",
+      "expected_compiled_sha256": "0b9c12db4af96dabfd295f8d0def43735b30bf9ee2f81c4b5cb7af06565121ba",
+      "served_sha256": "0b9c12db4af96dabfd295f8d0def43735b30bf9ee2f81c4b5cb7af06565121ba",
+      "status": "match"
+    },
+    {
+      "logical": "lightbox.css",
+      "source": "upstream/app/assets/stylesheets/lightbox.css",
+      "served": "src/Campfire/wwwroot/assets/lightbox-619deafc.css",
+      "source_sha256": "19897465e5aa8de698e333e28110a80c35b1a9d95d311f9395ba14f2b08f8ba9",
+      "expected_compiled_sha256": "19897465e5aa8de698e333e28110a80c35b1a9d95d311f9395ba14f2b08f8ba9",
+      "served_sha256": "19897465e5aa8de698e333e28110a80c35b1a9d95d311f9395ba14f2b08f8ba9",
+      "status": "match"
+    },
+    {
+      "logical": "messages.css",
+      "source": "upstream/app/assets/stylesheets/messages.css",
+      "served": "src/Campfire/wwwroot/assets/messages-684703cf.css",
+      "source_sha256": "90b93f2990891f5adc6daff5a41554163d9110f255b3138be8aa939198aef2a7",
+      "expected_compiled_sha256": "90b93f2990891f5adc6daff5a41554163d9110f255b3138be8aa939198aef2a7",
+      "served_sha256": "90b93f2990891f5adc6daff5a41554163d9110f255b3138be8aa939198aef2a7",
+      "status": "match"
+    },
+    {
+      "logical": "nav.css",
+      "source": "upstream/app/assets/stylesheets/nav.css",
+      "served": "src/Campfire/wwwroot/assets/nav-a9913410.css",
+      "source_sha256": "945bb5d264096cc574d816dd505a69f0eae05709d5d126a8abbd8a0359923959",
+      "expected_compiled_sha256": "945bb5d264096cc574d816dd505a69f0eae05709d5d126a8abbd8a0359923959",
+      "served_sha256": "945bb5d264096cc574d816dd505a69f0eae05709d5d126a8abbd8a0359923959",
+      "status": "match"
+    },
+    {
+      "logical": "panels.css",
+      "source": "upstream/app/assets/stylesheets/panels.css",
+      "served": "src/Campfire/wwwroot/assets/panels-46ba4891.css",
+      "source_sha256": "0bfc56fe5efad5d0183e1148962e706b2fc8e244afb82c25430d3cd5f2606bd0",
+      "expected_compiled_sha256": "0bfc56fe5efad5d0183e1148962e706b2fc8e244afb82c25430d3cd5f2606bd0",
+      "served_sha256": "0bfc56fe5efad5d0183e1148962e706b2fc8e244afb82c25430d3cd5f2606bd0",
+      "status": "match"
+    },
+    {
+      "logical": "separators.css",
+      "source": "upstream/app/assets/stylesheets/separators.css",
+      "served": "src/Campfire/wwwroot/assets/separators-ee652b6b.css",
+      "source_sha256": "40773a0da1225a5dddaf2412c9d94fa2b65fe48127b63847e8a20e43147f8efa",
+      "expected_compiled_sha256": "40773a0da1225a5dddaf2412c9d94fa2b65fe48127b63847e8a20e43147f8efa",
+      "served_sha256": "40773a0da1225a5dddaf2412c9d94fa2b65fe48127b63847e8a20e43147f8efa",
+      "status": "match"
+    },
+    {
+      "logical": "sidebar.css",
+      "source": "upstream/app/assets/stylesheets/sidebar.css",
+      "served": "src/Campfire/wwwroot/assets/sidebar-eb3882ae.css",
+      "source_sha256": "1014c54e0d94bd199e857ae3f240b4db21ed69c636f9ec2c34d6a81a4f230dbc",
+      "expected_compiled_sha256": "1014c54e0d94bd199e857ae3f240b4db21ed69c636f9ec2c34d6a81a4f230dbc",
+      "served_sha256": "1014c54e0d94bd199e857ae3f240b4db21ed69c636f9ec2c34d6a81a4f230dbc",
+      "status": "match"
+    },
+    {
+      "logical": "signup.css",
+      "source": "upstream/app/assets/stylesheets/signup.css",
+      "served": "src/Campfire/wwwroot/assets/signup-14a4dccb.css",
+      "source_sha256": "5adde3f0d72b71e8f518aca50e90c75d239940879fb12e9af449e5019a25405b",
+      "expected_compiled_sha256": "5adde3f0d72b71e8f518aca50e90c75d239940879fb12e9af449e5019a25405b",
+      "served_sha256": "5adde3f0d72b71e8f518aca50e90c75d239940879fb12e9af449e5019a25405b",
+      "status": "match"
+    },
+    {
+      "logical": "spinner.css",
+      "source": "upstream/app/assets/stylesheets/spinner.css",
+      "served": "src/Campfire/wwwroot/assets/spinner-f9e38cce.css",
+      "source_sha256": "850f4e7203aab2cc69a174176c0c5059b7470d429350532aea7518d1a2ffac8d",
+      "expected_compiled_sha256": "850f4e7203aab2cc69a174176c0c5059b7470d429350532aea7518d1a2ffac8d",
+      "served_sha256": "850f4e7203aab2cc69a174176c0c5059b7470d429350532aea7518d1a2ffac8d",
+      "status": "match"
+    },
+    {
+      "logical": "utilities.css",
+      "source": "upstream/app/assets/stylesheets/utilities.css",
+      "served": "src/Campfire/wwwroot/assets/utilities-5404ab42.css",
+      "source_sha256": "0997eedc7cb2eb5ff494f1b9d1c8c3c77424db3ae5b4f5fdb286365cf8859342",
+      "expected_compiled_sha256": "0997eedc7cb2eb5ff494f1b9d1c8c3c77424db3ae5b4f5fdb286365cf8859342",
+      "served_sha256": "0997eedc7cb2eb5ff494f1b9d1c8c3c77424db3ae5b4f5fdb286365cf8859342",
+      "status": "match"
+    },
+    {
+      "logical": "add.svg",
+      "source": "upstream/app/assets/images/add.svg",
+      "served": "src/Campfire/wwwroot/assets/add-f232d8a6.svg",
+      "source_sha256": "c2432767c10fa24794ff0242addab3ddf810662e15ed837ed805394b2a131b74",
+      "expected_compiled_sha256": "c2432767c10fa24794ff0242addab3ddf810662e15ed837ed805394b2a131b74",
+      "served_sha256": "c2432767c10fa24794ff0242addab3ddf810662e15ed837ed805394b2a131b74",
+      "status": "match"
+    },
+    {
+      "logical": "alert.svg",
+      "source": "upstream/app/assets/images/alert.svg",
+      "served": "src/Campfire/wwwroot/assets/alert-b937985b.svg",
+      "source_sha256": "dc6971bdb81eb6d9b8af85681db5457cc0d740506782a5f72f20c0a7519c236c",
+      "expected_compiled_sha256": "dc6971bdb81eb6d9b8af85681db5457cc0d740506782a5f72f20c0a7519c236c",
+      "served_sha256": "dc6971bdb81eb6d9b8af85681db5457cc0d740506782a5f72f20c0a7519c236c",
+      "status": "match"
+    },
+    {
+      "logical": "arrow-down.svg",
+      "source": "upstream/app/assets/images/arrow-down.svg",
+      "served": "src/Campfire/wwwroot/assets/arrow-down-3f174d76.svg",
+      "source_sha256": "aee7221f66896718af4dc7004b78c650b31a08b79d0bccacb6f7d7baec68b495",
+      "expected_compiled_sha256": "aee7221f66896718af4dc7004b78c650b31a08b79d0bccacb6f7d7baec68b495",
+      "served_sha256": "aee7221f66896718af4dc7004b78c650b31a08b79d0bccacb6f7d7baec68b495",
+      "status": "match"
+    },
+    {
+      "logical": "arrow-left.svg",
+      "source": "upstream/app/assets/images/arrow-left.svg",
+      "served": "src/Campfire/wwwroot/assets/arrow-left-abe40556.svg",
+      "source_sha256": "b2d77964ac8c40f68cd8d41ea02498d8edd16874b18af9d55c25f456509c22b1",
+      "expected_compiled_sha256": "b2d77964ac8c40f68cd8d41ea02498d8edd16874b18af9d55c25f456509c22b1",
+      "served_sha256": "b2d77964ac8c40f68cd8d41ea02498d8edd16874b18af9d55c25f456509c22b1",
+      "status": "match"
+    },
+    {
+      "logical": "arrow-right.svg",
+      "source": "upstream/app/assets/images/arrow-right.svg",
+      "served": "src/Campfire/wwwroot/assets/arrow-right-8f3eb40d.svg",
+      "source_sha256": "dec2474c2245d348d8e14725a5e324c0ca30d9c876d453531e6fc73cdf07313f",
+      "expected_compiled_sha256": "dec2474c2245d348d8e14725a5e324c0ca30d9c876d453531e6fc73cdf07313f",
+      "served_sha256": "dec2474c2245d348d8e14725a5e324c0ca30d9c876d453531e6fc73cdf07313f",
+      "status": "match"
+    },
+    {
+      "logical": "arrow-up.svg",
+      "source": "upstream/app/assets/images/arrow-up.svg",
+      "served": "src/Campfire/wwwroot/assets/arrow-up-f96b3895.svg",
+      "source_sha256": "ae5cd51a256a68b98c77197801a35b016c3c4dfbaa3bba9a8c63a9275493498f",
+      "expected_compiled_sha256": "ae5cd51a256a68b98c77197801a35b016c3c4dfbaa3bba9a8c63a9275493498f",
+      "served_sha256": "ae5cd51a256a68b98c77197801a35b016c3c4dfbaa3bba9a8c63a9275493498f",
+      "status": "match"
+    },
+    {
+      "logical": "art.svg",
+      "source": "upstream/app/assets/images/art.svg",
+      "served": "src/Campfire/wwwroot/assets/art-ed709d32.svg",
+      "source_sha256": "dfb0711d60654690b051bbc25c816e7286cc30ec067a7086d16d9403fcff7895",
+      "expected_compiled_sha256": "dfb0711d60654690b051bbc25c816e7286cc30ec067a7086d16d9403fcff7895",
+      "served_sha256": "dfb0711d60654690b051bbc25c816e7286cc30ec067a7086d16d9403fcff7895",
+      "status": "match"
+    },
+    {
+      "logical": "attachment.svg",
+      "source": "upstream/app/assets/images/attachment.svg",
+      "served": "src/Campfire/wwwroot/assets/attachment-8bcccab0.svg",
+      "source_sha256": "6c335caae0526aa93498d5454f6bc5622f0c2db3de94fa82693b8b3b63c44b67",
+      "expected_compiled_sha256": "6c335caae0526aa93498d5454f6bc5622f0c2db3de94fa82693b8b3b63c44b67",
+      "served_sha256": "6c335caae0526aa93498d5454f6bc5622f0c2db3de94fa82693b8b3b63c44b67",
+      "status": "match"
+    },
+    {
+      "logical": "bio.svg",
+      "source": "upstream/app/assets/images/bio.svg",
+      "served": "src/Campfire/wwwroot/assets/bio-567a6005.svg",
+      "source_sha256": "ca3327ece84be5320f581bcc09beee4a5bc4ab2a48be49f821977c35316f2917",
+      "expected_compiled_sha256": "ca3327ece84be5320f581bcc09beee4a5bc4ab2a48be49f821977c35316f2917",
+      "served_sha256": "ca3327ece84be5320f581bcc09beee4a5bc4ab2a48be49f821977c35316f2917",
+      "status": "match"
+    },
+    {
+      "logical": "boost.svg",
+      "source": "upstream/app/assets/images/boost.svg",
+      "served": "src/Campfire/wwwroot/assets/boost-4a7bab66.svg",
+      "source_sha256": "b6acc9cbbfc16e25c905d8d9d89908e5d6c14669a20f30372f28d0acb4c3f098",
+      "expected_compiled_sha256": "b6acc9cbbfc16e25c905d8d9d89908e5d6c14669a20f30372f28d0acb4c3f098",
+      "served_sha256": "b6acc9cbbfc16e25c905d8d9d89908e5d6c14669a20f30372f28d0acb4c3f098",
+      "status": "match"
+    },
+    {
+      "logical": "bot.svg",
+      "source": "upstream/app/assets/images/bot.svg",
+      "served": "src/Campfire/wwwroot/assets/bot-8a69692e.svg",
+      "source_sha256": "9fa12187fcaf69fea291b809d18e48e9c5f3f9155b4c44804a93fa597ab46dee",
+      "expected_compiled_sha256": "9fa12187fcaf69fea291b809d18e48e9c5f3f9155b4c44804a93fa597ab46dee",
+      "served_sha256": "9fa12187fcaf69fea291b809d18e48e9c5f3f9155b4c44804a93fa597ab46dee",
+      "status": "match"
+    },
+    {
+      "logical": "broom.svg",
+      "source": "upstream/app/assets/images/broom.svg",
+      "served": "src/Campfire/wwwroot/assets/broom-13d30a95.svg",
+      "source_sha256": "914bef6ff78cc29967f4da07995839805aee4d9b79047df59a5d8fb54db39cef",
+      "expected_compiled_sha256": "914bef6ff78cc29967f4da07995839805aee4d9b79047df59a5d8fb54db39cef",
+      "served_sha256": "914bef6ff78cc29967f4da07995839805aee4d9b79047df59a5d8fb54db39cef",
+      "status": "match"
+    },
+    {
+      "logical": "browsers/android.svg",
+      "source": "upstream/app/assets/images/browsers/android.svg",
+      "served": "src/Campfire/wwwroot/assets/browsers/android-196a24ef.svg",
+      "source_sha256": "2bb1a2c9b9ae4d36f62ea53811554636cf3c5b74d9845e1dbacca0ce62dc7880",
+      "expected_compiled_sha256": "2bb1a2c9b9ae4d36f62ea53811554636cf3c5b74d9845e1dbacca0ce62dc7880",
+      "served_sha256": "2bb1a2c9b9ae4d36f62ea53811554636cf3c5b74d9845e1dbacca0ce62dc7880",
+      "status": "match"
+    },
+    {
+      "logical": "browsers/chrome.svg",
+      "source": "upstream/app/assets/images/browsers/chrome.svg",
+      "served": "src/Campfire/wwwroot/assets/browsers/chrome-196a24ef.svg",
+      "source_sha256": "2bb1a2c9b9ae4d36f62ea53811554636cf3c5b74d9845e1dbacca0ce62dc7880",
+      "expected_compiled_sha256": "2bb1a2c9b9ae4d36f62ea53811554636cf3c5b74d9845e1dbacca0ce62dc7880",
+      "served_sha256": "2bb1a2c9b9ae4d36f62ea53811554636cf3c5b74d9845e1dbacca0ce62dc7880",
+      "status": "match"
+    },
+    {
+      "logical": "browsers/edge.svg",
+      "source": "upstream/app/assets/images/browsers/edge.svg",
+      "served": "src/Campfire/wwwroot/assets/browsers/edge-352f198a.svg",
+      "source_sha256": "019c61ed30c4c26e44f458af9f2151bae06f7d5432969b4806661c4ea7d37490",
+      "expected_compiled_sha256": "019c61ed30c4c26e44f458af9f2151bae06f7d5432969b4806661c4ea7d37490",
+      "served_sha256": "019c61ed30c4c26e44f458af9f2151bae06f7d5432969b4806661c4ea7d37490",
+      "status": "match"
+    },
+    {
+      "logical": "browsers/firefox.svg",
+      "source": "upstream/app/assets/images/browsers/firefox.svg",
+      "served": "src/Campfire/wwwroot/assets/browsers/firefox-57046321.svg",
+      "source_sha256": "e0cf83025fcc91475362f6bd3f64b4290cd8f976cb910951e9a69d71a037283b",
+      "expected_compiled_sha256": "e0cf83025fcc91475362f6bd3f64b4290cd8f976cb910951e9a69d71a037283b",
+      "served_sha256": "e0cf83025fcc91475362f6bd3f64b4290cd8f976cb910951e9a69d71a037283b",
+      "status": "match"
+    },
+    {
+      "logical": "browsers/opera.svg",
+      "source": "upstream/app/assets/images/browsers/opera.svg",
+      "served": "src/Campfire/wwwroot/assets/browsers/opera-0f156483.svg",
+      "source_sha256": "a4c95d23e431c96db544d7acdcf6e25ffd98d1f30f5fe23669ca65f75e054526",
+      "expected_compiled_sha256": "a4c95d23e431c96db544d7acdcf6e25ffd98d1f30f5fe23669ca65f75e054526",
+      "served_sha256": "a4c95d23e431c96db544d7acdcf6e25ffd98d1f30f5fe23669ca65f75e054526",
+      "status": "match"
+    },
+    {
+      "logical": "browsers/safari.svg",
+      "source": "upstream/app/assets/images/browsers/safari.svg",
+      "served": "src/Campfire/wwwroot/assets/browsers/safari-0b7b9bbc.svg",
+      "source_sha256": "23b78b04e9892e64cddc3d47c0c99169382f50ac3d86a1e852d81e9638ddd7f2",
+      "expected_compiled_sha256": "23b78b04e9892e64cddc3d47c0c99169382f50ac3d86a1e852d81e9638ddd7f2",
+      "served_sha256": "23b78b04e9892e64cddc3d47c0c99169382f50ac3d86a1e852d81e9638ddd7f2",
+      "status": "match"
+    },
+    {
+      "logical": "camera.svg",
+      "source": "upstream/app/assets/images/camera.svg",
+      "served": "src/Campfire/wwwroot/assets/camera-927323b8.svg",
+      "source_sha256": "9c37e8dc9e900ab683d1721705dffac106d110101de63dd98ef3a164ab1bdd74",
+      "expected_compiled_sha256": "9c37e8dc9e900ab683d1721705dffac106d110101de63dd98ef3a164ab1bdd74",
+      "served_sha256": "9c37e8dc9e900ab683d1721705dffac106d110101de63dd98ef3a164ab1bdd74",
+      "status": "match"
+    },
+    {
+      "logical": "campfire-icon.png",
+      "source": "upstream/app/assets/images/campfire-icon.png",
+      "served": "src/Campfire/wwwroot/assets/campfire-icon-3d9986c5.png",
+      "source_sha256": "f91df2931f8939035a6448928d43ea04a50d1f75d14dac9329b6ee363dcbbd69",
+      "expected_compiled_sha256": "f91df2931f8939035a6448928d43ea04a50d1f75d14dac9329b6ee363dcbbd69",
+      "served_sha256": "f91df2931f8939035a6448928d43ea04a50d1f75d14dac9329b6ee363dcbbd69",
+      "status": "match"
+    },
+    {
+      "logical": "cancel.svg",
+      "source": "upstream/app/assets/images/cancel.svg",
+      "served": "src/Campfire/wwwroot/assets/cancel-c6dfeb78.svg",
+      "source_sha256": "8f798011ab283690f84f945a4ccf90926c805d46f50f81dab10ee3f40d54f141",
+      "expected_compiled_sha256": "8f798011ab283690f84f945a4ccf90926c805d46f50f81dab10ee3f40d54f141",
+      "served_sha256": "8f798011ab283690f84f945a4ccf90926c805d46f50f81dab10ee3f40d54f141",
+      "status": "match"
+    },
+    {
+      "logical": "check.svg",
+      "source": "upstream/app/assets/images/check.svg",
+      "served": "src/Campfire/wwwroot/assets/check-7897ff7e.svg",
+      "source_sha256": "9000e4bb232fcc4fd38f7ea4b3e4cdcee326e62eec98c5374998a9d25f7588d2",
+      "expected_compiled_sha256": "9000e4bb232fcc4fd38f7ea4b3e4cdcee326e62eec98c5374998a9d25f7588d2",
+      "served_sha256": "9000e4bb232fcc4fd38f7ea4b3e4cdcee326e62eec98c5374998a9d25f7588d2",
+      "status": "match"
+    },
+    {
+      "logical": "common-file-text.svg",
+      "source": "upstream/app/assets/images/common-file-text.svg",
+      "served": "src/Campfire/wwwroot/assets/common-file-text-9043d980.svg",
+      "source_sha256": "614509095ce703fce92653d7cfe92141c599c8749ec1628ccc4a8ac7412d1274",
+      "expected_compiled_sha256": "614509095ce703fce92653d7cfe92141c599c8749ec1628ccc4a8ac7412d1274",
+      "served_sha256": "614509095ce703fce92653d7cfe92141c599c8749ec1628ccc4a8ac7412d1274",
+      "status": "match"
+    },
+    {
+      "logical": "copy-paste.svg",
+      "source": "upstream/app/assets/images/copy-paste.svg",
+      "served": "src/Campfire/wwwroot/assets/copy-paste-4c379063.svg",
+      "source_sha256": "9af55f0262e5eeee0a593fb7d31f28cf646a53c32099842ce9f11eda017daf5d",
+      "expected_compiled_sha256": "9af55f0262e5eeee0a593fb7d31f28cf646a53c32099842ce9f11eda017daf5d",
+      "served_sha256": "9af55f0262e5eeee0a593fb7d31f28cf646a53c32099842ce9f11eda017daf5d",
+      "status": "match"
+    },
+    {
+      "logical": "crown.svg",
+      "source": "upstream/app/assets/images/crown.svg",
+      "served": "src/Campfire/wwwroot/assets/crown-00d190cb.svg",
+      "source_sha256": "849864419bae0da36ba763d5828335c4c314d17cb3b424c3fafe4569aa5eb790",
+      "expected_compiled_sha256": "849864419bae0da36ba763d5828335c4c314d17cb3b424c3fafe4569aa5eb790",
+      "served_sha256": "849864419bae0da36ba763d5828335c4c314d17cb3b424c3fafe4569aa5eb790",
+      "status": "match"
+    },
+    {
+      "logical": "default-avatar.svg",
+      "source": "upstream/app/assets/images/default-avatar.svg",
+      "served": "src/Campfire/wwwroot/assets/default-avatar-1ee67b00.svg",
+      "source_sha256": "14d1cd05fe94fe1c87978f97520ca95256247153065dc9503c0fad46019ae374",
+      "expected_compiled_sha256": "14d1cd05fe94fe1c87978f97520ca95256247153065dc9503c0fad46019ae374",
+      "served_sha256": "14d1cd05fe94fe1c87978f97520ca95256247153065dc9503c0fad46019ae374",
+      "status": "match"
+    },
+    {
+      "logical": "default-bot-avatar.svg",
+      "source": "upstream/app/assets/images/default-bot-avatar.svg",
+      "served": "src/Campfire/wwwroot/assets/default-bot-avatar-de1d12f7.svg",
+      "source_sha256": "aefe43e21cd8423e5b29ee6e3088db788090bc715f52863eaddc0efdb92c9062",
+      "expected_compiled_sha256": "aefe43e21cd8423e5b29ee6e3088db788090bc715f52863eaddc0efdb92c9062",
+      "served_sha256": "aefe43e21cd8423e5b29ee6e3088db788090bc715f52863eaddc0efdb92c9062",
+      "status": "match"
+    },
+    {
+      "logical": "disclosure.svg",
+      "source": "upstream/app/assets/images/disclosure.svg",
+      "served": "src/Campfire/wwwroot/assets/disclosure-26d63471.svg",
+      "source_sha256": "9df71db55e0ff95b9b47f27aa09f9ff3ebc5a686f1052bb31b91ef1265653040",
+      "expected_compiled_sha256": "9df71db55e0ff95b9b47f27aa09f9ff3ebc5a686f1052bb31b91ef1265653040",
+      "served_sha256": "9df71db55e0ff95b9b47f27aa09f9ff3ebc5a686f1052bb31b91ef1265653040",
+      "status": "match"
+    },
+    {
+      "logical": "download.svg",
+      "source": "upstream/app/assets/images/download.svg",
+      "served": "src/Campfire/wwwroot/assets/download-04029899.svg",
+      "source_sha256": "be2396eed9103cf486e9290fac6a78abe58841c2a5e4e9d57745e9b32856408c",
+      "expected_compiled_sha256": "be2396eed9103cf486e9290fac6a78abe58841c2a5e4e9d57745e9b32856408c",
+      "served_sha256": "be2396eed9103cf486e9290fac6a78abe58841c2a5e4e9d57745e9b32856408c",
+      "status": "match"
+    },
+    {
+      "logical": "email.svg",
+      "source": "upstream/app/assets/images/email.svg",
+      "served": "src/Campfire/wwwroot/assets/email-6c595bc5.svg",
+      "source_sha256": "2bc3ffe9645cbd54a8a2672d9a179fd363c337e2ea1162e1475e1c8ecd441fb4",
+      "expected_compiled_sha256": "2bc3ffe9645cbd54a8a2672d9a179fd363c337e2ea1162e1475e1c8ecd441fb4",
+      "served_sha256": "2bc3ffe9645cbd54a8a2672d9a179fd363c337e2ea1162e1475e1c8ecd441fb4",
+      "status": "match"
+    },
+    {
+      "logical": "everyone.svg",
+      "source": "upstream/app/assets/images/everyone.svg",
+      "served": "src/Campfire/wwwroot/assets/everyone-4ca1d460.svg",
+      "source_sha256": "12cae105dbcc9e5544a3e9eec90eacb58443a1df338c637dcfc930b73fdbde60",
+      "expected_compiled_sha256": "12cae105dbcc9e5544a3e9eec90eacb58443a1df338c637dcfc930b73fdbde60",
+      "served_sha256": "12cae105dbcc9e5544a3e9eec90eacb58443a1df338c637dcfc930b73fdbde60",
+      "status": "match"
+    },
+    {
+      "logical": "external/gear.svg",
+      "source": "upstream/app/assets/images/external/gear.svg",
+      "served": "src/Campfire/wwwroot/assets/external/gear-50e77d2b.svg",
+      "source_sha256": "4623c01aca5f621671d14d8623669d9417284af6debf933f323181a724cb12cc",
+      "expected_compiled_sha256": "4623c01aca5f621671d14d8623669d9417284af6debf933f323181a724cb12cc",
+      "served_sha256": "4623c01aca5f621671d14d8623669d9417284af6debf933f323181a724cb12cc",
+      "status": "match"
+    },
+    {
+      "logical": "external/install-edge.svg",
+      "source": "upstream/app/assets/images/external/install-edge.svg",
+      "served": "src/Campfire/wwwroot/assets/external/install-edge-0b7cd918.svg",
+      "source_sha256": "08673ca2a7695286a40ab388bc48f09919e830427a7e1c93f5faf1c71cc64040",
+      "expected_compiled_sha256": "08673ca2a7695286a40ab388bc48f09919e830427a7e1c93f5faf1c71cc64040",
+      "served_sha256": "08673ca2a7695286a40ab388bc48f09919e830427a7e1c93f5faf1c71cc64040",
+      "status": "match"
+    },
+    {
+      "logical": "external/install.svg",
+      "source": "upstream/app/assets/images/external/install.svg",
+      "served": "src/Campfire/wwwroot/assets/external/install-f762b3be.svg",
+      "source_sha256": "5bff50b526a431f9e0284de550f86a8f4f4c7f59b0ccbd6329c97bb44f743d2f",
+      "expected_compiled_sha256": "5bff50b526a431f9e0284de550f86a8f4f4c7f59b0ccbd6329c97bb44f743d2f",
+      "served_sha256": "5bff50b526a431f9e0284de550f86a8f4f4c7f59b0ccbd6329c97bb44f743d2f",
+      "status": "match"
+    },
+    {
+      "logical": "external/share.svg",
+      "source": "upstream/app/assets/images/external/share.svg",
+      "served": "src/Campfire/wwwroot/assets/external/share-f9d3e998.svg",
+      "source_sha256": "28ae5d5ad16a1981f8595651a083ac18aa964a98014d150d284870abd328d121",
+      "expected_compiled_sha256": "28ae5d5ad16a1981f8595651a083ac18aa964a98014d150d284870abd328d121",
+      "served_sha256": "28ae5d5ad16a1981f8595651a083ac18aa964a98014d150d284870abd328d121",
+      "status": "match"
+    },
+    {
+      "logical": "external/sliders.svg",
+      "source": "upstream/app/assets/images/external/sliders.svg",
+      "served": "src/Campfire/wwwroot/assets/external/sliders-3979a007.svg",
+      "source_sha256": "db187b689b91625ee664c9339363ee02b455635aa8001b6701ee3f33b7330968",
+      "expected_compiled_sha256": "db187b689b91625ee664c9339363ee02b455635aa8001b6701ee3f33b7330968",
+      "served_sha256": "db187b689b91625ee664c9339363ee02b455635aa8001b6701ee3f33b7330968",
+      "status": "match"
+    },
+    {
+      "logical": "external/switch.svg",
+      "source": "upstream/app/assets/images/external/switch.svg",
+      "served": "src/Campfire/wwwroot/assets/external/switch-eec22a2d.svg",
+      "source_sha256": "c301949700b984ca3a6c0835a684ea8e5ce513de71eab983c9cb31d1191596cc",
+      "expected_compiled_sha256": "c301949700b984ca3a6c0835a684ea8e5ce513de71eab983c9cb31d1191596cc",
+      "served_sha256": "c301949700b984ca3a6c0835a684ea8e5ce513de71eab983c9cb31d1191596cc",
+      "status": "match"
+    },
+    {
+      "logical": "external/web.svg",
+      "source": "upstream/app/assets/images/external/web.svg",
+      "served": "src/Campfire/wwwroot/assets/external/web-24ffe636.svg",
+      "source_sha256": "3a527a8c732949c4e6637948fc805eeceef09098b602ae2662d7cc8522e77d07",
+      "expected_compiled_sha256": "3a527a8c732949c4e6637948fc805eeceef09098b602ae2662d7cc8522e77d07",
+      "served_sha256": "3a527a8c732949c4e6637948fc805eeceef09098b602ae2662d7cc8522e77d07",
+      "status": "match"
+    },
+    {
+      "logical": "globe.svg",
+      "source": "upstream/app/assets/images/globe.svg",
+      "served": "src/Campfire/wwwroot/assets/globe-8c54d23b.svg",
+      "source_sha256": "c21bfd87ef23d495b58edda204cb8b23a2c8be626c26ef4450838804d4e02e0c",
+      "expected_compiled_sha256": "c21bfd87ef23d495b58edda204cb8b23a2c8be626c26ef4450838804d4e02e0c",
+      "served_sha256": "c21bfd87ef23d495b58edda204cb8b23a2c8be626c26ef4450838804d4e02e0c",
+      "status": "match"
+    },
+    {
+      "logical": "help-circle.svg",
+      "source": "upstream/app/assets/images/help-circle.svg",
+      "served": "src/Campfire/wwwroot/assets/help-circle-1bb1a839.svg",
+      "source_sha256": "9ba094d5a7a4b545551f6d98b4cf2f23ac010fb5b2369e9063cbd12352384a77",
+      "expected_compiled_sha256": "9ba094d5a7a4b545551f6d98b4cf2f23ac010fb5b2369e9063cbd12352384a77",
+      "served_sha256": "9ba094d5a7a4b545551f6d98b4cf2f23ac010fb5b2369e9063cbd12352384a77",
+      "status": "match"
+    },
+    {
+      "logical": "help.svg",
+      "source": "upstream/app/assets/images/help.svg",
+      "served": "src/Campfire/wwwroot/assets/help-a18b47fc.svg",
+      "source_sha256": "2fe519ea3cf5a67402b2e4c50f251edc1e8953eb066cbb3b873f36d34b0fe220",
+      "expected_compiled_sha256": "2fe519ea3cf5a67402b2e4c50f251edc1e8953eb066cbb3b873f36d34b0fe220",
+      "served_sha256": "2fe519ea3cf5a67402b2e4c50f251edc1e8953eb066cbb3b873f36d34b0fe220",
+      "status": "match"
+    },
+    {
+      "logical": "key.svg",
+      "source": "upstream/app/assets/images/key.svg",
+      "served": "src/Campfire/wwwroot/assets/key-82330955.svg",
+      "source_sha256": "3f433cb84f94ebada8d7ab2fffa8041d0680aed1565cef6ec97bd51379165913",
+      "expected_compiled_sha256": "3f433cb84f94ebada8d7ab2fffa8041d0680aed1565cef6ec97bd51379165913",
+      "served_sha256": "3f433cb84f94ebada8d7ab2fffa8041d0680aed1565cef6ec97bd51379165913",
+      "status": "match"
+    },
+    {
+      "logical": "lanyard.svg",
+      "source": "upstream/app/assets/images/lanyard.svg",
+      "served": "src/Campfire/wwwroot/assets/lanyard-945079e9.svg",
+      "source_sha256": "7ce2380d09cb01a3b74b0a3530c7835ecde29b5d4bf7726158d430ec1d5c3015",
+      "expected_compiled_sha256": "7ce2380d09cb01a3b74b0a3530c7835ecde29b5d4bf7726158d430ec1d5c3015",
+      "served_sha256": "7ce2380d09cb01a3b74b0a3530c7835ecde29b5d4bf7726158d430ec1d5c3015",
+      "status": "match"
+    },
+    {
+      "logical": "laptop.svg",
+      "source": "upstream/app/assets/images/laptop.svg",
+      "served": "src/Campfire/wwwroot/assets/laptop-cf35e6d4.svg",
+      "source_sha256": "72ab5e2f7d8630cc44c07bd82a50d7e4a59cea5b9c422e7af07829b6e9c6d431",
+      "expected_compiled_sha256": "72ab5e2f7d8630cc44c07bd82a50d7e4a59cea5b9c422e7af07829b6e9c6d431",
+      "served_sha256": "72ab5e2f7d8630cc44c07bd82a50d7e4a59cea5b9c422e7af07829b6e9c6d431",
+      "status": "match"
+    },
+    {
+      "logical": "lifebuoy.svg",
+      "source": "upstream/app/assets/images/lifebuoy.svg",
+      "served": "src/Campfire/wwwroot/assets/lifebuoy-f31f26aa.svg",
+      "source_sha256": "189066e3da784dd6e1d6dc7451602edf2ed9e54bbdc9bee4f5f75652971e84f7",
+      "expected_compiled_sha256": "189066e3da784dd6e1d6dc7451602edf2ed9e54bbdc9bee4f5f75652971e84f7",
+      "served_sha256": "189066e3da784dd6e1d6dc7451602edf2ed9e54bbdc9bee4f5f75652971e84f7",
+      "status": "match"
+    },
+    {
+      "logical": "link.svg",
+      "source": "upstream/app/assets/images/link.svg",
+      "served": "src/Campfire/wwwroot/assets/link-e546a5df.svg",
+      "source_sha256": "ecfe610d727b6feb467388c0b9bd0363b5de3d6eb9adf7c826cc3dae373d8976",
+      "expected_compiled_sha256": "ecfe610d727b6feb467388c0b9bd0363b5de3d6eb9adf7c826cc3dae373d8976",
+      "served_sha256": "ecfe610d727b6feb467388c0b9bd0363b5de3d6eb9adf7c826cc3dae373d8976",
+      "status": "match"
+    },
+    {
+      "logical": "lock.svg",
+      "source": "upstream/app/assets/images/lock.svg",
+      "served": "src/Campfire/wwwroot/assets/lock-7cdf4b3d.svg",
+      "source_sha256": "6d7365c22c5ba65fd641a91dc4db0d54f467feaa94c58e721b178713d4d4976b",
+      "expected_compiled_sha256": "6d7365c22c5ba65fd641a91dc4db0d54f467feaa94c58e721b178713d4d4976b",
+      "served_sha256": "6d7365c22c5ba65fd641a91dc4db0d54f467feaa94c58e721b178713d4d4976b",
+      "status": "match"
+    },
+    {
+      "logical": "login-keys.svg",
+      "source": "upstream/app/assets/images/login-keys.svg",
+      "served": "src/Campfire/wwwroot/assets/login-keys-df926967.svg",
+      "source_sha256": "b84bd5c1c64b8ee0ac5bdcda1b1b3c7a5cd6c674f3a6d80e56fd8cb3739e4d68",
+      "expected_compiled_sha256": "b84bd5c1c64b8ee0ac5bdcda1b1b3c7a5cd6c674f3a6d80e56fd8cb3739e4d68",
+      "served_sha256": "b84bd5c1c64b8ee0ac5bdcda1b1b3c7a5cd6c674f3a6d80e56fd8cb3739e4d68",
+      "status": "match"
+    },
+    {
+      "logical": "logos/app-icon-192.png",
+      "source": "upstream/app/assets/images/logos/app-icon-192.png",
+      "served": "src/Campfire/wwwroot/assets/logos/app-icon-192-646b105a.png",
+      "source_sha256": "a84c80d117bd5a79430c74283e40f6bed6784055287a20a125e620aa710bf85c",
+      "expected_compiled_sha256": "a84c80d117bd5a79430c74283e40f6bed6784055287a20a125e620aa710bf85c",
+      "served_sha256": "a84c80d117bd5a79430c74283e40f6bed6784055287a20a125e620aa710bf85c",
+      "status": "match"
+    },
+    {
+      "logical": "logos/app-icon.png",
+      "source": "upstream/app/assets/images/logos/app-icon.png",
+      "served": "src/Campfire/wwwroot/assets/logos/app-icon-a6fa894e.png",
+      "source_sha256": "f486fb65a608013dd6cbb193d9f8ce0d4fb4516e4806098874751877ab988c4e",
+      "expected_compiled_sha256": "f486fb65a608013dd6cbb193d9f8ce0d4fb4516e4806098874751877ab988c4e",
+      "served_sha256": "f486fb65a608013dd6cbb193d9f8ce0d4fb4516e4806098874751877ab988c4e",
+      "status": "match"
+    },
+    {
+      "logical": "logout.svg",
+      "source": "upstream/app/assets/images/logout.svg",
+      "served": "src/Campfire/wwwroot/assets/logout-a6131db1.svg",
+      "source_sha256": "d1ad9c469740e7ec9e603c1ffa6719683e3ad31215273afcb435e3a784eec944",
+      "expected_compiled_sha256": "d1ad9c469740e7ec9e603c1ffa6719683e3ad31215273afcb435e3a784eec944",
+      "served_sha256": "d1ad9c469740e7ec9e603c1ffa6719683e3ad31215273afcb435e3a784eec944",
+      "status": "match"
+    },
+    {
+      "logical": "menu-dots-horizontal.svg",
+      "source": "upstream/app/assets/images/menu-dots-horizontal.svg",
+      "served": "src/Campfire/wwwroot/assets/menu-dots-horizontal-f6a5d793.svg",
+      "source_sha256": "87517bc026c54f8d9469161f3ccdfb36790af91fb45b68d7fedaab8f2ac99af3",
+      "expected_compiled_sha256": "87517bc026c54f8d9469161f3ccdfb36790af91fb45b68d7fedaab8f2ac99af3",
+      "served_sha256": "87517bc026c54f8d9469161f3ccdfb36790af91fb45b68d7fedaab8f2ac99af3",
+      "status": "match"
+    },
+    {
+      "logical": "menu-dots-vertical.svg",
+      "source": "upstream/app/assets/images/menu-dots-vertical.svg",
+      "served": "src/Campfire/wwwroot/assets/menu-dots-vertical-c247e3cc.svg",
+      "source_sha256": "1f539171d73366d411d08e51e9a72f59acc5e93876ff0d994e9a149679b63065",
+      "expected_compiled_sha256": "1f539171d73366d411d08e51e9a72f59acc5e93876ff0d994e9a149679b63065",
+      "served_sha256": "1f539171d73366d411d08e51e9a72f59acc5e93876ff0d994e9a149679b63065",
+      "status": "match"
+    },
+    {
+      "logical": "menu.svg",
+      "source": "upstream/app/assets/images/menu.svg",
+      "served": "src/Campfire/wwwroot/assets/menu-5462dfd3.svg",
+      "source_sha256": "1cb54b1e95f99e7ce0e39fa28cef70e9763f50ca2f7e0ad1b3450d1f4f845a3a",
+      "expected_compiled_sha256": "1cb54b1e95f99e7ce0e39fa28cef70e9763f50ca2f7e0ad1b3450d1f4f845a3a",
+      "served_sha256": "1cb54b1e95f99e7ce0e39fa28cef70e9763f50ca2f7e0ad1b3450d1f4f845a3a",
+      "status": "match"
+    },
+    {
+      "logical": "messages-add.svg",
+      "source": "upstream/app/assets/images/messages-add.svg",
+      "served": "src/Campfire/wwwroot/assets/messages-add-d229e6c2.svg",
+      "source_sha256": "4e9af4fcebd39defecec784ce6d0bea65cd5f164f9fa5af06efa33b24ae6dbf0",
+      "expected_compiled_sha256": "4e9af4fcebd39defecec784ce6d0bea65cd5f164f9fa5af06efa33b24ae6dbf0",
+      "served_sha256": "4e9af4fcebd39defecec784ce6d0bea65cd5f164f9fa5af06efa33b24ae6dbf0",
+      "status": "match"
+    },
+    {
+      "logical": "messages-empty.svg",
+      "source": "upstream/app/assets/images/messages-empty.svg",
+      "served": "src/Campfire/wwwroot/assets/messages-empty-84c8fd41.svg",
+      "source_sha256": "527451cef62372d5ab8084715056ee8d2b7d36caf5ff1fe99ef12048c93021b2",
+      "expected_compiled_sha256": "527451cef62372d5ab8084715056ee8d2b7d36caf5ff1fe99ef12048c93021b2",
+      "served_sha256": "527451cef62372d5ab8084715056ee8d2b7d36caf5ff1fe99ef12048c93021b2",
+      "status": "match"
+    },
+    {
+      "logical": "messages-outlined.svg",
+      "source": "upstream/app/assets/images/messages-outlined.svg",
+      "served": "src/Campfire/wwwroot/assets/messages-outlined-87ff0331.svg",
+      "source_sha256": "3aa35582961c89e8908b35fc416e261c3c0c26245d04e45dc753be6157f43249",
+      "expected_compiled_sha256": "3aa35582961c89e8908b35fc416e261c3c0c26245d04e45dc753be6157f43249",
+      "served_sha256": "3aa35582961c89e8908b35fc416e261c3c0c26245d04e45dc753be6157f43249",
+      "status": "match"
+    },
+    {
+      "logical": "messages.svg",
+      "source": "upstream/app/assets/images/messages.svg",
+      "served": "src/Campfire/wwwroot/assets/messages-9395d503.svg",
+      "source_sha256": "4233b28ff5463d3bc94e8ee978f43e2e1f9bc4da80a22b4fa101fd05e121ab5a",
+      "expected_compiled_sha256": "4233b28ff5463d3bc94e8ee978f43e2e1f9bc4da80a22b4fa101fd05e121ab5a",
+      "served_sha256": "4233b28ff5463d3bc94e8ee978f43e2e1f9bc4da80a22b4fa101fd05e121ab5a",
+      "status": "match"
+    },
+    {
+      "logical": "minus.svg",
+      "source": "upstream/app/assets/images/minus.svg",
+      "served": "src/Campfire/wwwroot/assets/minus-b31a1093.svg",
+      "source_sha256": "d85b074a9e53c06963a4799e74dd4b20b89542a8e7f2c7def5657cca9b199ac4",
+      "expected_compiled_sha256": "d85b074a9e53c06963a4799e74dd4b20b89542a8e7f2c7def5657cca9b199ac4",
+      "served_sha256": "d85b074a9e53c06963a4799e74dd4b20b89542a8e7f2c7def5657cca9b199ac4",
+      "status": "match"
+    },
+    {
+      "logical": "mobile-phone.svg",
+      "source": "upstream/app/assets/images/mobile-phone.svg",
+      "served": "src/Campfire/wwwroot/assets/mobile-phone-d0d2301d.svg",
+      "source_sha256": "7a9c3713ddf155ae5319c5916662123b3e7b5d85bba62284a82d98714b55cb58",
+      "expected_compiled_sha256": "7a9c3713ddf155ae5319c5916662123b3e7b5d85bba62284a82d98714b55cb58",
+      "served_sha256": "7a9c3713ddf155ae5319c5916662123b3e7b5d85bba62284a82d98714b55cb58",
+      "status": "match"
+    },
+    {
+      "logical": "notification-bell-alert.svg",
+      "source": "upstream/app/assets/images/notification-bell-alert.svg",
+      "served": "src/Campfire/wwwroot/assets/notification-bell-alert-b467cde7.svg",
+      "source_sha256": "90f3c0df58a267bed47226785804b0439d3058c201a1996deca70f2474b4dabc",
+      "expected_compiled_sha256": "90f3c0df58a267bed47226785804b0439d3058c201a1996deca70f2474b4dabc",
+      "served_sha256": "90f3c0df58a267bed47226785804b0439d3058c201a1996deca70f2474b4dabc",
+      "status": "match"
+    },
+    {
+      "logical": "notification-bell-everything.svg",
+      "source": "upstream/app/assets/images/notification-bell-everything.svg",
+      "served": "src/Campfire/wwwroot/assets/notification-bell-everything-cde41b14.svg",
+      "source_sha256": "98af59ccafa6d6babf6cba0aaa6d5014167f6a188238c203263895771c57c317",
+      "expected_compiled_sha256": "98af59ccafa6d6babf6cba0aaa6d5014167f6a188238c203263895771c57c317",
+      "served_sha256": "98af59ccafa6d6babf6cba0aaa6d5014167f6a188238c203263895771c57c317",
+      "status": "match"
+    },
+    {
+      "logical": "notification-bell-invisible.svg",
+      "source": "upstream/app/assets/images/notification-bell-invisible.svg",
+      "served": "src/Campfire/wwwroot/assets/notification-bell-invisible-8b495073.svg",
+      "source_sha256": "4de95bda9740ee13da994138e86116d251ffeb0b989570e1ca4eba113df5f7b0",
+      "expected_compiled_sha256": "4de95bda9740ee13da994138e86116d251ffeb0b989570e1ca4eba113df5f7b0",
+      "served_sha256": "4de95bda9740ee13da994138e86116d251ffeb0b989570e1ca4eba113df5f7b0",
+      "status": "match"
+    },
+    {
+      "logical": "notification-bell-loading.svg",
+      "source": "upstream/app/assets/images/notification-bell-loading.svg",
+      "served": "src/Campfire/wwwroot/assets/notification-bell-loading-7533ce55.svg",
+      "source_sha256": "befaa6df6728613345ffbb3c6f6c793fbbf1a0f11cae0d508d2c7518288ce0cd",
+      "expected_compiled_sha256": "befaa6df6728613345ffbb3c6f6c793fbbf1a0f11cae0d508d2c7518288ce0cd",
+      "served_sha256": "befaa6df6728613345ffbb3c6f6c793fbbf1a0f11cae0d508d2c7518288ce0cd",
+      "status": "match"
+    },
+    {
+      "logical": "notification-bell-mentions.svg",
+      "source": "upstream/app/assets/images/notification-bell-mentions.svg",
+      "served": "src/Campfire/wwwroot/assets/notification-bell-mentions-945d1b91.svg",
+      "source_sha256": "37befe8b594c0b31fae7c2f96f0ab4272dacca2ff02d76fa88fe521eac6fe9a0",
+      "expected_compiled_sha256": "37befe8b594c0b31fae7c2f96f0ab4272dacca2ff02d76fa88fe521eac6fe9a0",
+      "served_sha256": "37befe8b594c0b31fae7c2f96f0ab4272dacca2ff02d76fa88fe521eac6fe9a0",
+      "status": "match"
+    },
+    {
+      "logical": "notification-bell-nothing.svg",
+      "source": "upstream/app/assets/images/notification-bell-nothing.svg",
+      "served": "src/Campfire/wwwroot/assets/notification-bell-nothing-d8096c76.svg",
+      "source_sha256": "d4738476a4e6a583c776e6ff0528078ec88c33a4fb51a1210a63579d93dece8f",
+      "expected_compiled_sha256": "d4738476a4e6a583c776e6ff0528078ec88c33a4fb51a1210a63579d93dece8f",
+      "served_sha256": "d4738476a4e6a583c776e6ff0528078ec88c33a4fb51a1210a63579d93dece8f",
+      "status": "match"
+    },
+    {
+      "logical": "office.svg",
+      "source": "upstream/app/assets/images/office.svg",
+      "served": "src/Campfire/wwwroot/assets/office-69ba5668.svg",
+      "source_sha256": "3ae440bb6a9aba1e34f43c4437db7a89f0cf8b780958ae1741f0650d9e5e0b19",
+      "expected_compiled_sha256": "3ae440bb6a9aba1e34f43c4437db7a89f0cf8b780958ae1741f0650d9e5e0b19",
+      "served_sha256": "3ae440bb6a9aba1e34f43c4437db7a89f0cf8b780958ae1741f0650d9e5e0b19",
+      "status": "match"
+    },
+    {
+      "logical": "password.svg",
+      "source": "upstream/app/assets/images/password.svg",
+      "served": "src/Campfire/wwwroot/assets/password-0896da4e.svg",
+      "source_sha256": "84f6d63a1d2e776f7331273c74ec4f7a347f107b1295cb5071c69bb495d6dc34",
+      "expected_compiled_sha256": "84f6d63a1d2e776f7331273c74ec4f7a347f107b1295cb5071c69bb495d6dc34",
+      "served_sha256": "84f6d63a1d2e776f7331273c74ec4f7a347f107b1295cb5071c69bb495d6dc34",
+      "status": "match"
+    },
+    {
+      "logical": "pencil.svg",
+      "source": "upstream/app/assets/images/pencil.svg",
+      "served": "src/Campfire/wwwroot/assets/pencil-cf9d28aa.svg",
+      "source_sha256": "0756aec7b96a26ea432ab8f545cd2a411556b39a0cc829ecb7f4fbd21c1a8eb2",
+      "expected_compiled_sha256": "0756aec7b96a26ea432ab8f545cd2a411556b39a0cc829ecb7f4fbd21c1a8eb2",
+      "served_sha256": "0756aec7b96a26ea432ab8f545cd2a411556b39a0cc829ecb7f4fbd21c1a8eb2",
+      "status": "match"
+    },
+    {
+      "logical": "person-add.svg",
+      "source": "upstream/app/assets/images/person-add.svg",
+      "served": "src/Campfire/wwwroot/assets/person-add-1432b76b.svg",
+      "source_sha256": "e38b220c0f7629f676920a339506b430ef4971c5c768aad86abbb390f317f307",
+      "expected_compiled_sha256": "e38b220c0f7629f676920a339506b430ef4971c5c768aad86abbb390f317f307",
+      "served_sha256": "e38b220c0f7629f676920a339506b430ef4971c5c768aad86abbb390f317f307",
+      "status": "match"
+    },
+    {
+      "logical": "person.svg",
+      "source": "upstream/app/assets/images/person.svg",
+      "served": "src/Campfire/wwwroot/assets/person-da193438.svg",
+      "source_sha256": "48ac49f6bc4440a0f8888578e8af68f7b4fa3f7b62484a80888d5a473e02b306",
+      "expected_compiled_sha256": "48ac49f6bc4440a0f8888578e8af68f7b4fa3f7b62484a80888d5a473e02b306",
+      "served_sha256": "48ac49f6bc4440a0f8888578e8af68f7b4fa3f7b62484a80888d5a473e02b306",
+      "status": "match"
+    },
+    {
+      "logical": "qr-code.svg",
+      "source": "upstream/app/assets/images/qr-code.svg",
+      "served": "src/Campfire/wwwroot/assets/qr-code-dac3b273.svg",
+      "source_sha256": "2f594522b4b31538a2555794578b5e97f543a9978115079e3d6cf878504da306",
+      "expected_compiled_sha256": "2f594522b4b31538a2555794578b5e97f543a9978115079e3d6cf878504da306",
+      "served_sha256": "2f594522b4b31538a2555794578b5e97f543a9978115079e3d6cf878504da306",
+      "status": "match"
+    },
+    {
+      "logical": "refresh.svg",
+      "source": "upstream/app/assets/images/refresh.svg",
+      "served": "src/Campfire/wwwroot/assets/refresh-249f0509.svg",
+      "source_sha256": "475e0ce21b139e73b7fc5e94d3cd1bb521d6171d8b7100e636dfd2719033518a",
+      "expected_compiled_sha256": "475e0ce21b139e73b7fc5e94d3cd1bb521d6171d8b7100e636dfd2719033518a",
+      "served_sha256": "475e0ce21b139e73b7fc5e94d3cd1bb521d6171d8b7100e636dfd2719033518a",
+      "status": "match"
+    },
+    {
+      "logical": "remove-circle.svg",
+      "source": "upstream/app/assets/images/remove-circle.svg",
+      "served": "src/Campfire/wwwroot/assets/remove-circle-384c618c.svg",
+      "source_sha256": "7e343bfb850123f5281f0ac4548282057ada490bb88a0172bfbb032d6d364ba5",
+      "expected_compiled_sha256": "7e343bfb850123f5281f0ac4548282057ada490bb88a0172bfbb032d6d364ba5",
+      "served_sha256": "7e343bfb850123f5281f0ac4548282057ada490bb88a0172bfbb032d6d364ba5",
+      "status": "match"
+    },
+    {
+      "logical": "remove.svg",
+      "source": "upstream/app/assets/images/remove.svg",
+      "served": "src/Campfire/wwwroot/assets/remove-0e7a045d.svg",
+      "source_sha256": "4f1c47b86ede7ab641dc667e13775fa953bb257ad050f309397aea0f0164f5d5",
+      "expected_compiled_sha256": "4f1c47b86ede7ab641dc667e13775fa953bb257ad050f309397aea0f0164f5d5",
+      "served_sha256": "4f1c47b86ede7ab641dc667e13775fa953bb257ad050f309397aea0f0164f5d5",
+      "status": "match"
+    },
+    {
+      "logical": "reply.svg",
+      "source": "upstream/app/assets/images/reply.svg",
+      "served": "src/Campfire/wwwroot/assets/reply-edb77e33.svg",
+      "source_sha256": "dae8faaf2c6d661fb6e5d670aa00c1ea7ae21ff563b4c1ab4ae3483b69f7be04",
+      "expected_compiled_sha256": "dae8faaf2c6d661fb6e5d670aa00c1ea7ae21ff563b4c1ab4ae3483b69f7be04",
+      "served_sha256": "dae8faaf2c6d661fb6e5d670aa00c1ea7ae21ff563b4c1ab4ae3483b69f7be04",
+      "status": "match"
+    },
+    {
+      "logical": "screenshots/android-chat.png",
+      "source": "upstream/app/assets/images/screenshots/android-chat.png",
+      "served": "src/Campfire/wwwroot/assets/screenshots/android-chat-f8b923c9.png",
+      "source_sha256": "cffb170593cacc0c9e924a4af6a06a5c936e2be06e1f9c1c160c6bff9534a688",
+      "expected_compiled_sha256": "cffb170593cacc0c9e924a4af6a06a5c936e2be06e1f9c1c160c6bff9534a688",
+      "served_sha256": "cffb170593cacc0c9e924a4af6a06a5c936e2be06e1f9c1c160c6bff9534a688",
+      "status": "match"
+    },
+    {
+      "logical": "screenshots/android-dark-mode.png",
+      "source": "upstream/app/assets/images/screenshots/android-dark-mode.png",
+      "served": "src/Campfire/wwwroot/assets/screenshots/android-dark-mode-e43dcf59.png",
+      "source_sha256": "b8b6db9e6f4626412983cef3e883de58bba4c693a4a570ad8e0dcdefb154e51b",
+      "expected_compiled_sha256": "b8b6db9e6f4626412983cef3e883de58bba4c693a4a570ad8e0dcdefb154e51b",
+      "served_sha256": "b8b6db9e6f4626412983cef3e883de58bba4c693a4a570ad8e0dcdefb154e51b",
+      "status": "match"
+    },
+    {
+      "logical": "screenshots/android-sidebar.png",
+      "source": "upstream/app/assets/images/screenshots/android-sidebar.png",
+      "served": "src/Campfire/wwwroot/assets/screenshots/android-sidebar-e9d2b49f.png",
+      "source_sha256": "a8ae76656d6e91267ae1fd5cafaf05302df4776180819d171d7bd1cc4e07c57b",
+      "expected_compiled_sha256": "a8ae76656d6e91267ae1fd5cafaf05302df4776180819d171d7bd1cc4e07c57b",
+      "served_sha256": "a8ae76656d6e91267ae1fd5cafaf05302df4776180819d171d7bd1cc4e07c57b",
+      "status": "match"
+    },
+    {
+      "logical": "search.svg",
+      "source": "upstream/app/assets/images/search.svg",
+      "served": "src/Campfire/wwwroot/assets/search-5f29565f.svg",
+      "source_sha256": "b9d32a32d57bb98052344413080c033f88f916e3e93ddb246c971d8448e92d7a",
+      "expected_compiled_sha256": "b9d32a32d57bb98052344413080c033f88f916e3e93ddb246c971d8448e92d7a",
+      "served_sha256": "b9d32a32d57bb98052344413080c033f88f916e3e93ddb246c971d8448e92d7a",
+      "status": "match"
+    },
+    {
+      "logical": "settings.svg",
+      "source": "upstream/app/assets/images/settings.svg",
+      "served": "src/Campfire/wwwroot/assets/settings-aee56972.svg",
+      "source_sha256": "97e110330545f2d4408f99e55405bdf54d4da3ad9118efab5dbe18b6e3638b4b",
+      "expected_compiled_sha256": "97e110330545f2d4408f99e55405bdf54d4da3ad9118efab5dbe18b6e3638b4b",
+      "served_sha256": "97e110330545f2d4408f99e55405bdf54d4da3ad9118efab5dbe18b6e3638b4b",
+      "status": "match"
+    },
+    {
+      "logical": "share.svg",
+      "source": "upstream/app/assets/images/share.svg",
+      "served": "src/Campfire/wwwroot/assets/share-bf28da4f.svg",
+      "source_sha256": "2947c481e2deb79d132d2ae66ae4ee65a9e2b30b6e005e719d88ebf788fe245d",
+      "expected_compiled_sha256": "2947c481e2deb79d132d2ae66ae4ee65a9e2b30b6e005e719d88ebf788fe245d",
+      "served_sha256": "2947c481e2deb79d132d2ae66ae4ee65a9e2b30b6e005e719d88ebf788fe245d",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/56k.gif",
+      "source": "upstream/app/assets/images/sounds/56k.gif",
+      "served": "src/Campfire/wwwroot/assets/sounds/56k-22d60d09.gif",
+      "source_sha256": "19860097add890e4e446801f1c51873a44bc91a874cae0c2769381ecc1483ac5",
+      "expected_compiled_sha256": "19860097add890e4e446801f1c51873a44bc91a874cae0c2769381ecc1483ac5",
+      "served_sha256": "19860097add890e4e446801f1c51873a44bc91a874cae0c2769381ecc1483ac5",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/56k.webp",
+      "source": "upstream/app/assets/images/sounds/56k.webp",
+      "served": "src/Campfire/wwwroot/assets/sounds/56k-1567db5b.webp",
+      "source_sha256": "62ab7ed0b956fb53a360dda72ea0000e1d36a17e1356b37d6930d0d6b507b755",
+      "expected_compiled_sha256": "62ab7ed0b956fb53a360dda72ea0000e1d36a17e1356b37d6930d0d6b507b755",
+      "served_sha256": "62ab7ed0b956fb53a360dda72ea0000e1d36a17e1356b37d6930d0d6b507b755",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/clowntown.gif",
+      "source": "upstream/app/assets/images/sounds/clowntown.gif",
+      "served": "src/Campfire/wwwroot/assets/sounds/clowntown-fa123df7.gif",
+      "source_sha256": "0ab9f4d44751e1692e7d2bdb29ab9c2294f107e600b8370561d5d716c5528dee",
+      "expected_compiled_sha256": "0ab9f4d44751e1692e7d2bdb29ab9c2294f107e600b8370561d5d716c5528dee",
+      "served_sha256": "0ab9f4d44751e1692e7d2bdb29ab9c2294f107e600b8370561d5d716c5528dee",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/clowntown.webp",
+      "source": "upstream/app/assets/images/sounds/clowntown.webp",
+      "served": "src/Campfire/wwwroot/assets/sounds/clowntown-1670db9e.webp",
+      "source_sha256": "de7a3314e8c02defdb26fae6f7c00076dbe8f1936fc15719f15a17c386fad0d5",
+      "expected_compiled_sha256": "de7a3314e8c02defdb26fae6f7c00076dbe8f1936fc15719f15a17c386fad0d5",
+      "served_sha256": "de7a3314e8c02defdb26fae6f7c00076dbe8f1936fc15719f15a17c386fad0d5",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/curb.gif",
+      "source": "upstream/app/assets/images/sounds/curb.gif",
+      "served": "src/Campfire/wwwroot/assets/sounds/curb-0c6f596b.gif",
+      "source_sha256": "9d7d0528af54d17855bf70d2d4caf0e96937c68ef522e3a16816dc62b73e5da0",
+      "expected_compiled_sha256": "9d7d0528af54d17855bf70d2d4caf0e96937c68ef522e3a16816dc62b73e5da0",
+      "served_sha256": "9d7d0528af54d17855bf70d2d4caf0e96937c68ef522e3a16816dc62b73e5da0",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/curb.webp",
+      "source": "upstream/app/assets/images/sounds/curb.webp",
+      "served": "src/Campfire/wwwroot/assets/sounds/curb-b74cab9f.webp",
+      "source_sha256": "f63eae06f137eb7926b1c547c496efe810f1e5de8cd45b46c46b9648e69176ce",
+      "expected_compiled_sha256": "f63eae06f137eb7926b1c547c496efe810f1e5de8cd45b46c46b9648e69176ce",
+      "served_sha256": "f63eae06f137eb7926b1c547c496efe810f1e5de8cd45b46c46b9648e69176ce",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/dangerzone.png",
+      "source": "upstream/app/assets/images/sounds/dangerzone.png",
+      "served": "src/Campfire/wwwroot/assets/sounds/dangerzone-60067535.png",
+      "source_sha256": "7a0ea0c1f0ddec52e718836104f747ed4aa1ea44377879f7e6d0284408eb8348",
+      "expected_compiled_sha256": "7a0ea0c1f0ddec52e718836104f747ed4aa1ea44377879f7e6d0284408eb8348",
+      "served_sha256": "7a0ea0c1f0ddec52e718836104f747ed4aa1ea44377879f7e6d0284408eb8348",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/dangerzone.webp",
+      "source": "upstream/app/assets/images/sounds/dangerzone.webp",
+      "served": "src/Campfire/wwwroot/assets/sounds/dangerzone-0e0f0d09.webp",
+      "source_sha256": "b30d02c0395076462afef0b7daef9e48bfd61496e219170b8021a141d4bb2b03",
+      "expected_compiled_sha256": "b30d02c0395076462afef0b7daef9e48bfd61496e219170b8021a141d4bb2b03",
+      "served_sha256": "b30d02c0395076462afef0b7daef9e48bfd61496e219170b8021a141d4bb2b03",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/donotwant.gif",
+      "source": "upstream/app/assets/images/sounds/donotwant.gif",
+      "served": "src/Campfire/wwwroot/assets/sounds/donotwant-c19843b2.gif",
+      "source_sha256": "6ba2c15748e69670ff119f09302f16bc1c42b0ec9df2fec8a3f87c9a0dcc0ff4",
+      "expected_compiled_sha256": "6ba2c15748e69670ff119f09302f16bc1c42b0ec9df2fec8a3f87c9a0dcc0ff4",
+      "served_sha256": "6ba2c15748e69670ff119f09302f16bc1c42b0ec9df2fec8a3f87c9a0dcc0ff4",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/donotwant.webp",
+      "source": "upstream/app/assets/images/sounds/donotwant.webp",
+      "served": "src/Campfire/wwwroot/assets/sounds/donotwant-d29fb6fb.webp",
+      "source_sha256": "4881703b69fc17c87a4026053a02a3561ebc7f0c42a30b36d86c1110255f6e62",
+      "expected_compiled_sha256": "4881703b69fc17c87a4026053a02a3561ebc7f0c42a30b36d86c1110255f6e62",
+      "served_sha256": "4881703b69fc17c87a4026053a02a3561ebc7f0c42a30b36d86c1110255f6e62",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/drama.webp",
+      "source": "upstream/app/assets/images/sounds/drama.webp",
+      "served": "src/Campfire/wwwroot/assets/sounds/drama-b398c916.webp",
+      "source_sha256": "8431b85ddd4cc9b49614a1148b7aa3c0e33d5faed359cb3d33c2949893ac02ab",
+      "expected_compiled_sha256": "8431b85ddd4cc9b49614a1148b7aa3c0e33d5faed359cb3d33c2949893ac02ab",
+      "served_sha256": "8431b85ddd4cc9b49614a1148b7aa3c0e33d5faed359cb3d33c2949893ac02ab",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/greatjob.png",
+      "source": "upstream/app/assets/images/sounds/greatjob.png",
+      "served": "src/Campfire/wwwroot/assets/sounds/greatjob-d65f324c.png",
+      "source_sha256": "bf4af7b0c43ddd8982d5dc56c0f07307eab80167ca5ef77ebe32b5817db91aeb",
+      "expected_compiled_sha256": "bf4af7b0c43ddd8982d5dc56c0f07307eab80167ca5ef77ebe32b5817db91aeb",
+      "served_sha256": "bf4af7b0c43ddd8982d5dc56c0f07307eab80167ca5ef77ebe32b5817db91aeb",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/greatjob.webp",
+      "source": "upstream/app/assets/images/sounds/greatjob.webp",
+      "served": "src/Campfire/wwwroot/assets/sounds/greatjob-99af483c.webp",
+      "source_sha256": "d65ddebd31f6675c0142886ff4fa16a16ffe759cb24849933af084569b497a72",
+      "expected_compiled_sha256": "d65ddebd31f6675c0142886ff4fa16a16ffe759cb24849933af084569b497a72",
+      "served_sha256": "d65ddebd31f6675c0142886ff4fa16a16ffe759cb24849933af084569b497a72",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/loggins.webp",
+      "source": "upstream/app/assets/images/sounds/loggins.webp",
+      "served": "src/Campfire/wwwroot/assets/sounds/loggins-a40a75e6.webp",
+      "source_sha256": "c02fa390a55f525a875760b8ac9d100b5d9fac04f8a0f366f94b9d366403e440",
+      "expected_compiled_sha256": "c02fa390a55f525a875760b8ac9d100b5d9fac04f8a0f366f94b9d366403e440",
+      "served_sha256": "c02fa390a55f525a875760b8ac9d100b5d9fac04f8a0f366f94b9d366403e440",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/nyan.gif",
+      "source": "upstream/app/assets/images/sounds/nyan.gif",
+      "served": "src/Campfire/wwwroot/assets/sounds/nyan-995f5ada.gif",
+      "source_sha256": "e20d21627621876e5c3efda1a881e29d229a32c3565738ae00300105a71915ef",
+      "expected_compiled_sha256": "e20d21627621876e5c3efda1a881e29d229a32c3565738ae00300105a71915ef",
+      "served_sha256": "e20d21627621876e5c3efda1a881e29d229a32c3565738ae00300105a71915ef",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/nyan.webp",
+      "source": "upstream/app/assets/images/sounds/nyan.webp",
+      "served": "src/Campfire/wwwroot/assets/sounds/nyan-8cc577e4.webp",
+      "source_sha256": "732ecc7e76e6ab01d4c5ed748142b1a15047e47fa0c51dcc09eb0551e6d4e0a2",
+      "expected_compiled_sha256": "732ecc7e76e6ab01d4c5ed748142b1a15047e47fa0c51dcc09eb0551e6d4e0a2",
+      "served_sha256": "732ecc7e76e6ab01d4c5ed748142b1a15047e47fa0c51dcc09eb0551e6d4e0a2",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/pushit.gif",
+      "source": "upstream/app/assets/images/sounds/pushit.gif",
+      "served": "src/Campfire/wwwroot/assets/sounds/pushit-599fd1e2.gif",
+      "source_sha256": "0a9870762efeeb710adb0fc25ef2d517c85693f7fe4f289c7b971ff889ef9cc6",
+      "expected_compiled_sha256": "0a9870762efeeb710adb0fc25ef2d517c85693f7fe4f289c7b971ff889ef9cc6",
+      "served_sha256": "0a9870762efeeb710adb0fc25ef2d517c85693f7fe4f289c7b971ff889ef9cc6",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/pushit.webp",
+      "source": "upstream/app/assets/images/sounds/pushit.webp",
+      "served": "src/Campfire/wwwroot/assets/sounds/pushit-05915cda.webp",
+      "source_sha256": "c56fee9519340a196b0f71e6dc1b18bd9974b4cbbcf991c7a82be9b8e5b58782",
+      "expected_compiled_sha256": "c56fee9519340a196b0f71e6dc1b18bd9974b4cbbcf991c7a82be9b8e5b58782",
+      "served_sha256": "c56fee9519340a196b0f71e6dc1b18bd9974b4cbbcf991c7a82be9b8e5b58782",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/rumble.gif",
+      "source": "upstream/app/assets/images/sounds/rumble.gif",
+      "served": "src/Campfire/wwwroot/assets/sounds/rumble-5ddb8536.gif",
+      "source_sha256": "82211e8461dd597a147e4d2265b68bb4716c31f8ba6302af8a416a704117953d",
+      "expected_compiled_sha256": "82211e8461dd597a147e4d2265b68bb4716c31f8ba6302af8a416a704117953d",
+      "served_sha256": "82211e8461dd597a147e4d2265b68bb4716c31f8ba6302af8a416a704117953d",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/rumble.webp",
+      "source": "upstream/app/assets/images/sounds/rumble.webp",
+      "served": "src/Campfire/wwwroot/assets/sounds/rumble-c4fc52a9.webp",
+      "source_sha256": "f4671edd83274ce30353a0668e2c9e651dec183ef974da8e168c787fdd0aea22",
+      "expected_compiled_sha256": "f4671edd83274ce30353a0668e2c9e651dec183ef974da8e168c787fdd0aea22",
+      "served_sha256": "f4671edd83274ce30353a0668e2c9e651dec183ef974da8e168c787fdd0aea22",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/top.gif",
+      "source": "upstream/app/assets/images/sounds/top.gif",
+      "served": "src/Campfire/wwwroot/assets/sounds/top-15f70a0c.gif",
+      "source_sha256": "8330dde187d5f91af6eae76ee790e317ea9e7fd9f4b120734ce78cd453899d25",
+      "expected_compiled_sha256": "8330dde187d5f91af6eae76ee790e317ea9e7fd9f4b120734ce78cd453899d25",
+      "served_sha256": "8330dde187d5f91af6eae76ee790e317ea9e7fd9f4b120734ce78cd453899d25",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/top.webp",
+      "source": "upstream/app/assets/images/sounds/top.webp",
+      "served": "src/Campfire/wwwroot/assets/sounds/top-cc086a68.webp",
+      "source_sha256": "53767892b3513b6da26eae278a48007e1d6dde6ecc7397f88e5cea63e6c5a216",
+      "expected_compiled_sha256": "53767892b3513b6da26eae278a48007e1d6dde6ecc7397f88e5cea63e6c5a216",
+      "served_sha256": "53767892b3513b6da26eae278a48007e1d6dde6ecc7397f88e5cea63e6c5a216",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/what.gif",
+      "source": "upstream/app/assets/images/sounds/what.gif",
+      "served": "src/Campfire/wwwroot/assets/sounds/what-5ff77085.gif",
+      "source_sha256": "0c53e70e9377393473a3b7d2c36afb675a37075c4cd19d90538e837fc1b98dd9",
+      "expected_compiled_sha256": "0c53e70e9377393473a3b7d2c36afb675a37075c4cd19d90538e837fc1b98dd9",
+      "served_sha256": "0c53e70e9377393473a3b7d2c36afb675a37075c4cd19d90538e837fc1b98dd9",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/what.webp",
+      "source": "upstream/app/assets/images/sounds/what.webp",
+      "served": "src/Campfire/wwwroot/assets/sounds/what-02690db4.webp",
+      "source_sha256": "6f39a9aa680750b6a84f4b862a9b20d70285c6b8f729f5144af4fe3d9a6ab3ec",
+      "expected_compiled_sha256": "6f39a9aa680750b6a84f4b862a9b20d70285c6b8f729f5144af4fe3d9a6ab3ec",
+      "served_sha256": "6f39a9aa680750b6a84f4b862a9b20d70285c6b8f729f5144af4fe3d9a6ab3ec",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/yay.png",
+      "source": "upstream/app/assets/images/sounds/yay.png",
+      "served": "src/Campfire/wwwroot/assets/sounds/yay-6d9d9620.png",
+      "source_sha256": "fbd205c769a518cf6d80d6616f09c2f994b384780de40f7201cd9dad3d1a2bae",
+      "expected_compiled_sha256": "fbd205c769a518cf6d80d6616f09c2f994b384780de40f7201cd9dad3d1a2bae",
+      "served_sha256": "fbd205c769a518cf6d80d6616f09c2f994b384780de40f7201cd9dad3d1a2bae",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/yay.webp",
+      "source": "upstream/app/assets/images/sounds/yay.webp",
+      "served": "src/Campfire/wwwroot/assets/sounds/yay-914d17c4.webp",
+      "source_sha256": "d1c150d2506442a5501ecd29775ed4817b5f2c7efdde08ab437189d2dde8a0f7",
+      "expected_compiled_sha256": "d1c150d2506442a5501ecd29775ed4817b5f2c7efdde08ab437189d2dde8a0f7",
+      "served_sha256": "d1c150d2506442a5501ecd29775ed4817b5f2c7efdde08ab437189d2dde8a0f7",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/yeah.gif",
+      "source": "upstream/app/assets/images/sounds/yeah.gif",
+      "served": "src/Campfire/wwwroot/assets/sounds/yeah-7b10b5f7.gif",
+      "source_sha256": "fa25eb29c382731a5ede9822048a699dbfc1047fde0aba7a885d16e3c8673d21",
+      "expected_compiled_sha256": "fa25eb29c382731a5ede9822048a699dbfc1047fde0aba7a885d16e3c8673d21",
+      "served_sha256": "fa25eb29c382731a5ede9822048a699dbfc1047fde0aba7a885d16e3c8673d21",
+      "status": "match"
+    },
+    {
+      "logical": "sounds/yeah.webp",
+      "source": "upstream/app/assets/images/sounds/yeah.webp",
+      "served": "src/Campfire/wwwroot/assets/sounds/yeah-886795b2.webp",
+      "source_sha256": "a754c785d295a028fe4b119e384ad9f0929f705baae41a68a8afe1229943fcae",
+      "expected_compiled_sha256": "a754c785d295a028fe4b119e384ad9f0929f705baae41a68a8afe1229943fcae",
+      "served_sha256": "a754c785d295a028fe4b119e384ad9f0929f705baae41a68a8afe1229943fcae",
+      "status": "match"
+    },
+    {
+      "logical": "text-options.svg",
+      "source": "upstream/app/assets/images/text-options.svg",
+      "served": "src/Campfire/wwwroot/assets/text-options-055e0d16.svg",
+      "source_sha256": "c8929694132253ae390509b1b273e6a2efccdee2c5da338a059273642064ef0c",
+      "expected_compiled_sha256": "c8929694132253ae390509b1b273e6a2efccdee2c5da338a059273642064ef0c",
+      "served_sha256": "c8929694132253ae390509b1b273e6a2efccdee2c5da338a059273642064ef0c",
+      "status": "match"
+    },
+    {
+      "logical": "transfer.svg",
+      "source": "upstream/app/assets/images/transfer.svg",
+      "served": "src/Campfire/wwwroot/assets/transfer-3ec4f61b.svg",
+      "source_sha256": "f9231f2ed2e7ad3672dd03654f3e3c2bbedc627994dfd99b8e4bf2cef80dca39",
+      "expected_compiled_sha256": "f9231f2ed2e7ad3672dd03654f3e3c2bbedc627994dfd99b8e4bf2cef80dca39",
+      "served_sha256": "f9231f2ed2e7ad3672dd03654f3e3c2bbedc627994dfd99b8e4bf2cef80dca39",
+      "status": "match"
+    },
+    {
+      "logical": "trash.svg",
+      "source": "upstream/app/assets/images/trash.svg",
+      "served": "src/Campfire/wwwroot/assets/trash-708c7eb2.svg",
+      "source_sha256": "95a9bc7f96789903cfdd375846dd5545de7336407b699fcaf8ea234e1a8f3a97",
+      "expected_compiled_sha256": "95a9bc7f96789903cfdd375846dd5545de7336407b699fcaf8ea234e1a8f3a97",
+      "served_sha256": "95a9bc7f96789903cfdd375846dd5545de7336407b699fcaf8ea234e1a8f3a97",
+      "status": "match"
+    },
+    {
+      "logical": "web.svg",
+      "source": "upstream/app/assets/images/web.svg",
+      "served": "src/Campfire/wwwroot/assets/web-e179f247.svg",
+      "source_sha256": "43c2ac14c270709f4e504d3a19aa53ad1c1a37806d5d032a112ebbb3b7931aa9",
+      "expected_compiled_sha256": "43c2ac14c270709f4e504d3a19aa53ad1c1a37806d5d032a112ebbb3b7931aa9",
+      "served_sha256": "43c2ac14c270709f4e504d3a19aa53ad1c1a37806d5d032a112ebbb3b7931aa9",
+      "status": "match"
+    }
+  ],
+  "source_anchors": {
+    "routes": {
+      "path": "src/Campfire/Features/Chat/ChatFeature.cs",
+      "matches": [
+        {
+          "line": 37,
+          "text": "routes.MapGet(\"/\", (HttpContext context, ChatStore store, ChatRenderer renderer) =>"
+        },
+        {
+          "line": 43,
+          "text": "routes.MapGet(\"/rooms\", (HttpContext context, ChatStore store) =>"
+        },
+        {
+          "line": 48,
+          "text": "routes.MapGet(\"/rooms/{id:long}\", ShowRoom);"
+        },
+        {
+          "line": 49,
+          "text": "routes.MapGet(\"/rooms/{id:long}/@{messageId:long}\", ShowRoom);"
+        },
+        {
+          "line": 50,
+          "text": "routes.MapDelete(\"/rooms/{id:long}\", (HttpContext context, long id, ChatStore store, ChatRenderer renderer, IRealtimeEvents realtime, IMediaService media) => DeleteRoom(context, id, store, renderer, realtime, media, false));"
+        },
+        {
+          "line": 54,
+          "text": "routes.MapGet(\"/rooms/\" + prefix + \"/new\", (HttpContext context, ChatStore store, ChatRenderer renderer) =>"
+        },
+        {
+          "line": 60,
+          "text": "routes.MapGet(\"/rooms/\" + prefix + \"/{id:long}/edit\", (HttpContext context, long id, ChatStore store, ChatRenderer renderer) =>"
+        },
+        {
+          "line": 67,
+          "text": "if (type != \"Rooms::Direct\") routes.MapGet(\"/rooms/\" + prefix + \"/{id:long}\", (HttpContext context, long id, ChatStore store) =>"
+        },
+        {
+          "line": 73,
+          "text": "routes.MapPost(\"/rooms/\" + prefix, async (HttpContext context, ChatStore store, ChatRenderer renderer, IRealtimeEvents realtime) =>"
+        },
+        {
+          "line": 80,
+          "text": "if (type != \"Rooms::Direct\") routes.MapMethods(\"/rooms/\" + prefix + \"/{id:long}\", [\"PATCH\", \"PUT\"], async (HttpContext context, long id, ChatStore store, ChatRenderer renderer, IRealtimeEvents realtime) =>"
+        },
+        {
+          "line": 96,
+          "text": "if (type == \"Rooms::Direct\") routes.MapDelete(\"/rooms/directs/{id:long}\", (HttpContext context, long id, ChatStore store, ChatRenderer renderer, IRealtimeEvents realtime, IMediaService media) => DeleteRoom(context, id, store, renderer, realtime, media, true));"
+        },
+        {
+          "line": 97,
+          "text": "else routes.MapDelete(\"/rooms/\" + prefix + \"/{id:long}\", (HttpContext context, long id, ChatStore store, ChatRenderer renderer, IRealtimeEvents realtime, IMediaService media) =>"
+        },
+        {
+          "line": 103,
+          "text": "routes.MapGet(\"/rooms/{roomId:long}/settings\", (HttpContext context, long roomId, ChatStore store) => Results.Redirect(store.Room(roomId, context.User()!.Id).EditPath));"
+        },
+        {
+          "line": 104,
+          "text": "routes.MapGet(\"/users/{userId}/sidebar\", (HttpContext context, string userId, ChatRenderer renderer) =>"
+        },
+        {
+          "line": 109,
+          "text": "routes.MapGet(\"/rooms/{roomId:long}/involvement\", (HttpContext context, long roomId, ChatStore store, ChatRenderer renderer) => Html(renderer.InvolvementHtml(store.Room(roomId, context.User()!.Id))));"
+        },
+        {
+          "line": 110,
+          "text": "routes.MapMethods(\"/rooms/{roomId:long}/involvement\", [\"PUT\", \"PATCH\"], async (HttpContext context, long roomId, ChatStore store, ChatRenderer renderer, IRealtimeEvents realtime) =>"
+        },
+        {
+          "line": 123,
+          "text": "routes.MapGet(\"/rooms/{roomId:long}/messages\", MessageIndex);"
+        },
+        {
+          "line": 124,
+          "text": "routes.MapGet(\"/rooms/{roomId:long}/messages/{id:long}\", ShowMessage);"
+        },
+        {
+          "line": 125,
+          "text": "routes.MapGet(\"/messages/{id:long}\", ShowMessage);"
+        },
+        {
+          "line": 126,
+          "text": "routes.MapGet(\"/rooms/{roomId:long}/messages/{id:long}/edit\", EditMessage);"
+        },
+        {
+          "line": 127,
+          "text": "routes.MapGet(\"/messages/{id:long}/edit\", EditMessage);"
+        },
+        {
+          "line": 128,
+          "text": "routes.MapPost(\"/rooms/{roomId:long}/messages\", CreateMessage);"
+        },
+        {
+          "line": 129,
+          "text": "routes.MapMethods(\"/rooms/{roomId:long}/messages/{id:long}\", [\"PATCH\", \"PUT\"], UpdateMessage);"
+        },
+        {
+          "line": 130,
+          "text": "routes.MapMethods(\"/messages/{id:long}\", [\"PATCH\", \"PUT\"], UpdateMessage);"
+        },
+        {
+          "line": 131,
+          "text": "routes.MapDelete(\"/rooms/{roomId:long}/messages/{id:long}\", DestroyMessage);"
+        },
+        {
+          "line": 132,
+          "text": "routes.MapDelete(\"/messages/{id:long}\", DestroyMessage);"
+        },
+        {
+          "line": 133,
+          "text": "routes.MapGet(\"/rooms/{roomId:long}/refresh\", (HttpContext context, long roomId, ChatStore store, ChatRenderer renderer) =>"
+        },
+        {
+          "line": 141,
+          "text": "routes.MapGet(\"/searches\", (HttpContext context, ChatStore store, ChatRenderer renderer) =>"
+        },
+        {
+          "line": 146,
+          "text": "routes.MapPost(\"/searches\", async (HttpContext context, ChatStore store) =>"
+        },
+        {
+          "line": 153,
+          "text": "routes.MapDelete(\"/searches/clear\", (HttpContext context, ChatStore store) => { store.ClearSearches(context.User()!.Id); return Results.Redirect(\"/searches\"); });"
+        },
+        {
+          "line": 154,
+          "text": "routes.MapGet(\"/autocompletable/users\", (HttpContext context, ChatStore store, ChatRenderer renderer, RichText richText) =>"
+        },
+        {
+          "line": 160,
+          "text": "routes.MapGet(\"/messages/{messageId:long}/boosts\", (HttpContext context, long messageId, ChatStore store, ChatRenderer renderer) => Html(renderer.Layout(context.User()!, renderer.BoostsHtml(store.Message(messageId, context.User()!.Id)))));"
+        },
+        {
+          "line": 161,
+          "text": "routes.MapGet(\"/messages/{messageId:long}/boosts/new\", (HttpContext context, long messageId, ChatStore store, ChatRenderer renderer) => Html(renderer.Layout(context.User()!, renderer.NewBoostHtml(store.Message(messageId, context.User()!.Id), context.User()!))));"
+        },
+        {
+          "line": 162,
+          "text": "routes.MapPost(\"/messages/{messageId:long}/boosts\", CreateBoost);"
+        },
+        {
+          "line": 163,
+          "text": "routes.MapDelete(\"/messages/{messageId:long}/boosts/{id:long}\", DestroyBoost);"
+        },
+        {
+          "line": 164,
+          "text": "routes.MapGet(\"/rooms/{roomId:long}/{bot_key}/messages\", MessageIndex);"
+        },
+        {
+          "line": 165,
+          "text": "routes.MapPost(\"/rooms/{roomId:long}/{bot_key}/messages\", CreateMessage);"
+        },
+        {
+          "line": 166,
+          "text": "routes.MapMethods(\"/rooms/{roomId:long}/{bot_key}/messages/{id:long}\", [\"PATCH\", \"PUT\"], UpdateMessage);"
+        },
+        {
+          "line": 167,
+          "text": "routes.MapDelete(\"/rooms/{roomId:long}/{bot_key}/messages/{id:long}\", DestroyMessage);"
+        },
+        {
+          "line": 168,
+          "text": "routes.MapPost(\"/rooms/{roomId:long}/{bot_key}/messages/{messageId:long}/boosts\", CreateBoost);"
+        },
+        {
+          "line": 169,
+          "text": "routes.MapDelete(\"/rooms/{roomId:long}/{bot_key}/messages/{messageId:long}/boosts/{id:long}\", DestroyBoost);"
+        }
+      ]
+    },
+    "frame_layout": {
+      "path": "src/Campfire/Features/Chat/ChatRenderer.cs",
+      "matches": [
+        {
+          "line": 61,
+          "text": "if (context?.Request.Headers.ContainsKey(\"Turbo-Frame\") == true) return \"<html><head></head><body>\" + body + \"</body></html>\";"
+        }
+      ]
+    },
+    "edit_raw_body": {
+      "path": "src/Campfire/Features/Chat/ChatRenderer.cs",
+      "matches": [
+        {
+          "line": 141,
+          "text": "<turbo-frame id=\"edit_message_{{E(message.ClientMessageId)}}\"><div class=\"message__body position-relative\" data-controller=\"scroll-into-view\"><div class=\"message__body-content message__body-content--editing gap\"><div class=\"composer--edit composer--rich-text\"><form id=\"form_message_{{E(message.ClientMessageId)}}\" data-controller=\"form\" data-action=\"lexxy:file-accept-&gt;form#preventAttachment keydown.esc-&gt;form#cancel keydown.ctrl+enter-&gt;form#submit:prevent keydown.meta+enter-&gt;form#submit:prevent\" action=\"/rooms/{{message.RoomId}}/messages/{{message.Id}}\" method=\"post\"><input type=\"hidden\" name=\"_method\" value=\"patch\"><div class=\"full-width input input--actor min-width fill-white\"><lexxy-editor rows=\"1\" class=\"input lexxy-content\" aria-multiline=\"true\" aria-label=\"Edit message\" autofocus=\"autofocus\" permitted-attachment-types=\"application/vnd.campfire.mention application/vnd.actiontext.opengraph-embed\" id=\"message_body\" input=\"message_body_trix_input_{{E(message.ClientMessageId)}}\" name=\"message[body]\" value=\"{{E(message.Body)}}\"><lexxy-prompt trigger=\"@\" name=\"mention\" src=\"/autocompletable/users?room_id={{message.RoomId}}\" remote-filtering=\"true\" empty-results=\"No matches\"></lexxy-prompt></lexxy-editor></div><a data-form-target=\"cancel\" hidden=\"hidden\" href=\"/rooms/{{message.RoomId}}/messages/{{message.Id}}\">Close editor and discard changes</a><div class=\"message__edit-btns flex align-center justify-space-between gap full-width pad-block-start-half\"><button type=\"submit\" class=\"btn btn--reversed\">{{Icon(\"check.svg\")}}<span class=\"for-screen-reader\">Save changes</span></button><button type=\"submit\" class=\"btn btn--negative\" form=\"delete_form_message_{{E(message.ClientMessageId)}}\" data-turbo-confirm=\"Are you sure you want to delete this message?\">{{Icon(\"trash.svg\")}}<span class=\"for-screen-reader\">Delete message</span></button></div></form></div></div><div class=\"message__actions flex flex-wrap\"><a class=\"message__action-btn message__edit-close-btn txt-small btn btn--borderless\" href=\"/rooms/{{message.RoomId}}/messages/{{message.Id}}\">{{Icon(\"remove.svg\")}}<span class=\"for-screen-reader\">Close editor and discard changes</span></a></div><form id=\"delete_form_message_{{E(message.ClientMessageId)}}\" data-turbo-frame=\"edit_message_{{E(message.ClientMessageId)}}\" action=\"/rooms/{{message.RoomId}}/messages/{{message.Id}}\" method=\"post\"><input type=\"hidden\" name=\"_method\" value=\"delete\"></form></div></turbo-frame>"
+        }
+      ]
+    },
+    "bot_input": {
+      "path": "src/Campfire/Features/Chat/ChatFeature.cs",
+      "matches": [
+        {
+          "line": 338,
+          "text": "if (context.Request.HasFormContentType)"
+        }
+      ]
+    },
+    "etag": {
+      "path": "src/Campfire/Features/Chat/ChatFeature.cs",
+      "matches": [
+        {
+          "line": 199,
+          "text": "if (context.Request.Headers.IfNoneMatch.Any(value => value?.Split(',').Any(item => item.Trim() == etag || item.Trim() == \"W/\" + etag) == true)) return Results.StatusCode(304);"
+        }
+      ]
+    },
+    "same_host_embed": {
+      "path": "src/Campfire/Features/Chat/RichText.cs",
+      "matches": [
+        {
+          "line": 93,
+          "text": "if (!SafeWebUrl(href)) return WebUtility.HtmlEncode(description ?? title ?? \"\");"
+        },
+        {
+          "line": 94,
+          "text": "var imageHtml = SafeWebUrl(image) ? $\"<div class=\\\"og-embed__image\\\"><img src=\\\"{WebUtility.HtmlEncode(image)}\\\" class=\\\"image center\\\" alt=\\\"\\\"></div>\" : \"\";"
+        },
+        {
+          "line": 98,
+          "text": "private static bool SafeWebUrl(string? value) => Uri.TryCreate(value, UriKind.Absolute, out var uri) && uri.Scheme is \"http\" or \"https\";"
+        }
+      ]
+    },
+    "timestamp_json": {
+      "path": "src/Campfire/Features/Chat/RichText.cs",
+      "matches": [
+        {
+          "line": 107,
+          "text": "public static string Iso(string timestamp) => DateTimeOffset.TryParse(timestamp, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out var value) ? value.UtcDateTime.ToString(\"yyyy-MM-ddTHH:mm:ss.ffffffZ\", CultureInfo.InvariantCulture) : timestamp;"
+        }
+      ]
+    },
+    "refresh_casing": {
+      "path": "src/Campfire/Features/Chat/ChatFeature.cs",
+      "matches": [
+        {
+          "line": 138,
+          "text": "streams += string.Concat(updated.Select(x => ChatRenderer.Turbo(\"replace\", \"message_\" + x.ClientMessageId, renderer.MessageHtml(x, context.User()!.Id))));"
+        }
+      ]
+    }
+  }
+}

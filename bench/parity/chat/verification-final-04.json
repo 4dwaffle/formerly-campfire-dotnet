@@ -1,0 +1,71 @@
+{
+  "checked_utc": "2026-10-05T09:55:39.9834883Z",
+  "manifest": "instances-final-04.json",
+  "gates": [
+    {
+      "file": "assertions-final-04.json",
+      "sha256": "0ffcc5eb771572ed6a00d89c6b6c20c93afea178e3ef8b76006eccf785a767bf",
+      "assertions": 154,
+      "passed": 154,
+      "failed": 0
+    },
+    {
+      "file": "broader-assertions-final-04.json",
+      "sha256": "02ed535c516104d3f9f40626976dcd2b2ff0209f1aca8c763647cfc9a8ce1c6c",
+      "assertions": 18,
+      "passed": 18,
+      "failed": 0
+    },
+    {
+      "file": "source-assertions-final-04.json",
+      "sha256": "d04385e02a0ed292948c77af81c46793bcd5e94e9b2f1af81a96f65b75e4e679",
+      "assertions": 17,
+      "passed": 17,
+      "failed": 0
+    },
+    {
+      "file": "frame-assertions-final-04.json",
+      "sha256": "0581bbd4ff2a013fa70c60ebc3e6859342c7c41ec8c7c6d61483109428c3ac0e",
+      "assertions": 22,
+      "passed": 22,
+      "failed": 0
+    },
+    {
+      "file": "fts-assertions-final-04.json",
+      "sha256": "b3d1d4972e1933d2befe1655da74a43c2dde9e7b59433d6675c5b5e41bc32c22",
+      "assertions": 12,
+      "passed": 12,
+      "failed": 0
+    },
+    {
+      "file": "cache-assertions-final-04.json",
+      "sha256": "8bf581904cc81b246aa84a3b59ca39725a6686ce436f12b9f8b8f32a2bd3a1ce",
+      "assertions": 20,
+      "passed": 15,
+      "failed": 5
+    }
+  ],
+  "assertions": 243.0,
+  "passed": 238.0,
+  "failed": 5.0,
+  "primary_request_counts": {
+    "rails": {
+      "main": 160,
+      "edges": 24,
+      "followups": 10
+    },
+    "dotnet": {
+      "main": 160,
+      "edges": 24,
+      "followups": 10
+    },
+    "aot": {
+      "main": 160,
+      "edges": 24,
+      "followups": 10
+    }
+  },
+  "cache_probe": "cache-policy-final-04.json",
+  "cleanup": "cleanup-final-04.json",
+  "scope_note": "Standard 223 comparisons pass. Separate 20-check cache gate has five failures: intended touch was an unchanged body PATCH; Rails leaves versions/cache unchanged while these .NET images touch/reindex. Failed evidence retained; corrected source and probe await fresh image verification."
+}

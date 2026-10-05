@@ -1,0 +1,4 @@
+FROM python:3.13-slim
+WORKDIR /client
+COPY upload.py /client/upload.py
+ENTRYPOINT ["python", "/client/upload.py"]

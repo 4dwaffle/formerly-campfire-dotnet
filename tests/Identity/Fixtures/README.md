@@ -1,0 +1,1 @@
+Rails compatibility fixture attribution: rails_compat.json copied unchanged from reference-rust/vectors/rails_compat.json at reference revision 64f86353021145b63849fb1cd93adeb08f3b8dbb. The reference project generated these vectors from pinned Rails Campfire behavior. It is vendored here so tests need no read-only reference checkout.

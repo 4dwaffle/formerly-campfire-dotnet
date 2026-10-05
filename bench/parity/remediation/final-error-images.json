@@ -1,0 +1,40 @@
+{
+  "status": "ready",
+  "started_utc": "2026-10-05T09:55:46.433665+00:00",
+  "application_runtime_source_sha256_before": "fb0990e19b36d2c01b90dd3f1b4d3fbab0fc520729887914b32a2082f35a7700",
+  "immutable_cache_images_before": {
+    "campfire-dotnet:rails-cache-jit": "sha256:04162e54726b372b6943124a6e641bfadd994c237b74e8ba10811738b5461161",
+    "campfire-dotnet:rails-cache-aot": "sha256:276000739c8cdcd00dfb8e61bc9336a6394c57751cd74b9b5961a889ba8ae60c"
+  },
+  "images": {
+    "jit": {
+      "tag": "campfire-dotnet:rails-errors-jit",
+      "dockerfile": "Dockerfile",
+      "build_log": "bench/parity/remediation/final-error-images-jit.log",
+      "image_id": "sha256:584ff2a329ee6ef24c4781d2a3d2b3f3608b4a4899ad8fb8040a23578626188f",
+      "build_exit_code": 0,
+      "ready_utc": "2026-10-05T09:56:48.356514+00:00",
+      "build_log_sha256": "554f7360e4a9821f444f06d2ee8978c4ba6e7d217d30e2b3fd1ddd8fd87fb2f2",
+      "dockerfile_sha256": "a995a5610c3835825cdbcc9108f01c488d2b3b9ddd586ec95d64ef781c07b0b6"
+    },
+    "aot": {
+      "tag": "campfire-dotnet:rails-errors-aot",
+      "dockerfile": "Dockerfile.aot",
+      "build_log": "bench/parity/remediation/final-error-images-aot.log",
+      "image_id": "sha256:d74ea345ca0e48c538df6be0aa9ac432fd4dee0b04e53e60a6c8bca9778dc689",
+      "build_exit_code": 0,
+      "build_log_sha256": "9cf89aa4186f912a2d830274666f29b477de908d85a24d897a52c90ece28717d",
+      "dockerfile_sha256": "2da2107ffd1d2a3a8d6d644720d0e20963d7a82f88a69e80e03e1d77ec411992",
+      "ready_utc": "2026-10-05T09:57:22.542966+00:00"
+    }
+  },
+  "purpose": "Fresh HTTP error-response and no-op update verification; previous measured cache images retained",
+  "application_runtime_source_sha256_after": "fb0990e19b36d2c01b90dd3f1b4d3fbab0fc520729887914b32a2082f35a7700",
+  "source_hash_unchanged": true,
+  "immutable_cache_images_after": {
+    "campfire-dotnet:rails-cache-jit": "sha256:04162e54726b372b6943124a6e641bfadd994c237b74e8ba10811738b5461161",
+    "campfire-dotnet:rails-cache-aot": "sha256:276000739c8cdcd00dfb8e61bc9336a6394c57751cd74b9b5961a889ba8ae60c"
+  },
+  "cache_images_unchanged": true,
+  "completed_utc": "2026-10-05T09:57:22.542966+00:00"
+}

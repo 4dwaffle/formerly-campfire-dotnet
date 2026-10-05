@@ -1,0 +1,584 @@
+- link "Skip to main content":
+  - /url: "#main-content"
+- navigation:
+  - heading "All Talk" [level=1]
+  - link "Settings for this room":
+    - /url: /rooms/closeds/486777696/edit
+    - generic: Settings for this room
+  - button "Notification settings for this room":
+    - generic: Notification settings for this room
+- main:
+  - heading "28 February 2026" [level=2]:
+    - time: 28 February 2026
+  - figure:
+    - link "David":
+      - /url: /users/127326141
+  - heading "David 19:44" [level=3]:
+    - generic "David":
+      - strong: David
+    - link "19:44":
+      - /url: /rooms/486777696/@933434601
+      - time: 19:44
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 092. I'm heading out for lunch.
+  - figure:
+    - link "Jason":
+      - /url: /users/149087659
+  - heading "Jason 19:51" [level=3]:
+    - generic "Jason":
+      - strong: Jason
+    - link "19:51":
+      - /url: /rooms/486777696/@933434602
+      - time: 19:51
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 093. New plants in the kitchen.
+  - figure:
+    - link "Bender Bot":
+      - /url: /users/394959859
+  - heading "Bender Bot 19:58" [level=3]:
+    - generic "Bender Bot":
+      - strong: Bender Bot
+    - link "19:58":
+      - /url: /rooms/486777696/@933434603
+      - time: 19:58
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 094. Who took my stapler?
+  - figure:
+    - link "David":
+      - /url: /users/127326141
+  - heading "David 20:05" [level=3]:
+    - generic "David":
+      - strong: David
+    - link "20:05":
+      - /url: /rooms/486777696/@933434604
+      - time: 20:05
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 095. Friday demo is at 3pm.
+  - figure:
+    - link "Jason":
+      - /url: /users/149087659
+  - heading "Jason 20:12" [level=3]:
+    - generic "Jason":
+      - strong: Jason
+    - link "20:12":
+      - /url: /rooms/486777696/@933434605
+      - time: 20:12
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 096. The wifi is flaky again.
+  - figure:
+    - link "David":
+      - /url: /users/127326141
+  - heading "David 20:19" [level=3]:
+    - generic "David":
+      - strong: David
+    - link "20:19":
+      - /url: /rooms/486777696/@933434606
+      - time: 20:19
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 097. Congrats on the launch!
+  - figure:
+    - link "Jason":
+      - /url: /users/149087659
+  - heading "Jason 20:26" [level=3]:
+    - generic "Jason":
+      - strong: Jason
+    - link "20:26":
+      - /url: /rooms/486777696/@933434607
+      - time: 20:26
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 098. Anyone up for a walk?
+  - figure:
+    - link "Bender Bot":
+      - /url: /users/394959859
+  - heading "Bender Bot 20:33" [level=3]:
+    - generic "Bender Bot":
+      - strong: Bender Bot
+    - link "20:33":
+      - /url: /rooms/486777696/@933434608
+      - time: 20:33
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 099. Back in 5.
+  - figure:
+    - link "David":
+      - /url: /users/127326141
+  - heading "David 20:40" [level=3]:
+    - generic "David":
+      - strong: David
+    - link "20:40":
+      - /url: /rooms/486777696/@933434609
+      - time: 20:40
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 100. Did anyone see the game last night?
+  - figure:
+    - link "Jason":
+      - /url: /users/149087659
+  - heading "Jason 20:47" [level=3]:
+    - generic "Jason":
+      - strong: Jason
+    - link "20:47":
+      - /url: /rooms/486777696/@933434610
+      - time: 20:47
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 101. Coffee machine is fixed!
+  - figure:
+    - link "David":
+      - /url: /users/127326141
+  - heading "David 20:54" [level=3]:
+    - generic "David":
+      - strong: David
+    - link "20:54":
+      - /url: /rooms/486777696/@933434611
+      - time: 20:54
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 102. I'm heading out for lunch.
+  - figure:
+    - link "Jason":
+      - /url: /users/149087659
+  - heading "Jason 21:01" [level=3]:
+    - generic "Jason":
+      - strong: Jason
+    - link "21:01":
+      - /url: /rooms/486777696/@933434612
+      - time: 21:01
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 103. New plants in the kitchen.
+  - figure:
+    - link "Bender Bot":
+      - /url: /users/394959859
+  - heading "Bender Bot 21:08" [level=3]:
+    - generic "Bender Bot":
+      - strong: Bender Bot
+    - link "21:08":
+      - /url: /rooms/486777696/@933434613
+      - time: 21:08
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 104. Who took my stapler?
+  - figure:
+    - link "David":
+      - /url: /users/127326141
+  - heading "David 21:15" [level=3]:
+    - generic "David":
+      - strong: David
+    - link "21:15":
+      - /url: /rooms/486777696/@933434614
+      - time: 21:15
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 105. Friday demo is at 3pm.
+  - figure:
+    - link "Jason":
+      - /url: /users/149087659
+  - heading "Jason 21:22" [level=3]:
+    - generic "Jason":
+      - strong: Jason
+    - link "21:22":
+      - /url: /rooms/486777696/@933434615
+      - time: 21:22
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 106. The wifi is flaky again.
+  - figure:
+    - link "David":
+      - /url: /users/127326141
+  - heading "David 21:29" [level=3]:
+    - generic "David":
+      - strong: David
+    - link "21:29":
+      - /url: /rooms/486777696/@933434616
+      - time: 21:29
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 107. Congrats on the launch!
+  - figure:
+    - link "Jason":
+      - /url: /users/149087659
+  - heading "Jason 21:36" [level=3]:
+    - generic "Jason":
+      - strong: Jason
+    - link "21:36":
+      - /url: /rooms/486777696/@933434617
+      - time: 21:36
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 108. Anyone up for a walk?
+  - figure:
+    - link "Bender Bot":
+      - /url: /users/394959859
+  - heading "Bender Bot 21:43" [level=3]:
+    - generic "Bender Bot":
+      - strong: Bender Bot
+    - link "21:43":
+      - /url: /rooms/486777696/@933434618
+      - time: 21:43
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 109. Back in 5.
+  - figure:
+    - link "David":
+      - /url: /users/127326141
+  - heading "David 21:50" [level=3]:
+    - generic "David":
+      - strong: David
+    - link "21:50":
+      - /url: /rooms/486777696/@933434619
+      - time: 21:50
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 110. Did anyone see the game last night?
+  - figure:
+    - link "Jason":
+      - /url: /users/149087659
+  - heading "Jason 21:57" [level=3]:
+    - generic "Jason":
+      - strong: Jason
+    - link "21:57":
+      - /url: /rooms/486777696/@933434620
+      - time: 21:57
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 111. Coffee machine is fixed!
+  - figure:
+    - link "David":
+      - /url: /users/127326141
+  - heading "David 22:04" [level=3]:
+    - generic "David":
+      - strong: David
+    - link "22:04":
+      - /url: /rooms/486777696/@933434621
+      - time: 22:04
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 112. I'm heading out for lunch.
+  - figure:
+    - link "Jason":
+      - /url: /users/149087659
+  - heading "Jason 22:11" [level=3]:
+    - generic "Jason":
+      - strong: Jason
+    - link "22:11":
+      - /url: /rooms/486777696/@933434622
+      - time: 22:11
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 113. New plants in the kitchen.
+  - figure:
+    - link "Bender Bot":
+      - /url: /users/394959859
+  - heading "Bender Bot 22:18" [level=3]:
+    - generic "Bender Bot":
+      - strong: Bender Bot
+    - link "22:18":
+      - /url: /rooms/486777696/@933434623
+      - time: 22:18
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 114. Who took my stapler?
+  - figure:
+    - link "David":
+      - /url: /users/127326141
+  - heading "David 22:25" [level=3]:
+    - generic "David":
+      - strong: David
+    - link "22:25":
+      - /url: /rooms/486777696/@933434624
+      - time: 22:25
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 115. Friday demo is at 3pm.
+  - figure:
+    - link "Jason":
+      - /url: /users/149087659
+  - heading "Jason 22:32" [level=3]:
+    - generic "Jason":
+      - strong: Jason
+    - link "22:32":
+      - /url: /rooms/486777696/@933434625
+      - time: 22:32
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 116. The wifi is flaky again.
+  - figure:
+    - link "David":
+      - /url: /users/127326141
+  - heading "David 22:39" [level=3]:
+    - generic "David":
+      - strong: David
+    - link "22:39":
+      - /url: /rooms/486777696/@933434626
+      - time: 22:39
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 117. Congrats on the launch!
+  - figure:
+    - link "Jason":
+      - /url: /users/149087659
+  - heading "Jason 22:46" [level=3]:
+    - generic "Jason":
+      - strong: Jason
+    - link "22:46":
+      - /url: /rooms/486777696/@933434627
+      - time: 22:46
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 118. Anyone up for a walk?
+  - figure:
+    - link "Bender Bot":
+      - /url: /users/394959859
+  - heading "Bender Bot 22:53" [level=3]:
+    - generic "Bender Bot":
+      - strong: Bender Bot
+    - link "22:53":
+      - /url: /rooms/486777696/@933434628
+      - time: 22:53
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 119. Back in 5.
+  - figure:
+    - link "David":
+      - /url: /users/127326141
+  - heading "David 23:00" [level=3]:
+    - generic "David":
+      - strong: David
+    - link "23:00":
+      - /url: /rooms/486777696/@933434629
+      - time: 23:00
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: 120. Did anyone see the game last night?
+  - heading "2 March 2026" [level=2]:
+    - time: 2 March 2026
+  - figure:
+    - link "JZ – Designer":
+      - /url: /users/773523953
+  - heading "JZ 16:30" [level=3]:
+    - generic "JZ – Designer":
+      - strong: JZ
+    - link "16:30":
+      - /url: /rooms/486777696/@933434481
+      - time: 16:30
+  - generic "Message options":
+    - generic: Message options
+  - generic: You know what the fellow said – in Italy, for thirty years under the Borgias, they had warfare, terror, murder and bloodshed, but they produced Michelangelo, Leonardo da Vinci and the Renaissance. In Switzerland, they had brotherly love, they had five hundred years of democracy and peace – and what did that produce? The cuckoo clock.
+  - figure:
+    - link "Bender Bot boosted 👀":
+      - /url: /users/394959859
+      - img "Bender Bot boosted 👀"
+  - button "👀"
+  - generic: Press enter to delete this boost
+  - link "Add a boost":
+    - /url: /messages/933434481/boosts/new
+    - generic: Add a boost
+  - figure:
+    - link "Jason":
+      - /url: /users/149087659
+  - heading "Jason 16:31" [level=3]:
+    - generic "Jason":
+      - strong: Jason
+    - link "16:31":
+      - /url: /rooms/486777696/@303968118
+      - time: 16:31
+  - generic "Message options":
+    - generic: Message options
+  - generic: Champagne, if you are seeking the truth, is better than a lie detector.
+  - figure:
+    - link "David":
+      - /url: /users/127326141
+  - heading "David 16:33" [level=3]:
+    - generic "David":
+      - strong: David
+    - link "16:33":
+      - /url: /rooms/486777696/@749124092
+      - time: 16:33
+  - generic "Message options":
+    - generic: Message options
+  - generic: The sense of unhappiness is so much easier to convey than that of happiness. In misery we seem aware of our own existence, even though it may be in the form of a monstrous egotism—this pain of mine is individual, this nerve that winces belongs to me and to no other. But happiness annihilates us—we lose our identity.
+  - figure:
+    - link "Jason":
+      - /url: /users/149087659
+  - heading "Jason 16:34" [level=3]:
+    - generic "Jason":
+      - strong: Jason
+    - link "16:34":
+      - /url: /rooms/486777696/@684468941
+      - time: 16:34
+  - generic "Message options":
+    - generic: Message options
+  - generic: A story has no beginning or end—arbitrarily one chooses that moment of experience from which to look back or from which to look ahead.
+  - figure:
+    - link "JZ – Designer":
+      - /url: /users/773523953
+  - heading "JZ 16:35" [level=3]:
+    - generic "JZ – Designer":
+      - strong: JZ
+    - link "16:35":
+      - /url: /rooms/486777696/@366357198
+      - time: 16:35
+  - generic "Message options":
+    - generic: Message options
+  - generic: Hate is a lack of imagination.
+  - heading "16:36" [level=3]:
+    - link "16:36":
+      - /url: /rooms/486777696/@746403085
+      - time: 16:36
+  - generic "Message options":
+    - generic: Message options
+  - generic: And innocence is a kind of insanity
+  - figure:
+    - link "David":
+      - /url: /users/127326141
+  - heading "David 16:37" [level=3]:
+    - generic "David":
+      - strong: David
+    - link "16:37":
+      - /url: /rooms/486777696/@217777555
+      - time: 16:37
+  - generic "Message options":
+    - generic: Message options
+  - generic: I don't care a damn about men who are loyal to the people who pay them, to organizations...I don't think even my country means all that much. There are many countries in our blood, aren't there, but only one person. Would the world be in the mess it is if we were loyal to love and not to countries?
+  - figure:
+    - link "Jason":
+      - /url: /users/149087659
+  - heading "Jason 16:38" [level=3]:
+    - generic "Jason":
+      - strong: Jason
+    - link "16:38":
+      - /url: /rooms/486777696/@421488677
+      - time: 16:38
+  - generic "Message options":
+    - generic: Message options
+  - generic: People who like quotes love meaningless generalizations
+  - heading "16:39" [level=3]:
+    - link "16:39":
+      - /url: /rooms/486777696/@925779126
+      - time: 16:39
+  - generic "Message options":
+    - generic: Message options
+  - generic: Pain is easy to write. In pain we're all happily individual. But what can one write about happiness?
+  - figure:
+    - link "Bender Bot":
+      - /url: /users/394959859
+  - heading "Bender Bot 16:40" [level=3]:
+    - generic "Bender Bot":
+      - strong: Bender Bot
+    - link "16:40":
+      - /url: /rooms/486777696/@933434630
+      - time: 16:40
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: Build 1043 passed.
+  - figure:
+    - link "JZ – Designer":
+      - /url: /users/773523953
+  - heading "JZ 16:55" [level=3]:
+    - generic "JZ – Designer":
+      - strong: JZ
+    - link "16:55":
+      - /url: /rooms/486777696/@136976342
+      - time: 16:55
+  - generic "Message options":
+    - generic: Message options
+  - generic: When we are not sure, we are alive.
+  - figure:
+    - link "Jason boosted 💯":
+      - /url: /users/149087659
+      - img "Jason boosted 💯"
+  - button "💯"
+  - generic: Press enter to delete this boost
+  - link "Add a boost":
+    - /url: /messages/136976342/boosts/new
+    - generic: Add a boost
+  - heading "5 October 2026" [level=2]:
+    - time: 5 October 2026
+  - figure:
+    - link "David":
+      - /url: /users/127326141
+  - heading "David 08:57" [level=3]:
+    - generic "David":
+      - strong: David
+    - link "08:57":
+      - /url: /rooms/486777696/@933434638
+      - time: 08:57
+  - generic "Message options":
+    - generic: Message options
+  - paragraph: parity-remediation-browser-20261005
+  - link "Search":
+    - /url: /searches
+    - generic: Search
+  - generic "Write a message":
+    - text: Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa
+    - textbox "Write a message" [active]:
+      - paragraph
+  - button "Attach a file"
+  - generic: Attach a file
+  - button "Rich text":
+    - generic: Rich text
+  - button "Send Message":
+    - generic: Send Message
+- complementary:
+  - link "New Ping":
+    - /url: /rooms/directs/new
+    - generic: New
+    - generic: Ping
+  - link "Ping with Kevin":
+    - /url: /rooms/699448325
+    - generic: Ping with
+    - text: Kevin
+  - link "Ping with J, K, and J":
+    - /url: /rooms/699448329
+    - generic: Ping with
+    - text: J, K, and J
+  - link "Ping with Jason":
+    - /url: /rooms/186869642
+    - generic: Ping with
+    - text: Jason
+  - button "Start a ping with Bender":
+    - generic: Start a ping with
+    - text: Bender
+  - button "Start a ping with Deploy":
+    - generic: Start a ping with
+    - text: Deploy
+  - button "Start a ping with Lonely":
+    - generic: Start a ping with
+    - text: Lonely
+  - link "All Pets":
+    - /url: /rooms/104393281
+    - generic: All Pets
+  - link "All Talk":
+    - /url: /rooms/486777696
+    - generic: All Talk
+  - link "Broken":
+    - /url: /rooms/699448328
+    - generic: Broken
+  - link "Designers":
+    - /url: /rooms/654632876
+    - generic: Designers
+  - link "HQ":
+    - /url: /rooms/201306877
+    - generic: HQ
+  - link "Quiet Corner":
+    - /url: /rooms/699448326
+    - generic: Quiet Corner
+  - link "New Chat Room":
+    - /url: /rooms/opens/new
+  - link "My Settings":
+    - /url: /users/me/profile
+    - generic: My Settings
+  - link "Account Settings":
+    - /url: /account/edit
+    - generic: Account Settings
+- link "Once software from 37signals home page":
+  - /url: https://once.com
+  - img "Campfire logo"

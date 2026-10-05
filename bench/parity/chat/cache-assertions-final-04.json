@@ -1,0 +1,277 @@
+{
+  "assertions": 20,
+  "passed": 15,
+  "failed": 5,
+  "checks": [
+    {
+      "app": "dotnet",
+      "name": "cache-warm-first",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "cache-warm-second",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "cache-after-creator-rename",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "cache-after-same-version-body-edit",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "cache-after-message-touch",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": false,
+        "new_body": true,
+        "old_creator": false,
+        "new_creator": true
+      },
+      "passed": false
+    },
+    {
+      "app": "dotnet",
+      "name": "message_version_unchanged",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "rich_text_version_unchanged",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "touch_changed_message_version",
+      "expected": false,
+      "actual": true,
+      "passed": false
+    },
+    {
+      "app": "aot",
+      "name": "cache-warm-first",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "cache-warm-second",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "cache-after-creator-rename",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "cache-after-same-version-body-edit",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "cache-after-message-touch",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": false,
+        "new_body": true,
+        "old_creator": false,
+        "new_creator": true
+      },
+      "passed": false
+    },
+    {
+      "app": "aot",
+      "name": "message_version_unchanged",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "rich_text_version_unchanged",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "touch_changed_message_version",
+      "expected": false,
+      "actual": true,
+      "passed": false
+    },
+    {
+      "app": "rails",
+      "name": "creator rename stays stale before touch",
+      "expected": {
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "unversioned body edit stays stale before touch",
+      "expected": {
+        "old_body": true,
+        "new_body": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false
+      },
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "touch refreshes creator and body",
+      "expected": {
+        "old_body": false,
+        "new_body": true,
+        "old_creator": false,
+        "new_creator": true
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": false
+    },
+    {
+      "app": "rails",
+      "name": "production cache enabled and operational",
+      "expected": {
+        "perform_caching": true,
+        "cache_class": "ActiveSupport::Cache::RedisCacheStore",
+        "cache_roundtrip": 123
+      },
+      "actual": {
+        "perform_caching": true,
+        "cache_class": "ActiveSupport::Cache::RedisCacheStore",
+        "cache_roundtrip": 123
+      },
+      "passed": true
+    }
+  ]
+}

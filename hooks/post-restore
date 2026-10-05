@@ -1,0 +1,12 @@
+#!/bin/bash
+set -euo pipefail
+storage="${CAMPFIRE_STORAGE:-/rails/storage}"
+db_name="${RAILS_ENV:-production}.sqlite3"
+case "$db_name" in *\\*|*/*) exit 1 ;; esac
+snapshot="$storage/backups/$db_name"
+database="$storage/db/$db_name"
+if [ -f "$snapshot" ]; then
+    mkdir -p "$storage/db"
+    cp "$snapshot" "$database"
+    rm -f "$database-wal" "$database-shm"
+fi

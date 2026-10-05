@@ -1,0 +1,19 @@
+{
+  "rails": {
+    "repository": "https://github.com/basecamp/once-campfire.git",
+    "revision": "6c7f8fa15f8c39478af64a483dcdf6223527ed22",
+    "directory": "upstream",
+    "image": "ghcr.io/basecamp/once-campfire@sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672"
+  },
+  "rust": {
+    "repository": "https://github.com/basecamp/once-campfire-rust.git",
+    "revision": "64f86353021145b63849fb1cd93adeb08f3b8dbb",
+    "directory": "reference-rust",
+    "image": "ghcr.io/basecamp/once-campfire-rust@sha256:5f7be4ddab928522af0d22cb0a1cd35721cb1a865481f168d3cc06b307fc3584"
+  },
+  "go": {
+    "repository": "https://github.com/basecamp/once-campfire-go.git",
+    "revision": "504428addff333549f1fc88b003c7331779a3c2a",
+    "directory": "reference-go"
+  }
+}

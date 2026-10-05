@@ -1,0 +1,64 @@
+{
+  "redis_major": 7,
+  "checks": [
+    {
+      "mode": "sequential",
+      "replies": [
+        1,
+        {
+          "type": "-",
+          "value": "NOPERM No permissions to access a channel"
+        }
+      ],
+      "delivered": [
+        [
+          "message",
+          "first",
+          "first-sequential"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "mode": "pipeline",
+      "replies": [
+        1,
+        {
+          "type": "-",
+          "value": "NOPERM No permissions to access a channel"
+        },
+        1
+      ],
+      "delivered": [
+        [
+          "message",
+          "first",
+          "first-pipeline"
+        ],
+        [
+          "message",
+          "third",
+          "third-pipeline"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "mode": "lua",
+      "replies": [
+        {
+          "type": "-",
+          "value": "ERR ACL failure in script: No permissions to access a channel script: e41d32ca4beba154200d69709374cf8af96e4431, on @user_script:1."
+        }
+      ],
+      "delivered": [
+        [
+          "message",
+          "first",
+          "first-lua"
+        ]
+      ],
+      "passed": true
+    }
+  ]
+}

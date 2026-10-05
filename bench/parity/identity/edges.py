@@ -1,0 +1,116 @@
+"""Additional disposable-family cookie/transfer/DOM/ban differential checks.
+
+Run check.py first, then this script. Only the identity family is mutated.
+The hook rows created by this script are deleted before any message is created.
+"""
+import datetime
+import argparse
+import json
+import pathlib
+import re
+import sys
+import time
+import urllib.parse
+import uuid
+
+from check import Client, HERE
+
+
+def quote(value):
+    return "NULL" if value is None else "'" + str(value).replace("'", "''") + "'"
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--instances", type=pathlib.Path, default=HERE / "runtime/instances.json")
+    parser.add_argument("--output", type=pathlib.Path, default=HERE / "runtime/results")
+    args = parser.parse_args()
+    family = json.loads(args.instances.read_text(encoding="utf-8-sig"))
+    if family["family"] != "identity":
+        raise RuntimeError("Refusing a non-identity family")
+    suffix = "edges-" + uuid.uuid4().hex[:8]
+    output = args.output / suffix
+    output.mkdir(parents=True)
+    clients, data, sessions = {}, {}, {}
+    for name, instance in family["instances"].items():
+        client = Client(instance)
+        client.login(family["labels"], "david")
+        clients[name] = client
+        sessions[name] = client.sql(f"SELECT user_id,token,created_at,updated_at,last_active_at,ip_address,user_agent FROM sessions WHERE user_id={family['labels']['users.david']} ORDER BY id DESC LIMIT 1")[0]
+        profile = client.request("profile-semantic-controls", "/users/me/profile")
+        token = re.search(r'id="session_transfer_url"[^>]*value="([^"]+)"', profile["body"])
+        if not token:
+            token = re.search(r'value="([^"]+)"[^>]*id="session_transfer_url"', profile["body"])
+        if not token:
+            raise RuntimeError("Transfer URL missing")
+        transfer_path = urllib.parse.urlparse(token[1]).path
+        anonymous = Client(instance)
+        anonymous.get_token(transfer_path)
+        anonymous.request("transfer-valid", transfer_path, "PUT")
+        anonymous.get_token("/users/me/profile")
+        anonymous.request("transfer-invalid", "/session/transfers/invalid", "PUT")
+        invitation = Client(instance)
+        join_path = "/join/" + family["labels"]["join_codes.signal"]
+        invitation.get_token(join_path)
+        invitation.request("join-missing-user", join_path, "POST", {"irrelevant": "1"})
+        client.request("bot-missing-user", "/account/bots", "POST", {"irrelevant": "1"})
+        client.request("custom-styles-missing-account", "/account/custom_styles", "PATCH", {"irrelevant": "1"})
+        client.request("settings-unknown-key", "/account", "PATCH", {"account[settings][unknown_key]": "hello"})
+        client.request("user-deactivated-card", f"/users/{family['labels']['users.rita']}")
+        client.request("user-bot-card", f"/users/{family['labels']['users.bender']}")
+        client.request("unsupported-browser", "/session/new", headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/114.0"})
+        profile_body = profile["body"]
+        controls = {"involvement_put_forms": len(re.findall(r'<form[^>]*action="[^\"]*/involvement', profile_body)),
+                    "notification_checkbox_roles": profile_body.count('role="checkbox"'),
+                    "contains_install_help": 'data-controller="pwa-install"' in profile_body}
+        ban_user = invitation.sql("INSERT INTO users(name,email_address,role,status,created_at,updated_at) VALUES('Ban fixture',NULL,0,0,'2000-01-01 00:00:00','2000-01-01 00:00:00') RETURNING id")[0]["id"]
+        room = family["labels"]["rooms.watercooler"]
+        invitation.sql(f"INSERT INTO sessions(user_id,token,ip_address,user_agent,created_at,updated_at,last_active_at) VALUES({ban_user},'blank-ip-{suffix}','   ','parity','2000-01-01 00:00:00','2000-01-01 00:00:00','2000-01-01 00:00:00'); INSERT INTO messages(creator_id,room_id,client_message_id,created_at,updated_at) VALUES({ban_user},{room},'ban-message-{suffix}','2000-01-01 00:00:00','2000-01-01 00:00:00'); UPDATE rooms SET updated_at='2000-01-01 00:00:00' WHERE id={room}")
+        client.request("ban-content-callbacks", f"/users/{ban_user}/ban", "POST")
+        deadline = time.monotonic() + 10
+        while invitation.sql(f"SELECT count(*) AS n FROM messages WHERE creator_id={ban_user}")[0]["n"] and time.monotonic() < deadline:
+            time.sleep(.2)
+        ban_effects = invitation.sql(f"SELECT (SELECT count(*) FROM messages WHERE creator_id={ban_user}) AS messages,(SELECT count(*) FROM bans WHERE user_id={ban_user}) AS bans,(SELECT updated_at<>'2000-01-01 00:00:00' FROM rooms WHERE id={room}) AS room_touched")
+        data[name] = {"responses": client.records + anonymous.records + invitation.records, "profile_controls": controls, "ban_effects": ban_effects}
+    # Source cookie and encrypted CSRF session generated by each implementation are used
+    # by both other implementations. Copy only their persisted authentication row.
+    interop, samples = [], {}
+    for source, client in clients.items():
+        cookie = "; ".join(c.name + "=" + c.value for c in client.jar if c.name in ("session_token", "_campfire_session"))
+        samples[source] = {"cookies": {c.name: urllib.parse.unquote(c.value) for c in client.jar if c.name in ("session_token", "_campfire_session")}, "csrf_token": client.token}
+        session = sessions[source]
+        columns = ",".join(session)
+        values = ",".join(quote(value) for value in session.values())
+        for target, destination in clients.items():
+            if target == source:
+                continue
+            destination.sql(f"INSERT OR IGNORE INTO sessions({columns}) VALUES({values})")
+            other = Client(destination.instance)
+            read = other.request("cookie-interop-read", "/users/me/profile", headers={"Cookie": cookie})
+            write = other.request("cookie-interop-write", "/account", "PATCH", {"account[name]": "Cookie interop " + suffix}, headers={"Cookie": cookie, "X-CSRF-Token": client.token}, csrf=False)
+            interop.append({"source": source, "target": target, "read_status": read["status"], "write_status": write["status"]})
+    differences = []
+    for name in ("dotnet", "aot"):
+        expected = {r["case"]: r for r in data["rails"]["responses"] if r["case"] != "csrf-page"}
+        for row in data[name]["responses"]:
+            if row["case"] in expected and row["status"] != expected[row["case"]]["status"]:
+                differences.append({"case": row["case"], "implementation": name, "rails": expected[row["case"]]["status"], "actual": row["status"]})
+        if data[name]["profile_controls"] != data["rails"]["profile_controls"]:
+            differences.append({"case": "profile-semantic-controls", "implementation": name, "rails": data["rails"]["profile_controls"], "actual": data[name]["profile_controls"]})
+        if data[name]["ban_effects"] != data["rails"]["ban_effects"]:
+            differences.append({"case": "ban-content-callbacks", "implementation": name, "rails": data["rails"]["ban_effects"], "actual": data[name]["ban_effects"]})
+    for name, result in data.items():
+        (output / (name + ".json")).write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    (output / "cookie-samples.json").write_text(json.dumps(samples, indent=2) + "\n", encoding="utf-8")
+    summary = {"utc": datetime.datetime.now(datetime.timezone.utc).isoformat(), "interop": interop, "differences": differences}
+    (output / "summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(summary, indent=2))
+    return 1 if differences or any(r["read_status"] != 200 or r["write_status"] != 302 for r in interop) else 0
+
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main())
+    except Exception as error:
+        print("HARNESS FAILURE:", error, file=sys.stderr)
+        sys.exit(2)

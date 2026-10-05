@@ -1,0 +1,524 @@
+{
+  "assertions": 47,
+  "passed": 44,
+  "failed": 3,
+  "checks": [
+    {
+      "app": "dotnet",
+      "name": "cache-warm-first",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "cache-warm-second",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "cache-after-creator-rename",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "cache-after-same-version-body-edit",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "cache-after-no-op-update",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "cache-after-message-touch",
+      "expected": {
+        "old_body": false,
+        "new_body": true,
+        "old_creator": false,
+        "new_creator": true
+      },
+      "actual": {
+        "old_body": false,
+        "new_body": true,
+        "old_creator": false,
+        "new_creator": true
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "message_version_unchanged",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "rich_text_version_unchanged",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "noop_changed_message_version",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "noop_changed_body_version",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "noop_state_unchanged",
+      "expected": false,
+      "actual": true,
+      "passed": false
+    },
+    {
+      "app": "dotnet",
+      "name": "noop_fields_state_unchanged",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "touch_changed_message_version",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "real_edit_body_touched",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "real_edit_room_touched",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "real_edit_indexed",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "real_edit_unread_unchanged",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "client_changed_message_version",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "client_changed_body_version",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "cache-warm-first",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "cache-warm-second",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "cache-after-creator-rename",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "cache-after-same-version-body-edit",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "cache-after-no-op-update",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "cache-after-message-touch",
+      "expected": {
+        "old_body": false,
+        "new_body": true,
+        "old_creator": false,
+        "new_creator": true
+      },
+      "actual": {
+        "old_body": false,
+        "new_body": true,
+        "old_creator": false,
+        "new_creator": true
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "message_version_unchanged",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "rich_text_version_unchanged",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "noop_changed_message_version",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "noop_changed_body_version",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "noop_state_unchanged",
+      "expected": false,
+      "actual": true,
+      "passed": false
+    },
+    {
+      "app": "aot",
+      "name": "noop_fields_state_unchanged",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "touch_changed_message_version",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "real_edit_body_touched",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "real_edit_room_touched",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "real_edit_indexed",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "real_edit_unread_unchanged",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "client_changed_message_version",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "client_changed_body_version",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "creator rename stays stale before touch",
+      "expected": {
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "unversioned body edit stays stale before touch",
+      "expected": {
+        "old_body": true,
+        "new_body": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false
+      },
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "no-op body assignment preserves stale fragment",
+      "expected": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "actual": {
+        "old_body": true,
+        "new_body": false,
+        "old_creator": true,
+        "new_creator": false
+      },
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "no-op does not touch either version",
+      "expected": {
+        "message": false,
+        "body": false
+      },
+      "actual": {
+        "message": false,
+        "body": false
+      },
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "no-op body/client/empty detach preserve all recorded state",
+      "expected": {
+        "body_assignment": true,
+        "client_and_detach": true
+      },
+      "actual": {
+        "body_assignment": false,
+        "client_and_detach": true
+      },
+      "passed": false
+    },
+    {
+      "app": "rails",
+      "name": "real edit touches/indexes without receiving unread again",
+      "expected": {
+        "body": true,
+        "room": true,
+        "index": true,
+        "unread": true
+      },
+      "actual": {
+        "body": true,
+        "room": true,
+        "index": true,
+        "unread": true
+      },
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "client change touches message without writing unchanged body",
+      "expected": {
+        "message": true,
+        "body": false
+      },
+      "actual": {
+        "message": true,
+        "body": false
+      },
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "touch refreshes creator and body",
+      "expected": {
+        "old_body": false,
+        "new_body": true,
+        "old_creator": false,
+        "new_creator": true
+      },
+      "actual": {
+        "old_body": false,
+        "new_body": true,
+        "old_creator": false,
+        "new_creator": true
+      },
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "production cache enabled and operational",
+      "expected": {
+        "perform_caching": true,
+        "cache_class": "ActiveSupport::Cache::RedisCacheStore",
+        "cache_roundtrip": 123
+      },
+      "actual": {
+        "perform_caching": true,
+        "cache_class": "ActiveSupport::Cache::RedisCacheStore",
+        "cache_roundtrip": 123
+      },
+      "passed": true
+    }
+  ]
+}

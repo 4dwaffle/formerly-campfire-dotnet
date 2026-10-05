@@ -1,0 +1,17 @@
+{
+  "checked_utc": "2026-10-05T10:04:21.7617877Z",
+  "manifest": "instances-final-05.json",
+  "gate": "cache-assertions-final-05.json",
+  "gate_sha256": "047a73e340971b7ff2b9dc96b116c6a3f901861a2d41db4c07b42a8fc3239728",
+  "assertions": 47,
+  "passed": 44,
+  "failed": 3,
+  "captured_request_counts": {
+    "rails": 15,
+    "dotnet": 15,
+    "aot": 15
+  },
+  "capture": "cache-policy-final-05.json",
+  "cleanup": "cleanup-final-05.json",
+  "scope_note": "Expanded probe confirms matching no-op cache/timestamps and real-edit touches. Three failures reveal incorrect skipped no-op index callback: Rails reindexes while versions/cache remain unchanged. Retained failed intermediate image proof; focused unconditional callback correction awaits final06 images."
+}

@@ -1,0 +1,30 @@
+{
+  "capture": "/repo/bench/results/render-cache-20261005/dotnet-1-room.html",
+  "capture_sha256": "a3439ac51991fb826db76662a7fe52ea50a006e306fa5e4b1b36609280bb803e",
+  "decoded_bytes": 404478,
+  "messages": 40,
+  "segments": 686,
+  "whole_gzip_fastest_bytes": 36250,
+  "native_fragment_bytes": 30644,
+  "native_fragment_sha256": "8250d57580aa662a57776af4e99a5894d125dac81d1916ab4d7dbf565503acb9",
+  "cold_warm_bytes_equal": true,
+  "cache_entries": 363,
+  "assembly_plan_entries": 1,
+  "cache_reserved_bytes": 14760669,
+  "native_backend": true,
+  "exact_dotnet_gzip_decode": true,
+  "timing_benchmark": false,
+  "native_codec_tests": {
+    "passed": 205,
+    "failed": 0,
+    "skipped": 0
+  },
+  "independent_decoders": [
+    "System.IO.Compression.GZipStream",
+    "Python gzip",
+    "Python zlib"
+  ],
+  "independent_native_proof": "fragment-gzip-native-context-proof.json",
+  "deployed_new_image_verification": "Actual final JIT and Native AOT verified separately in fragment-gzip-live-hotpath-proof.json:47 controls/99 requests, zero5xx, all11resources removed.",
+  "server_throughput_claim": false
+}

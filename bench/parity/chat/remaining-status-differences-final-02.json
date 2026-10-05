@@ -1,0 +1,201 @@
+{
+  "images": {
+    "rails": {
+      "base": "http://127.0.0.1:4410",
+      "container": "cf-dotnet-80d3ca080e9d-app",
+      "volume": "cf-dotnet-80d3ca080e9d-data",
+      "network": "cf-dotnet-80d3ca080e9d",
+      "image": "ghcr.io/basecamp/once-campfire@sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "image_id": "sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "ready_ms": 3932.935999997426
+    },
+    "dotnet": {
+      "base": "http://127.0.0.1:4411",
+      "container": "cf-dotnet-621df95fc091-app",
+      "volume": "cf-dotnet-621df95fc091-data",
+      "network": "cf-dotnet-621df95fc091",
+      "image": "campfire-dotnet:parity-normal-jit",
+      "image_id": "sha256:ef474f477aa537ff3695353cc1d144d06ad45573d4a030a97cf84fd66d9f7236",
+      "ready_ms": 600.6251999933738
+    },
+    "aot": {
+      "base": "http://127.0.0.1:4412",
+      "container": "cf-dotnet-63cb3d6359f2-app",
+      "volume": "cf-dotnet-63cb3d6359f2-data",
+      "network": "cf-dotnet-63cb3d6359f2",
+      "image": "campfire-dotnet:parity-normal-aot",
+      "image_id": "sha256:8355fcc91e7c1b409fd0b378449b355159868913d598d3968fa42b9e04057923",
+      "ready_ms": 407.92050000163727
+    }
+  },
+  "status_differences": [
+    {
+      "case": "david-room-invalid-id",
+      "app": "dotnet",
+      "differences": {
+        "status": {
+          "rails": 302,
+          "dotnet": 404
+        },
+        "location": {
+          "rails": "<origin>/",
+          "dotnet": null
+        },
+        "body_classes": {
+          "rails": [],
+          "dotnet": [
+            null
+          ]
+        }
+      }
+    },
+    {
+      "case": "fixture-unrenderable",
+      "app": "dotnet",
+      "differences": {
+        "status": {
+          "rails": 200,
+          "dotnet": 404
+        },
+        "body_classes": {
+          "rails": [
+            "admin"
+          ],
+          "dotnet": [
+            null
+          ]
+        }
+      }
+    },
+    {
+      "case": "fixture-edit-unrenderable",
+      "app": "dotnet",
+      "differences": {
+        "status": {
+          "rails": 200,
+          "dotnet": 404
+        },
+        "frame_ids": {
+          "rails": [
+            "edit_message_46326e09-6614-5f97-bf29-7360aac1f60c"
+          ],
+          "dotnet": []
+        },
+        "body_classes": {
+          "rails": [
+            "admin"
+          ],
+          "dotnet": [
+            null
+          ]
+        }
+      }
+    },
+    {
+      "case": "loner-search",
+      "app": "dotnet",
+      "differences": {
+        "status": {
+          "rails": 500,
+          "dotnet": 200
+        },
+        "content-type": {
+          "rails": "text/html; charset=UTF-8",
+          "dotnet": "text/html; charset=utf-8"
+        },
+        "body_classes": {
+          "rails": [
+            null
+          ],
+          "dotnet": [
+            "sidebar searches"
+          ]
+        }
+      }
+    },
+    {
+      "case": "david-room-invalid-id",
+      "app": "aot",
+      "differences": {
+        "status": {
+          "rails": 302,
+          "aot": 404
+        },
+        "location": {
+          "rails": "<origin>/",
+          "aot": null
+        },
+        "body_classes": {
+          "rails": [],
+          "aot": [
+            null
+          ]
+        }
+      }
+    },
+    {
+      "case": "fixture-unrenderable",
+      "app": "aot",
+      "differences": {
+        "status": {
+          "rails": 200,
+          "aot": 404
+        },
+        "body_classes": {
+          "rails": [
+            "admin"
+          ],
+          "aot": [
+            null
+          ]
+        }
+      }
+    },
+    {
+      "case": "fixture-edit-unrenderable",
+      "app": "aot",
+      "differences": {
+        "status": {
+          "rails": 200,
+          "aot": 404
+        },
+        "frame_ids": {
+          "rails": [
+            "edit_message_46326e09-6614-5f97-bf29-7360aac1f60c"
+          ],
+          "aot": []
+        },
+        "body_classes": {
+          "rails": [
+            "admin"
+          ],
+          "aot": [
+            null
+          ]
+        }
+      }
+    },
+    {
+      "case": "loner-search",
+      "app": "aot",
+      "differences": {
+        "status": {
+          "rails": 500,
+          "aot": 200
+        },
+        "content-type": {
+          "rails": "text/html; charset=UTF-8",
+          "aot": "text/html; charset=utf-8"
+        },
+        "body_classes": {
+          "rails": [
+            null
+          ],
+          "aot": [
+            "sidebar searches"
+          ]
+        }
+      }
+    }
+  ]
+}

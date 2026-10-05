@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net10.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><IsPackable>false</IsPackable><IsTestProject>true</IsTestProject><TreatWarningsAsErrors>true</TreatWarningsAsErrors><InterceptorsNamespaces>$(InterceptorsNamespaces);Dapper.AOT</InterceptorsNamespaces></PropertyGroup>
+  <ItemGroup><PackageReference Include="Dapper.AOT" Version="1.1.0" /></ItemGroup>
+  <ItemGroup><Compile Include="../../src/Campfire/Contracts/RailsRemoteIp.cs" Link="Contracts/RailsRemoteIp.cs" /></ItemGroup>
+  <ItemGroup><FrameworkReference Include="Microsoft.AspNetCore.App"/><PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1"/><PackageReference Include="xunit" Version="2.9.3"/><PackageReference Include="xunit.runner.visualstudio" Version="3.1.4"/><PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.12"/><PackageReference Include="Dapper" Version="2.1.89"/><PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="3.0.5"/><PackageReference Include="BCrypt.Net-Next" Version="4.0.3"/><PackageReference Include="Microsoft.AspNetCore.TestHost" Version="10.0.12"/></ItemGroup>
+  <ItemGroup><Compile Include="../../src/Campfire/Contracts/Services.cs" Link="Contracts/Services.cs"/><Compile Include="../../src/Campfire/Features/Identity/*.cs" Link="Identity/%(Filename)%(Extension)"/><Compile Include="../../src/Campfire/Features/Persistence/*.cs" Link="Persistence/%(Filename)%(Extension)"/><Content Include="../../src/Campfire/Features/Persistence/schema.sql" Link="Features/Persistence/schema.sql" CopyToOutputDirectory="PreserveNewest"/><Content Include="Fixtures/rails_compat.json" Link="rails_compat.json" CopyToOutputDirectory="PreserveNewest"/></ItemGroup>
+</Project>
+
+

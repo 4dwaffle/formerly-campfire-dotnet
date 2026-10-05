@@ -1,0 +1,1041 @@
+{
+  "audit_date": "2026-10-05",
+  "primary_cases": 39,
+  "primary_differences": [
+    {
+      "implementation": "dotnet",
+      "case": "login-head",
+      "field": "status",
+      "rails": 200,
+      "actual": 405
+    },
+    {
+      "implementation": "dotnet",
+      "case": "login-head",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "login-html-format",
+      "field": "status",
+      "rails": 200,
+      "actual": 404
+    },
+    {
+      "implementation": "dotnet",
+      "case": "login-html-format",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "session-get-extra-route",
+      "field": "status",
+      "rails": 404,
+      "actual": 200
+    },
+    {
+      "implementation": "dotnet",
+      "case": "invalid-join",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "auth-return-to",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "login-david",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "account-get-extra-route",
+      "field": "status",
+      "rails": 404,
+      "actual": 200
+    },
+    {
+      "implementation": "dotnet",
+      "case": "custom-styles-extra-route",
+      "field": "status",
+      "rails": 404,
+      "actual": 200
+    },
+    {
+      "implementation": "dotnet",
+      "case": "account-users-html",
+      "field": "status",
+      "rails": 406,
+      "actual": 200
+    },
+    {
+      "implementation": "dotnet",
+      "case": "account-users-html",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": "text/vnd.turbo-stream.html"
+    },
+    {
+      "implementation": "dotnet",
+      "case": "bot-show-extra-route",
+      "field": "status",
+      "rails": 404,
+      "actual": 200
+    },
+    {
+      "implementation": "dotnet",
+      "case": "account-missing-nested-params",
+      "field": "status",
+      "rails": 400,
+      "actual": 302
+    },
+    {
+      "implementation": "dotnet",
+      "case": "account-missing-nested-params",
+      "field": "location",
+      "rails": null,
+      "actual": "/account/edit"
+    },
+    {
+      "implementation": "dotnet",
+      "case": "account-missing-nested-params",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "account-settings-nonboolean",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "csrf-invalid-form-valid-header",
+      "field": "status",
+      "rails": 302,
+      "actual": 422
+    },
+    {
+      "implementation": "dotnet",
+      "case": "csrf-invalid-form-valid-header",
+      "field": "location",
+      "rails": "/account/edit",
+      "actual": null
+    },
+    {
+      "implementation": "dotnet",
+      "case": "csrf-invalid-form-valid-header",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "csrf-header-only",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "csrf-cross-site-header",
+      "field": "status",
+      "rails": 302,
+      "actual": 422
+    },
+    {
+      "implementation": "dotnet",
+      "case": "csrf-cross-site-header",
+      "field": "location",
+      "rails": "/account/edit",
+      "actual": null
+    },
+    {
+      "implementation": "dotnet",
+      "case": "csrf-cross-site-header",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "csrf-missing",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "csrf-cross-origin",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "bot-create-blank-webhook",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "bot-set-webhook",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "bot-update-webhook",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "bot-whitespace-webhook",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "bot-delete",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "role-missing-nested-params",
+      "field": "status",
+      "rails": 400,
+      "actual": 302
+    },
+    {
+      "implementation": "dotnet",
+      "case": "role-missing-nested-params",
+      "field": "location",
+      "rails": null,
+      "actual": "/account/edit"
+    },
+    {
+      "implementation": "dotnet",
+      "case": "role-missing-nested-params",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "role-invalid-falls-back-to-member",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "deactivate-user",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "logout",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "after-logout-protected",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "login-jason",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "member-account-update-denied",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "profile-missing-nested-params",
+      "field": "status",
+      "rails": 400,
+      "actual": 302
+    },
+    {
+      "implementation": "dotnet",
+      "case": "profile-missing-nested-params",
+      "field": "location",
+      "rails": null,
+      "actual": "/users/me/profile"
+    },
+    {
+      "implementation": "dotnet",
+      "case": "profile-missing-nested-params",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "profile-duplicate-email",
+      "field": "status",
+      "rails": 500,
+      "actual": 422
+    },
+    {
+      "implementation": "dotnet",
+      "case": "profile-duplicate-email",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": "application/json"
+    },
+    {
+      "implementation": "dotnet",
+      "case": "profile-password-over-72-bytes",
+      "field": "status",
+      "rails": 302,
+      "actual": 422
+    },
+    {
+      "implementation": "dotnet",
+      "case": "profile-password-over-72-bytes",
+      "field": "location",
+      "rails": "/users/me/profile",
+      "actual": null
+    },
+    {
+      "implementation": "dotnet",
+      "case": "profile-password-over-72-bytes",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": "application/json"
+    },
+    {
+      "implementation": "dotnet",
+      "case": "profile-json-body",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "join-create",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "dotnet",
+      "case": "profile-json-body",
+      "field": "database",
+      "rails": [
+        {
+          "bio": "JSON parity parity-118c5919df"
+        }
+      ],
+      "actual": [
+        {
+          "bio": ""
+        }
+      ]
+    },
+    {
+      "implementation": "dotnet",
+      "case": "account-settings-nonboolean",
+      "field": "database",
+      "rails": [
+        {
+          "settings": "{\"restrict_room_creation_to_administrators\":true}"
+        }
+      ],
+      "actual": [
+        {
+          "settings": "{\"restrict_room_creation_to_administrators\":false}"
+        }
+      ]
+    },
+    {
+      "implementation": "dotnet",
+      "case": "bot-create-blank-webhook",
+      "field": "database",
+      "rails": [
+        {
+          "webhooks": 1
+        }
+      ],
+      "actual": [
+        {
+          "webhooks": 0
+        }
+      ]
+    },
+    {
+      "implementation": "dotnet",
+      "case": "bot-update-webhook",
+      "field": "database",
+      "rails": {
+        "id_preserved": true,
+        "created_at_preserved": true
+      },
+      "actual": {
+        "id_preserved": false,
+        "created_at_preserved": false
+      }
+    },
+    {
+      "implementation": "dotnet",
+      "case": "bot-whitespace-webhook",
+      "field": "database",
+      "rails": [
+        {
+          "webhooks": 0
+        }
+      ],
+      "actual": [
+        {
+          "webhooks": 1
+        }
+      ]
+    },
+    {
+      "implementation": "aot",
+      "case": "login-head",
+      "field": "status",
+      "rails": 200,
+      "actual": 405
+    },
+    {
+      "implementation": "aot",
+      "case": "login-head",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "login-html-format",
+      "field": "status",
+      "rails": 200,
+      "actual": 404
+    },
+    {
+      "implementation": "aot",
+      "case": "login-html-format",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "session-get-extra-route",
+      "field": "status",
+      "rails": 404,
+      "actual": 200
+    },
+    {
+      "implementation": "aot",
+      "case": "invalid-join",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "auth-return-to",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "login-david",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "account-get-extra-route",
+      "field": "status",
+      "rails": 404,
+      "actual": 200
+    },
+    {
+      "implementation": "aot",
+      "case": "custom-styles-extra-route",
+      "field": "status",
+      "rails": 404,
+      "actual": 200
+    },
+    {
+      "implementation": "aot",
+      "case": "account-users-html",
+      "field": "status",
+      "rails": 406,
+      "actual": 200
+    },
+    {
+      "implementation": "aot",
+      "case": "account-users-html",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": "text/vnd.turbo-stream.html"
+    },
+    {
+      "implementation": "aot",
+      "case": "bot-show-extra-route",
+      "field": "status",
+      "rails": 404,
+      "actual": 200
+    },
+    {
+      "implementation": "aot",
+      "case": "account-missing-nested-params",
+      "field": "status",
+      "rails": 400,
+      "actual": 302
+    },
+    {
+      "implementation": "aot",
+      "case": "account-missing-nested-params",
+      "field": "location",
+      "rails": null,
+      "actual": "/account/edit"
+    },
+    {
+      "implementation": "aot",
+      "case": "account-missing-nested-params",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "account-settings-nonboolean",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "csrf-invalid-form-valid-header",
+      "field": "status",
+      "rails": 302,
+      "actual": 422
+    },
+    {
+      "implementation": "aot",
+      "case": "csrf-invalid-form-valid-header",
+      "field": "location",
+      "rails": "/account/edit",
+      "actual": null
+    },
+    {
+      "implementation": "aot",
+      "case": "csrf-invalid-form-valid-header",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "csrf-header-only",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "csrf-cross-site-header",
+      "field": "status",
+      "rails": 302,
+      "actual": 422
+    },
+    {
+      "implementation": "aot",
+      "case": "csrf-cross-site-header",
+      "field": "location",
+      "rails": "/account/edit",
+      "actual": null
+    },
+    {
+      "implementation": "aot",
+      "case": "csrf-cross-site-header",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "csrf-missing",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "csrf-cross-origin",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "bot-create-blank-webhook",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "bot-set-webhook",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "bot-update-webhook",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "bot-whitespace-webhook",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "bot-delete",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "role-missing-nested-params",
+      "field": "status",
+      "rails": 400,
+      "actual": 302
+    },
+    {
+      "implementation": "aot",
+      "case": "role-missing-nested-params",
+      "field": "location",
+      "rails": null,
+      "actual": "/account/edit"
+    },
+    {
+      "implementation": "aot",
+      "case": "role-missing-nested-params",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "role-invalid-falls-back-to-member",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "deactivate-user",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "logout",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "after-logout-protected",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "login-jason",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "member-account-update-denied",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "profile-missing-nested-params",
+      "field": "status",
+      "rails": 400,
+      "actual": 302
+    },
+    {
+      "implementation": "aot",
+      "case": "profile-missing-nested-params",
+      "field": "location",
+      "rails": null,
+      "actual": "/users/me/profile"
+    },
+    {
+      "implementation": "aot",
+      "case": "profile-missing-nested-params",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "profile-duplicate-email",
+      "field": "status",
+      "rails": 500,
+      "actual": 422
+    },
+    {
+      "implementation": "aot",
+      "case": "profile-duplicate-email",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": "application/json"
+    },
+    {
+      "implementation": "aot",
+      "case": "profile-password-over-72-bytes",
+      "field": "status",
+      "rails": 302,
+      "actual": 422
+    },
+    {
+      "implementation": "aot",
+      "case": "profile-password-over-72-bytes",
+      "field": "location",
+      "rails": "/users/me/profile",
+      "actual": null
+    },
+    {
+      "implementation": "aot",
+      "case": "profile-password-over-72-bytes",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": "application/json"
+    },
+    {
+      "implementation": "aot",
+      "case": "profile-json-body",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "join-create",
+      "field": "content_type",
+      "rails": "text/html",
+      "actual": ""
+    },
+    {
+      "implementation": "aot",
+      "case": "profile-json-body",
+      "field": "database",
+      "rails": [
+        {
+          "bio": "JSON parity parity-118c5919df"
+        }
+      ],
+      "actual": [
+        {
+          "bio": ""
+        }
+      ]
+    },
+    {
+      "implementation": "aot",
+      "case": "account-settings-nonboolean",
+      "field": "database",
+      "rails": [
+        {
+          "settings": "{\"restrict_room_creation_to_administrators\":true}"
+        }
+      ],
+      "actual": [
+        {
+          "settings": "{\"restrict_room_creation_to_administrators\":false}"
+        }
+      ]
+    },
+    {
+      "implementation": "aot",
+      "case": "bot-create-blank-webhook",
+      "field": "database",
+      "rails": [
+        {
+          "webhooks": 1
+        }
+      ],
+      "actual": [
+        {
+          "webhooks": 0
+        }
+      ]
+    },
+    {
+      "implementation": "aot",
+      "case": "bot-update-webhook",
+      "field": "database",
+      "rails": {
+        "id_preserved": true,
+        "created_at_preserved": true
+      },
+      "actual": {
+        "id_preserved": false,
+        "created_at_preserved": false
+      }
+    },
+    {
+      "implementation": "aot",
+      "case": "bot-whitespace-webhook",
+      "field": "database",
+      "rails": [
+        {
+          "webhooks": 0
+        }
+      ],
+      "actual": [
+        {
+          "webhooks": 1
+        }
+      ]
+    }
+  ],
+  "edge_differences": [
+    {
+      "case": "bot-missing-user",
+      "implementation": "dotnet",
+      "rails": 400,
+      "actual": 302
+    },
+    {
+      "case": "custom-styles-missing-account",
+      "implementation": "dotnet",
+      "rails": 400,
+      "actual": 302
+    },
+    {
+      "case": "settings-unknown-key",
+      "implementation": "dotnet",
+      "rails": 500,
+      "actual": 302
+    },
+    {
+      "case": "join-missing-user",
+      "implementation": "dotnet",
+      "rails": 400,
+      "actual": 302
+    },
+    {
+      "case": "profile-semantic-controls",
+      "implementation": "dotnet",
+      "rails": {
+        "involvement_put_forms": 10,
+        "notification_checkbox_roles": 10,
+        "contains_install_help": false
+      },
+      "actual": {
+        "involvement_put_forms": 0,
+        "notification_checkbox_roles": 0,
+        "contains_install_help": false
+      }
+    },
+    {
+      "case": "ban-content-callbacks",
+      "implementation": "dotnet",
+      "rails": [
+        {
+          "messages": 0,
+          "bans": 0,
+          "room_touched": 1
+        }
+      ],
+      "actual": [
+        {
+          "messages": 0,
+          "bans": 1,
+          "room_touched": 0
+        }
+      ]
+    },
+    {
+      "case": "bot-missing-user",
+      "implementation": "aot",
+      "rails": 400,
+      "actual": 302
+    },
+    {
+      "case": "custom-styles-missing-account",
+      "implementation": "aot",
+      "rails": 400,
+      "actual": 302
+    },
+    {
+      "case": "settings-unknown-key",
+      "implementation": "aot",
+      "rails": 500,
+      "actual": 302
+    },
+    {
+      "case": "join-missing-user",
+      "implementation": "aot",
+      "rails": 400,
+      "actual": 302
+    },
+    {
+      "case": "profile-semantic-controls",
+      "implementation": "aot",
+      "rails": {
+        "involvement_put_forms": 10,
+        "notification_checkbox_roles": 10,
+        "contains_install_help": false
+      },
+      "actual": {
+        "involvement_put_forms": 0,
+        "notification_checkbox_roles": 0,
+        "contains_install_help": false
+      }
+    },
+    {
+      "case": "ban-content-callbacks",
+      "implementation": "aot",
+      "rails": [
+        {
+          "messages": 0,
+          "bans": 0,
+          "room_touched": 1
+        }
+      ],
+      "actual": [
+        {
+          "messages": 0,
+          "bans": 1,
+          "room_touched": 0
+        }
+      ]
+    }
+  ],
+  "cookie_interop": [
+    {
+      "source": "rails",
+      "target": "dotnet",
+      "read_status": 200,
+      "write_status": 302
+    },
+    {
+      "source": "rails",
+      "target": "aot",
+      "read_status": 200,
+      "write_status": 302
+    },
+    {
+      "source": "dotnet",
+      "target": "rails",
+      "read_status": 200,
+      "write_status": 422
+    },
+    {
+      "source": "dotnet",
+      "target": "aot",
+      "read_status": 200,
+      "write_status": 302
+    },
+    {
+      "source": "aot",
+      "target": "rails",
+      "read_status": 200,
+      "write_status": 422
+    },
+    {
+      "source": "aot",
+      "target": "dotnet",
+      "read_status": 200,
+      "write_status": 302
+    }
+  ],
+  "fresh": {
+    "results": "A:\\External\\minimal-api-benchmark\\bench\\parity\\identity\\runtime\\results\\fresh-20261005T054312Z",
+    "differences": [
+      {
+        "implementation": "dotnet",
+        "field": "missing_params_database"
+      },
+      {
+        "implementation": "dotnet",
+        "field": "metadata"
+      },
+      {
+        "implementation": "aot",
+        "field": "missing_params_database"
+      },
+      {
+        "implementation": "aot",
+        "field": "metadata"
+      }
+    ],
+    "pending_migrations": {
+      "dotnet": 14,
+      "aot": 14
+    }
+  },
+  "culture_golden_generation": {
+    "matched": [
+      "en-US",
+      "cs-CZ",
+      "tr-TR"
+    ],
+    "failed": [
+      "th-TH",
+      "ar-SA"
+    ]
+  },
+  "verdict": "Full parity contradicted; no production fixes"
+}

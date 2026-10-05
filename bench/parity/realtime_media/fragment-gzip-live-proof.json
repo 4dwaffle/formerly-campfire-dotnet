@@ -1,0 +1,191 @@
+{
+  "verified_utc": "2026-10-05T11:12:39.019166+00:00",
+  "application_runtime_source_sha256": "7702ad59794a99f7853827b97ae49924c71e0d9cdf20d1ff5f29a22a059b6ee5",
+  "image_source_attribution": "Parent frozen rust-inspired-initial-build manifest; image IDs checked from Docker.",
+  "observed_workspace_runtime_source_sha256": "b3c9a921b7b0ab8c9f045c16d03856a27c6daf0333c2f6c07455dc7575bb5f3c",
+  "source_files": 850,
+  "server_cpus": "24-27",
+  "fixture": "bench/parity/realtime_media/runtime/rust-inspired-codec",
+  "records": [
+    {
+      "implementation": "rails",
+      "image": "ghcr.io/basecamp/once-campfire@sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "image_id": "sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "controls": [
+        "identity full UTF8 body / SHA256-derived Rails ETag / 40 message IDs",
+        "actual gzip independently decoded with CRC/ISIZE, whole-body ETag and same message IDs",
+        "fresh request CSRF and fresh whole-body validator during warm fragment reuse",
+        "previous-token ETag correctly yields new 200 body rather than erroneous 304",
+        "original Rails dynamic room wildcard If-None-Match returns 200 with a fresh full body",
+        "HEAD gzip negotiation preserves empty response without gzip payload",
+        "conditional HEAD preserves empty source-specific status (Rails200/port304 wildcard difference)",
+        "six Accept-Encoding preference/exclusion/invalid/unsupported cases preserve correct body",
+        "shared immutable message fragments retain separate session CSRF; foreign-session mutation rejected",
+        "created message enters compressed page with exact whole-body validator",
+        "touched immutable message version invalidates compressed fragment without stale text",
+        "deleted message disappears and original page message IDs return"
+      ],
+      "gzip_sample": {
+        "wire_bytes": 44384,
+        "decoded_bytes": 463720,
+        "wire_sha256": "97d086a1ae74a80d498cf0c30aed82d7625512453c8d57ed9bdd34216d053e0b",
+        "decoded_sha256": "f5462c2af382c28b07a4416ea75840d16a93f690c889d7d2905507cabee13493",
+        "etag": "W/\"f5462c2af382c28b07a4416ea75840d1\""
+      },
+      "wildcard_dynamic_room_status": 200,
+      "head_gzip_content_encoding": "gzip",
+      "passed": true,
+      "http_requests": 26,
+      "expected_rejection_statuses": [
+        422
+      ],
+      "http_server_error_count": 0
+    },
+    {
+      "implementation": "dotnet",
+      "image": "campfire-dotnet:rust-inspired-jit",
+      "image_id": "sha256:c453efc414c95bf62b360cbf3d18a926c3b098bf9e38a4dff9fc03488b8422df",
+      "controls": [
+        "identity full UTF8 body / SHA256-derived Rails ETag / 40 message IDs",
+        "actual gzip independently decoded with CRC/ISIZE, whole-body ETag and same message IDs",
+        "fresh request CSRF and fresh whole-body validator during warm fragment reuse",
+        "previous-token ETag correctly yields new 200 body rather than erroneous 304",
+        "port dynamic room wildcard 304 has empty body and no gzip encoding; differs from pinned Rails",
+        "HEAD gzip negotiation preserves empty response without gzip payload",
+        "conditional HEAD preserves empty source-specific status (Rails200/port304 wildcard difference)",
+        "six Accept-Encoding preference/exclusion/invalid/unsupported cases preserve correct body",
+        "shared immutable message fragments retain separate session CSRF; foreign-session mutation rejected",
+        "created message enters compressed page with exact whole-body validator",
+        "touched immutable message version invalidates compressed fragment without stale text",
+        "deleted message disappears and original page message IDs return",
+        "actual deployed native helper and immutable cache reuse confirmed by one-time backend logs"
+      ],
+      "gzip_sample": {
+        "wire_bytes": 28815,
+        "decoded_bytes": 404523,
+        "wire_sha256": "4231781b6a5bdbcd8c06c58320d126f91fa630d58d807ca91a12524baff87305",
+        "decoded_sha256": "0c6b9a30274f760d480c3e973109eb5454416f3c2cba2443ae10744dda2dd834",
+        "etag": "W/\"0c6b9a30274f760d480c3e973109eb54\""
+      },
+      "wildcard_dynamic_room_status": 304,
+      "head_gzip_content_encoding": "gzip",
+      "native_backend_marker_count": 1,
+      "cache_backend_marker_count": 1,
+      "passed": true,
+      "http_requests": 26,
+      "expected_rejection_statuses": [
+        422
+      ],
+      "http_server_error_count": 0
+    },
+    {
+      "implementation": "aot",
+      "image": "campfire-dotnet:rust-inspired-aot",
+      "image_id": "sha256:cf8530ecce2ed05dfb245ba032db90f158e9c2d24dfd3cbc0ec88e16296a1d08",
+      "controls": [
+        "identity full UTF8 body / SHA256-derived Rails ETag / 40 message IDs",
+        "actual gzip independently decoded with CRC/ISIZE, whole-body ETag and same message IDs",
+        "fresh request CSRF and fresh whole-body validator during warm fragment reuse",
+        "previous-token ETag correctly yields new 200 body rather than erroneous 304",
+        "port dynamic room wildcard 304 has empty body and no gzip encoding; differs from pinned Rails",
+        "HEAD gzip negotiation preserves empty response without gzip payload",
+        "conditional HEAD preserves empty source-specific status (Rails200/port304 wildcard difference)",
+        "six Accept-Encoding preference/exclusion/invalid/unsupported cases preserve correct body",
+        "shared immutable message fragments retain separate session CSRF; foreign-session mutation rejected",
+        "created message enters compressed page with exact whole-body validator",
+        "touched immutable message version invalidates compressed fragment without stale text",
+        "deleted message disappears and original page message IDs return",
+        "actual deployed native helper and immutable cache reuse confirmed by one-time backend logs"
+      ],
+      "gzip_sample": {
+        "wire_bytes": 28806,
+        "decoded_bytes": 404523,
+        "wire_sha256": "6d7e4d03801c04d524314fd8b55d5f82d0d15f4afeb960417a2e282781923b1e",
+        "decoded_sha256": "4973dfa23d6f50c3c5cf9f8ddc734e23c77e0b3f6bf0205fbedd412e6f9fd21f",
+        "etag": "W/\"4973dfa23d6f50c3c5cf9f8ddc734e23\""
+      },
+      "wildcard_dynamic_room_status": 304,
+      "head_gzip_content_encoding": "gzip",
+      "native_backend_marker_count": 1,
+      "cache_backend_marker_count": 1,
+      "passed": true,
+      "http_requests": 26,
+      "expected_rejection_statuses": [
+        422
+      ],
+      "http_server_error_count": 0
+    }
+  ],
+  "http_requests": 78,
+  "server_error_count": 0,
+  "controls_passed": 38,
+  "all_passed": true,
+  "timing_benchmark": false,
+  "cleanup_verified": true,
+  "confirmed_differences": [
+    "Dynamic room If-None-Match wildcard: pinned Rails200; frozen port304 (also conditional HEAD).",
+    "Accept-Encoding identity;q=1,gzip;q=0.5: pinned Railsgzip; frozen portidentity.",
+    "Accept-Encoding gzip;q=invalid: pinned Railsgzip; frozen portidentity."
+  ],
+  "unverified": [
+    "Response Cache-Control:no-transform integration: no disposable route emits it.",
+    "Throughput improvement: parent controlled run shows regression, not a win."
+  ],
+  "cleanup_checks": [
+    {
+      "kind": "container",
+      "name": "cf-dotnet-ed7dc871a750-app",
+      "removed": true
+    },
+    {
+      "kind": "volume",
+      "name": "cf-dotnet-ed7dc871a750-data",
+      "removed": true
+    },
+    {
+      "kind": "network",
+      "name": "cf-dotnet-ed7dc871a750",
+      "removed": true
+    },
+    {
+      "kind": "container",
+      "name": "cf-dotnet-8686ab5887dc-app",
+      "removed": true
+    },
+    {
+      "kind": "volume",
+      "name": "cf-dotnet-8686ab5887dc-data",
+      "removed": true
+    },
+    {
+      "kind": "network",
+      "name": "cf-dotnet-8686ab5887dc",
+      "removed": true
+    },
+    {
+      "kind": "container",
+      "name": "cf-dotnet-8686ab5887dc-redis",
+      "removed": true
+    },
+    {
+      "kind": "container",
+      "name": "cf-dotnet-38612335098b-app",
+      "removed": true
+    },
+    {
+      "kind": "volume",
+      "name": "cf-dotnet-38612335098b-data",
+      "removed": true
+    },
+    {
+      "kind": "network",
+      "name": "cf-dotnet-38612335098b",
+      "removed": true
+    },
+    {
+      "kind": "container",
+      "name": "cf-dotnet-38612335098b-redis",
+      "removed": true
+    }
+  ]
+}

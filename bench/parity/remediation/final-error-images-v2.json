@@ -1,0 +1,51 @@
+{
+  "status": "ready",
+  "started_utc": "2026-10-05T10:02:42.308097+00:00",
+  "application_runtime_source_sha256_before": "1fcc0163c6bc9af8781c0b8f26cfdca622ad0e351882a92b3f6467054e630c55",
+  "immutable_images_before": {
+    "campfire-dotnet:rails-cache-jit": "sha256:04162e54726b372b6943124a6e641bfadd994c237b74e8ba10811738b5461161",
+    "campfire-dotnet:rails-cache-aot": "sha256:276000739c8cdcd00dfb8e61bc9336a6394c57751cd74b9b5961a889ba8ae60c",
+    "campfire-dotnet:rails-errors-jit": "sha256:584ff2a329ee6ef24c4781d2a3d2b3f3608b4a4899ad8fb8040a23578626188f",
+    "campfire-dotnet:rails-errors-aot": "sha256:d74ea345ca0e48c538df6be0aa9ac432fd4dee0b04e53e60a6c8bca9778dc689"
+  },
+  "previous_verification_manifest": "bench/parity/remediation/final-error-images.json",
+  "previous_manifest_sha256": "2e60dc08bb6019a1883d9e7f80aef0489bfe7832e5de05e1acdb1abc4b7a99d8",
+  "images": {
+    "jit": {
+      "tag": "campfire-dotnet:rails-errors-v2-jit",
+      "dockerfile": "Dockerfile",
+      "build_log": "bench/parity/remediation/final-error-images-v2-jit.log",
+      "image_id": "sha256:fc0c4f7ba1dbd5b19d22d6af892dfc5ddeb393ce86a57866f0666cde409bca94",
+      "build_exit_code": 0,
+      "ready_utc": "2026-10-05T10:03:34.969624+00:00",
+      "build_log_sha256": "852b3b07fb6851daeb5d7931514f6093a54a506f2178d7dabc63d4b2b337c8aa",
+      "dockerfile_sha256": "a995a5610c3835825cdbcc9108f01c488d2b3b9ddd586ec95d64ef781c07b0b6",
+      "compiler_warning_count": 0,
+      "compiler_error_count": 0
+    },
+    "aot": {
+      "tag": "campfire-dotnet:rails-errors-v2-aot",
+      "dockerfile": "Dockerfile.aot",
+      "build_log": "bench/parity/remediation/final-error-images-v2-aot.log",
+      "image_id": "sha256:0af416e9d6da2afa6e63dc3ef8136d66a481ce8cdfbf3e54a649a1a9db6e33f6",
+      "build_exit_code": 0,
+      "build_log_sha256": "d5b4b835185e0f59d586934d5c581144ba49ceb18fdcdca36aa75e645f62509b",
+      "dockerfile_sha256": "2da2107ffd1d2a3a8d6d644720d0e20963d7a82f88a69e80e03e1d77ec411992",
+      "compiler_warning_count": 0,
+      "compiler_error_count": 0,
+      "ready_utc": "2026-10-05T10:04:42.593307+00:00"
+    }
+  },
+  "purpose": "Bare406 and unconditional after-update FTS callback verification; measured cache and prior verification snapshots retained",
+  "application_runtime_source_sha256_after": "1fcc0163c6bc9af8781c0b8f26cfdca622ad0e351882a92b3f6467054e630c55",
+  "source_hash_unchanged": true,
+  "immutable_images_after": {
+    "campfire-dotnet:rails-cache-jit": "sha256:04162e54726b372b6943124a6e641bfadd994c237b74e8ba10811738b5461161",
+    "campfire-dotnet:rails-cache-aot": "sha256:276000739c8cdcd00dfb8e61bc9336a6394c57751cd74b9b5961a889ba8ae60c",
+    "campfire-dotnet:rails-errors-jit": "sha256:584ff2a329ee6ef24c4781d2a3d2b3f3608b4a4899ad8fb8040a23578626188f",
+    "campfire-dotnet:rails-errors-aot": "sha256:d74ea345ca0e48c538df6be0aa9ac432fd4dee0b04e53e60a6c8bca9778dc689"
+  },
+  "immutable_images_unchanged": true,
+  "previous_manifest_unchanged": true,
+  "completed_utc": "2026-10-05T10:04:42.593307+00:00"
+}

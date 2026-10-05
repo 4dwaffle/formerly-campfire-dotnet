@@ -1,0 +1,260 @@
+{
+  "kind": "warm in-memory encode-only micro; no HTTP throughput claim",
+  "warmup_iterations_per_backend": 3000,
+  "warmup_elapsed_ms": 7670.2672,
+  "capture_sha256": "a3439ac51991fb826db76662a7fe52ea50a006e306fa5e4b1b36609280bb803e",
+  "decoded_bytes": 404478,
+  "segments": 686,
+  "fresh_dynamic_variants": 32,
+  "rounds": [
+    {
+      "round": 0,
+      "backend": "native-fragments",
+      "repetitions": 500,
+      "elapsed_ms": 64.3581,
+      "allocated_bytes": 18713040,
+      "encoded_bytes_sum": 14337546
+    },
+    {
+      "round": 0,
+      "backend": "managed-whole-coalesced32k",
+      "repetitions": 500,
+      "elapsed_ms": 68.5619,
+      "allocated_bytes": 80012816,
+      "encoded_bytes_sum": 18127453
+    },
+    {
+      "round": 0,
+      "backend": "libdeflate-whole-1",
+      "repetitions": 500,
+      "elapsed_ms": 176.0938,
+      "allocated_bytes": 13741192,
+      "encoded_bytes_sum": 13727907
+    },
+    {
+      "round": 0,
+      "backend": "libdeflate-whole-2",
+      "repetitions": 500,
+      "elapsed_ms": 245.24,
+      "allocated_bytes": 12320816,
+      "encoded_bytes_sum": 12306343
+    },
+    {
+      "round": 0,
+      "backend": "libdeflate-whole-3",
+      "repetitions": 500,
+      "elapsed_ms": 250.6354,
+      "allocated_bytes": 11568816,
+      "encoded_bytes_sum": 11555093
+    },
+    {
+      "round": 0,
+      "backend": "libdeflate-whole-6",
+      "repetitions": 500,
+      "elapsed_ms": 326.0143,
+      "allocated_bytes": 10348816,
+      "encoded_bytes_sum": 10335048
+    },
+    {
+      "round": 1,
+      "backend": "libdeflate-whole-6",
+      "repetitions": 500,
+      "elapsed_ms": 326.4251,
+      "allocated_bytes": 10348816,
+      "encoded_bytes_sum": 10335048
+    },
+    {
+      "round": 1,
+      "backend": "libdeflate-whole-3",
+      "repetitions": 500,
+      "elapsed_ms": 253.27,
+      "allocated_bytes": 11568816,
+      "encoded_bytes_sum": 11555093
+    },
+    {
+      "round": 1,
+      "backend": "libdeflate-whole-2",
+      "repetitions": 500,
+      "elapsed_ms": 244.7076,
+      "allocated_bytes": 12320816,
+      "encoded_bytes_sum": 12306343
+    },
+    {
+      "round": 1,
+      "backend": "libdeflate-whole-1",
+      "repetitions": 500,
+      "elapsed_ms": 179.0399,
+      "allocated_bytes": 13741192,
+      "encoded_bytes_sum": 13727907
+    },
+    {
+      "round": 1,
+      "backend": "managed-whole-coalesced32k",
+      "repetitions": 500,
+      "elapsed_ms": 69.6025,
+      "allocated_bytes": 80012816,
+      "encoded_bytes_sum": 18127453
+    },
+    {
+      "round": 1,
+      "backend": "native-fragments",
+      "repetitions": 500,
+      "elapsed_ms": 63.2791,
+      "allocated_bytes": 18712816,
+      "encoded_bytes_sum": 14337546
+    },
+    {
+      "round": 2,
+      "backend": "native-fragments",
+      "repetitions": 500,
+      "elapsed_ms": 63.2731,
+      "allocated_bytes": 18712816,
+      "encoded_bytes_sum": 14337546
+    },
+    {
+      "round": 2,
+      "backend": "managed-whole-coalesced32k",
+      "repetitions": 500,
+      "elapsed_ms": 69.8276,
+      "allocated_bytes": 80012816,
+      "encoded_bytes_sum": 18127453
+    },
+    {
+      "round": 2,
+      "backend": "libdeflate-whole-1",
+      "repetitions": 500,
+      "elapsed_ms": 188.0405,
+      "allocated_bytes": 13741192,
+      "encoded_bytes_sum": 13727907
+    },
+    {
+      "round": 2,
+      "backend": "libdeflate-whole-2",
+      "repetitions": 500,
+      "elapsed_ms": 292.6077,
+      "allocated_bytes": 12320768,
+      "encoded_bytes_sum": 12306343
+    },
+    {
+      "round": 2,
+      "backend": "libdeflate-whole-3",
+      "repetitions": 500,
+      "elapsed_ms": 572.3427,
+      "allocated_bytes": 11568768,
+      "encoded_bytes_sum": 11555093
+    },
+    {
+      "round": 2,
+      "backend": "libdeflate-whole-6",
+      "repetitions": 500,
+      "elapsed_ms": 356.7449,
+      "allocated_bytes": 10348768,
+      "encoded_bytes_sum": 10335048
+    },
+    {
+      "round": 3,
+      "backend": "libdeflate-whole-6",
+      "repetitions": 500,
+      "elapsed_ms": 380.0425,
+      "allocated_bytes": 10348768,
+      "encoded_bytes_sum": 10335048
+    },
+    {
+      "round": 3,
+      "backend": "libdeflate-whole-3",
+      "repetitions": 500,
+      "elapsed_ms": 333.1447,
+      "allocated_bytes": 11568768,
+      "encoded_bytes_sum": 11555093
+    },
+    {
+      "round": 3,
+      "backend": "libdeflate-whole-2",
+      "repetitions": 500,
+      "elapsed_ms": 376.5543,
+      "allocated_bytes": 12320768,
+      "encoded_bytes_sum": 12306343
+    },
+    {
+      "round": 3,
+      "backend": "libdeflate-whole-1",
+      "repetitions": 500,
+      "elapsed_ms": 240.0251,
+      "allocated_bytes": 13741144,
+      "encoded_bytes_sum": 13727907
+    },
+    {
+      "round": 3,
+      "backend": "managed-whole-coalesced32k",
+      "repetitions": 500,
+      "elapsed_ms": 123.9287,
+      "allocated_bytes": 80012768,
+      "encoded_bytes_sum": 18127453
+    },
+    {
+      "round": 3,
+      "backend": "native-fragments",
+      "repetitions": 500,
+      "elapsed_ms": 90.9551,
+      "allocated_bytes": 18712768,
+      "encoded_bytes_sum": 14337546
+    },
+    {
+      "round": 4,
+      "backend": "native-fragments",
+      "repetitions": 500,
+      "elapsed_ms": 77.0588,
+      "allocated_bytes": 18712768,
+      "encoded_bytes_sum": 14337546
+    },
+    {
+      "round": 4,
+      "backend": "managed-whole-coalesced32k",
+      "repetitions": 500,
+      "elapsed_ms": 109.6924,
+      "allocated_bytes": 80012768,
+      "encoded_bytes_sum": 18127453
+    },
+    {
+      "round": 4,
+      "backend": "libdeflate-whole-1",
+      "repetitions": 500,
+      "elapsed_ms": 299.134,
+      "allocated_bytes": 13741144,
+      "encoded_bytes_sum": 13727907
+    },
+    {
+      "round": 4,
+      "backend": "libdeflate-whole-2",
+      "repetitions": 500,
+      "elapsed_ms": 308.3952,
+      "allocated_bytes": 12320768,
+      "encoded_bytes_sum": 12306343
+    },
+    {
+      "round": 4,
+      "backend": "libdeflate-whole-3",
+      "repetitions": 500,
+      "elapsed_ms": 257.549,
+      "allocated_bytes": 11568768,
+      "encoded_bytes_sum": 11555093
+    },
+    {
+      "round": 4,
+      "backend": "libdeflate-whole-6",
+      "repetitions": 500,
+      "elapsed_ms": 337.1583,
+      "allocated_bytes": 10348768,
+      "encoded_bytes_sum": 10335048
+    }
+  ],
+  "codec_file_sha256": {
+    "FragmentGzipEncoder.cs": "c03e5b09c8fec6c21dfdf30246e0b127e43c1679a23364009bba50cde56e4952",
+    "FragmentDeflate.cs": "952a707eceff1af7d55caed01f3ccabde35d352de29eeae768a1076bc24b1cd2",
+    "FragmentHistory.cs": "3d073f5bfd30c21cb9678ab2db8b9940d0163df4415d8f0a672c282d4b84ac9f",
+    "FragmentBackreference.cs": "0ccc00a065f34ff109ebddd027068f9a7e99bd0ba7261fd567ee88984b424774",
+    "FragmentCompressionPlan.cs": "d6d10c59a7a791443a50afc984329139bc6dbb3f427aa8defade3c7dd3be5b7c",
+    "fragment-deflate.c": "ff49d6f444d6071738484137baacdf8876a59c3c36621aeb10f9bb2efb1a3272",
+    "LibDeflateWhole.cs": "4f6d457f590a3b68ae7c356de3efce9afafc62e79176fd7da35ab0472f6208aa"
+  }
+}

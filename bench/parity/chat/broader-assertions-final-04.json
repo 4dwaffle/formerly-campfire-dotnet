@@ -1,0 +1,217 @@
+{
+  "assertions": 18,
+  "passed": 18,
+  "failed": 0,
+  "checks": [
+    {
+      "app": "dotnet",
+      "name": "david-room-invalid-id status",
+      "expected": 302,
+      "actual": 302,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "fixture-unrenderable status",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "fixture-edit-unrenderable status",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "loner-search status",
+      "expected": 500,
+      "actual": 500,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "frame-message-show layout",
+      "expected": {
+        "doctype": true,
+        "importmap": true,
+        "csrf_meta": true,
+        "title": [
+          "Campfire"
+        ]
+      },
+      "actual": {
+        "doctype": true,
+        "importmap": true,
+        "csrf_meta": true,
+        "title": [
+          "Campfire"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "frame-message-edit layout",
+      "expected": {
+        "doctype": true,
+        "importmap": true,
+        "csrf_meta": true,
+        "title": [
+          "Campfire"
+        ]
+      },
+      "actual": {
+        "doctype": true,
+        "importmap": true,
+        "csrf_meta": true,
+        "title": [
+          "Campfire"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "fixture-edit-unrenderable layout",
+      "expected": {
+        "doctype": true,
+        "importmap": true,
+        "csrf_meta": true,
+        "title": [
+          "Campfire"
+        ]
+      },
+      "actual": {
+        "doctype": true,
+        "importmap": true,
+        "csrf_meta": true,
+        "title": [
+          "Campfire"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "fixture-unrenderable content",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "fixture-edit-unrenderable content",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "david-room-invalid-id status",
+      "expected": 302,
+      "actual": 302,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "fixture-unrenderable status",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "fixture-edit-unrenderable status",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "loner-search status",
+      "expected": 500,
+      "actual": 500,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "frame-message-show layout",
+      "expected": {
+        "doctype": true,
+        "importmap": true,
+        "csrf_meta": true,
+        "title": [
+          "Campfire"
+        ]
+      },
+      "actual": {
+        "doctype": true,
+        "importmap": true,
+        "csrf_meta": true,
+        "title": [
+          "Campfire"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "frame-message-edit layout",
+      "expected": {
+        "doctype": true,
+        "importmap": true,
+        "csrf_meta": true,
+        "title": [
+          "Campfire"
+        ]
+      },
+      "actual": {
+        "doctype": true,
+        "importmap": true,
+        "csrf_meta": true,
+        "title": [
+          "Campfire"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "fixture-edit-unrenderable layout",
+      "expected": {
+        "doctype": true,
+        "importmap": true,
+        "csrf_meta": true,
+        "title": [
+          "Campfire"
+        ]
+      },
+      "actual": {
+        "doctype": true,
+        "importmap": true,
+        "csrf_meta": true,
+        "title": [
+          "Campfire"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "fixture-unrenderable content",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "fixture-edit-unrenderable content",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ]
+}

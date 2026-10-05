@@ -1,0 +1,54 @@
+[
+  {
+    "html": "<p>First</p><p>Second</p>",
+    "expected": "First\n\nSecond"
+  },
+  {
+    "html": "<ul><li>one</li><li>two<ul><li>nested</li></ul></li></ul>",
+    "expected": "• one\n• two\n  • nested"
+  },
+  {
+    "html": "<ol start=\"5\"><li>one</li><li>two</li></ol>",
+    "expected": "1. one\n2. two"
+  },
+  {
+    "html": "<blockquote> quoted </blockquote>",
+    "expected": " “quoted” "
+  },
+  {
+    "html": "<figure><figcaption>caption</figcaption></figure>",
+    "expected": "[caption]"
+  },
+  {
+    "html": "<h2>head</h2><pre>a\nb</pre>",
+    "expected": "heada\nb"
+  },
+  {
+    "html": " spaces ",
+    "expected": " spaces "
+  },
+  {
+    "html": "<custom>preserved<script>removed</script></custom>",
+    "expected": "preserved"
+  },
+  {
+    "html": "<div>a<br>b</div><div>c</div>",
+    "expected": "a\nb\nc"
+  },
+  {
+    "html": "<table><tr><td>one</td><td>two</td></tr><tr><td>three</td></tr></table>",
+    "expected": "onetwothree"
+  },
+  {
+    "html": "<blockquote></blockquote>",
+    "expected": "“”"
+  },
+  {
+    "html": "<p>one<br><br></p><p>two</p>",
+    "expected": "one\n\ntwo"
+  },
+  {
+    "html": "<ul><li>a<ol><li>b<ul><li>c</li></ul></li></ol></li></ul>",
+    "expected": "• a\n  1. b\n    • c"
+  }
+]

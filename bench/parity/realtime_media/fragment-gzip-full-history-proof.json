@@ -1,0 +1,17 @@
+{
+  "capture": "bench/results/render-cache-20261005/dotnet-1-room.html",
+  "sha256": "a3439ac51991fb826db76662a7fe52ea50a006e306fa5e4b1b36609280bb803e",
+  "decoded_bytes": 404478,
+  "messages": 40,
+  "segments": 686,
+  "whole_gzip_level1": 29475,
+  "whole_gzip_level6": 20417,
+  "independent_fragments": 209423,
+  "masked_dictionary_fragments": 123758,
+  "masked_with_request_local_references": 88187,
+  "masked_full_history_with_request_local_references": 28672,
+  "local_reference_hits": 321,
+  "boundary_independent_decoder_checks": 315,
+  "exact_decoded_bytes_and_gzip_crc": true,
+  "timing_benchmark": false
+}

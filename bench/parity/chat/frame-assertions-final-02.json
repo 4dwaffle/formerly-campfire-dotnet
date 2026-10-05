@@ -1,0 +1,354 @@
+{
+  "assertions": 22,
+  "passed": 22,
+  "failed": 0,
+  "results": {
+    "rails": {
+      "sidebar": {
+        "status": 200,
+        "html": true,
+        "doctype": false,
+        "csrf": true,
+        "importmap": false,
+        "frame": true
+      },
+      "pages": {
+        "david-message-page": {
+          "status": 200,
+          "etag": "W/\"2ff50ec44c85567e65db2875bf6b7f8a\"",
+          "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+        },
+        "david-message-page-before": {
+          "status": 200,
+          "etag": "W/\"59298a2cd1ac31813bdfdbba2864b350\"",
+          "last_modified": "Sat, 28 Feb 2026 14:53:00 GMT"
+        },
+        "david-message-page-after": {
+          "status": 200,
+          "etag": "W/\"cf87f1b7e6241305ce8a4ba119576c95\"",
+          "last_modified": "Sat, 28 Feb 2026 19:40:00 GMT"
+        },
+        "david-page-if-none-match": {
+          "status": 200,
+          "etag": "W/\"e2e9982fb632b431bcdfbbfa83c32871\"",
+          "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+        },
+        "david-page-if-modified-since": {
+          "status": 304,
+          "etag": "W/\"e2e9982fb632b431bcdfbbfa83c32871\"",
+          "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+        }
+      }
+    },
+    "dotnet": {
+      "sidebar": {
+        "status": 200,
+        "html": true,
+        "doctype": false,
+        "csrf": true,
+        "importmap": false,
+        "frame": true
+      },
+      "pages": {
+        "david-message-page": {
+          "status": 200,
+          "etag": "W/\"2ff50ec44c85567e65db2875bf6b7f8a\"",
+          "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+        },
+        "david-message-page-before": {
+          "status": 200,
+          "etag": "W/\"59298a2cd1ac31813bdfdbba2864b350\"",
+          "last_modified": "Sat, 28 Feb 2026 14:53:00 GMT"
+        },
+        "david-message-page-after": {
+          "status": 200,
+          "etag": "W/\"cf87f1b7e6241305ce8a4ba119576c95\"",
+          "last_modified": "Sat, 28 Feb 2026 19:40:00 GMT"
+        },
+        "david-page-if-none-match": {
+          "status": 200,
+          "etag": "W/\"e2e9982fb632b431bcdfbbfa83c32871\"",
+          "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+        },
+        "david-page-if-modified-since": {
+          "status": 304,
+          "etag": "W/\"e2e9982fb632b431bcdfbbfa83c32871\"",
+          "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+        }
+      }
+    },
+    "aot": {
+      "sidebar": {
+        "status": 200,
+        "html": true,
+        "doctype": false,
+        "csrf": true,
+        "importmap": false,
+        "frame": true
+      },
+      "pages": {
+        "david-message-page": {
+          "status": 200,
+          "etag": "W/\"2ff50ec44c85567e65db2875bf6b7f8a\"",
+          "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+        },
+        "david-message-page-before": {
+          "status": 200,
+          "etag": "W/\"59298a2cd1ac31813bdfdbba2864b350\"",
+          "last_modified": "Sat, 28 Feb 2026 14:53:00 GMT"
+        },
+        "david-message-page-after": {
+          "status": 200,
+          "etag": "W/\"cf87f1b7e6241305ce8a4ba119576c95\"",
+          "last_modified": "Sat, 28 Feb 2026 19:40:00 GMT"
+        },
+        "david-page-if-none-match": {
+          "status": 200,
+          "etag": "W/\"e2e9982fb632b431bcdfbbfa83c32871\"",
+          "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+        },
+        "david-page-if-modified-since": {
+          "status": 304,
+          "etag": "W/\"e2e9982fb632b431bcdfbbfa83c32871\"",
+          "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+        }
+      }
+    }
+  },
+  "checks": [
+    {
+      "app": "dotnet",
+      "name": "sidebar status",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "sidebar html",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "sidebar doctype",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "sidebar csrf",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "sidebar importmap",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "sidebar frame",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "pages david-message-page",
+      "expected": {
+        "status": 200,
+        "etag": "W/\"2ff50ec44c85567e65db2875bf6b7f8a\"",
+        "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+      },
+      "actual": {
+        "status": 200,
+        "etag": "W/\"2ff50ec44c85567e65db2875bf6b7f8a\"",
+        "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "pages david-message-page-before",
+      "expected": {
+        "status": 200,
+        "etag": "W/\"59298a2cd1ac31813bdfdbba2864b350\"",
+        "last_modified": "Sat, 28 Feb 2026 14:53:00 GMT"
+      },
+      "actual": {
+        "status": 200,
+        "etag": "W/\"59298a2cd1ac31813bdfdbba2864b350\"",
+        "last_modified": "Sat, 28 Feb 2026 14:53:00 GMT"
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "pages david-message-page-after",
+      "expected": {
+        "status": 200,
+        "etag": "W/\"cf87f1b7e6241305ce8a4ba119576c95\"",
+        "last_modified": "Sat, 28 Feb 2026 19:40:00 GMT"
+      },
+      "actual": {
+        "status": 200,
+        "etag": "W/\"cf87f1b7e6241305ce8a4ba119576c95\"",
+        "last_modified": "Sat, 28 Feb 2026 19:40:00 GMT"
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "pages david-page-if-none-match",
+      "expected": {
+        "status": 200,
+        "etag": "W/\"e2e9982fb632b431bcdfbbfa83c32871\"",
+        "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+      },
+      "actual": {
+        "status": 200,
+        "etag": "W/\"e2e9982fb632b431bcdfbbfa83c32871\"",
+        "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+      },
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "pages david-page-if-modified-since",
+      "expected": {
+        "status": 304,
+        "etag": "W/\"e2e9982fb632b431bcdfbbfa83c32871\"",
+        "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+      },
+      "actual": {
+        "status": 304,
+        "etag": "W/\"e2e9982fb632b431bcdfbbfa83c32871\"",
+        "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "sidebar status",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "sidebar html",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "sidebar doctype",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "sidebar csrf",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "sidebar importmap",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "sidebar frame",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "pages david-message-page",
+      "expected": {
+        "status": 200,
+        "etag": "W/\"2ff50ec44c85567e65db2875bf6b7f8a\"",
+        "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+      },
+      "actual": {
+        "status": 200,
+        "etag": "W/\"2ff50ec44c85567e65db2875bf6b7f8a\"",
+        "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "pages david-message-page-before",
+      "expected": {
+        "status": 200,
+        "etag": "W/\"59298a2cd1ac31813bdfdbba2864b350\"",
+        "last_modified": "Sat, 28 Feb 2026 14:53:00 GMT"
+      },
+      "actual": {
+        "status": 200,
+        "etag": "W/\"59298a2cd1ac31813bdfdbba2864b350\"",
+        "last_modified": "Sat, 28 Feb 2026 14:53:00 GMT"
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "pages david-message-page-after",
+      "expected": {
+        "status": 200,
+        "etag": "W/\"cf87f1b7e6241305ce8a4ba119576c95\"",
+        "last_modified": "Sat, 28 Feb 2026 19:40:00 GMT"
+      },
+      "actual": {
+        "status": 200,
+        "etag": "W/\"cf87f1b7e6241305ce8a4ba119576c95\"",
+        "last_modified": "Sat, 28 Feb 2026 19:40:00 GMT"
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "pages david-page-if-none-match",
+      "expected": {
+        "status": 200,
+        "etag": "W/\"e2e9982fb632b431bcdfbbfa83c32871\"",
+        "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+      },
+      "actual": {
+        "status": 200,
+        "etag": "W/\"e2e9982fb632b431bcdfbbfa83c32871\"",
+        "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+      },
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "pages david-page-if-modified-since",
+      "expected": {
+        "status": 304,
+        "etag": "W/\"e2e9982fb632b431bcdfbbfa83c32871\"",
+        "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+      },
+      "actual": {
+        "status": 304,
+        "etag": "W/\"e2e9982fb632b431bcdfbbfa83c32871\"",
+        "last_modified": "Mon, 02 Mar 2026 15:55:00 GMT"
+      },
+      "passed": true
+    }
+  ]
+}

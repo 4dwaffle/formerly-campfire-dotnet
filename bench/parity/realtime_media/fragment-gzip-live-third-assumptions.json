@@ -1,0 +1,75 @@
+{
+  "verified_utc": "2026-10-05T11:08:42.502539+00:00",
+  "application_runtime_source_sha256": "7702ad59794a99f7853827b97ae49924c71e0d9cdf20d1ff5f29a22a059b6ee5",
+  "image_source_attribution": "Parent frozen rust-inspired-initial-build manifest; image IDs checked from Docker.",
+  "observed_workspace_runtime_source_sha256": "ef725ddc63541bd7c7b99140c34897a6ebabe1bd65f0d6b7677ecb1cfc0b20e3",
+  "source_files": 850,
+  "server_cpus": "24-27",
+  "fixture": "bench/parity/realtime_media/runtime/rust-inspired-codec",
+  "records": [
+    {
+      "implementation": "rails",
+      "image": "ghcr.io/basecamp/once-campfire@sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "image_id": "sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "controls": [
+        "identity full UTF8 body / SHA256-derived Rails ETag / 40 message IDs",
+        "actual gzip independently decoded with CRC/ISIZE, whole-body ETag and same message IDs",
+        "fresh request CSRF and fresh whole-body validator during warm fragment reuse",
+        "previous-token ETag correctly yields new 200 body rather than erroneous 304",
+        "original Rails dynamic room wildcard If-None-Match returns 200 with a fresh full body",
+        "HEAD gzip negotiation preserves empty response without gzip payload",
+        "conditional HEAD preserves empty source-specific status (Rails200/port304 wildcard difference)"
+      ],
+      "gzip_sample": {
+        "wire_bytes": 44379,
+        "decoded_bytes": 463720,
+        "wire_sha256": "55cce7dc9f5b69e4559472ac009bc317435099f446b61fdfd0d8ebd94118583b",
+        "decoded_sha256": "eca4cd0ccfcaefb9f393747572a3910cafad0b38d52ce342504767d953b8f571",
+        "etag": "W/\"eca4cd0ccfcaefb9f393747572a3910c\""
+      },
+      "wildcard_dynamic_room_status": 200,
+      "head_gzip_content_encoding": "gzip",
+      "passed": false,
+      "error": "AssertionError({'label': 'invalid-q', 'method': 'GET', 'path': '/rooms/486777696', 'status': 200, 'headers': {'cache-control': 'max-age=0, private, must-revalidate', 'content-encoding': 'gzip', 'content-type': 'text/html; charset=utf-8', 'etag': 'W/\"113d8a6a1dd5fe52a76b674c42605fe9\"', 'link': '</assets/_reset-9c3efd7b.css>; rel=preload; as=style; nopush,</assets/actiontext-7b8d51ea.css>; rel=preload; as=style; nopush,</assets/animation-bcdb4bab.css>; rel=preload; as=style; nopush,</assets/autocomplete-9de8c93f.css>; rel=preload; as=style; nopush,</assets/avatars-279376ab.css>; rel=preload; as=style; nopush,</assets/base-637a0ec8.css>; rel=preload; as=style; nopush,</assets/boosts-da4032a8.css>; rel=preload; as=style; nopush,</assets/buttons-c7d39fd4.css>; rel=preload; as=style; nopush,</assets/code-333ae548.css>; rel=preload; as=style; nopush,</assets/colorize-eb391ca0.css>; rel=preload; as=style; nopush,</assets/colors-aee62523.css>; rel=preload; as=style; nopush,</assets/composer-e490638a.css>; rel=preload; as=style; nopush,</assets/embeds-c20d0a3a.css>; rel=preload; as=style; nopush,</assets/filters-8a4d63ed.css>; rel=preload; as=style; nopush,</assets/flash-a561c1e5.css>; rel=preload; as=style; nopush,</assets/inputs-9e58a07c.css>; rel=preload; as=style; nopush', 'referrer-policy': 'strict-origin-when-cross-origin', 'vary': 'Accept-Encoding', 'x-cache': 'miss', 'x-content-type-options': 'nosniff', 'x-frame-options': 'SAMEORIGIN', 'x-permitted-cross-domain-policies': 'none', 'x-request-id': 'b182793c-8274-4a6f-ac34-a0a4c637f267', 'x-rev': 'parity', 'x-runtime': '0.019284', 'x-version': 'parity', 'x-xss-protection': '0', 'date': 'Mon, 05 Oct 2026 11:08:42 GMT', 'connection': 'close', 'transfer-encoding': 'chunked'}, 'wire_bytes': 44379, 'decoded_bytes': 463720, 'wire_sha256': 'ac5c3a3ceaf796076e67e170fda7b05dfd0804a6ce2edfe98e3abcd1793363d4', 'decoded_sha256': '113d8a6a1dd5fe52a76b674c42605fe93b0b92ad5654350bb3a0ebcfe537bfb0'})",
+      "http_requests": 15,
+      "expected_rejection_statuses": [],
+      "http_server_error_count": 0
+    },
+    {
+      "implementation": "dotnet",
+      "image": "campfire-dotnet:rust-inspired-jit",
+      "image_id": "sha256:c453efc414c95bf62b360cbf3d18a926c3b098bf9e38a4dff9fc03488b8422df",
+      "controls": [],
+      "passed": false,
+      "error": "AssertionError((39, {'label': 'room-identity', 'method': 'GET', 'path': '/rooms/486777696', 'status': 200, 'headers': {'content-length': '404500', 'connection': 'close', 'content-type': 'text/html; charset=utf-8', 'date': 'Mon, 05 Oct 2026 11:08:42 GMT', 'server': 'Kestrel', 'cache-control': 'max-age=0, private, must-revalidate', 'etag': 'W/\"381fa2d6cfd560deb281b007e8638a48\"', 'vary': 'Accept-Encoding', 'x-version': 'parity', 'x-rev': 'parity', 'x-content-type-options': 'nosniff', 'x-frame-options': 'SAMEORIGIN', 'x-permitted-cross-domain-policies': 'none', 'x-xss-protection': '0', 'referrer-policy': 'strict-origin-when-cross-origin'}, 'wire_bytes': 404500, 'decoded_bytes': 404500, 'wire_sha256': '381fa2d6cfd560deb281b007e8638a48dc91e0fb0a0f3dcb7e7d8bd7248a3222', 'decoded_sha256': '381fa2d6cfd560deb281b007e8638a48dc91e0fb0a0f3dcb7e7d8bd7248a3222'}))",
+      "http_requests": 3,
+      "expected_rejection_statuses": [],
+      "http_server_error_count": 0
+    },
+    {
+      "implementation": "aot",
+      "image": "campfire-dotnet:rust-inspired-aot",
+      "image_id": "sha256:cf8530ecce2ed05dfb245ba032db90f158e9c2d24dfd3cbc0ec88e16296a1d08",
+      "controls": [],
+      "passed": false,
+      "error": "AssertionError((39, {'label': 'room-identity', 'method': 'GET', 'path': '/rooms/486777696', 'status': 200, 'headers': {'content-length': '404500', 'connection': 'close', 'content-type': 'text/html; charset=utf-8', 'date': 'Mon, 05 Oct 2026 11:08:41 GMT', 'server': 'Kestrel', 'cache-control': 'max-age=0, private, must-revalidate', 'etag': 'W/\"fb9cf3f852e261c5ba5e3ea4c461a510\"', 'vary': 'Accept-Encoding', 'x-version': 'parity', 'x-rev': 'parity', 'x-content-type-options': 'nosniff', 'x-frame-options': 'SAMEORIGIN', 'x-permitted-cross-domain-policies': 'none', 'x-xss-protection': '0', 'referrer-policy': 'strict-origin-when-cross-origin'}, 'wire_bytes': 404500, 'decoded_bytes': 404500, 'wire_sha256': 'fb9cf3f852e261c5ba5e3ea4c461a5105687987b583d6f46217a360637944ecd', 'decoded_sha256': 'fb9cf3f852e261c5ba5e3ea4c461a5105687987b583d6f46217a360637944ecd'}))",
+      "http_requests": 3,
+      "expected_rejection_statuses": [],
+      "http_server_error_count": 0
+    }
+  ],
+  "http_requests": 21,
+  "server_error_count": 0,
+  "controls_passed": 7,
+  "all_passed": false,
+  "timing_benchmark": false,
+  "cleanup_verified": false,
+  "confirmed_differences": [
+    "Dynamic room If-None-Match wildcard: pinned Rails200; frozen port304 (also conditional HEAD).",
+    "Accept-Encoding identity;q=1,gzip;q=0.5: pinned Railsgzip; frozen portidentity."
+  ],
+  "unverified": [
+    "Response Cache-Control:no-transform integration: no disposable route emits it.",
+    "Throughput improvement: parent controlled run shows regression, not a win."
+  ]
+}

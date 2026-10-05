@@ -1,0 +1,522 @@
+{
+  "rails_routes": [
+    {
+      "name": null,
+      "verb": "",
+      "path": "/cable",
+      "controller": null,
+      "action": null,
+      "implemented_action": null
+    },
+    {
+      "name": "account_logo",
+      "verb": "GET",
+      "path": "/account/logo(.:format)",
+      "controller": "accounts/logos",
+      "action": "show",
+      "implemented_action": true
+    },
+    {
+      "name": null,
+      "verb": "DELETE",
+      "path": "/account/logo(.:format)",
+      "controller": "accounts/logos",
+      "action": "destroy",
+      "implemented_action": true
+    },
+    {
+      "name": "user_avatar",
+      "verb": "GET",
+      "path": "/users/:user_id/avatar(.:format)",
+      "controller": "users/avatars",
+      "action": "show",
+      "implemented_action": true
+    },
+    {
+      "name": null,
+      "verb": "DELETE",
+      "path": "/users/:user_id/avatar(.:format)",
+      "controller": "users/avatars",
+      "action": "destroy",
+      "implemented_action": true
+    },
+    {
+      "name": "user_push_subscription_test_notifications",
+      "verb": "POST",
+      "path": "/users/:user_id/push_subscriptions/:push_subscription_id/test_notifications(.:format)",
+      "controller": "users/push_subscriptions/test_notifications",
+      "action": "create",
+      "implemented_action": true
+    },
+    {
+      "name": "user_push_subscriptions",
+      "verb": "GET",
+      "path": "/users/:user_id/push_subscriptions(.:format)",
+      "controller": "users/push_subscriptions",
+      "action": "index",
+      "implemented_action": true
+    },
+    {
+      "name": null,
+      "verb": "POST",
+      "path": "/users/:user_id/push_subscriptions(.:format)",
+      "controller": "users/push_subscriptions",
+      "action": "create",
+      "implemented_action": true
+    },
+    {
+      "name": "new_user_push_subscription",
+      "verb": "GET",
+      "path": "/users/:user_id/push_subscriptions/new(.:format)",
+      "controller": "users/push_subscriptions",
+      "action": "new",
+      "implemented_action": false
+    },
+    {
+      "name": "edit_user_push_subscription",
+      "verb": "GET",
+      "path": "/users/:user_id/push_subscriptions/:id/edit(.:format)",
+      "controller": "users/push_subscriptions",
+      "action": "edit",
+      "implemented_action": false
+    },
+    {
+      "name": "user_push_subscription",
+      "verb": "GET",
+      "path": "/users/:user_id/push_subscriptions/:id(.:format)",
+      "controller": "users/push_subscriptions",
+      "action": "show",
+      "implemented_action": false
+    },
+    {
+      "name": null,
+      "verb": "PATCH",
+      "path": "/users/:user_id/push_subscriptions/:id(.:format)",
+      "controller": "users/push_subscriptions",
+      "action": "update",
+      "implemented_action": false
+    },
+    {
+      "name": null,
+      "verb": "PUT",
+      "path": "/users/:user_id/push_subscriptions/:id(.:format)",
+      "controller": "users/push_subscriptions",
+      "action": "update",
+      "implemented_action": false
+    },
+    {
+      "name": null,
+      "verb": "DELETE",
+      "path": "/users/:user_id/push_subscriptions/:id(.:format)",
+      "controller": "users/push_subscriptions",
+      "action": "destroy",
+      "implemented_action": true
+    },
+    {
+      "name": "unfurl_link",
+      "verb": "POST",
+      "path": "/unfurl_link(.:format)",
+      "controller": "unfurl_links",
+      "action": "create",
+      "implemented_action": true
+    },
+    {
+      "name": "rails_service_blob",
+      "verb": "GET",
+      "path": "/rails/active_storage/blobs/redirect/:signed_id/*filename(.:format)",
+      "controller": "active_storage/blobs/redirect",
+      "action": "show",
+      "implemented_action": true
+    },
+    {
+      "name": "rails_service_blob_proxy",
+      "verb": "GET",
+      "path": "/rails/active_storage/blobs/proxy/:signed_id/*filename(.:format)",
+      "controller": "active_storage/blobs/proxy",
+      "action": "show",
+      "implemented_action": true
+    },
+    {
+      "name": null,
+      "verb": "GET",
+      "path": "/rails/active_storage/blobs/:signed_id/*filename(.:format)",
+      "controller": "active_storage/blobs/redirect",
+      "action": "show",
+      "implemented_action": true
+    },
+    {
+      "name": "rails_blob_representation",
+      "verb": "GET",
+      "path": "/rails/active_storage/representations/redirect/:signed_blob_id/:variation_key/*filename(.:format)",
+      "controller": "active_storage/representations/redirect",
+      "action": "show",
+      "implemented_action": true
+    },
+    {
+      "name": "rails_blob_representation_proxy",
+      "verb": "GET",
+      "path": "/rails/active_storage/representations/proxy/:signed_blob_id/:variation_key/*filename(.:format)",
+      "controller": "active_storage/representations/proxy",
+      "action": "show",
+      "implemented_action": true
+    },
+    {
+      "name": null,
+      "verb": "GET",
+      "path": "/rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format)",
+      "controller": "active_storage/representations/redirect",
+      "action": "show",
+      "implemented_action": true
+    },
+    {
+      "name": "rails_disk_service",
+      "verb": "GET",
+      "path": "/rails/active_storage/disk/:encoded_key/*filename(.:format)",
+      "controller": "active_storage/disk",
+      "action": "show",
+      "implemented_action": true
+    },
+    {
+      "name": "update_rails_disk_service",
+      "verb": "PUT",
+      "path": "/rails/active_storage/disk/:encoded_token(.:format)",
+      "controller": "active_storage/disk",
+      "action": "update",
+      "implemented_action": true
+    },
+    {
+      "name": "rails_direct_uploads",
+      "verb": "POST",
+      "path": "/rails/active_storage/direct_uploads(.:format)",
+      "controller": "active_storage/direct_uploads",
+      "action": "create",
+      "implemented_action": true
+    }
+  ],
+  "rails_channels": [
+    {
+      "path": "upstream/app/channels/application_cable/channel.rb",
+      "lines": 4,
+      "sha256": "da7aa248a8222fc0d2eafd9989927a298718776cf9cd16c5fcf4230f6a45ee64",
+      "methods": []
+    },
+    {
+      "path": "upstream/app/channels/application_cable/connection.rb",
+      "lines": 20,
+      "sha256": "5d378eb804af9064c9634e007d3956109105f7cf111b04c82a78fd71c00a3b2c",
+      "methods": [
+        {
+          "name": "connect",
+          "line": 6
+        },
+        {
+          "name": "find_verified_user",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "path": "upstream/app/channels/concerns/room_streams_are_authorized.rb",
+      "lines": 13,
+      "sha256": "e61c8118298a41889e410c22c15cbf6ffefe400c81e7931d3e6d124f1b55e03d",
+      "methods": [
+        {
+          "name": "subscribed",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "path": "upstream/app/channels/heartbeat_channel.rb",
+      "lines": 2,
+      "sha256": "60940aef993401bf7913bd1846062a82a5906b0d9f59c14749c183743c428e18",
+      "methods": []
+    },
+    {
+      "path": "upstream/app/channels/presence_channel.rb",
+      "lines": 27,
+      "sha256": "eae34df2c241604d2ddad528950cdd41d30acaefd8bf582568217b37033971cd",
+      "methods": [
+        {
+          "name": "present",
+          "line": 4
+        },
+        {
+          "name": "absent",
+          "line": 10
+        },
+        {
+          "name": "refresh",
+          "line": 14
+        },
+        {
+          "name": "membership",
+          "line": 20
+        },
+        {
+          "name": "broadcast_read_room",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "path": "upstream/app/channels/read_rooms_channel.rb",
+      "lines": 5,
+      "sha256": "c225798b5ab937a1dfbe899cb2bd250b95dddd45efdf71b4ded298d8f3946fcc",
+      "methods": [
+        {
+          "name": "subscribed",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "upstream/app/channels/room_channel.rb",
+      "lines": 14,
+      "sha256": "597b7eddfbf8dc98d10b602ffd518cf9fd89a87bb60a585e07044f7ce02c3d78",
+      "methods": [
+        {
+          "name": "subscribed",
+          "line": 2
+        },
+        {
+          "name": "find_room",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "path": "upstream/app/channels/room_messages_channel.rb",
+      "lines": 55,
+      "sha256": "7498b505bf9758014ccc03e7fbd8a47423841dd16ca2ea2b0123940abb5ffb11",
+      "methods": [
+        {
+          "name": "guarded_stream?",
+          "line": 22
+        },
+        {
+          "name": "subscribable_room",
+          "line": 25
+        },
+        {
+          "name": "room_from",
+          "line": 35
+        },
+        {
+          "name": "subscribed",
+          "line": 41
+        },
+        {
+          "name": "authorized_stream_name",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "path": "upstream/app/channels/typing_notifications_channel.rb",
+      "lines": 14,
+      "sha256": "e8cb382f26291b10dab7409387bedbedf9e38fd069f0d3c1d5ff3e091bdc08b4",
+      "methods": [
+        {
+          "name": "start",
+          "line": 2
+        },
+        {
+          "name": "stop",
+          "line": 5
+        },
+        {
+          "name": "current_user_attributes",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "path": "upstream/app/channels/unread_rooms_channel.rb",
+      "lines": 12,
+      "sha256": "07e491073b8ace228d7aef2641cefaeb7536eb8db328edbe88ca6aa4a8e20217",
+      "methods": [
+        {
+          "name": "self.stream_name_for",
+          "line": 5
+        },
+        {
+          "name": "subscribed",
+          "line": 8
+        }
+      ]
+    }
+  ],
+  "rails_jobs": [
+    {
+      "path": "upstream/app/jobs/application_job.rb",
+      "lines": 7,
+      "sha256": "13c5bcd3f749cbbceeb6412545ea0f6610407f39f9915e4a86f8ff4ded46e563",
+      "methods": []
+    },
+    {
+      "path": "upstream/app/jobs/bot/webhook_job.rb",
+      "lines": 5,
+      "sha256": "b6020fdcf25b558917bb1a80fc41770e008d6ebe35590dd6d583ba5a40ea5622",
+      "methods": [
+        {
+          "name": "perform",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "upstream/app/jobs/remove_banned_content_job.rb",
+      "lines": 5,
+      "sha256": "0928d8a7a0e6f3d1c2290e221006bd1e7ef7bcbc81ba7c50b9609f49d1138fca",
+      "methods": [
+        {
+          "name": "perform",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "upstream/app/jobs/room/push_message_job.rb",
+      "lines": 5,
+      "sha256": "cedb1e6ff9fa9191f721a76218977338ae8fa95746d470fc3c55756f8af1242f",
+      "methods": [
+        {
+          "name": "perform",
+          "line": 2
+        }
+      ]
+    }
+  ],
+  "active_storage_jobs": [
+    {
+      "path": "bench/parity/realtime_media/runtime/framework/activestorage/app/jobs/active_storage/analyze_job.rb",
+      "lines": 13,
+      "sha256": "e33ef7f1d0846cc4be18dbf68326d9ad8cc9ba551a484cd754407a0fe0487eaa",
+      "methods": [
+        {
+          "name": "perform",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "bench/parity/realtime_media/runtime/framework/activestorage/app/jobs/active_storage/base_job.rb",
+      "lines": 4,
+      "sha256": "62dac69ab7bf43ce9e0fe127fa07db460315beb0c4a001f8513852ca594b50b0",
+      "methods": []
+    },
+    {
+      "path": "bench/parity/realtime_media/runtime/framework/activestorage/app/jobs/active_storage/mirror_job.rb",
+      "lines": 15,
+      "sha256": "01459494143c0d676d77e56e3b46fdf32c719e192182c7ce267d509cfa087748",
+      "methods": [
+        {
+          "name": "perform",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "path": "bench/parity/realtime_media/runtime/framework/activestorage/app/jobs/active_storage/preview_image_job.rb",
+      "lines": 16,
+      "sha256": "5a4f48ce1b6c451cc62836e85083c461545c7300d4d794585fd4bd26e1c54377",
+      "methods": [
+        {
+          "name": "perform",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "bench/parity/realtime_media/runtime/framework/activestorage/app/jobs/active_storage/purge_job.rb",
+      "lines": 13,
+      "sha256": "1bd88dc58736a33c9b326993cbcaf8d62c2f8040a42c4f82d8e9c79925bfa8d4",
+      "methods": [
+        {
+          "name": "perform",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "bench/parity/realtime_media/runtime/framework/activestorage/app/jobs/active_storage/transform_job.rb",
+      "lines": 12,
+      "sha256": "87d2d6dbd24718948c7ea21dfd018d35c512634890a091ba938c0ca37b86d979",
+      "methods": [
+        {
+          "name": "perform",
+          "line": 8
+        }
+      ]
+    }
+  ],
+  "production_sources": [
+    {
+      "path": "src/Campfire/Features/Integrations/IntegrationsFeature.cs",
+      "lines": 246,
+      "sha256": "6d3b0fd5960d9e6ef0e9300a7949902f002c8119576ead43c8d2170f4e556399",
+      "methods": []
+    },
+    {
+      "path": "src/Campfire/Features/Integrations/IntegrationsJson.cs",
+      "lines": 20,
+      "sha256": "cd1ca3732df10c3bd401f842a93c9b17e2c987ab318ee975b46e74b28724fe79",
+      "methods": []
+    },
+    {
+      "path": "src/Campfire/Features/Integrations/OpenGraph.cs",
+      "lines": 116,
+      "sha256": "53454570b342464fe5c8e940ece1d47f92d76066a4c41d106951f333e121e016",
+      "methods": []
+    },
+    {
+      "path": "src/Campfire/Features/Integrations/OutboundPolicy.cs",
+      "lines": 48,
+      "sha256": "0db51a70e89b25e5240d0291c84aa032661fe6d33b18b01303a34daae9fee4a1",
+      "methods": []
+    },
+    {
+      "path": "src/Campfire/Features/Integrations/WebPushEncoding.cs",
+      "lines": 53,
+      "sha256": "c997a3a0040effc125303d759f361a15f94b464503f461991f181a8e1735f1fd",
+      "methods": []
+    },
+    {
+      "path": "src/Campfire/Features/Realtime/RealtimeFeature.cs",
+      "lines": 266,
+      "sha256": "8176d7332b0ab5e6fc0f53e7897e3f35bcd7a994a1f399a6655a912f47b5d45b",
+      "methods": []
+    },
+    {
+      "path": "src/Campfire/Features/Realtime/RealtimeJson.cs",
+      "lines": 20,
+      "sha256": "b98397bd1762a8aa1f2e04dba627063320d4b51377cd6e8003c920d089bf6813",
+      "methods": []
+    },
+    {
+      "path": "src/Campfire/Features/Storage/MediaProcessing.cs",
+      "lines": 113,
+      "sha256": "c4b1262dfdd9d094f536cdba401f45992c66b3eb1ca4b274c6a8b6805c18fef9",
+      "methods": []
+    },
+    {
+      "path": "src/Campfire/Features/Storage/RubyVariation.cs",
+      "lines": 47,
+      "sha256": "b831589eae20938937066a6d6014d2acb947e6da7f43542047b1dcd8014221c2",
+      "methods": []
+    },
+    {
+      "path": "src/Campfire/Features/Storage/StorageFeature.cs",
+      "lines": 447,
+      "sha256": "6466e8d953b6f23df6dd8a2d94eeadb0bb81b7eeb9e213ff32ecb6cc2a04eaa8",
+      "methods": []
+    },
+    {
+      "path": "src/Campfire/Features/Storage/StorageJson.cs",
+      "lines": 22,
+      "sha256": "f99f5337960ccfdd7d97356c943ac1f179270e72e3b92273883d437cdefb4b8e",
+      "methods": []
+    }
+  ]
+}

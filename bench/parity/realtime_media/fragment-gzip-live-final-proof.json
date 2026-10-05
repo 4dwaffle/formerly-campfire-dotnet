@@ -1,0 +1,200 @@
+{
+  "verified_utc": "2026-10-05T11:38:34.839337+00:00",
+  "application_runtime_source_sha256": "e028436cf93f752167e32c8d666de67cd3170a9cb4a79a6170f0f3172827e89e",
+  "image_source_attribution": "Parent frozen rust-inspired-final-build.json; image IDs checked from Docker.",
+  "observed_workspace_runtime_source_sha256": "e028436cf93f752167e32c8d666de67cd3170a9cb4a79a6170f0f3172827e89e",
+  "source_files": 850,
+  "server_cpus": "24-27",
+  "fixture": "bench/parity/realtime_media/runtime/rust-inspired-codec-final",
+  "records": [
+    {
+      "implementation": "rails",
+      "image": "ghcr.io/basecamp/once-campfire@sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "image_id": "sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "controls": [
+        "identity full UTF8 body / SHA256-derived Rails ETag / 40 message IDs",
+        "actual gzip independently decoded with CRC/ISIZE, whole-body ETag and same message IDs",
+        "fresh request CSRF and fresh whole-body validator during warm fragment reuse",
+        "previous-token ETag correctly yields new 200 body rather than erroneous 304",
+        "Rack literal dynamic room wildcard If-None-Match returns 200 with a fresh full body",
+        "HEAD gzip negotiation preserves empty response without gzip payload",
+        "conditional HEAD preserves empty body and expected literal/wildcard status",
+        "six Accept-Encoding preference/exclusion/invalid/unsupported cases preserve correct body",
+        "stable JSON exact original weak ETag yields empty304 without gzip",
+        "stable JSON weak-equivalent/list/wildcard validators remain200 under literal Rack matching",
+        "stable JSON conditional HEAD exact ETag yields empty304 without gzip",
+        "shared immutable message fragments retain separate session CSRF; foreign-session mutation rejected",
+        "created message enters compressed page with exact whole-body validator",
+        "touched immutable message version invalidates compressed fragment without stale text",
+        "deleted message disappears and original page message IDs return"
+      ],
+      "gzip_sample": {
+        "wire_bytes": 44361,
+        "decoded_bytes": 463720,
+        "wire_sha256": "326f4d3f3a8bac45f704a3c545167a63fdffb4419c51018a3bdec801b36086d0",
+        "decoded_sha256": "ad60235f7063c17870fe31e078e245cc43a8c5f1beeb817fd5576faf99f4d22f",
+        "etag": "W/\"ad60235f7063c17870fe31e078e245cc\""
+      },
+      "wildcard_dynamic_room_status": 200,
+      "head_gzip_content_encoding": "gzip",
+      "passed": true,
+      "http_requests": 33,
+      "expected_rejection_statuses": [
+        422
+      ],
+      "http_server_error_count": 0
+    },
+    {
+      "implementation": "dotnet",
+      "image": "campfire-dotnet:rust-inspired-v2-jit",
+      "image_id": "sha256:cab8ba57b16f22ee31782932cd3bfd1d3eb54e72dee757ac81bedabee5967a9d",
+      "controls": [
+        "identity full UTF8 body / SHA256-derived Rails ETag / 40 message IDs",
+        "actual gzip independently decoded with CRC/ISIZE, whole-body ETag and same message IDs",
+        "fresh request CSRF and fresh whole-body validator during warm fragment reuse",
+        "previous-token ETag correctly yields new 200 body rather than erroneous 304",
+        "Rack literal dynamic room wildcard If-None-Match returns 200 with a fresh full body",
+        "HEAD gzip negotiation preserves empty response without gzip payload",
+        "conditional HEAD preserves empty body and expected literal/wildcard status",
+        "six Accept-Encoding preference/exclusion/invalid/unsupported cases preserve correct body",
+        "stable JSON exact original weak ETag yields empty304 without gzip",
+        "stable JSON weak-equivalent/list/wildcard validators remain200 under literal Rack matching",
+        "stable JSON conditional HEAD exact ETag yields empty304 without gzip",
+        "shared immutable message fragments retain separate session CSRF; foreign-session mutation rejected",
+        "created message enters compressed page with exact whole-body validator",
+        "touched immutable message version invalidates compressed fragment without stale text",
+        "deleted message disappears and original page message IDs return",
+        "actual deployed native helper and immutable cache reuse confirmed by one-time backend logs"
+      ],
+      "gzip_sample": {
+        "wire_bytes": 28673,
+        "decoded_bytes": 404477,
+        "wire_sha256": "31cd5dd015073c85abf15062e26ad5c055eabdbb674d38b122a32c50f541883a",
+        "decoded_sha256": "f19d7a43d801c1b03a041c24ac4f4df31d10268d5419e485f2c9f92676a94d7a",
+        "etag": "W/\"f19d7a43d801c1b03a041c24ac4f4df3\""
+      },
+      "wildcard_dynamic_room_status": 200,
+      "head_gzip_content_encoding": "gzip",
+      "native_backend_marker_count": 1,
+      "cache_backend_marker_count": 1,
+      "passed": true,
+      "http_requests": 33,
+      "expected_rejection_statuses": [
+        422
+      ],
+      "http_server_error_count": 0
+    },
+    {
+      "implementation": "aot",
+      "image": "campfire-dotnet:rust-inspired-v2-aot",
+      "image_id": "sha256:f9654c77a5bbe4c35760595b611269c78e342fc2c8df85fde91ea57c6e411889",
+      "controls": [
+        "identity full UTF8 body / SHA256-derived Rails ETag / 40 message IDs",
+        "actual gzip independently decoded with CRC/ISIZE, whole-body ETag and same message IDs",
+        "fresh request CSRF and fresh whole-body validator during warm fragment reuse",
+        "previous-token ETag correctly yields new 200 body rather than erroneous 304",
+        "Rack literal dynamic room wildcard If-None-Match returns 200 with a fresh full body",
+        "HEAD gzip negotiation preserves empty response without gzip payload",
+        "conditional HEAD preserves empty body and expected literal/wildcard status",
+        "six Accept-Encoding preference/exclusion/invalid/unsupported cases preserve correct body",
+        "stable JSON exact original weak ETag yields empty304 without gzip",
+        "stable JSON weak-equivalent/list/wildcard validators remain200 under literal Rack matching",
+        "stable JSON conditional HEAD exact ETag yields empty304 without gzip",
+        "shared immutable message fragments retain separate session CSRF; foreign-session mutation rejected",
+        "created message enters compressed page with exact whole-body validator",
+        "touched immutable message version invalidates compressed fragment without stale text",
+        "deleted message disappears and original page message IDs return",
+        "actual deployed native helper and immutable cache reuse confirmed by one-time backend logs"
+      ],
+      "gzip_sample": {
+        "wire_bytes": 28671,
+        "decoded_bytes": 404477,
+        "wire_sha256": "1843688ed94afc79e89b02bf88b0f025fed0ed4a1c5103d5ab6ae985e9749435",
+        "decoded_sha256": "ea3c260efab233f75345848e51df856b4fca70102d39ceecb415e36dfada7ee2",
+        "etag": "W/\"ea3c260efab233f75345848e51df856b\""
+      },
+      "wildcard_dynamic_room_status": 200,
+      "head_gzip_content_encoding": "gzip",
+      "native_backend_marker_count": 1,
+      "cache_backend_marker_count": 1,
+      "passed": true,
+      "http_requests": 33,
+      "expected_rejection_statuses": [
+        422
+      ],
+      "http_server_error_count": 0
+    }
+  ],
+  "http_requests": 99,
+  "server_error_count": 0,
+  "controls_passed": 47,
+  "all_passed": true,
+  "timing_benchmark": false,
+  "cleanup_verified": true,
+  "rack_literal_conditional": true,
+  "confirmed_differences": [
+    "Accept-Encoding identity;q=1,gzip;q=0.5: pinned Rails front-Thrustgzip but directRackidentity; frozen portidentity.",
+    "Accept-Encoding gzip;q=invalid: pinned directRack/front-Thrustgzip; frozen portidentity."
+  ],
+  "unverified": [
+    "Response Cache-Control:no-transform integration: no disposable route emits it.",
+    "Throughput improvement: parent controlled run shows regression, not a win."
+  ],
+  "cleanup_checks": [
+    {
+      "kind": "container",
+      "name": "cf-dotnet-1a6ce87a3646-app",
+      "removed": true
+    },
+    {
+      "kind": "volume",
+      "name": "cf-dotnet-1a6ce87a3646-data",
+      "removed": true
+    },
+    {
+      "kind": "network",
+      "name": "cf-dotnet-1a6ce87a3646",
+      "removed": true
+    },
+    {
+      "kind": "container",
+      "name": "cf-dotnet-4c4bccf6620d-app",
+      "removed": true
+    },
+    {
+      "kind": "volume",
+      "name": "cf-dotnet-4c4bccf6620d-data",
+      "removed": true
+    },
+    {
+      "kind": "network",
+      "name": "cf-dotnet-4c4bccf6620d",
+      "removed": true
+    },
+    {
+      "kind": "container",
+      "name": "cf-dotnet-4c4bccf6620d-redis",
+      "removed": true
+    },
+    {
+      "kind": "container",
+      "name": "cf-dotnet-08ff06f67cab-app",
+      "removed": true
+    },
+    {
+      "kind": "volume",
+      "name": "cf-dotnet-08ff06f67cab-data",
+      "removed": true
+    },
+    {
+      "kind": "network",
+      "name": "cf-dotnet-08ff06f67cab",
+      "removed": true
+    },
+    {
+      "kind": "container",
+      "name": "cf-dotnet-08ff06f67cab-redis",
+      "removed": true
+    }
+  ]
+}

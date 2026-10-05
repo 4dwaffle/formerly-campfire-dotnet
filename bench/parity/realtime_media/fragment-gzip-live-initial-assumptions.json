@@ -1,0 +1,86 @@
+{
+  "verified_utc": "2026-10-05T11:04:26.229692+00:00",
+  "application_runtime_source_sha256": "7702ad59794a99f7853827b97ae49924c71e0d9cdf20d1ff5f29a22a059b6ee5",
+  "source_files": 850,
+  "server_cpus": "24-27",
+  "fixture": "bench/parity/realtime_media/runtime/rust-inspired-codec",
+  "records": [
+    {
+      "implementation": "rails",
+      "image": "ghcr.io/basecamp/once-campfire@sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "image_id": "sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "controls": [
+        "identity full UTF8 body / SHA256-derived Rails ETag / 40 message IDs",
+        "actual gzip independently decoded with CRC/ISIZE, whole-body ETag and same message IDs",
+        "fresh request CSRF and fresh whole-body validator during warm fragment reuse",
+        "previous-token ETag correctly yields new 200 body rather than erroneous 304"
+      ],
+      "gzip_sample": {
+        "wire_bytes": 44379,
+        "decoded_bytes": 463720,
+        "wire_sha256": "17b1dcc88ef754ca0e0b741d9a578b888f81c0e2dc0aeddde81cb201cbb3db97",
+        "decoded_sha256": "1e5b23c811336629011d359e4d781aefdadfefbfbcb8521778a0a06fae84c384",
+        "etag": "W/\"1e5b23c811336629011d359e4d781aef\""
+      },
+      "passed": false,
+      "error": "AssertionError({'label': 'wildcard-304', 'method': 'GET', 'path': '/rooms/486777696', 'status': 200, 'headers': {'cache-control': 'max-age=0, private, must-revalidate', 'content-encoding': 'gzip', 'content-type': 'text/html; charset=utf-8', 'etag': 'W/\"25a2da9d3242a14da446d4c112779bac\"', 'link': '</assets/_reset-9c3efd7b.css>; rel=preload; as=style; nopush,</assets/actiontext-7b8d51ea.css>; rel=preload; as=style; nopush,</assets/animation-bcdb4bab.css>; rel=preload; as=style; nopush,</assets/autocomplete-9de8c93f.css>; rel=preload; as=style; nopush,</assets/avatars-279376ab.css>; rel=preload; as=style; nopush,</assets/base-637a0ec8.css>; rel=preload; as=style; nopush,</assets/boosts-da4032a8.css>; rel=preload; as=style; nopush,</assets/buttons-c7d39fd4.css>; rel=preload; as=style; nopush,</assets/code-333ae548.css>; rel=preload; as=style; nopush,</assets/colorize-eb391ca0.css>; rel=preload; as=style; nopush,</assets/colors-aee62523.css>; rel=preload; as=style; nopush,</assets/composer-e490638a.css>; rel=preload; as=style; nopush,</assets/embeds-c20d0a3a.css>; rel=preload; as=style; nopush,</assets/filters-8a4d63ed.css>; rel=preload; as=style; nopush,</assets/flash-a561c1e5.css>; rel=preload; as=style; nopush,</assets/inputs-9e58a07c.css>; rel=preload; as=style; nopush', 'referrer-policy': 'strict-origin-when-cross-origin', 'vary': 'Accept-Encoding', 'x-cache': 'miss', 'x-content-type-options': 'nosniff', 'x-frame-options': 'SAMEORIGIN', 'x-permitted-cross-domain-policies': 'none', 'x-request-id': 'd005d27b-3dc2-4650-9b4d-8ee2c9657b90', 'x-rev': 'parity', 'x-runtime': '0.025698', 'x-version': 'parity', 'x-xss-protection': '0', 'date': 'Mon, 05 Oct 2026 11:04:25 GMT', 'connection': 'close', 'transfer-encoding': 'chunked'}, 'wire_bytes': 44377, 'decoded_bytes': 463720, 'wire_sha256': 'd5b8dcdf9f5abbed7f0a2cf8b59e05dd3488a0e0c7df3e696d7bda12a43682f2', 'decoded_sha256': '25a2da9d3242a14da446d4c112779bac24fbfb8d61bc4c9fca641946911b9ad7'})",
+      "http_requests": 7,
+      "expected_rejection_statuses": [],
+      "http_server_error_count": 0
+    },
+    {
+      "implementation": "dotnet",
+      "image": "campfire-dotnet:rust-inspired-jit",
+      "image_id": "sha256:c453efc414c95bf62b360cbf3d18a926c3b098bf9e38a4dff9fc03488b8422df",
+      "controls": [
+        "identity full UTF8 body / SHA256-derived Rails ETag / 40 message IDs",
+        "actual gzip independently decoded with CRC/ISIZE, whole-body ETag and same message IDs",
+        "fresh request CSRF and fresh whole-body validator during warm fragment reuse",
+        "previous-token ETag correctly yields new 200 body rather than erroneous 304",
+        "conditional wildcard 304 has empty body and no gzip encoding"
+      ],
+      "gzip_sample": {
+        "wire_bytes": 28675,
+        "decoded_bytes": 404477,
+        "wire_sha256": "373dda355b06fb04a39f2ce601e32cc62c434302efc19a91ba53ef18874d7132",
+        "decoded_sha256": "092f67a33142718ce85ca2548b62a9b81c093a458aff9ff93589e2cd8f0c9ca0",
+        "etag": "W/\"092f67a33142718ce85ca2548b62a9b8\""
+      },
+      "passed": false,
+      "error": "AssertionError({'label': 'head-gzip', 'method': 'HEAD', 'path': '/rooms/486777696', 'status': 200, 'headers': {'content-length': '0', 'connection': 'close', 'content-type': 'text/html; charset=utf-8', 'date': 'Mon, 05 Oct 2026 11:04:25 GMT', 'server': 'Kestrel', 'cache-control': 'max-age=0, private, must-revalidate', 'content-encoding': 'gzip', 'etag': 'W/\"342f87a1b4440af595752db2fb58c8b1\"', 'vary': 'Accept-Encoding', 'x-version': 'parity', 'x-rev': 'parity', 'x-content-type-options': 'nosniff', 'x-frame-options': 'SAMEORIGIN', 'x-permitted-cross-domain-policies': 'none', 'x-xss-protection': '0', 'referrer-policy': 'strict-origin-when-cross-origin'}, 'wire_bytes': 0, 'decoded_bytes': 0, 'wire_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'decoded_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'})",
+      "http_requests": 8,
+      "expected_rejection_statuses": [],
+      "http_server_error_count": 0
+    },
+    {
+      "implementation": "aot",
+      "image": "campfire-dotnet:rust-inspired-aot",
+      "image_id": "sha256:cf8530ecce2ed05dfb245ba032db90f158e9c2d24dfd3cbc0ec88e16296a1d08",
+      "controls": [
+        "identity full UTF8 body / SHA256-derived Rails ETag / 40 message IDs",
+        "actual gzip independently decoded with CRC/ISIZE, whole-body ETag and same message IDs",
+        "fresh request CSRF and fresh whole-body validator during warm fragment reuse",
+        "previous-token ETag correctly yields new 200 body rather than erroneous 304",
+        "conditional wildcard 304 has empty body and no gzip encoding"
+      ],
+      "gzip_sample": {
+        "wire_bytes": 28681,
+        "decoded_bytes": 404477,
+        "wire_sha256": "d6c140f999dfcd14d0d21c8c1ae8e5662cbb9f5657147e1cd50930decfd206c9",
+        "decoded_sha256": "2cdce3e22297c3209a330c5eaaed0acd69529bcf1c2329c41b971257c9c5287d",
+        "etag": "W/\"2cdce3e22297c3209a330c5eaaed0acd\""
+      },
+      "passed": false,
+      "error": "AssertionError({'label': 'head-gzip', 'method': 'HEAD', 'path': '/rooms/486777696', 'status': 200, 'headers': {'content-length': '0', 'connection': 'close', 'content-type': 'text/html; charset=utf-8', 'date': 'Mon, 05 Oct 2026 11:04:25 GMT', 'server': 'Kestrel', 'cache-control': 'max-age=0, private, must-revalidate', 'content-encoding': 'gzip', 'etag': 'W/\"3abbbffb34b79ccf9ac54ec73787c169\"', 'vary': 'Accept-Encoding', 'x-version': 'parity', 'x-rev': 'parity', 'x-content-type-options': 'nosniff', 'x-frame-options': 'SAMEORIGIN', 'x-permitted-cross-domain-policies': 'none', 'x-xss-protection': '0', 'referrer-policy': 'strict-origin-when-cross-origin'}, 'wire_bytes': 0, 'decoded_bytes': 0, 'wire_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'decoded_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'})",
+      "http_requests": 8,
+      "expected_rejection_statuses": [],
+      "http_server_error_count": 0
+    }
+  ],
+  "http_requests": 23,
+  "server_error_count": 0,
+  "controls_passed": 14,
+  "all_passed": false,
+  "timing_benchmark": false,
+  "cleanup_verified": false
+}

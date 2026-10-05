@@ -1,0 +1,9 @@
+ARG BASE_IMAGE=campfire-reference:app
+FROM ${BASE_IMAGE}
+USER root
+RUN apt-get update -qq && apt-get install --no-install-recommends -y sqlite3 procps && rm -rf /var/lib/apt/lists/*
+COPY --from=fixtures . /rails/test/fixtures
+COPY bench/seed-entrypoint.sh /usr/local/bin/campfire-seed
+RUN sed -i 's/\r$//' /usr/local/bin/campfire-seed
+ENTRYPOINT ["bash", "/usr/local/bin/campfire-seed"]
+CMD ["bin/boot"]

@@ -1,0 +1,11 @@
+{
+  "checked_utc": "2026-10-05T11:14:50.1864306Z",
+  "prefixes": [
+    "cf-dotnet-50ca0984c672",
+    "cf-dotnet-ef4683558eaf",
+    "cf-dotnet-b3798299b616"
+  ],
+  "remaining_containers": [],
+  "remaining_volumes": [],
+  "remaining_networks": []
+}

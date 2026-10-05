@@ -1,0 +1,7 @@
+FROM rust:1.98.1 AS build
+WORKDIR /src
+COPY . .
+RUN cargo build --release --locked
+FROM debian:trixie-slim
+COPY --from=build /src/target/release/loadgen /usr/local/bin/loadgen
+ENTRYPOINT ["loadgen"]

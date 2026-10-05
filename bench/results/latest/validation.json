@@ -1,0 +1,131 @@
+{
+  "runs": 6,
+  "measured_responses": 2416828,
+  "warmup_responses": 528180,
+  "successful_persisted_posts": 0,
+  "transport_status_protocol_errors": 0,
+  "captured_bytes_hashes_gzip_and_ids_verified": true,
+  "message_fts_growth_match": true,
+  "etag_scope": "Complete body SHA for .NET room/sidebar/search/up; pagination uses a Rails model validator, not body SHA.",
+  "durable_jobs": [
+    {
+      "app": "aot",
+      "repetition": 1,
+      "snapshot": {
+        "ready": 0,
+        "outbound_held": 0,
+        "scheduled": 0,
+        "failed": 0,
+        "processing": 0,
+        "workers": 1
+      }
+    },
+    {
+      "app": "aot",
+      "repetition": 2,
+      "snapshot": {
+        "ready": 0,
+        "outbound_held": 0,
+        "scheduled": 0,
+        "failed": 0,
+        "processing": 0,
+        "workers": 1
+      }
+    },
+    {
+      "app": "dotnet",
+      "repetition": 1,
+      "snapshot": {
+        "ready": 0,
+        "outbound_held": 0,
+        "scheduled": 0,
+        "failed": 0,
+        "processing": 0,
+        "workers": 1
+      }
+    },
+    {
+      "app": "dotnet",
+      "repetition": 2,
+      "snapshot": {
+        "ready": 0,
+        "outbound_held": 0,
+        "scheduled": 0,
+        "failed": 0,
+        "processing": 0,
+        "workers": 1
+      }
+    }
+  ],
+  "summary": {
+    "dotnet": {
+      "room": {
+        "median": 10914.25,
+        "range": [
+          10887.1,
+          10941.4
+        ]
+      },
+      "messages": {
+        "median": 17061.75,
+        "range": [
+          17003.4,
+          17120.1
+        ]
+      },
+      "search": {
+        "median": 11261.95,
+        "range": [
+          11095.5,
+          11428.4
+        ]
+      }
+    },
+    "aot": {
+      "room": {
+        "median": 10180.900000000001,
+        "range": [
+          10125.2,
+          10236.6
+        ]
+      },
+      "messages": {
+        "median": 15535.7,
+        "range": [
+          15366.1,
+          15705.3
+        ]
+      },
+      "search": {
+        "median": 10674.95,
+        "range": [
+          10626.5,
+          10723.4
+        ]
+      }
+    },
+    "rust": {
+      "room": {
+        "median": 13769.75,
+        "range": [
+          13730.4,
+          13809.1
+        ]
+      },
+      "messages": {
+        "median": 14654.55,
+        "range": [
+          14530.9,
+          14778.2
+        ]
+      },
+      "search": {
+        "median": 16759.45,
+        "range": [
+          16574.4,
+          16944.5
+        ]
+      }
+    }
+  }
+}

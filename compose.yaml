@@ -1,0 +1,33 @@
+services:
+  campfire:
+    build: .
+    ports:
+      - "127.0.0.1:5088:3000"
+    environment:
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE:?Set a persistent SECRET_KEY_BASE}
+      CAMPFIRE_DELIVER_INTEGRATIONS: ${CAMPFIRE_DELIVER_INTEGRATIONS:-true}
+      VAPID_PUBLIC_KEY: ${VAPID_PUBLIC_KEY:-}
+      VAPID_PRIVATE_KEY: ${VAPID_PRIVATE_KEY:-}
+      VAPID_SUBJECT: ${VAPID_SUBJECT:-}
+      REDIS_URL: redis://redis:6379/0
+      DISABLE_SSL: ${DISABLE_SSL:-1}
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - campfire:/rails/storage
+    restart: unless-stopped
+  redis:
+    image: redis:7.4
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 2s
+      retries: 30
+    restart: unless-stopped
+volumes:
+  campfire:
+  redis:

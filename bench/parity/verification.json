@@ -1,0 +1,49 @@
+{
+  "verdict": "FAIL",
+  "date": "2026-10-05",
+  "source_proof": {
+    "current_source_sha256": "05cb09a1fb71b91740b3cf9f35d4787e1529ff3a15fcac57fcfbba88a8122e7c",
+    "benchmark_source_sha256": "05cb09a1fb71b91740b3cf9f35d4787e1529ff3a15fcac57fcfbba88a8122e7c",
+    "unchanged": true
+  },
+  "references": {
+    "upstream": {
+      "revision": "6c7f8fa15f8c39478af64a483dcdf6223527ed22",
+      "status": ""
+    },
+    "reference-rust": {
+      "revision": "64f86353021145b63849fb1cd93adeb08f3b8dbb",
+      "status": ""
+    },
+    "reference-go": {
+      "revision": "504428addff333549f1fc88b003c7331779a3c2a",
+      "status": ""
+    }
+  },
+  "chat_assertions": {
+    "assertions": 134,
+    "passed": 66,
+    "failed": 68,
+    "by_app": {
+      "dotnet": {
+        "passed": 33,
+        "failed": 34
+      },
+      "aot": {
+        "passed": 33,
+        "failed": 34
+      }
+    }
+  },
+  "framework_named_probes": 21,
+  "framework_status_or_mime_differences": 12,
+  "identity_primary_named_cases": 39,
+  "evidence": [
+    "identity/report.md",
+    "chat/report.md",
+    "realtime_media/report.md",
+    "browser/report.md",
+    "route-coverage.md"
+  ],
+  "limits": "No behavioral parity percentage or exhaustive equivalence proof is asserted."
+}

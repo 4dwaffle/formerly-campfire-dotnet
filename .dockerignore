@@ -1,0 +1,12 @@
+**/bin
+**/obj
+.git
+upstream
+reference-go
+reference-rust
+bench/.seed
+bench/.work
+bench/results
+tests
+storage
+artifacts

@@ -1,0 +1,73 @@
+{
+  "checked_utc": "2026-10-05T10:08:02.2384660Z",
+  "manifest": "instances-final-06.json",
+  "reported_runtime_source_sha256": "1fcc0163c6bc9af8781c0b8f26cfdca622ad0e351882a92b3f6467054e630c55",
+  "gate": "cache-assertions-final-06.json",
+  "gate_sha256": "96c6b36d301482ef24be8ffc03dbf1b7b13ed9b317caaf4e8732a4f5201b9844",
+  "assertions": 47,
+  "passed": 47,
+  "failed": 0,
+  "captured_request_counts": {
+    "rails": 15,
+    "dotnet": 15,
+    "aot": 15
+  },
+  "statuses": {
+    "rails": {
+      "david-login-form": 200,
+      "david-login": 302,
+      "david-home": 302,
+      "david-home-room": 200,
+      "cache-target-create": 200,
+      "cache-warm-first": 200,
+      "cache-warm-second": 200,
+      "cache-after-creator-rename": 200,
+      "cache-after-same-version-body-edit": 200,
+      "cache-no-op-update": 302,
+      "cache-after-no-op-update": 200,
+      "cache-no-op-client-and-detach": 302,
+      "cache-edit-message": 302,
+      "cache-after-message-touch": 200,
+      "cache-changed-client": 302
+    },
+    "dotnet": {
+      "david-login-form": 200,
+      "david-login": 302,
+      "david-home": 302,
+      "david-home-room": 200,
+      "cache-target-create": 200,
+      "cache-warm-first": 200,
+      "cache-warm-second": 200,
+      "cache-after-creator-rename": 200,
+      "cache-after-same-version-body-edit": 200,
+      "cache-no-op-update": 302,
+      "cache-after-no-op-update": 200,
+      "cache-no-op-client-and-detach": 302,
+      "cache-edit-message": 302,
+      "cache-after-message-touch": 200,
+      "cache-changed-client": 302
+    },
+    "aot": {
+      "david-login-form": 200,
+      "david-login": 302,
+      "david-home": 302,
+      "david-home-room": 200,
+      "cache-target-create": 200,
+      "cache-warm-first": 200,
+      "cache-warm-second": 200,
+      "cache-after-creator-rename": 200,
+      "cache-after-same-version-body-edit": 200,
+      "cache-no-op-update": 302,
+      "cache-after-no-op-update": 200,
+      "cache-no-op-client-and-detach": 302,
+      "cache-edit-message": 302,
+      "cache-after-message-touch": 200,
+      "cache-changed-client": 302
+    }
+  },
+  "capture": "cache-policy-final-06.json",
+  "capture_sha256": "184ac78c9fa66471405ebdf1f70e3cf045b81a7988d90e35d318fd860bff9ee3",
+  "cleanup": "cleanup-final-06.json",
+  "previous_standard_gate": "verification-final-04.json",
+  "scope_note": "47 focused no-op/cache/real-edit comparisons pass on final v2 JIT/AOT. 223 standard comparisons were verified on previous 7a147 image and not rerun here; local 52 Chat regressions cover corrected callback failures. CPU affinity: servers8-11, SQL helpers12-15; Windows HTTP clients/sharedDockerIO not isolated. These are functional probes, not benchmark results or universal parity certification."
+}

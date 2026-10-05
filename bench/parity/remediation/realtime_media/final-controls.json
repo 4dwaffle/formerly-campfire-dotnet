@@ -1,0 +1,32 @@
+{
+  "records": [
+    {
+      "implementation": "rails",
+      "image_id": "sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "checks": [],
+      "passed": false,
+      "error": "AssertionError({})"
+    },
+    {
+      "implementation": "dotnet",
+      "image_id": "sha256:ef474f477aa537ff3695353cc1d144d06ad45573d4a030a97cf84fd66d9f7236",
+      "checks": [
+        "omitted metadata is JSON/SQL NULL",
+        "signed disk PUT preserves unanalysed NULL metadata",
+        "no PDF preview markup/records without Poppler/MuPDF"
+      ],
+      "passed": true
+    },
+    {
+      "implementation": "aot",
+      "image_id": "sha256:8355fcc91e7c1b409fd0b378449b355159868913d598d3968fa42b9e04057923",
+      "checks": [
+        "omitted metadata is JSON/SQL NULL",
+        "signed disk PUT preserves unanalysed NULL metadata",
+        "no PDF preview markup/records without Poppler/MuPDF"
+      ],
+      "passed": true
+    }
+  ],
+  "passed": 6
+}

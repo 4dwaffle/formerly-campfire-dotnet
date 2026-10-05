@@ -1,0 +1,113 @@
+{
+  "verified_utc": "2026-10-05T11:34:12.141432+00:00",
+  "application_runtime_source_sha256": "e028436cf93f752167e32c8d666de67cd3170a9cb4a79a6170f0f3172827e89e",
+  "image_source_attribution": "Parent frozen rust-inspired-initial-build manifest; image IDs checked from Docker.",
+  "observed_workspace_runtime_source_sha256": "e028436cf93f752167e32c8d666de67cd3170a9cb4a79a6170f0f3172827e89e",
+  "source_files": 850,
+  "server_cpus": "24-27",
+  "fixture": "bench/parity/realtime_media/runtime/rust-inspired-codec-final",
+  "records": [
+    {
+      "implementation": "rails",
+      "image": "ghcr.io/basecamp/once-campfire@sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "image_id": "sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "controls": [
+        "identity full UTF8 body / SHA256-derived Rails ETag / 40 message IDs",
+        "actual gzip independently decoded with CRC/ISIZE, whole-body ETag and same message IDs",
+        "fresh request CSRF and fresh whole-body validator during warm fragment reuse",
+        "previous-token ETag correctly yields new 200 body rather than erroneous 304",
+        "Rack literal dynamic room wildcard If-None-Match returns 200 with a fresh full body",
+        "HEAD gzip negotiation preserves empty response without gzip payload",
+        "conditional HEAD preserves empty body and expected literal/wildcard status",
+        "six Accept-Encoding preference/exclusion/invalid/unsupported cases preserve correct body"
+      ],
+      "gzip_sample": {
+        "wire_bytes": 44364,
+        "decoded_bytes": 463720,
+        "wire_sha256": "3683c7d52b5e351d5428d85ae09d4ff2a4a72c01f953f0785a08bf72dde41f05",
+        "decoded_sha256": "952b4c94cfb2081e4228fccf3e93cc5634a0828fb968b1637f23e58e3fc1638f",
+        "etag": "W/\"952b4c94cfb2081e4228fccf3e93cc56\""
+      },
+      "wildcard_dynamic_room_status": 200,
+      "head_gzip_content_encoding": "gzip",
+      "passed": false,
+      "error": "AssertionError({'label': 'stable-json', 'method': 'GET', 'path': '/rooms/486777696/messages/933434569.json', 'status': 406, 'request_accept_encoding': 'identity', 'headers': {'content-length': '39', 'content-type': 'application/json; charset=UTF-8', 'vary': 'Accept-Encoding', 'x-cache': 'miss', 'x-request-id': '091d29e1-cfe6-487d-9ec5-3e3f6ed77ced', 'x-runtime': '0.052680', 'date': 'Mon, 05 Oct 2026 11:34:10 GMT', 'connection': 'close'}, 'wire_bytes': 39, 'decoded_bytes': 39, 'wire_sha256': '12290547066c932e57557a153a84f3b7b2c8ea7e9754ce206bae362330d9d830', 'decoded_sha256': '12290547066c932e57557a153a84f3b7b2c8ea7e9754ce206bae362330d9d830'})",
+      "http_requests": 16,
+      "expected_rejection_statuses": [],
+      "http_server_error_count": 0
+    },
+    {
+      "implementation": "dotnet",
+      "image": "campfire-dotnet:rust-inspired-v2-jit",
+      "image_id": "sha256:cab8ba57b16f22ee31782932cd3bfd1d3eb54e72dee757ac81bedabee5967a9d",
+      "controls": [
+        "identity full UTF8 body / SHA256-derived Rails ETag / 40 message IDs",
+        "actual gzip independently decoded with CRC/ISIZE, whole-body ETag and same message IDs",
+        "fresh request CSRF and fresh whole-body validator during warm fragment reuse",
+        "previous-token ETag correctly yields new 200 body rather than erroneous 304",
+        "Rack literal dynamic room wildcard If-None-Match returns 200 with a fresh full body",
+        "HEAD gzip negotiation preserves empty response without gzip payload",
+        "conditional HEAD preserves empty body and expected literal/wildcard status",
+        "six Accept-Encoding preference/exclusion/invalid/unsupported cases preserve correct body"
+      ],
+      "gzip_sample": {
+        "wire_bytes": 28676,
+        "decoded_bytes": 404477,
+        "wire_sha256": "e86ffc12b9f5205559ebeffec1bcb7f51a47cfd35c25be01e09b0f2cbe054250",
+        "decoded_sha256": "743fe58467c8bc5a10f6a4e6c5df883e6da3e76f585457b7594f3a6d37fe7d4d",
+        "etag": "W/\"743fe58467c8bc5a10f6a4e6c5df883e\""
+      },
+      "wildcard_dynamic_room_status": 200,
+      "head_gzip_content_encoding": "gzip",
+      "passed": false,
+      "error": "AssertionError({'label': 'stable-json', 'method': 'GET', 'path': '/rooms/486777696/messages/933434569.json', 'status': 406, 'request_accept_encoding': 'identity', 'headers': {'connection': 'close', 'content-type': 'application/json; charset=utf-8', 'date': 'Mon, 05 Oct 2026 11:34:11 GMT', 'server': 'Kestrel', 'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'x-version': 'parity', 'x-rev': 'parity', 'x-content-type-options': 'nosniff', 'x-frame-options': 'SAMEORIGIN', 'x-permitted-cross-domain-policies': 'none', 'x-xss-protection': '0', 'referrer-policy': 'strict-origin-when-cross-origin'}, 'wire_bytes': 39, 'decoded_bytes': 39, 'wire_sha256': '12290547066c932e57557a153a84f3b7b2c8ea7e9754ce206bae362330d9d830', 'decoded_sha256': '12290547066c932e57557a153a84f3b7b2c8ea7e9754ce206bae362330d9d830'})",
+      "http_requests": 16,
+      "expected_rejection_statuses": [],
+      "http_server_error_count": 0
+    },
+    {
+      "implementation": "aot",
+      "image": "campfire-dotnet:rust-inspired-v2-aot",
+      "image_id": "sha256:f9654c77a5bbe4c35760595b611269c78e342fc2c8df85fde91ea57c6e411889",
+      "controls": [
+        "identity full UTF8 body / SHA256-derived Rails ETag / 40 message IDs",
+        "actual gzip independently decoded with CRC/ISIZE, whole-body ETag and same message IDs",
+        "fresh request CSRF and fresh whole-body validator during warm fragment reuse",
+        "previous-token ETag correctly yields new 200 body rather than erroneous 304",
+        "Rack literal dynamic room wildcard If-None-Match returns 200 with a fresh full body",
+        "HEAD gzip negotiation preserves empty response without gzip payload",
+        "conditional HEAD preserves empty body and expected literal/wildcard status",
+        "six Accept-Encoding preference/exclusion/invalid/unsupported cases preserve correct body"
+      ],
+      "gzip_sample": {
+        "wire_bytes": 28671,
+        "decoded_bytes": 404477,
+        "wire_sha256": "dc5e9f14ba380f72eb32492707ce86fb2c0d6389fa2d9fea5cedb41c63c8e462",
+        "decoded_sha256": "de6f5f244106056bd6929a2009a71ff5f10039e1d2b11b5b669e006531ec6943",
+        "etag": "W/\"de6f5f244106056bd6929a2009a71ff5\""
+      },
+      "wildcard_dynamic_room_status": 200,
+      "head_gzip_content_encoding": "gzip",
+      "passed": false,
+      "error": "AssertionError({'label': 'stable-json', 'method': 'GET', 'path': '/rooms/486777696/messages/933434569.json', 'status': 406, 'request_accept_encoding': 'identity', 'headers': {'connection': 'close', 'content-type': 'application/json; charset=utf-8', 'date': 'Mon, 05 Oct 2026 11:34:11 GMT', 'server': 'Kestrel', 'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'x-version': 'parity', 'x-rev': 'parity', 'x-content-type-options': 'nosniff', 'x-frame-options': 'SAMEORIGIN', 'x-permitted-cross-domain-policies': 'none', 'x-xss-protection': '0', 'referrer-policy': 'strict-origin-when-cross-origin'}, 'wire_bytes': 39, 'decoded_bytes': 39, 'wire_sha256': '12290547066c932e57557a153a84f3b7b2c8ea7e9754ce206bae362330d9d830', 'decoded_sha256': '12290547066c932e57557a153a84f3b7b2c8ea7e9754ce206bae362330d9d830'})",
+      "http_requests": 16,
+      "expected_rejection_statuses": [],
+      "http_server_error_count": 0
+    }
+  ],
+  "http_requests": 48,
+  "server_error_count": 0,
+  "controls_passed": 24,
+  "all_passed": false,
+  "timing_benchmark": false,
+  "cleanup_verified": false,
+  "rack_literal_conditional": true,
+  "confirmed_differences": [
+    "Accept-Encoding identity;q=1,gzip;q=0.5: pinned Rails front-Thrustgzip but directRackidentity; frozen portidentity.",
+    "Accept-Encoding gzip;q=invalid: pinned directRack/front-Thrustgzip; frozen portidentity."
+  ],
+  "unverified": [
+    "Response Cache-Control:no-transform integration: no disposable route emits it.",
+    "Throughput improvement: parent controlled run shows regression, not a win."
+  ]
+}

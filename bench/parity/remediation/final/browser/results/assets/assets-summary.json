@@ -1,0 +1,36 @@
+{
+  "manifest": {
+    "rails": {
+      "assets": 314,
+      "errors": 0,
+      "byte_differences": 0
+    },
+    "dotnet": {
+      "assets": 314,
+      "errors": 0,
+      "byte_differences": 0
+    },
+    "aot": {
+      "assets": 314,
+      "errors": 0,
+      "byte_differences": 0
+    }
+  },
+  "original_manifest": {
+    "rails": {
+      "original_paths": 314,
+      "errors": 0,
+      "byte_differences": 0
+    },
+    "dotnet": {
+      "original_paths": 314,
+      "errors": 0,
+      "byte_differences": 0
+    },
+    "aot": {
+      "original_paths": 314,
+      "errors": 0,
+      "byte_differences": 0
+    }
+  }
+}

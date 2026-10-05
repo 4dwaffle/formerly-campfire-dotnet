@@ -1,0 +1,67 @@
+{
+  "image_id": "sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+  "records": [
+    {
+      "accept_encoding": "identity;q=1,gzip;q=0.5",
+      "front_thrust": {
+        "status": 200,
+        "encoding": "gzip",
+        "wire_bytes": 45118,
+        "actual_request_header": "identity;q=1,gzip;q=0.5"
+      },
+      "direct_puma_rack": {
+        "status": 200,
+        "encoding": null,
+        "bytes": 463702,
+        "request_accept_encoding": "identity;q=1,gzip;q=0.5"
+      }
+    },
+    {
+      "accept_encoding": "gzip;q=invalid",
+      "front_thrust": {
+        "status": 200,
+        "encoding": "gzip",
+        "wire_bytes": 44384,
+        "actual_request_header": "gzip;q=invalid"
+      },
+      "direct_puma_rack": {
+        "status": 200,
+        "encoding": "gzip",
+        "bytes": 44385,
+        "request_accept_encoding": "gzip;q=invalid"
+      }
+    },
+    {
+      "accept_encoding": "gzip;q=0",
+      "front_thrust": {
+        "status": 200,
+        "encoding": null,
+        "wire_bytes": 463720,
+        "actual_request_header": "gzip;q=0"
+      },
+      "direct_puma_rack": {
+        "status": 200,
+        "encoding": null,
+        "bytes": 463702,
+        "request_accept_encoding": "gzip;q=0"
+      }
+    },
+    {
+      "accept_encoding": "gzip",
+      "front_thrust": {
+        "status": 200,
+        "encoding": "gzip",
+        "wire_bytes": 44383,
+        "actual_request_header": "gzip"
+      },
+      "direct_puma_rack": {
+        "status": 200,
+        "encoding": "gzip",
+        "bytes": 44389,
+        "request_accept_encoding": "gzip"
+      }
+    }
+  ],
+  "source_excerpt": "bench/parity/realtime_media/fragment-proxy-vs-rack.source.txt",
+  "real_external_contacts": false
+}

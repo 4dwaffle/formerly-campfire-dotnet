@@ -1,0 +1,74 @@
+[
+  {
+    "application": "rails",
+    "input": "https://example.com/join/fixture",
+    "status": 200,
+    "svg_sha256": "579e3167ef5509863fde6807a17d36f7ae7ac3ae968e593bd8c771991289d163",
+    "decoded": "https://example.com/join/fixture",
+    "matches": true
+  },
+  {
+    "application": "rails",
+    "input": "https://example.com/join/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "status": 200,
+    "svg_sha256": "8996cd849d664e496def76d0b7a05d5ff577ef63e532db25c462de000bdf05ff",
+    "decoded": "https://example.com/join/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "matches": true
+  },
+  {
+    "application": "rails",
+    "input": "https://example.com/join/Žluťoučký-🔥",
+    "status": 200,
+    "svg_sha256": "fc19589834f298b5f50167fbc2762ba4f72adcbc147b48ea22d7ac90b67b1fc6",
+    "decoded": "https://example.com/join/Žluťoučký-🔥",
+    "matches": true
+  },
+  {
+    "application": "dotnet",
+    "input": "https://example.com/join/fixture",
+    "status": 200,
+    "svg_sha256": "83c2dc97ca57d391d1c2232b26d7ee454290d5df5fb65b03452f04b6fea57692",
+    "decoded": "https://example.com/join/fixture",
+    "matches": true
+  },
+  {
+    "application": "dotnet",
+    "input": "https://example.com/join/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "status": 200,
+    "svg_sha256": "3db9551332db5914a375a73fd35ca2c1fe3acfe4b8438993adf7560b184e1bba",
+    "decoded": "https://example.com/join/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "matches": true
+  },
+  {
+    "application": "dotnet",
+    "input": "https://example.com/join/Žluťoučký-🔥",
+    "status": 200,
+    "svg_sha256": "beed094bfe14795e024f9eabf215157f82c86a12d522d2e2cc09dfe3bedf5e99",
+    "decoded": "https://example.com/join/Žluťoučký-🔥",
+    "matches": true
+  },
+  {
+    "application": "aot",
+    "input": "https://example.com/join/fixture",
+    "status": 200,
+    "svg_sha256": "83c2dc97ca57d391d1c2232b26d7ee454290d5df5fb65b03452f04b6fea57692",
+    "decoded": "https://example.com/join/fixture",
+    "matches": true
+  },
+  {
+    "application": "aot",
+    "input": "https://example.com/join/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "status": 200,
+    "svg_sha256": "3db9551332db5914a375a73fd35ca2c1fe3acfe4b8438993adf7560b184e1bba",
+    "decoded": "https://example.com/join/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "matches": true
+  },
+  {
+    "application": "aot",
+    "input": "https://example.com/join/Žluťoučký-🔥",
+    "status": 200,
+    "svg_sha256": "beed094bfe14795e024f9eabf215157f82c86a12d522d2e2cc09dfe3bedf5e99",
+    "decoded": "https://example.com/join/Žluťoučký-🔥",
+    "matches": true
+  }
+]

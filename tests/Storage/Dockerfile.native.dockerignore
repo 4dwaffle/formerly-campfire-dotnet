@@ -1,0 +1,10 @@
+**
+!src/
+!src/Campfire/
+!src/Campfire/Features/
+!src/Campfire/Features/Storage/
+!src/Campfire/Features/Storage/native/
+!src/Campfire/Features/Storage/native/vips-safe.c
+!tests/
+!tests/Storage/
+!tests/Storage/native_smoke.sh

@@ -1,0 +1,12 @@
+{
+  "kind": "independent native reset/fault ABI and whole gzip validation; no timing",
+  "controls_passed": 19,
+  "native_error_dropped_before_fresh_context": true,
+  "python_gzip_exact": true,
+  "python_zlib_exact": true,
+  "crc_isize_exact": true,
+  "decoded_bytes": 404478,
+  "gzip_bytes": 30644,
+  "decoded_sha256": "a3439ac51991fb826db76662a7fe52ea50a006e306fa5e4b1b36609280bb803e",
+  "gzip_sha256": "8250d57580aa662a57776af4e99a5894d125dac81d1916ab4d7dbf565503acb9"
+}

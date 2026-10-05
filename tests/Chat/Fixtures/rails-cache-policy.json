@@ -1,0 +1,35 @@
+{
+  "source_capture": "bench/parity/chat/cache-policy-final-03.json",
+  "rails_image_id": "sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+  "rails_cache_configuration": {
+    "perform_caching": true,
+    "cache_class": "ActiveSupport::Cache::RedisCacheStore",
+    "cache_roundtrip": 123
+  },
+  "observations": {
+    "cache-warm-first": {
+      "old_body": true,
+      "new_body": false,
+      "old_creator": true,
+      "new_creator": false
+    },
+    "cache-warm-second": {
+      "old_body": true,
+      "new_body": false,
+      "old_creator": true,
+      "new_creator": false
+    },
+    "cache-after-creator-rename": {
+      "old_body": true,
+      "new_body": false,
+      "old_creator": true,
+      "new_creator": false
+    },
+    "cache-after-same-version-body-edit": {
+      "old_body": true,
+      "new_body": false,
+      "old_creator": true,
+      "new_creator": false
+    }
+  }
+}

@@ -1,0 +1,641 @@
+{
+  "date_utc": "2026-10-05T16:08:31.356801+00:00",
+  "options": {
+    "apps": [
+      "dotnet",
+      "aot",
+      "rust"
+    ],
+    "jit_image": "campfire-dotnet:room-limit-jit",
+    "aot_image": "campfire-dotnet:room-limit-aot",
+    "loadgen_image": "campfire-dotnet-loadgen",
+    "upload_image": "campfire-dotnet-upload-client",
+    "reps": 2,
+    "duration": 10.0,
+    "warmup": 4.0,
+    "concurrencies": [
+      32
+    ],
+    "server_cpus": "20-23",
+    "client_cpus": "24-27",
+    "port": 4390,
+    "gzip": 1,
+    "fragment_gzip": 1,
+    "suites": [
+      "http"
+    ],
+    "routes": [
+      "room",
+      "messages",
+      "search"
+    ],
+    "cable_clients": [
+      100,
+      1000
+    ],
+    "output": "bench/results/latest"
+  },
+  "manifest": {
+    "rails": {
+      "repository": "https://github.com/basecamp/once-campfire.git",
+      "revision": "6c7f8fa15f8c39478af64a483dcdf6223527ed22",
+      "directory": "upstream",
+      "image": "ghcr.io/basecamp/once-campfire@sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672"
+    },
+    "rust": {
+      "repository": "https://github.com/basecamp/once-campfire-rust.git",
+      "revision": "64f86353021145b63849fb1cd93adeb08f3b8dbb",
+      "directory": "reference-rust",
+      "image": "ghcr.io/basecamp/once-campfire-rust@sha256:5f7be4ddab928522af0d22cb0a1cd35721cb1a865481f168d3cc06b307fc3584"
+    },
+    "go": {
+      "repository": "https://github.com/basecamp/once-campfire-go.git",
+      "revision": "504428addff333549f1fc88b003c7331779a3c2a",
+      "directory": "reference-go"
+    }
+  },
+  "docker": {
+    "ID": "7dd3b5c5-dd82-436a-841e-91bd86a032d0",
+    "Containers": 18,
+    "ContainersRunning": 12,
+    "ContainersPaused": 0,
+    "ContainersStopped": 6,
+    "Images": 88,
+    "Driver": "overlayfs",
+    "DriverStatus": [
+      [
+        "driver-type",
+        "io.containerd.snapshotter.v1"
+      ]
+    ],
+    "Plugins": {
+      "Volume": [
+        "local"
+      ],
+      "Network": [
+        "bridge",
+        "host",
+        "ipvlan",
+        "macvlan",
+        "null",
+        "overlay"
+      ],
+      "Authorization": null,
+      "Log": [
+        "awslogs",
+        "fluentd",
+        "gcplogs",
+        "gelf",
+        "journald",
+        "json-file",
+        "local",
+        "splunk",
+        "syslog"
+      ]
+    },
+    "MemoryLimit": true,
+    "SwapLimit": true,
+    "CpuCfsPeriod": true,
+    "CpuCfsQuota": true,
+    "CPUShares": true,
+    "CPUSet": true,
+    "PidsLimit": true,
+    "IPv4Forwarding": true,
+    "Debug": false,
+    "NFd": 76,
+    "OomKillDisable": false,
+    "NGoroutines": 126,
+    "SystemTime": "2026-10-05T16:08:31.514498212Z",
+    "LoggingDriver": "json-file",
+    "CgroupDriver": "cgroupfs",
+    "CgroupVersion": "2",
+    "NEventsListener": 13,
+    "KernelVersion": "6.18.35.2-microsoft-standard-WSL2",
+    "OperatingSystem": "Docker Desktop",
+    "OSVersion": "",
+    "OSType": "linux",
+    "Architecture": "x86_64",
+    "IndexServerAddress": "https://index.docker.io/v1/",
+    "RegistryConfig": {
+      "InsecureRegistryCIDRs": [
+        "::1/128",
+        "127.0.0.0/8"
+      ],
+      "IndexConfigs": {
+        "192.168.0.104:5000": {
+          "Name": "192.168.0.104:5000",
+          "Mirrors": [],
+          "Secure": false,
+          "Official": false
+        },
+        "docker.io": {
+          "Name": "docker.io",
+          "Mirrors": [],
+          "Secure": true,
+          "Official": true
+        },
+        "hubproxy.docker.internal:5555": {
+          "Name": "hubproxy.docker.internal:5555",
+          "Mirrors": [],
+          "Secure": false,
+          "Official": false
+        }
+      },
+      "Mirrors": []
+    },
+    "NCPU": 32,
+    "MemTotal": 32386007040,
+    "GenericResources": null,
+    "DockerRootDir": "/var/lib/docker",
+    "HttpProxy": "http.docker.internal:3128",
+    "HttpsProxy": "http.docker.internal:3128",
+    "NoProxy": "hubproxy.docker.internal",
+    "Name": "docker-desktop",
+    "Labels": [
+      "com.docker.desktop.address=npipe://\\\\.\\pipe\\docker_cli"
+    ],
+    "ExperimentalBuild": false,
+    "ServerVersion": "29.8.0",
+    "Runtimes": {
+      "io.containerd.runc.v2": {
+        "path": "runc",
+        "status": {
+          "org.opencontainers.runtime-spec.features": "{\"ociVersionMin\":\"1.0.0\",\"ociVersionMax\":\"1.3.0\",\"hooks\":[\"prestart\",\"createRuntime\",\"createContainer\",\"startContainer\",\"poststart\",\"poststop\"],\"mountOptions\":[\"async\",\"atime\",\"bind\",\"defaults\",\"dev\",\"diratime\",\"dirsync\",\"exec\",\"iversion\",\"lazytime\",\"loud\",\"mand\",\"noatime\",\"nodev\",\"nodiratime\",\"noexec\",\"noiversion\",\"nolazytime\",\"nomand\",\"norelatime\",\"nostrictatime\",\"nosuid\",\"nosymfollow\",\"private\",\"ratime\",\"rbind\",\"rdev\",\"rdiratime\",\"relatime\",\"remount\",\"rexec\",\"rnoatime\",\"rnodev\",\"rnodiratime\",\"rnoexec\",\"rnorelatime\",\"rnostrictatime\",\"rnosuid\",\"rnosymfollow\",\"ro\",\"rprivate\",\"rrelatime\",\"rro\",\"rrw\",\"rshared\",\"rslave\",\"rstrictatime\",\"rsuid\",\"rsymfollow\",\"runbindable\",\"rw\",\"shared\",\"silent\",\"slave\",\"strictatime\",\"suid\",\"symfollow\",\"sync\",\"tmpcopyup\",\"unbindable\"],\"linux\":{\"namespaces\":[\"cgroup\",\"ipc\",\"mount\",\"network\",\"pid\",\"time\",\"user\",\"uts\"],\"capabilities\":[\"CAP_CHOWN\",\"CAP_DAC_OVERRIDE\",\"CAP_DAC_READ_SEARCH\",\"CAP_FOWNER\",\"CAP_FSETID\",\"CAP_KILL\",\"CAP_SETGID\",\"CAP_SETUID\",\"CAP_SETPCAP\",\"CAP_LINUX_IMMUTABLE\",\"CAP_NET_BIND_SERVICE\",\"CAP_NET_BROADCAST\",\"CAP_NET_ADMIN\",\"CAP_NET_RAW\",\"CAP_IPC_LOCK\",\"CAP_IPC_OWNER\",\"CAP_SYS_MODULE\",\"CAP_SYS_RAWIO\",\"CAP_SYS_CHROOT\",\"CAP_SYS_PTRACE\",\"CAP_SYS_PACCT\",\"CAP_SYS_ADMIN\",\"CAP_SYS_BOOT\",\"CAP_SYS_NICE\",\"CAP_SYS_RESOURCE\",\"CAP_SYS_TIME\",\"CAP_SYS_TTY_CONFIG\",\"CAP_MKNOD\",\"CAP_LEASE\",\"CAP_AUDIT_WRITE\",\"CAP_AUDIT_CONTROL\",\"CAP_SETFCAP\",\"CAP_MAC_OVERRIDE\",\"CAP_MAC_ADMIN\",\"CAP_SYSLOG\",\"CAP_WAKE_ALARM\",\"CAP_BLOCK_SUSPEND\",\"CAP_AUDIT_READ\",\"CAP_PERFMON\",\"CAP_BPF\",\"CAP_CHECKPOINT_RESTORE\"],\"cgroup\":{\"v1\":true,\"v2\":true,\"systemd\":true,\"systemdUser\":true,\"rdma\":true},\"seccomp\":{\"enabled\":true,\"actions\":[\"SCMP_ACT_ALLOW\",\"SCMP_ACT_ERRNO\",\"SCMP_ACT_KILL\",\"SCMP_ACT_KILL_PROCESS\",\"SCMP_ACT_KILL_THREAD\",\"SCMP_ACT_LOG\",\"SCMP_ACT_NOTIFY\",\"SCMP_ACT_TRACE\",\"SCMP_ACT_TRAP\"],\"operators\":[\"SCMP_CMP_EQ\",\"SCMP_CMP_GE\",\"SCMP_CMP_GT\",\"SCMP_CMP_LE\",\"SCMP_CMP_LT\",\"SCMP_CMP_MASKED_EQ\",\"SCMP_CMP_NE\"],\"archs\":[\"SCMP_ARCH_AARCH64\",\"SCMP_ARCH_ARM\",\"SCMP_ARCH_LOONGARCH64\",\"SCMP_ARCH_MIPS\",\"SCMP_ARCH_MIPS64\",\"SCMP_ARCH_MIPS64N32\",\"SCMP_ARCH_MIPSEL\",\"SCMP_ARCH_MIPSEL64\",\"SCMP_ARCH_MIPSEL64N32\",\"SCMP_ARCH_PPC\",\"SCMP_ARCH_PPC64\",\"SCMP_ARCH_PPC64LE\",\"SCMP_ARCH_RISCV64\",\"SCMP_ARCH_S390\",\"SCMP_ARCH_S390X\",\"SCMP_ARCH_X32\",\"SCMP_ARCH_X86\",\"SCMP_ARCH_X86_64\"],\"knownFlags\":[\"SECCOMP_FILTER_FLAG_TSYNC\",\"SECCOMP_FILTER_FLAG_SPEC_ALLOW\",\"SECCOMP_FILTER_FLAG_LOG\",\"SECCOMP_FILTER_FLAG_WAIT_KILLABLE_RECV\"],\"supportedFlags\":[\"SECCOMP_FILTER_FLAG_TSYNC\",\"SECCOMP_FILTER_FLAG_SPEC_ALLOW\",\"SECCOMP_FILTER_FLAG_LOG\"]},\"apparmor\":{\"enabled\":true},\"selinux\":{\"enabled\":true},\"intelRdt\":{\"enabled\":true,\"schemata\":true,\"monitoring\":true},\"memoryPolicy\":{\"modes\":[\"MPOL_BIND\",\"MPOL_DEFAULT\",\"MPOL_INTERLEAVE\",\"MPOL_LOCAL\",\"MPOL_PREFERRED\",\"MPOL_PREFERRED_MANY\",\"MPOL_WEIGHTED_INTERLEAVE\"],\"flags\":[\"MPOL_F_NUMA_BALANCING\",\"MPOL_F_RELATIVE_NODES\",\"MPOL_F_STATIC_NODES\"]},\"mountExtensions\":{\"idmap\":{\"enabled\":true}},\"netDevices\":{\"enabled\":true}},\"annotations\":{\"io.github.seccomp.libseccomp.version\":\"2.5.4\",\"org.opencontainers.runc.checkpoint.enabled\":\"true\",\"org.opencontainers.runc.commit\":\"v1.5.1-0-g8f2685a4\",\"org.opencontainers.runc.version\":\"1.5.1\"},\"potentiallyUnsafeConfigAnnotations\":[\"bundle\",\"org.systemd.property.\",\"org.criu.config\"]}"
+        }
+      },
+      "nvidia": {
+        "path": "nvidia-container-runtime",
+        "status": {
+          "org.opencontainers.runtime-spec.features": "{\"ociVersionMin\":\"1.0.0\",\"ociVersionMax\":\"1.3.0\",\"hooks\":[\"prestart\",\"createRuntime\",\"createContainer\",\"startContainer\",\"poststart\",\"poststop\"],\"mountOptions\":[\"async\",\"atime\",\"bind\",\"defaults\",\"dev\",\"diratime\",\"dirsync\",\"exec\",\"iversion\",\"lazytime\",\"loud\",\"mand\",\"noatime\",\"nodev\",\"nodiratime\",\"noexec\",\"noiversion\",\"nolazytime\",\"nomand\",\"norelatime\",\"nostrictatime\",\"nosuid\",\"nosymfollow\",\"private\",\"ratime\",\"rbind\",\"rdev\",\"rdiratime\",\"relatime\",\"remount\",\"rexec\",\"rnoatime\",\"rnodev\",\"rnodiratime\",\"rnoexec\",\"rnorelatime\",\"rnostrictatime\",\"rnosuid\",\"rnosymfollow\",\"ro\",\"rprivate\",\"rrelatime\",\"rro\",\"rrw\",\"rshared\",\"rslave\",\"rstrictatime\",\"rsuid\",\"rsymfollow\",\"runbindable\",\"rw\",\"shared\",\"silent\",\"slave\",\"strictatime\",\"suid\",\"symfollow\",\"sync\",\"tmpcopyup\",\"unbindable\"],\"linux\":{\"namespaces\":[\"cgroup\",\"ipc\",\"mount\",\"network\",\"pid\",\"time\",\"user\",\"uts\"],\"capabilities\":[\"CAP_CHOWN\",\"CAP_DAC_OVERRIDE\",\"CAP_DAC_READ_SEARCH\",\"CAP_FOWNER\",\"CAP_FSETID\",\"CAP_KILL\",\"CAP_SETGID\",\"CAP_SETUID\",\"CAP_SETPCAP\",\"CAP_LINUX_IMMUTABLE\",\"CAP_NET_BIND_SERVICE\",\"CAP_NET_BROADCAST\",\"CAP_NET_ADMIN\",\"CAP_NET_RAW\",\"CAP_IPC_LOCK\",\"CAP_IPC_OWNER\",\"CAP_SYS_MODULE\",\"CAP_SYS_RAWIO\",\"CAP_SYS_CHROOT\",\"CAP_SYS_PTRACE\",\"CAP_SYS_PACCT\",\"CAP_SYS_ADMIN\",\"CAP_SYS_BOOT\",\"CAP_SYS_NICE\",\"CAP_SYS_RESOURCE\",\"CAP_SYS_TIME\",\"CAP_SYS_TTY_CONFIG\",\"CAP_MKNOD\",\"CAP_LEASE\",\"CAP_AUDIT_WRITE\",\"CAP_AUDIT_CONTROL\",\"CAP_SETFCAP\",\"CAP_MAC_OVERRIDE\",\"CAP_MAC_ADMIN\",\"CAP_SYSLOG\",\"CAP_WAKE_ALARM\",\"CAP_BLOCK_SUSPEND\",\"CAP_AUDIT_READ\",\"CAP_PERFMON\",\"CAP_BPF\",\"CAP_CHECKPOINT_RESTORE\"],\"cgroup\":{\"v1\":true,\"v2\":true,\"systemd\":true,\"systemdUser\":true,\"rdma\":true},\"seccomp\":{\"enabled\":true,\"actions\":[\"SCMP_ACT_ALLOW\",\"SCMP_ACT_ERRNO\",\"SCMP_ACT_KILL\",\"SCMP_ACT_KILL_PROCESS\",\"SCMP_ACT_KILL_THREAD\",\"SCMP_ACT_LOG\",\"SCMP_ACT_NOTIFY\",\"SCMP_ACT_TRACE\",\"SCMP_ACT_TRAP\"],\"operators\":[\"SCMP_CMP_EQ\",\"SCMP_CMP_GE\",\"SCMP_CMP_GT\",\"SCMP_CMP_LE\",\"SCMP_CMP_LT\",\"SCMP_CMP_MASKED_EQ\",\"SCMP_CMP_NE\"],\"archs\":[\"SCMP_ARCH_AARCH64\",\"SCMP_ARCH_ARM\",\"SCMP_ARCH_LOONGARCH64\",\"SCMP_ARCH_MIPS\",\"SCMP_ARCH_MIPS64\",\"SCMP_ARCH_MIPS64N32\",\"SCMP_ARCH_MIPSEL\",\"SCMP_ARCH_MIPSEL64\",\"SCMP_ARCH_MIPSEL64N32\",\"SCMP_ARCH_PPC\",\"SCMP_ARCH_PPC64\",\"SCMP_ARCH_PPC64LE\",\"SCMP_ARCH_RISCV64\",\"SCMP_ARCH_S390\",\"SCMP_ARCH_S390X\",\"SCMP_ARCH_X32\",\"SCMP_ARCH_X86\",\"SCMP_ARCH_X86_64\"],\"knownFlags\":[\"SECCOMP_FILTER_FLAG_TSYNC\",\"SECCOMP_FILTER_FLAG_SPEC_ALLOW\",\"SECCOMP_FILTER_FLAG_LOG\",\"SECCOMP_FILTER_FLAG_WAIT_KILLABLE_RECV\"],\"supportedFlags\":[\"SECCOMP_FILTER_FLAG_TSYNC\",\"SECCOMP_FILTER_FLAG_SPEC_ALLOW\",\"SECCOMP_FILTER_FLAG_LOG\"]},\"apparmor\":{\"enabled\":true},\"selinux\":{\"enabled\":true},\"intelRdt\":{\"enabled\":true,\"schemata\":true,\"monitoring\":true},\"memoryPolicy\":{\"modes\":[\"MPOL_BIND\",\"MPOL_DEFAULT\",\"MPOL_INTERLEAVE\",\"MPOL_LOCAL\",\"MPOL_PREFERRED\",\"MPOL_PREFERRED_MANY\",\"MPOL_WEIGHTED_INTERLEAVE\"],\"flags\":[\"MPOL_F_NUMA_BALANCING\",\"MPOL_F_RELATIVE_NODES\",\"MPOL_F_STATIC_NODES\"]},\"mountExtensions\":{\"idmap\":{\"enabled\":true}},\"netDevices\":{\"enabled\":true}},\"annotations\":{\"io.github.seccomp.libseccomp.version\":\"2.5.4\",\"org.opencontainers.runc.checkpoint.enabled\":\"true\",\"org.opencontainers.runc.commit\":\"v1.5.1-0-g8f2685a4\",\"org.opencontainers.runc.version\":\"1.5.1\"},\"potentiallyUnsafeConfigAnnotations\":[\"bundle\",\"org.systemd.property.\",\"org.criu.config\"]}"
+        }
+      },
+      "runc": {
+        "path": "runc",
+        "status": {
+          "org.opencontainers.runtime-spec.features": "{\"ociVersionMin\":\"1.0.0\",\"ociVersionMax\":\"1.3.0\",\"hooks\":[\"prestart\",\"createRuntime\",\"createContainer\",\"startContainer\",\"poststart\",\"poststop\"],\"mountOptions\":[\"async\",\"atime\",\"bind\",\"defaults\",\"dev\",\"diratime\",\"dirsync\",\"exec\",\"iversion\",\"lazytime\",\"loud\",\"mand\",\"noatime\",\"nodev\",\"nodiratime\",\"noexec\",\"noiversion\",\"nolazytime\",\"nomand\",\"norelatime\",\"nostrictatime\",\"nosuid\",\"nosymfollow\",\"private\",\"ratime\",\"rbind\",\"rdev\",\"rdiratime\",\"relatime\",\"remount\",\"rexec\",\"rnoatime\",\"rnodev\",\"rnodiratime\",\"rnoexec\",\"rnorelatime\",\"rnostrictatime\",\"rnosuid\",\"rnosymfollow\",\"ro\",\"rprivate\",\"rrelatime\",\"rro\",\"rrw\",\"rshared\",\"rslave\",\"rstrictatime\",\"rsuid\",\"rsymfollow\",\"runbindable\",\"rw\",\"shared\",\"silent\",\"slave\",\"strictatime\",\"suid\",\"symfollow\",\"sync\",\"tmpcopyup\",\"unbindable\"],\"linux\":{\"namespaces\":[\"cgroup\",\"ipc\",\"mount\",\"network\",\"pid\",\"time\",\"user\",\"uts\"],\"capabilities\":[\"CAP_CHOWN\",\"CAP_DAC_OVERRIDE\",\"CAP_DAC_READ_SEARCH\",\"CAP_FOWNER\",\"CAP_FSETID\",\"CAP_KILL\",\"CAP_SETGID\",\"CAP_SETUID\",\"CAP_SETPCAP\",\"CAP_LINUX_IMMUTABLE\",\"CAP_NET_BIND_SERVICE\",\"CAP_NET_BROADCAST\",\"CAP_NET_ADMIN\",\"CAP_NET_RAW\",\"CAP_IPC_LOCK\",\"CAP_IPC_OWNER\",\"CAP_SYS_MODULE\",\"CAP_SYS_RAWIO\",\"CAP_SYS_CHROOT\",\"CAP_SYS_PTRACE\",\"CAP_SYS_PACCT\",\"CAP_SYS_ADMIN\",\"CAP_SYS_BOOT\",\"CAP_SYS_NICE\",\"CAP_SYS_RESOURCE\",\"CAP_SYS_TIME\",\"CAP_SYS_TTY_CONFIG\",\"CAP_MKNOD\",\"CAP_LEASE\",\"CAP_AUDIT_WRITE\",\"CAP_AUDIT_CONTROL\",\"CAP_SETFCAP\",\"CAP_MAC_OVERRIDE\",\"CAP_MAC_ADMIN\",\"CAP_SYSLOG\",\"CAP_WAKE_ALARM\",\"CAP_BLOCK_SUSPEND\",\"CAP_AUDIT_READ\",\"CAP_PERFMON\",\"CAP_BPF\",\"CAP_CHECKPOINT_RESTORE\"],\"cgroup\":{\"v1\":true,\"v2\":true,\"systemd\":true,\"systemdUser\":true,\"rdma\":true},\"seccomp\":{\"enabled\":true,\"actions\":[\"SCMP_ACT_ALLOW\",\"SCMP_ACT_ERRNO\",\"SCMP_ACT_KILL\",\"SCMP_ACT_KILL_PROCESS\",\"SCMP_ACT_KILL_THREAD\",\"SCMP_ACT_LOG\",\"SCMP_ACT_NOTIFY\",\"SCMP_ACT_TRACE\",\"SCMP_ACT_TRAP\"],\"operators\":[\"SCMP_CMP_EQ\",\"SCMP_CMP_GE\",\"SCMP_CMP_GT\",\"SCMP_CMP_LE\",\"SCMP_CMP_LT\",\"SCMP_CMP_MASKED_EQ\",\"SCMP_CMP_NE\"],\"archs\":[\"SCMP_ARCH_AARCH64\",\"SCMP_ARCH_ARM\",\"SCMP_ARCH_LOONGARCH64\",\"SCMP_ARCH_MIPS\",\"SCMP_ARCH_MIPS64\",\"SCMP_ARCH_MIPS64N32\",\"SCMP_ARCH_MIPSEL\",\"SCMP_ARCH_MIPSEL64\",\"SCMP_ARCH_MIPSEL64N32\",\"SCMP_ARCH_PPC\",\"SCMP_ARCH_PPC64\",\"SCMP_ARCH_PPC64LE\",\"SCMP_ARCH_RISCV64\",\"SCMP_ARCH_S390\",\"SCMP_ARCH_S390X\",\"SCMP_ARCH_X32\",\"SCMP_ARCH_X86\",\"SCMP_ARCH_X86_64\"],\"knownFlags\":[\"SECCOMP_FILTER_FLAG_TSYNC\",\"SECCOMP_FILTER_FLAG_SPEC_ALLOW\",\"SECCOMP_FILTER_FLAG_LOG\",\"SECCOMP_FILTER_FLAG_WAIT_KILLABLE_RECV\"],\"supportedFlags\":[\"SECCOMP_FILTER_FLAG_TSYNC\",\"SECCOMP_FILTER_FLAG_SPEC_ALLOW\",\"SECCOMP_FILTER_FLAG_LOG\"]},\"apparmor\":{\"enabled\":true},\"selinux\":{\"enabled\":true},\"intelRdt\":{\"enabled\":true,\"schemata\":true,\"monitoring\":true},\"memoryPolicy\":{\"modes\":[\"MPOL_BIND\",\"MPOL_DEFAULT\",\"MPOL_INTERLEAVE\",\"MPOL_LOCAL\",\"MPOL_PREFERRED\",\"MPOL_PREFERRED_MANY\",\"MPOL_WEIGHTED_INTERLEAVE\"],\"flags\":[\"MPOL_F_NUMA_BALANCING\",\"MPOL_F_RELATIVE_NODES\",\"MPOL_F_STATIC_NODES\"]},\"mountExtensions\":{\"idmap\":{\"enabled\":true}},\"netDevices\":{\"enabled\":true}},\"annotations\":{\"io.github.seccomp.libseccomp.version\":\"2.5.4\",\"org.opencontainers.runc.checkpoint.enabled\":\"true\",\"org.opencontainers.runc.commit\":\"v1.5.1-0-g8f2685a4\",\"org.opencontainers.runc.version\":\"1.5.1\"},\"potentiallyUnsafeConfigAnnotations\":[\"bundle\",\"org.systemd.property.\",\"org.criu.config\"]}"
+        }
+      }
+    },
+    "DefaultRuntime": "runc",
+    "Swarm": {
+      "NodeID": "",
+      "NodeAddr": "",
+      "LocalNodeState": "inactive",
+      "ControlAvailable": false,
+      "Error": "",
+      "RemoteManagers": null
+    },
+    "LiveRestoreEnabled": false,
+    "Isolation": "",
+    "InitBinary": "docker-init",
+    "ContainerdCommit": {
+      "ID": "1294c24a7da8e5a793ed378161673abe94118892"
+    },
+    "RuncCommit": {
+      "ID": "v1.5.1-0-g8f2685a4"
+    },
+    "InitCommit": {
+      "ID": "de40ad0"
+    },
+    "SecurityOptions": [
+      "name=seccomp,profile=builtin",
+      "name=cgroupns"
+    ],
+    "FirewallBackend": {
+      "Driver": "iptables"
+    },
+    "CDISpecDirs": [
+      "/etc/cdi",
+      "/var/run/cdi"
+    ],
+    "DiscoveredDevices": [
+      {
+        "Source": "cdi",
+        "ID": "docker.com/gpu=webgpu"
+      }
+    ],
+    "Containerd": {
+      "Address": "/run/containerd/containerd.sock",
+      "Namespaces": {
+        "Containers": "moby",
+        "Plugins": "plugins.moby"
+      }
+    },
+    "Warnings": null,
+    "ClientInfo": {
+      "Debug": false,
+      "Version": "29.8.0",
+      "DefaultAPIVersion": "1.56",
+      "GitCommit": "88096ef",
+      "GoVersion": "go1.26.8",
+      "Os": "windows",
+      "Arch": "amd64",
+      "BuildTime": "Thu Sep  3 21:53:38 2026",
+      "Context": "desktop-linux",
+      "Plugins": [
+        {
+          "SchemaVersion": "0.1.0",
+          "Vendor": "Docker Inc.",
+          "Version": "v1.140.0",
+          "ShortDescription": "Docker AI Agent Runner",
+          "Name": "agent",
+          "Path": "C:\\Program Files\\Docker\\cli-plugins\\docker-agent.exe"
+        },
+        {
+          "SchemaVersion": "0.1.0",
+          "Vendor": "Docker Inc.",
+          "Version": "v1.31.0",
+          "ShortDescription": "Docker AI Agent - Ask Gordon",
+          "Name": "ai",
+          "Path": "C:\\Program Files\\Docker\\cli-plugins\\docker-ai.exe"
+        },
+        {
+          "SchemaVersion": "0.1.0",
+          "Vendor": "Docker Inc.",
+          "Version": "v0.37.1",
+          "ShortDescription": "Docker Buildx",
+          "Name": "buildx",
+          "Path": "C:\\Program Files\\Docker\\cli-plugins\\docker-buildx.exe"
+        },
+        {
+          "SchemaVersion": "0.1.0",
+          "Vendor": "Docker Inc.",
+          "Version": "v5.5.1",
+          "ShortDescription": "Docker Compose",
+          "Name": "compose",
+          "Path": "C:\\Program Files\\Docker\\cli-plugins\\docker-compose.exe"
+        },
+        {
+          "SchemaVersion": "0.1.0",
+          "Vendor": "Docker Inc.",
+          "Version": "0.0.47",
+          "ShortDescription": "Get a shell into any image or container",
+          "Name": "debug",
+          "Path": "C:\\Program Files\\Docker\\cli-plugins\\docker-debug.exe"
+        },
+        {
+          "SchemaVersion": "0.1.0",
+          "Vendor": "Docker Inc.",
+          "Version": "v0.4.4",
+          "ShortDescription": "Docker Desktop commands",
+          "Name": "desktop",
+          "Path": "C:\\Program Files\\Docker\\cli-plugins\\docker-desktop.exe"
+        },
+        {
+          "SchemaVersion": "0.1.0",
+          "Vendor": "Docker Inc.",
+          "Version": "v0.0.7",
+          "ShortDescription": "CLI for managing Docker Hardened Images",
+          "Name": "dhi",
+          "Path": "C:\\Program Files\\Docker\\cli-plugins\\docker-dhi.exe"
+        },
+        {
+          "SchemaVersion": "0.1.0",
+          "Vendor": "Docker Inc.",
+          "Version": "v0.2.31",
+          "ShortDescription": "Manages Docker extensions",
+          "Name": "extension",
+          "Path": "C:\\Program Files\\Docker\\cli-plugins\\docker-extension.exe"
+        },
+        {
+          "SchemaVersion": "0.1.0",
+          "Vendor": "Docker Inc.",
+          "Version": "v1.4.0",
+          "ShortDescription": "Creates Docker-related starter files for your project",
+          "Name": "init",
+          "Path": "C:\\Program Files\\Docker\\cli-plugins\\docker-init.exe"
+        },
+        {
+          "SchemaVersion": "0.1.0",
+          "Vendor": "Docker Inc.",
+          "Version": "v0.43.3",
+          "ShortDescription": "Docker MCP Plugin",
+          "Name": "mcp",
+          "Path": "C:\\Program Files\\Docker\\cli-plugins\\docker-mcp.exe"
+        },
+        {
+          "SchemaVersion": "0.1.0",
+          "Vendor": "Docker Inc.",
+          "Version": "v1.2.6",
+          "ShortDescription": "Docker Model Runner",
+          "Name": "model",
+          "Path": "C:\\Program Files\\Docker\\cli-plugins\\docker-model.exe"
+        },
+        {
+          "SchemaVersion": "0.1.0",
+          "Vendor": "Docker Inc.",
+          "Version": "v0.6.27",
+          "ShortDescription": "Docker Offload",
+          "Name": "offload",
+          "Path": "C:\\Program Files\\Docker\\cli-plugins\\docker-offload.exe"
+        },
+        {
+          "SchemaVersion": "0.1.0",
+          "Vendor": "Docker Inc.",
+          "Version": "v0.2.2",
+          "ShortDescription": "Docker Pass Secrets Manager Plugin (beta)",
+          "Name": "pass",
+          "Path": "C:\\Program Files\\Docker\\cli-plugins\\docker-pass.exe"
+        },
+        {
+          "SchemaVersion": "0.1.0",
+          "Vendor": "Docker Inc.",
+          "Version": "v0.13.0",
+          "ShortDescription": "\"docker sandbox\" is deprecated, use Docker Sandboxes instead",
+          "URL": "https://www.docker.com/products/docker-sandboxes",
+          "Hidden": true,
+          "Name": "sandbox",
+          "Path": "C:\\Program Files\\Docker\\cli-plugins\\docker-sandbox.exe"
+        },
+        {
+          "SchemaVersion": "0.1.0",
+          "Vendor": "Docker Inc.",
+          "Version": "v1.24.0",
+          "ShortDescription": "Docker Scout",
+          "Name": "scout",
+          "Path": "C:\\Program Files\\Docker\\cli-plugins\\docker-scout.exe"
+        }
+      ],
+      "Warnings": null
+    }
+  },
+  "images": {
+    "dotnet": {
+      "Id": "sha256:c8baecd2e49b8b33487261be673c082273b52b6ad927229abdd9505aff1e16b8",
+      "RepoTags": [
+        "campfire-dotnet:room-limit-jit"
+      ],
+      "RepoDigests": [
+        "campfire-dotnet@sha256:c8baecd2e49b8b33487261be673c082273b52b6ad927229abdd9505aff1e16b8"
+      ],
+      "Comment": "buildkit.dockerfile.v0",
+      "Created": "2026-10-05T16:06:39.17792884Z",
+      "Config": {
+        "User": "app",
+        "ExposedPorts": {
+          "3000/tcp": {}
+        },
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "APP_UID=1654",
+          "ASPNETCORE_HTTP_PORTS=8080",
+          "DOTNET_RUNNING_IN_CONTAINER=true",
+          "DOTNET_VERSION=10.0.12",
+          "ASPNET_VERSION=10.0.12",
+          "ASPNETCORE_URLS=http://+:3000",
+          "ASPNETCORE_ENVIRONMENT=Production",
+          "CAMPFIRE_STORAGE=/rails/storage",
+          "CAMPFIRE_VIPS_COMMAND=/app/vips-safe",
+          "VIPS_BLOCK_UNTRUSTED=1"
+        ],
+        "Entrypoint": [
+          "dotnet",
+          "Campfire.dll"
+        ],
+        "WorkingDir": "/app",
+        "Labels": {
+          "org.opencontainers.image.version": "24.04"
+        }
+      },
+      "Architecture": "amd64",
+      "Os": "linux",
+      "Size": 1169052071,
+      "RootFS": {
+        "Type": "layers",
+        "Layers": [
+          "sha256:32ab39660fd51c6dc3aae486b42d42bbe8fe4c1db78eaf57bb9c21198de48a16",
+          "sha256:313aea57446d59434c4949c65acbd367c02c13067e66d7273c8bdab3450baf39",
+          "sha256:806311afe1a5416d87f661a0434393b8835881214ea1490ebbe63b917dcdf7e7",
+          "sha256:8ce69102a98ba592f897dad7399301cc879d0ff3d462c0217c6bfd68ca25776a",
+          "sha256:677498bcad5664b66a48b40f2eea193e91737cd86e0b979dcbf5de15f9ff4f78",
+          "sha256:00c4767cdd8b4577f11cc82dd407303732a5417ba6ee0dbf2692b85f37c6a9b7",
+          "sha256:f164ff585e89d0cc51db4ab97e0c184abac5fef3d6ea65aec245c070aa822cbe",
+          "sha256:e872caf65025a22e9ad91f22b660499537ea6d1c393d49ad6aec79e674c828ea",
+          "sha256:89880bb1d5359e8e7be7c5a59cbcc6e0e8f068f934dc7ea0400d874d5a083801",
+          "sha256:06b27895e6a21401cad0022e07968bda73ef496b88e45729d35688049be74357",
+          "sha256:02024d67b1363796a50c7c73a23daeabda8da0eb53f992ae3f0ba7ded63a48ab",
+          "sha256:66350dd1659bcead8a0fe1eeafa3d3d1282bfaeb7bb4c206155cd1efed46c976"
+        ]
+      },
+      "Metadata": {
+        "LastTagTime": "2026-10-05T16:06:41.094085518Z"
+      },
+      "Descriptor": {
+        "mediaType": "application/vnd.oci.image.index.v1+json",
+        "digest": "sha256:c8baecd2e49b8b33487261be673c082273b52b6ad927229abdd9505aff1e16b8",
+        "size": 856
+      },
+      "Identity": {
+        "Build": [
+          {
+            "Ref": "5ox87n76p9koy0qrj4s564qf9",
+            "CreatedAt": "2026-10-05T16:06:41.641165589Z"
+          }
+        ]
+      }
+    },
+    "aot": {
+      "Id": "sha256:ac3f95625ccd4468676d3eb0c5a0220f0407e4c552d3777ada5e0578b4c76bff",
+      "RepoTags": [
+        "campfire-dotnet:room-limit-aot"
+      ],
+      "RepoDigests": [
+        "campfire-dotnet@sha256:ac3f95625ccd4468676d3eb0c5a0220f0407e4c552d3777ada5e0578b4c76bff"
+      ],
+      "Comment": "buildkit.dockerfile.v0",
+      "Created": "2026-10-05T16:07:19.656356596Z",
+      "Config": {
+        "User": "app",
+        "ExposedPorts": {
+          "3000/tcp": {}
+        },
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "APP_UID=1654",
+          "ASPNETCORE_HTTP_PORTS=8080",
+          "DOTNET_RUNNING_IN_CONTAINER=true",
+          "ASPNETCORE_URLS=http://+:3000",
+          "ASPNETCORE_ENVIRONMENT=Production",
+          "CAMPFIRE_STORAGE=/rails/storage",
+          "CAMPFIRE_VIPS_COMMAND=/app/vips-safe",
+          "VIPS_BLOCK_UNTRUSTED=1"
+        ],
+        "Entrypoint": [
+          "/app/Campfire"
+        ],
+        "WorkingDir": "/app",
+        "Labels": {
+          "org.opencontainers.image.version": "24.04"
+        }
+      },
+      "Architecture": "amd64",
+      "Os": "linux",
+      "Size": 1040965417,
+      "RootFS": {
+        "Type": "layers",
+        "Layers": [
+          "sha256:32ab39660fd51c6dc3aae486b42d42bbe8fe4c1db78eaf57bb9c21198de48a16",
+          "sha256:313aea57446d59434c4949c65acbd367c02c13067e66d7273c8bdab3450baf39",
+          "sha256:806311afe1a5416d87f661a0434393b8835881214ea1490ebbe63b917dcdf7e7",
+          "sha256:094cf4843f19005d71c1f0dcecee240902b260f33b5f825893f9f10119216e01",
+          "sha256:0230fc584387e871717a97348bbbed34a0b00b5bef37f2b58388b96ec7ea9391",
+          "sha256:74e39111481c6c412a13245124684a28e5017e422dbb0b0e8e48a4b0634054c8",
+          "sha256:06b27895e6a21401cad0022e07968bda73ef496b88e45729d35688049be74357",
+          "sha256:776f6e7e8bda473fd9ecf12cde86c2a71b04a1f03d0647fc8237a2a0237aebef",
+          "sha256:ee88f1d2f3595e3fb0f03456395f4e5bb59fb7f09aad37f4da0206d28cbb0f35"
+        ]
+      },
+      "Metadata": {
+        "LastTagTime": "2026-10-05T16:07:21.709438765Z"
+      },
+      "Descriptor": {
+        "mediaType": "application/vnd.oci.image.index.v1+json",
+        "digest": "sha256:ac3f95625ccd4468676d3eb0c5a0220f0407e4c552d3777ada5e0578b4c76bff",
+        "size": 856
+      },
+      "Identity": {
+        "Build": [
+          {
+            "Ref": "68we9uk2aqfsjun8xj3km7qby",
+            "CreatedAt": "2026-10-05T16:07:22.235065471Z"
+          }
+        ]
+      }
+    },
+    "rust": {
+      "Id": "sha256:5f7be4ddab928522af0d22cb0a1cd35721cb1a865481f168d3cc06b307fc3584",
+      "RepoTags": [
+        "ghcr.io/basecamp/once-campfire-rust:main"
+      ],
+      "RepoDigests": [
+        "ghcr.io/basecamp/once-campfire-rust@sha256:5f7be4ddab928522af0d22cb0a1cd35721cb1a865481f168d3cc06b307fc3584"
+      ],
+      "Comment": "buildkit.dockerfile.v0",
+      "Created": "2026-10-01T19:48:59.013264479Z",
+      "Config": {
+        "User": "1000:1000",
+        "ExposedPorts": {
+          "443/tcp": {},
+          "80/tcp": {}
+        },
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "RAILS_ENV=production",
+          "HTTP_IDLE_TIMEOUT=60",
+          "HTTP_READ_TIMEOUT=300",
+          "HTTP_WRITE_TIMEOUT=300",
+          "APP_VERSION=64f8635",
+          "GIT_REVISION=64f86353021145b63849fb1cd93adeb08f3b8dbb"
+        ],
+        "Cmd": [
+          "bin/boot"
+        ],
+        "WorkingDir": "/rails",
+        "Labels": {
+          "org.opencontainers.image.created": "2026-10-01T21:25:47.835Z",
+          "org.opencontainers.image.description": "ONCE Campfire in Rust: one binary, the Rails app's data, 19\u201344\u00d7 faster",
+          "org.opencontainers.image.licenses": "MIT",
+          "org.opencontainers.image.revision": "64f86353021145b63849fb1cd93adeb08f3b8dbb",
+          "org.opencontainers.image.source": "https://github.com/basecamp/once-campfire-rust",
+          "org.opencontainers.image.title": "once-campfire-rust",
+          "org.opencontainers.image.url": "https://github.com/basecamp/once-campfire-rust",
+          "org.opencontainers.image.version": "main-amd64"
+        },
+        "ArgsEscaped": true
+      },
+      "Architecture": "amd64",
+      "Os": "linux",
+      "Size": 249538459,
+      "RootFS": {
+        "Type": "layers",
+        "Layers": [
+          "sha256:a6dc765193a52cbaede3c93a9ff48b9540948dd0774bbe7031fcb5847606f9ac",
+          "sha256:4182de35907904702c5a610412643cc7e9b94c8292befb8a35fbc11e81449a6e",
+          "sha256:949ee9f90143c4a1069352559e61b976766f9b24d262d0f45540efa4477c4934",
+          "sha256:1fd936c792efaf4a3d3784019dde9e06381c6cab5fb5c7b15606752f54af318e",
+          "sha256:aca2fa95659b3895f7ced153a2b8e19321fe4ecc4bef2d61ebb768f2daa51820",
+          "sha256:a96399e2ffe1fba069d74cee0da8e8930e90a5fe61b02675adeb58bc73f76330",
+          "sha256:6fc60ce8b7197e70e7f13262530d78c245fde593f3b13df0bcb6090dd43af675",
+          "sha256:c0bca3c02a81826b728ef4d9195fa6f43086f920e0c45304552b37c6400d98f3",
+          "sha256:e6b7fd40aebbb4d88159bef6d73d8c3bf8ebee9e9c730d40e8bdbd44d447dc45",
+          "sha256:f047201d2a342badb79d83fb9932c2219389142383125e438af8626be0224fc9",
+          "sha256:a332b5ac7cf3d27c0df252fe19fce7b81d1816a0bcdc9e3062592e215e4d911e"
+        ]
+      },
+      "Metadata": {
+        "LastTagTime": "2026-10-04T20:41:51.695920856Z"
+      },
+      "Descriptor": {
+        "mediaType": "application/vnd.oci.image.index.v1+json",
+        "digest": "sha256:5f7be4ddab928522af0d22cb0a1cd35721cb1a865481f168d3cc06b307fc3584",
+        "size": 1022
+      },
+      "Identity": {
+        "Pull": [
+          {
+            "Repository": "ghcr.io/basecamp/once-campfire-rust"
+          }
+        ]
+      }
+    }
+  },
+  "background_containers": "dbgate-jmswgjjh dbgate/dbgate:6.1.4\ncopeland-sql-a9e80aad 192.168.0.104:5000/copeland-sql:latest\ncodex-aspire-tailnet-router nginx:alpine",
+  "loadgen_image": {
+    "Id": "sha256:50177e31cc6a63796069243204a55549172b6d5358f00eb7fd837360a17c823b",
+    "RepoTags": [
+      "campfire-dotnet-loadgen:latest"
+    ],
+    "RepoDigests": [
+      "campfire-dotnet-loadgen@sha256:50177e31cc6a63796069243204a55549172b6d5358f00eb7fd837360a17c823b"
+    ],
+    "Comment": "buildkit.dockerfile.v0",
+    "Created": "2026-10-04T20:44:46.829267404Z",
+    "Config": {
+      "Env": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      ],
+      "Entrypoint": [
+        "loadgen"
+      ]
+    },
+    "Architecture": "amd64",
+    "Os": "linux",
+    "Size": 124792802,
+    "RootFS": {
+      "Type": "layers",
+      "Layers": [
+        "sha256:a6dc765193a52cbaede3c93a9ff48b9540948dd0774bbe7031fcb5847606f9ac",
+        "sha256:8ed1efeba5e24696b7c5e334c1798e78bf18a38e88e66de31e51962ae545d33a"
+      ]
+    },
+    "Metadata": {
+      "LastTagTime": "2026-10-04T20:44:47.401462106Z"
+    },
+    "Descriptor": {
+      "mediaType": "application/vnd.oci.image.index.v1+json",
+      "digest": "sha256:50177e31cc6a63796069243204a55549172b6d5358f00eb7fd837360a17c823b",
+      "size": 855
+    },
+    "Identity": {
+      "Build": [
+        {
+          "Ref": "dzrnep07zi6v6a7id7wucu33j",
+          "CreatedAt": "2026-10-04T20:44:47.466773926Z"
+        }
+      ]
+    }
+  },
+  "upload_image": null,
+  "harness_sha256": "e1f77c70d191af88999299f9a4463facdc1346138be74180c4731496120be8f3",
+  "upload_client_sha256": "0f2f967423bd3c499f6e6bcd3e3a30a7deac5bf8699e85a03de41137e23b17ad",
+  "loadgen_instrumentation": null,
+  "application_source_sha256": "09f27c21d18675f1fed479655b3112f17c2621ce8cf79c0797279734c1393653",
+  "application_runtime_source_sha256": "4ba40a663875c3e16521faaac3e22f66c4ac27b81ed356a258a2f99620031f9a",
+  "seed_database_sha256": "3550c994635f47056dcfd12f6ba182d2f7ca5eaa4ae53a39725c9f9c3b0063aa",
+  "runtime_source_sha256_by_app": {
+    "dotnet": "4ba40a663875c3e16521faaac3e22f66c4ac27b81ed356a258a2f99620031f9a",
+    "aot": "4ba40a663875c3e16521faaac3e22f66c4ac27b81ed356a258a2f99620031f9a"
+  },
+  "collection_output": "bench\\results\\room-12k-20261005\\literal",
+  "selection_note": "Only current implementation records are retained from the collected run. Per-implementation samples and response bytes are unchanged."
+}

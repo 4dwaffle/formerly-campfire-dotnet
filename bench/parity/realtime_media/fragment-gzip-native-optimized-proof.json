@@ -1,0 +1,31 @@
+{
+  "capture": "bench/results/render-cache-20261005/dotnet-1-room.html",
+  "capture_sha256": "a3439ac51991fb826db76662a7fe52ea50a006e306fa5e4b1b36609280bb803e",
+  "decoded_bytes": 404478,
+  "messages": 40,
+  "segments": 686,
+  "whole_gzip_fastest_bytes": 36250,
+  "native_fragment_bytes": 28673,
+  "native_fragment_sha256": "3bd59984dfa96e68d7eda65d76775df4d6854fad84983cfd941e53f3aba6ae21",
+  "cold_warm_bytes_equal": true,
+  "cache_entries": 362,
+  "cache_reserved_bytes": 14387043,
+  "native_backend": true,
+  "exact_dotnet_gzip_decode": true,
+  "timing_benchmark": false,
+  "native_test_cases": 197,
+  "native_test_failures": 0,
+  "native_test_skipped": 0,
+  "exact_independent_python_gzip_decode": true,
+  "exact_independent_python_zlib_decode": true,
+  "gzip_crc_isize_validated": true,
+  "initial_native_bytes_unchanged": true,
+  "verified_file_sha256": {
+    "src/Campfire/Features/WebSupport/FragmentGzipEncoder.cs": "e14bb158055ddd7de2b567a16eaf42486af26140254e19489de2ecd579eaea1c",
+    "src/Campfire/Features/WebSupport/FragmentDeflate.cs": "d9660d50aeb159cdf466c1c42d829b881e17a27d8d0021e1f6ce6a77157b68fa",
+    "src/Campfire/Features/WebSupport/FragmentHistory.cs": "3d073f5bfd30c21cb9678ab2db8b9940d0163df4415d8f0a672c282d4b84ac9f",
+    "src/Campfire/Features/WebSupport/FragmentBackreference.cs": "0ccc00a065f34ff109ebddd027068f9a7e99bd0ba7261fd567ee88984b424774",
+    "src/Campfire/Features/WebSupport/native/fragment-deflate.c": "ca5c5b658000332480b85d14db40d113ebd466bcecae0596b4b978fa47b71b24",
+    "tests/System/FragmentGzipTests.cs": "c2cb3da015abc33ed115080a894d036a8c10f241dadd6ea37454a1d31cf35204"
+  }
+}

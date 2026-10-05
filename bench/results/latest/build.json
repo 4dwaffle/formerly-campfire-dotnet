@@ -1,0 +1,33 @@
+{
+  "settings": {
+    "gzip": true,
+    "sqlite_qpsg": false,
+    "page_limit": "Application PageSize constant in SQL; request inputs remain bound",
+    "kestrel": "default scheduling",
+    "fragment_gzip": true,
+    "native_aot": "portable balanced"
+  },
+  "build_times": "Not measured for this version.",
+  "validation": {
+    "identity_tests": 44,
+    "chat_tests": 64,
+    "full_rails_parity": "Not certified; prior twelve stored-body normalization failures remain.",
+    "release_build": "passed, zero warnings and errors",
+    "system_tests": 222
+  },
+  "runtime_source_sha256": "4ba40a663875c3e16521faaac3e22f66c4ac27b81ed356a258a2f99620031f9a",
+  "images": {
+    "aot": {
+      "id": "sha256:ac3f95625ccd4468676d3eb0c5a0220f0407e4c552d3777ada5e0578b4c76bff",
+      "created": "2026-10-05T16:07:19.656356596Z"
+    },
+    "rust": {
+      "id": "sha256:5f7be4ddab928522af0d22cb0a1cd35721cb1a865481f168d3cc06b307fc3584",
+      "created": "2026-10-01T19:48:59.013264479Z"
+    },
+    "dotnet": {
+      "id": "sha256:c8baecd2e49b8b33487261be673c082273b52b6ad927229abdd9505aff1e16b8",
+      "created": "2026-10-05T16:06:39.17792884Z"
+    }
+  }
+}

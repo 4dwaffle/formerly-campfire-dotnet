@@ -1,0 +1,429 @@
+{
+  "checked_utc": "2026-10-05T11:14:33.128492+00:00",
+  "manifest": "instances-rust-inspired.json",
+  "manifest_sha256": "0ebbc6c0ba3569af6d54d8db1b4b1a037bd6ab582d76322189e175790689332b",
+  "reported_runtime_source_sha256": "7702ad59794a99f7853827b97ae49924c71e0d9cdf20d1ff5f29a22a059b6ee5",
+  "images": {
+    "rails": {
+      "base": "http://127.0.0.1:4450",
+      "container": "cf-dotnet-50ca0984c672-app",
+      "volume": "cf-dotnet-50ca0984c672-data",
+      "network": "cf-dotnet-50ca0984c672",
+      "image": "ghcr.io/basecamp/once-campfire@sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "image_id": "sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "ready_ms": 4338.770200003637,
+      "client_cpus": "12-15"
+    },
+    "dotnet": {
+      "base": "http://127.0.0.1:4451",
+      "container": "cf-dotnet-ef4683558eaf-app",
+      "volume": "cf-dotnet-ef4683558eaf-data",
+      "network": "cf-dotnet-ef4683558eaf",
+      "image": "campfire-dotnet:rust-inspired-jit",
+      "image_id": "sha256:c453efc414c95bf62b360cbf3d18a926c3b098bf9e38a4dff9fc03488b8422df",
+      "ready_ms": 818.3956999855582,
+      "client_cpus": "12-15"
+    },
+    "aot": {
+      "base": "http://127.0.0.1:4452",
+      "container": "cf-dotnet-b3798299b616-app",
+      "volume": "cf-dotnet-b3798299b616-data",
+      "network": "cf-dotnet-b3798299b616",
+      "image": "campfire-dotnet:rust-inspired-aot",
+      "image_id": "sha256:cf8530ecce2ed05dfb245ba032db90f158e9c2d24dfd3cbc0ec88e16296a1d08",
+      "ready_ms": 563.1397999823093,
+      "client_cpus": "12-15"
+    }
+  },
+  "gates": [
+    {
+      "file": "assertions-rust-inspired.json",
+      "sha256": "58ea42b5433d95e509877e832eb648d278cd8ebc701b105af7e14f1c9fd2d2a5",
+      "assertions": 154,
+      "passed": 154,
+      "failed": 0
+    },
+    {
+      "file": "broader-assertions-rust-inspired.json",
+      "sha256": "02ed535c516104d3f9f40626976dcd2b2ff0209f1aca8c763647cfc9a8ce1c6c",
+      "assertions": 18,
+      "passed": 18,
+      "failed": 0
+    },
+    {
+      "file": "source-assertions-rust-inspired.json",
+      "sha256": "d04385e02a0ed292948c77af81c46793bcd5e94e9b2f1af81a96f65b75e4e679",
+      "assertions": 17,
+      "passed": 17,
+      "failed": 0
+    },
+    {
+      "file": "frame-assertions-rust-inspired.json",
+      "sha256": "0581bbd4ff2a013fa70c60ebc3e6859342c7c41ec8c7c6d61483109428c3ac0e",
+      "assertions": 22,
+      "passed": 22,
+      "failed": 0
+    },
+    {
+      "file": "fts-assertions-rust-inspired.json",
+      "sha256": "b3d1d4972e1933d2befe1655da74a43c2dde9e7b59433d6675c5b5e41bc32c22",
+      "assertions": 12,
+      "passed": 12,
+      "failed": 0
+    },
+    {
+      "file": "cache-assertions-rust-inspired.json",
+      "sha256": "96c6b36d301482ef24be8ffc03dbf1b7b13ed9b317caaf4e8732a4f5201b9844",
+      "assertions": 47,
+      "passed": 47,
+      "failed": 0
+    },
+    {
+      "file": "compressed-assertions-rust-inspired.json",
+      "sha256": "0ae00fdc2e6eccd50703c3758a92fb025485ea023c5e938b0a05c0d130d34b42",
+      "assertions": 66,
+      "passed": 66,
+      "failed": 0
+    }
+  ],
+  "assertions": 336,
+  "passed": 336,
+  "failed": 0,
+  "response_records": [
+    {
+      "suite": "cache",
+      "app": "aot",
+      "count": 15,
+      "statuses": {
+        "200": 9,
+        "302": 6
+      },
+      "sha256": "bb4b081818cb5e8e528b6c1ce9996b2edc713f83a535a5edcc342c55e651448d",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/cache/aot/responses.json"
+    },
+    {
+      "suite": "cache",
+      "app": "dotnet",
+      "count": 15,
+      "statuses": {
+        "200": 9,
+        "302": 6
+      },
+      "sha256": "3268f92c78acc61243ad4c5ed6188549470cad3596bbe9ef65d195fa7ed7dd83",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/cache/dotnet/responses.json"
+    },
+    {
+      "suite": "cache",
+      "app": "rails",
+      "count": 15,
+      "statuses": {
+        "200": 9,
+        "302": 6
+      },
+      "sha256": "5a9de953e43148e5bb4bb2dd3429beb2d6310d0569b798fb77c9fa28a8b035a7",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/cache/rails/responses.json"
+    },
+    {
+      "suite": "compressed",
+      "app": "aot",
+      "count": 24,
+      "statuses": {
+        "200": 17,
+        "204": 1,
+        "302": 5,
+        "422": 1
+      },
+      "sha256": "9592f473271c24d3353b4b9718f6da8156df3f34c9ce36be3a67fa2eb0bb32ba",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/compressed/aot/responses.json"
+    },
+    {
+      "suite": "compressed",
+      "app": "dotnet",
+      "count": 24,
+      "statuses": {
+        "200": 17,
+        "204": 1,
+        "302": 5,
+        "422": 1
+      },
+      "sha256": "6641742b4da46df333b1447d732f2ec9f9fdcd98f82f67af6560b13a65ff6063",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/compressed/dotnet/responses.json"
+    },
+    {
+      "suite": "compressed",
+      "app": "rails",
+      "count": 24,
+      "statuses": {
+        "200": 17,
+        "204": 1,
+        "302": 5,
+        "422": 1
+      },
+      "sha256": "cb5270fd81788373c6375303cfdbfd5f4149d87b2c013aec05e3731291487339",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/compressed/rails/responses.json"
+    },
+    {
+      "suite": "edges",
+      "app": "aot",
+      "count": 24,
+      "statuses": {
+        "200": 13,
+        "201": 2,
+        "204": 2,
+        "302": 3,
+        "403": 2,
+        "404": 1,
+        "500": 1
+      },
+      "sha256": "ebf5f7b1e9ddd503cafac4e12257c116a7985f450b7c1a5c6c994a33015d6b18",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/edges/aot/responses.json"
+    },
+    {
+      "suite": "edges",
+      "app": "dotnet",
+      "count": 24,
+      "statuses": {
+        "200": 13,
+        "201": 2,
+        "204": 2,
+        "302": 3,
+        "403": 2,
+        "404": 1,
+        "500": 1
+      },
+      "sha256": "cac15a82ee6c1e6752b282e4124bb05fcdb810e1a5e2302d89bb99d2316b8619",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/edges/dotnet/responses.json"
+    },
+    {
+      "suite": "edges",
+      "app": "rails",
+      "count": 24,
+      "statuses": {
+        "200": 13,
+        "201": 2,
+        "204": 2,
+        "302": 3,
+        "403": 2,
+        "404": 1,
+        "500": 1
+      },
+      "sha256": "e138b2e2f073bafa86f0de7fdb37927423753cb80058b7eca57ab5d32629c8c1",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/edges/rails/responses.json"
+    },
+    {
+      "suite": "followups",
+      "app": "aot",
+      "count": 10,
+      "statuses": {
+        "200": 2,
+        "302": 5,
+        "304": 1,
+        "403": 1,
+        "500": 1
+      },
+      "sha256": "395316432bd184ee30629afdc6d9fcad22ba33c91ad4eb91e0cc2e251b47f1a3",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/followups/aot/responses.json"
+    },
+    {
+      "suite": "followups",
+      "app": "dotnet",
+      "count": 10,
+      "statuses": {
+        "200": 2,
+        "302": 5,
+        "304": 1,
+        "403": 1,
+        "500": 1
+      },
+      "sha256": "3e5d75d3c285477675ce8f36489752947b0d96d76e562677415e32945285c17c",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/followups/dotnet/responses.json"
+    },
+    {
+      "suite": "followups",
+      "app": "rails",
+      "count": 10,
+      "statuses": {
+        "200": 2,
+        "302": 5,
+        "304": 1,
+        "403": 1,
+        "500": 1
+      },
+      "sha256": "1ed10eabc2cb4348a73763c6ed344f654740a2b4022c6947ebfd8a2887c925b7",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/followups/rails/responses.json"
+    },
+    {
+      "suite": "frame",
+      "app": "aot",
+      "count": 5,
+      "statuses": {
+        "200": 3,
+        "302": 2
+      },
+      "sha256": "35b153ce61bb1ecdea13caf73889367aa30ca25f016fe4ee5b377f417f72f0a6",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/frame/aot/responses.json"
+    },
+    {
+      "suite": "frame",
+      "app": "dotnet",
+      "count": 5,
+      "statuses": {
+        "200": 3,
+        "302": 2
+      },
+      "sha256": "ab99843aa366ecd55f7c3aa89c2680f65a7a409d3c4f048b059c251fbc85068b",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/frame/dotnet/responses.json"
+    },
+    {
+      "suite": "frame",
+      "app": "rails",
+      "count": 5,
+      "statuses": {
+        "200": 3,
+        "302": 2
+      },
+      "sha256": "68f97b79712dde01dd1b14188a28d36d1d02221271d3573b0c4b225e0a863399",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/frame/rails/responses.json"
+    },
+    {
+      "suite": "fts",
+      "app": "aot",
+      "count": 11,
+      "statuses": {
+        "200": 4,
+        "302": 2,
+        "500": 5
+      },
+      "sha256": "84d5dc04224e5268131380c70bf8f619e862119d0d6ab9ebc5e864cb71f27461",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/fts/aot/responses.json"
+    },
+    {
+      "suite": "fts",
+      "app": "dotnet",
+      "count": 11,
+      "statuses": {
+        "200": 4,
+        "302": 2,
+        "500": 5
+      },
+      "sha256": "f5a07964db42d91f977d6c261f70d254d87027bf1442b3706bf28164cecb57e3",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/fts/dotnet/responses.json"
+    },
+    {
+      "suite": "fts",
+      "app": "rails",
+      "count": 11,
+      "statuses": {
+        "200": 4,
+        "302": 2,
+        "500": 5
+      },
+      "sha256": "341bc1756796e461140307ee28384eb00b87273bf512867859de99d5dcade5e4",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/fts/rails/responses.json"
+    },
+    {
+      "suite": "main",
+      "app": "aot",
+      "count": 160,
+      "statuses": {
+        "200": 90,
+        "201": 3,
+        "302": 29,
+        "304": 2,
+        "400": 1,
+        "403": 2,
+        "404": 20,
+        "406": 7,
+        "422": 1,
+        "500": 5
+      },
+      "sha256": "8a8e29fe3044f491840cd6641e679f27c9288d245a7a23aca61341356c5f1794",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/main/aot/responses.json"
+    },
+    {
+      "suite": "main",
+      "app": "dotnet",
+      "count": 160,
+      "statuses": {
+        "200": 90,
+        "201": 3,
+        "302": 29,
+        "304": 2,
+        "400": 1,
+        "403": 2,
+        "404": 20,
+        "406": 7,
+        "422": 1,
+        "500": 5
+      },
+      "sha256": "0c59ae3a7ca6de237972b24d9d7cc0781f3d2e8afb2a22631e35153a791c4e7e",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/main/dotnet/responses.json"
+    },
+    {
+      "suite": "main",
+      "app": "rails",
+      "count": 160,
+      "statuses": {
+        "200": 90,
+        "201": 3,
+        "302": 29,
+        "304": 2,
+        "400": 1,
+        "403": 2,
+        "404": 20,
+        "406": 7,
+        "422": 1,
+        "500": 5
+      },
+      "sha256": "6a72a61cb5141a9ba9adcddb1365337564686a968f301e622d05d2ea9329561b",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/main/rails/responses.json"
+    },
+    {
+      "suite": "source",
+      "app": "aot",
+      "count": 35,
+      "statuses": {
+        "200": 19,
+        "201": 1,
+        "302": 4,
+        "406": 6,
+        "500": 5
+      },
+      "sha256": "f32d29cac5488fa7de882895db5feda7cf087ef7a3b59d8abde41154ad011730",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/source/aot/responses.json"
+    },
+    {
+      "suite": "source",
+      "app": "dotnet",
+      "count": 35,
+      "statuses": {
+        "200": 19,
+        "201": 1,
+        "302": 4,
+        "406": 6,
+        "500": 5
+      },
+      "sha256": "aa1ee355fa215238e428ba3f434781b2eddff4a8ae1bdee41943c462c9d0383e",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/source/dotnet/responses.json"
+    },
+    {
+      "suite": "source",
+      "app": "rails",
+      "count": 35,
+      "statuses": {
+        "200": 19,
+        "201": 1,
+        "302": 4,
+        "406": 6,
+        "500": 5
+      },
+      "sha256": "3698cf11eff595f4dac4d9e22ca8bf2e48ee3cc05085800daa5f1b966ace5235",
+      "raw_path": "bench/parity/chat/runtime/rust-inspired/source/rails/responses.json"
+    }
+  ],
+  "captured_requests": 852,
+  "cache_probe": "cache-policy-rust-inspired.json",
+  "cache_probe_sha256": "818a2c22566f9963e75ccf544b2f7651ff129ae0ced8831670c3e4bdb7f5ea1a",
+  "cleanup": "cleanup-rust-inspired.json",
+  "scope_note": "Frozen manifest images only. Expected error statuses are retained and asserted, including deliberate callback failures. These captures do not cover later host/codec changes and do not certify universal parity. Servers CPUs8-11 and SQL helpers12-15; Windows HTTP clients/shared Docker/I/O were not isolated. No transport exceptions occurred. Raw response and body captures remain under the ignored runtime directory."
+}

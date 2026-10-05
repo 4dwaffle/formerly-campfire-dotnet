@@ -1,0 +1,86 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.aot
+#1 transferring dockerfile: 1.50kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for mcr.microsoft.com/dotnet/sdk:10.0
+#2 DONE 0.0s
+
+#3 [internal] load metadata for mcr.microsoft.com/dotnet/runtime-deps:10.0
+#3 DONE 0.1s
+
+#4 [build 1/9] FROM mcr.microsoft.com/dotnet/sdk:10.0@sha256:4ea6fe75dd36706bb6d8c3c293d4c4315840f5d76ea28ac97def77e3ec487fa5
+#4 resolve mcr.microsoft.com/dotnet/sdk:10.0@sha256:4ea6fe75dd36706bb6d8c3c293d4c4315840f5d76ea28ac97def77e3ec487fa5 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 158B done
+#5 DONE 0.0s
+
+#6 [runtime 1/7] FROM mcr.microsoft.com/dotnet/runtime-deps:10.0@sha256:12dd273c196e92aa91542749b8df0996f497f812811abba9e6613b484f681dd0
+#6 resolve mcr.microsoft.com/dotnet/runtime-deps:10.0@sha256:12dd273c196e92aa91542749b8df0996f497f812811abba9e6613b484f681dd0 0.0s done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 117.81kB 0.0s done
+#7 DONE 0.0s
+
+#8 [build 3/9] WORKDIR /src
+#8 CACHED
+
+#9 [build 2/9] RUN apt-get update && apt-get install -y --no-install-recommends clang build-essential zlib1g-dev libvips-dev pkg-config && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [build 4/9] COPY NuGet.Config global.json ./
+#10 CACHED
+
+#11 [build 5/9] COPY src/Campfire/Campfire.csproj src/Campfire/
+#11 CACHED
+
+#12 [build 6/9] RUN dotnet restore src/Campfire/Campfire.csproj -r linux-x64 -p:PublishAot=true
+#12 CACHED
+
+#13 [build 7/9] COPY src/Campfire/ src/Campfire/
+#13 DONE 0.2s
+
+#14 [build 8/9] RUN dotnet publish src/Campfire/Campfire.csproj -c Release -r linux-x64 -p:PublishAot=true -p:TrimmerSingleWarn=false -p:IlcSingleWarn=false --no-restore -o /app
+#14 7.555   Campfire -> /src/src/Campfire/bin/Release/net10.0/linux-x64/Campfire.dll
+#14 7.874   Generating native code
+#14 36.29   Campfire -> /app/
+#14 DONE 36.6s
+
+#15 [build 9/9] RUN cc -O2 -Wall -Werror=incompatible-pointer-types -o /app/vips-safe src/Campfire/Features/Storage/native/vips-safe.c $(pkg-config --cflags --libs vips)
+#15 DONE 0.5s
+
+#16 [runtime 2/7] RUN apt-get update && apt-get install -y --no-install-recommends libvips-tools ffmpeg file && rm -rf /var/lib/apt/lists/*
+#16 CACHED
+
+#17 [runtime 3/7] WORKDIR /app
+#17 CACHED
+
+#18 [runtime 4/7] COPY --from=build /app .
+#18 DONE 0.3s
+
+#19 [runtime 5/7] COPY hooks/ /hooks/
+#19 DONE 0.1s
+
+#20 [runtime 6/7] RUN sed -i 's/\r$//' /hooks/pre-backup /hooks/post-restore && sed -i 's@dotnet /app/Campfire.dll@/app/Campfire@' /hooks/pre-backup && chmod +x /hooks/pre-backup /hooks/post-restore
+#20 DONE 0.2s
+
+#21 [runtime 7/7] RUN mkdir -p /rails/storage/db /rails/storage/files && chown -R app:app /rails/storage
+#21 DONE 0.4s
+
+#22 exporting to image
+#22 exporting layers
+#22 exporting layers 2.1s done
+#22 exporting manifest sha256:2b8e9882abb33d392154ca8195ec14c068799979f478c0a79fbaba203de67583 0.0s done
+#22 exporting config sha256:60488793a17f7ed25f78414b23a0cf4c93af6c64340b36b5dea2de2ca3a1abd5 0.0s done
+#22 exporting attestation manifest sha256:e77c24c62db5db4e9033b145e9341706fd612aab769d6646ece6c5f17d232fef 0.0s done
+#22 exporting manifest list sha256:0af416e9d6da2afa6e63dc3ef8136d66a481ce8cdfbf3e54a649a1a9db6e33f6 0.0s done
+#22 naming to docker.io/library/campfire-dotnet:rails-errors-v2-aot done
+#22 unpacking to docker.io/library/campfire-dotnet:rails-errors-v2-aot
+#22 unpacking to docker.io/library/campfire-dotnet:rails-errors-v2-aot 0.6s done
+#22 DONE 2.7s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/jq6z5qyne0yvy8r7zt4s755dp

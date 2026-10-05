@@ -1,0 +1,9 @@
+FROM mcr.microsoft.com/dotnet/sdk:10.0
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential libvips-dev pkg-config && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends libvips-tools && rm -rf /var/lib/apt/lists/*
+WORKDIR /check
+COPY src/Campfire/Features/Storage/native/vips-safe.c ./vips-safe.c
+RUN cc -O2 -Wall -Werror=incompatible-pointer-types -o /check/vips-safe /check/vips-safe.c $(pkg-config --cflags --libs vips)
+COPY tests/Storage/native_smoke.sh ./native_smoke.sh
+RUN sed -i 's/\r$//' /check/native_smoke.sh
+ENTRYPOINT ["sh", "/check/native_smoke.sh"]

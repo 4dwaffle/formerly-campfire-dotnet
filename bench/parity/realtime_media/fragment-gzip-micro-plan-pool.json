@@ -1,0 +1,99 @@
+{
+  "kind": "warm in-memory encode-only micro; no HTTP throughput claim",
+  "warmup_iterations_per_backend": 5277,
+  "warmup_elapsed_ms": 2000.1884,
+  "capture_sha256": "a3439ac51991fb826db76662a7fe52ea50a006e306fa5e4b1b36609280bb803e",
+  "decoded_bytes": 404478,
+  "segments": 686,
+  "fresh_dynamic_variants": 32,
+  "rounds": [
+    {
+      "round": 0,
+      "backend": "native-fragments",
+      "repetitions": 500,
+      "elapsed_ms": 67.7333,
+      "allocated_bytes": 18713040,
+      "encoded_bytes_sum": 14337546
+    },
+    {
+      "round": 0,
+      "backend": "managed-whole-coalesced32k",
+      "repetitions": 500,
+      "elapsed_ms": 70.7187,
+      "allocated_bytes": 80012816,
+      "encoded_bytes_sum": 18127453
+    },
+    {
+      "round": 1,
+      "backend": "managed-whole-coalesced32k",
+      "repetitions": 500,
+      "elapsed_ms": 72.8856,
+      "allocated_bytes": 80012816,
+      "encoded_bytes_sum": 18127453
+    },
+    {
+      "round": 1,
+      "backend": "native-fragments",
+      "repetitions": 500,
+      "elapsed_ms": 65.346,
+      "allocated_bytes": 18712816,
+      "encoded_bytes_sum": 14337546
+    },
+    {
+      "round": 2,
+      "backend": "native-fragments",
+      "repetitions": 500,
+      "elapsed_ms": 65.482,
+      "allocated_bytes": 18712816,
+      "encoded_bytes_sum": 14337546
+    },
+    {
+      "round": 2,
+      "backend": "managed-whole-coalesced32k",
+      "repetitions": 500,
+      "elapsed_ms": 72.4749,
+      "allocated_bytes": 80012816,
+      "encoded_bytes_sum": 18127453
+    },
+    {
+      "round": 3,
+      "backend": "managed-whole-coalesced32k",
+      "repetitions": 500,
+      "elapsed_ms": 69.4238,
+      "allocated_bytes": 80012816,
+      "encoded_bytes_sum": 18127453
+    },
+    {
+      "round": 3,
+      "backend": "native-fragments",
+      "repetitions": 500,
+      "elapsed_ms": 67.1694,
+      "allocated_bytes": 18712816,
+      "encoded_bytes_sum": 14337546
+    },
+    {
+      "round": 4,
+      "backend": "native-fragments",
+      "repetitions": 500,
+      "elapsed_ms": 64.2601,
+      "allocated_bytes": 18712816,
+      "encoded_bytes_sum": 14337546
+    },
+    {
+      "round": 4,
+      "backend": "managed-whole-coalesced32k",
+      "repetitions": 500,
+      "elapsed_ms": 69.5143,
+      "allocated_bytes": 80012816,
+      "encoded_bytes_sum": 18127453
+    }
+  ],
+  "codec_file_sha256": {
+    "FragmentGzipEncoder.cs": "e14bb158055ddd7de2b567a16eaf42486af26140254e19489de2ecd579eaea1c",
+    "FragmentDeflate.cs": "d9660d50aeb159cdf466c1c42d829b881e17a27d8d0021e1f6ce6a77157b68fa",
+    "FragmentHistory.cs": "3d073f5bfd30c21cb9678ab2db8b9940d0163df4415d8f0a672c282d4b84ac9f",
+    "FragmentBackreference.cs": "0ccc00a065f34ff109ebddd027068f9a7e99bd0ba7261fd567ee88984b424774",
+    "native/fragment-deflate.c": "ca5c5b658000332480b85d14db40d113ebd466bcecae0596b4b978fa47b71b24"
+  },
+  "hash_attribution_notice": "Initial prototype harness hashed live production paths, not the ignored prototype candidate. Those hashes must not be used as candidate source identity. Final assembly-plan report records all six actual production files."
+}

@@ -1,0 +1,24 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Campfire/Campfire.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+  <Folder Name="/tests/Chat/">
+    <Project Path="tests/Chat/Chat.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Identity/">
+    <Project Path="tests/Identity/Identity.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Integrations/">
+    <Project Path="tests/Integrations/Integrations.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Realtime/">
+    <Project Path="tests/Realtime/Realtime.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Storage/">
+    <Project Path="tests/Storage/Storage.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tests/System/">
+    <Project Path="tests/System/System.Tests.csproj" />
+  </Folder>
+</Solution>

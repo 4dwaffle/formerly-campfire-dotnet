@@ -1,0 +1,805 @@
+{
+  "application_runtime_source_sha256": "7a1475dfadbe09861fb5a1e47e1a1f005fcac0702c40298bae85479fdf9f208c",
+  "started_utc": "2026-10-05T09:35:59.104366+00:00",
+  "images": {
+    "rails": "sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+    "dotnet": "sha256:04162e54726b372b6943124a6e641bfadd994c237b74e8ba10811738b5461161",
+    "aot": "sha256:276000739c8cdcd00dfb8e61bc9336a6394c57751cd74b9b5961a889ba8ae60c"
+  },
+  "server_cpus": "16-19",
+  "separate_seeded_databases": true,
+  "shared_redis_image": "redis@sha256:c6eabf748fc7a61dbb5a705c78bcf3d6377b1127a97d0ce965c11c44ba46896f",
+  "checks": [
+    {
+      "phase": "typing",
+      "sender": "rails",
+      "receiver": "rails",
+      "passed": true
+    },
+    {
+      "phase": "typing",
+      "sender": "rails",
+      "receiver": "dotnet",
+      "passed": true
+    },
+    {
+      "phase": "typing",
+      "sender": "rails",
+      "receiver": "aot",
+      "passed": true
+    },
+    {
+      "phase": "typing",
+      "sender": "dotnet",
+      "receiver": "rails",
+      "passed": true
+    },
+    {
+      "phase": "typing",
+      "sender": "dotnet",
+      "receiver": "dotnet",
+      "passed": true
+    },
+    {
+      "phase": "typing",
+      "sender": "dotnet",
+      "receiver": "aot",
+      "passed": true
+    },
+    {
+      "phase": "typing",
+      "sender": "aot",
+      "receiver": "rails",
+      "passed": true
+    },
+    {
+      "phase": "typing",
+      "sender": "aot",
+      "receiver": "dotnet",
+      "passed": true
+    },
+    {
+      "phase": "typing",
+      "sender": "aot",
+      "receiver": "aot",
+      "passed": true
+    },
+    {
+      "phase": "turbo",
+      "sender": "rails",
+      "receiver": "rails",
+      "passed": true,
+      "sha256": "3a26c84d9b0768ac2cc7dd5b44e4c2a8be6e4f7e4da8e91477bd54b9092579cd",
+      "bytes": 9951
+    },
+    {
+      "phase": "turbo",
+      "sender": "rails",
+      "receiver": "dotnet",
+      "passed": true,
+      "sha256": "3a26c84d9b0768ac2cc7dd5b44e4c2a8be6e4f7e4da8e91477bd54b9092579cd",
+      "bytes": 9951
+    },
+    {
+      "phase": "turbo",
+      "sender": "rails",
+      "receiver": "aot",
+      "passed": true,
+      "sha256": "3a26c84d9b0768ac2cc7dd5b44e4c2a8be6e4f7e4da8e91477bd54b9092579cd",
+      "bytes": 9951
+    },
+    {
+      "phase": "turbo",
+      "sender": "dotnet",
+      "receiver": "rails",
+      "passed": true,
+      "sha256": "2a34eea32df796ef02df0dcce7d405e1f2ac0c9d6cafcdad368a5ca8b98e6e0c",
+      "bytes": 8519
+    },
+    {
+      "phase": "turbo",
+      "sender": "dotnet",
+      "receiver": "dotnet",
+      "passed": true,
+      "sha256": "2a34eea32df796ef02df0dcce7d405e1f2ac0c9d6cafcdad368a5ca8b98e6e0c",
+      "bytes": 8519
+    },
+    {
+      "phase": "turbo",
+      "sender": "dotnet",
+      "receiver": "aot",
+      "passed": true,
+      "sha256": "2a34eea32df796ef02df0dcce7d405e1f2ac0c9d6cafcdad368a5ca8b98e6e0c",
+      "bytes": 8519
+    },
+    {
+      "phase": "turbo",
+      "sender": "aot",
+      "receiver": "rails",
+      "passed": true,
+      "sha256": "940a9f9c8cc96a1ea8e3b85d421095deb1bf4032a36c941b878d3178678d1f77",
+      "bytes": 8468
+    },
+    {
+      "phase": "turbo",
+      "sender": "aot",
+      "receiver": "dotnet",
+      "passed": true,
+      "sha256": "940a9f9c8cc96a1ea8e3b85d421095deb1bf4032a36c941b878d3178678d1f77",
+      "bytes": 8468
+    },
+    {
+      "phase": "turbo",
+      "sender": "aot",
+      "receiver": "aot",
+      "passed": true,
+      "sha256": "940a9f9c8cc96a1ea8e3b85d421095deb1bf4032a36c941b878d3178678d1f77",
+      "bytes": 8468
+    },
+    {
+      "phase": "remote_disconnect",
+      "sender": "rails",
+      "receiver": "rails",
+      "passed": true
+    },
+    {
+      "phase": "remote_disconnect",
+      "sender": "rails",
+      "receiver": "dotnet",
+      "passed": true
+    },
+    {
+      "phase": "remote_disconnect",
+      "sender": "rails",
+      "receiver": "aot",
+      "passed": true
+    },
+    {
+      "phase": "remote_disconnect",
+      "sender": "dotnet",
+      "receiver": "rails",
+      "passed": true
+    },
+    {
+      "phase": "remote_disconnect",
+      "sender": "dotnet",
+      "receiver": "dotnet",
+      "passed": true
+    },
+    {
+      "phase": "remote_disconnect",
+      "sender": "dotnet",
+      "receiver": "aot",
+      "passed": true
+    },
+    {
+      "phase": "remote_disconnect",
+      "sender": "aot",
+      "receiver": "rails",
+      "passed": true
+    },
+    {
+      "phase": "remote_disconnect",
+      "sender": "aot",
+      "receiver": "dotnet",
+      "passed": true
+    },
+    {
+      "phase": "remote_disconnect",
+      "sender": "aot",
+      "receiver": "aot",
+      "passed": true
+    }
+  ],
+  "passed": 27,
+  "assertions": [
+    "typing payload delivered from each sender to all three receivers",
+    "Turbo append marker and action delivered from each sender to all three receivers in request order",
+    "Turbo broadcast contains no publisher authenticity_token",
+    "remote disconnect from each sender reaches all three receivers"
+  ],
+  "test_script": "bench/parity/realtime_media/mixed_redis.py",
+  "test_script_sha256": "2a883fa3857205bbb94038b1ec0eca667920d35a8b2f8a44b7cbd08906c3bc95",
+  "raw_runtime_root": "bench/parity/remediation/final/realtime_media/source-cache-retry/mixed/runtime",
+  "packet_captures": [
+    {
+      "path": "aot/broadcasts-cable.json",
+      "bytes": 31647,
+      "sha256": "83d3952c00e6e0dc9ba0a73ffe28a827a034062416a2af8f467167dc62d3ff58"
+    },
+    {
+      "path": "aot/disconnect-aot-cable.json",
+      "bytes": 1115,
+      "sha256": "a400aab46f02a69424f462b5439dc27cb577d32449605ea98dfdf95944efcc25"
+    },
+    {
+      "path": "aot/disconnect-dotnet-cable.json",
+      "bytes": 1115,
+      "sha256": "57c30df64f233789ced4160a464e66127743e812a9a7a50ce1cf9124b81a6b4a"
+    },
+    {
+      "path": "aot/disconnect-rails-cable.json",
+      "bytes": 1115,
+      "sha256": "cbda07f318bbc05ff13325e50c5bb8f64b0252aa99fc98f5a88f62ed30474761"
+    },
+    {
+      "path": "dotnet/broadcasts-cable.json",
+      "bytes": 31647,
+      "sha256": "eb651ae72bfa796c38e728e925ae32b6ddffe330988db23b93c63ed21a0f31fc"
+    },
+    {
+      "path": "dotnet/disconnect-aot-cable.json",
+      "bytes": 1115,
+      "sha256": "7872e60118edb38af4c5a03b5c0698533d193f9ff9d1fb29222da7c3cb3b4610"
+    },
+    {
+      "path": "dotnet/disconnect-dotnet-cable.json",
+      "bytes": 1115,
+      "sha256": "72c60fd6c9953293da70ff82489541e968dcb352d74a86612989462a62456f61"
+    },
+    {
+      "path": "dotnet/disconnect-rails-cable.json",
+      "bytes": 1115,
+      "sha256": "32b19efc2217c6dcc6705ed7f0087b838195c0fa1ebc82ac5c3499714a4e197a"
+    },
+    {
+      "path": "rails/broadcasts-cable.json",
+      "bytes": 31369,
+      "sha256": "613c2a3422e7be0317c8b7863df209a22fbdafd59f6c246b47bd14b3a6e990e5"
+    },
+    {
+      "path": "rails/disconnect-aot-cable.json",
+      "bytes": 837,
+      "sha256": "57e05aaca422d5580d6060a1a1375e402fb11ddae3eda5e11ad6da6511444a14"
+    },
+    {
+      "path": "rails/disconnect-dotnet-cable.json",
+      "bytes": 837,
+      "sha256": "b6e3094100abfbd49abde64b6483354bd9a47edd074ee4cb8eac41358a883f62"
+    },
+    {
+      "path": "rails/disconnect-rails-cable.json",
+      "bytes": 837,
+      "sha256": "e8dd86f4d624607650d8e01e111118c9ac4d6906f5a7f5414f12e16ec588de44"
+    }
+  ],
+  "http": [
+    {
+      "implementation": "rails",
+      "responses": [
+        {
+          "label": "login_form",
+          "method": "GET",
+          "url": "http://127.0.0.1:4500/session/new",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "max-age=0, private, must-revalidate",
+            "Content-Length": "25050",
+            "Content-Type": "text/html; charset=utf-8",
+            "Etag": "W/\"776bea45bc7cc9c8e5a2332fdd770dff\"",
+            "Link": "</assets/_reset-9c3efd7b.css>; rel=preload; as=style; nopush,</assets/actiontext-7b8d51ea.css>; rel=preload; as=style; nopush,</assets/animation-bcdb4bab.css>; rel=preload; as=style; nopush,</assets/autocomplete-9de8c93f.css>; rel=preload; as=style; nopush,</assets/avatars-279376ab.css>; rel=preload; as=style; nopush,</assets/base-637a0ec8.css>; rel=preload; as=style; nopush,</assets/boosts-da4032a8.css>; rel=preload; as=style; nopush,</assets/buttons-c7d39fd4.css>; rel=preload; as=style; nopush,</assets/code-333ae548.css>; rel=preload; as=style; nopush,</assets/colorize-eb391ca0.css>; rel=preload; as=style; nopush,</assets/colors-aee62523.css>; rel=preload; as=style; nopush,</assets/composer-e490638a.css>; rel=preload; as=style; nopush,</assets/embeds-c20d0a3a.css>; rel=preload; as=style; nopush,</assets/filters-8a4d63ed.css>; rel=preload; as=style; nopush,</assets/flash-a561c1e5.css>; rel=preload; as=style; nopush,</assets/inputs-9e58a07c.css>; rel=preload; as=style; nopush",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Vary": "Accept-Encoding",
+            "X-Cache": "miss",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-Request-Id": "d497d191-4070-4d70-8494-6b54c83c302d",
+            "X-Rev": "parity",
+            "X-Runtime": "0.127636",
+            "X-Version": "parity",
+            "X-Xss-Protection": "0",
+            "Date": "Mon, 05 Oct 2026 09:35:59 GMT",
+            "Connection": "close"
+          },
+          "bytes": 25050,
+          "sha256": "776bea45bc7cc9c8e5a2332fdd770dff71097a5d504c86ec09af2079d332dc34",
+          "elapsed_ms": 125.0
+        },
+        {
+          "label": "login",
+          "method": "POST",
+          "url": "http://127.0.0.1:4500/session",
+          "status": 302,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "Content-Length": "0",
+            "Content-Type": "text/html; charset=utf-8",
+            "Location": "http://127.0.0.1:4500/",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Vary": "Accept-Encoding",
+            "X-Cache": "bypass",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-Request-Id": "76e4de67-f3a5-42ea-8ccc-0ae56da2094c",
+            "X-Rev": "parity",
+            "X-Runtime": "0.189164",
+            "X-Version": "parity",
+            "X-Xss-Protection": "0",
+            "Date": "Mon, 05 Oct 2026 09:35:59 GMT",
+            "Connection": "close"
+          },
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_ms": 202.9999999795109
+        },
+        {
+          "label": "room",
+          "method": "GET",
+          "url": "http://127.0.0.1:4500/rooms/201306877",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "max-age=0, private, must-revalidate",
+            "Content-Length": "33514",
+            "Content-Type": "text/html; charset=utf-8",
+            "Etag": "W/\"7c501993be94cd5cfc11657681ce3e53\"",
+            "Link": "</assets/_reset-9c3efd7b.css>; rel=preload; as=style; nopush,</assets/actiontext-7b8d51ea.css>; rel=preload; as=style; nopush,</assets/animation-bcdb4bab.css>; rel=preload; as=style; nopush,</assets/autocomplete-9de8c93f.css>; rel=preload; as=style; nopush,</assets/avatars-279376ab.css>; rel=preload; as=style; nopush,</assets/base-637a0ec8.css>; rel=preload; as=style; nopush,</assets/boosts-da4032a8.css>; rel=preload; as=style; nopush,</assets/buttons-c7d39fd4.css>; rel=preload; as=style; nopush,</assets/code-333ae548.css>; rel=preload; as=style; nopush,</assets/colorize-eb391ca0.css>; rel=preload; as=style; nopush,</assets/colors-aee62523.css>; rel=preload; as=style; nopush,</assets/composer-e490638a.css>; rel=preload; as=style; nopush,</assets/embeds-c20d0a3a.css>; rel=preload; as=style; nopush,</assets/filters-8a4d63ed.css>; rel=preload; as=style; nopush,</assets/flash-a561c1e5.css>; rel=preload; as=style; nopush,</assets/inputs-9e58a07c.css>; rel=preload; as=style; nopush",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Vary": "Accept-Encoding",
+            "X-Cache": "miss",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-Request-Id": "07d46323-4113-43af-8dfb-d14f11c8091a",
+            "X-Rev": "parity",
+            "X-Runtime": "0.088476",
+            "X-Version": "parity",
+            "X-Xss-Protection": "0",
+            "Date": "Mon, 05 Oct 2026 09:35:59 GMT",
+            "Connection": "close"
+          },
+          "bytes": 33514,
+          "sha256": "7c501993be94cd5cfc11657681ce3e53957b6713dc2689991eec007c4b0bcd64",
+          "elapsed_ms": 94.00000001187436
+        },
+        {
+          "label": "message-rails",
+          "method": "POST",
+          "url": "http://127.0.0.1:4500/rooms/201306877/messages",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "max-age=0, private, must-revalidate",
+            "Content-Length": "9952",
+            "Content-Type": "text/vnd.turbo-stream.html; charset=utf-8",
+            "Etag": "W/\"ef45df7a02e72e8a459be72fa18b4c3e\"",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Vary": "Accept,Accept-Encoding",
+            "X-Cache": "bypass",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-Request-Id": "efb5c425-3fa1-4199-a3bb-38827283e135",
+            "X-Rev": "parity",
+            "X-Runtime": "0.151729",
+            "X-Version": "parity",
+            "X-Xss-Protection": "0",
+            "Date": "Mon, 05 Oct 2026 09:36:00 GMT",
+            "Connection": "close"
+          },
+          "bytes": 9952,
+          "sha256": "ef45df7a02e72e8a459be72fa18b4c3e13bedd829b07dd94dbb47383e2e5dd3a",
+          "elapsed_ms": 171.99999999138527
+        }
+      ]
+    },
+    {
+      "implementation": "dotnet",
+      "responses": [
+        {
+          "label": "login_form",
+          "method": "GET",
+          "url": "http://127.0.0.1:4501/session/new",
+          "status": 200,
+          "headers": {
+            "Content-Length": "24827",
+            "Connection": "close",
+            "Content-Type": "text/html",
+            "Date": "Mon, 05 Oct 2026 09:35:59 GMT",
+            "Server": "Kestrel",
+            "Cache-Control": "max-age=0, private, must-revalidate",
+            "ETag": "W/\"9e9b7a402d3c3eaf059d3df9cff6a14e\"",
+            "Vary": "Accept-Encoding",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 24827,
+          "sha256": "9e9b7a402d3c3eaf059d3df9cff6a14ea8910ed32089f05d28e74bc37dc9389c",
+          "elapsed_ms": 62.000000005355105
+        },
+        {
+          "label": "login",
+          "method": "POST",
+          "url": "http://127.0.0.1:4501/session",
+          "status": 302,
+          "headers": {
+            "Content-Length": "0",
+            "Connection": "close",
+            "Content-Type": "text/html; charset=utf-8",
+            "Date": "Mon, 05 Oct 2026 09:35:59 GMT",
+            "Server": "Kestrel",
+            "Location": "/",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_ms": 266.00000000325963
+        },
+        {
+          "label": "room",
+          "method": "GET",
+          "url": "http://127.0.0.1:4501/rooms/201306877",
+          "status": 200,
+          "headers": {
+            "Content-Length": "33205",
+            "Connection": "close",
+            "Content-Type": "text/html; charset=utf-8",
+            "Date": "Mon, 05 Oct 2026 09:35:59 GMT",
+            "Server": "Kestrel",
+            "Cache-Control": "max-age=0, private, must-revalidate",
+            "ETag": "W/\"01de722fe9a851243c46ddb7c822126b\"",
+            "Vary": "Accept-Encoding",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 33205,
+          "sha256": "01de722fe9a851243c46ddb7c822126be6300e97b2be9415405f03ffe949dd43",
+          "elapsed_ms": 14.999999984866008
+        },
+        {
+          "label": "message-dotnet",
+          "method": "POST",
+          "url": "http://127.0.0.1:4501/rooms/201306877/messages",
+          "status": 200,
+          "headers": {
+            "Content-Length": "9655",
+            "Connection": "close",
+            "Content-Type": "text/vnd.turbo-stream.html; charset=utf-8",
+            "Date": "Mon, 05 Oct 2026 09:36:00 GMT",
+            "Server": "Kestrel",
+            "Vary": "Accept-Encoding",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 9655,
+          "sha256": "0e014a26a3ac1cfb826a2de6f15aabde6ddc0303cb02a7b2226540c3996b8418",
+          "elapsed_ms": 219.00000001187436
+        },
+        {
+          "label": "logout-dotnet",
+          "method": "DELETE",
+          "url": "http://127.0.0.1:4501/session",
+          "status": 302,
+          "headers": {
+            "Content-Length": "0",
+            "Connection": "close",
+            "Content-Type": "text/html; charset=utf-8",
+            "Date": "Mon, 05 Oct 2026 09:36:05 GMT",
+            "Server": "Kestrel",
+            "Location": "/",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_ms": 16.00000000325963
+        },
+        {
+          "label": "login_form",
+          "method": "GET",
+          "url": "http://127.0.0.1:4501/session/new",
+          "status": 200,
+          "headers": {
+            "Content-Length": "24827",
+            "Connection": "close",
+            "Content-Type": "text/html",
+            "Date": "Mon, 05 Oct 2026 09:36:05 GMT",
+            "Server": "Kestrel",
+            "Cache-Control": "max-age=0, private, must-revalidate",
+            "ETag": "W/\"000bfda317b6ce97dec7d4855d20e28a\"",
+            "Vary": "Accept-Encoding",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 24827,
+          "sha256": "000bfda317b6ce97dec7d4855d20e28a0ea82113e82a3001c6f7305f3fe1471d",
+          "elapsed_ms": 14.999999984866008
+        },
+        {
+          "label": "login",
+          "method": "POST",
+          "url": "http://127.0.0.1:4501/session",
+          "status": 302,
+          "headers": {
+            "Content-Length": "0",
+            "Connection": "close",
+            "Content-Type": "text/html; charset=utf-8",
+            "Date": "Mon, 05 Oct 2026 09:36:05 GMT",
+            "Server": "Kestrel",
+            "Location": "/",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_ms": 172.0000000204891
+        },
+        {
+          "label": "room",
+          "method": "GET",
+          "url": "http://127.0.0.1:4501/rooms/201306877",
+          "status": 200,
+          "headers": {
+            "Content-Length": "42755",
+            "Connection": "close",
+            "Content-Type": "text/html; charset=utf-8",
+            "Date": "Mon, 05 Oct 2026 09:36:05 GMT",
+            "Server": "Kestrel",
+            "Cache-Control": "max-age=0, private, must-revalidate",
+            "ETag": "W/\"1fe66404c5074aabd9f2ac33ed872a75\"",
+            "Vary": "Accept-Encoding",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 42755,
+          "sha256": "1fe66404c5074aabd9f2ac33ed872a751ab4ade8910ee98e146fa4135161b3af",
+          "elapsed_ms": 15.999999974155799
+        }
+      ]
+    },
+    {
+      "implementation": "aot",
+      "responses": [
+        {
+          "label": "login_form",
+          "method": "GET",
+          "url": "http://127.0.0.1:4502/session/new",
+          "status": 200,
+          "headers": {
+            "Content-Length": "24827",
+            "Connection": "close",
+            "Content-Type": "text/html",
+            "Date": "Mon, 05 Oct 2026 09:35:59 GMT",
+            "Server": "Kestrel",
+            "Cache-Control": "max-age=0, private, must-revalidate",
+            "ETag": "W/\"e9c5790c6d6297480c05190ebf10269b\"",
+            "Vary": "Accept-Encoding",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 24827,
+          "sha256": "e9c5790c6d6297480c05190ebf10269b3f390555b0673b907e5772796932114a",
+          "elapsed_ms": 32.00000000651926
+        },
+        {
+          "label": "login",
+          "method": "POST",
+          "url": "http://127.0.0.1:4502/session",
+          "status": 302,
+          "headers": {
+            "Content-Length": "0",
+            "Connection": "close",
+            "Content-Type": "text/html; charset=utf-8",
+            "Date": "Mon, 05 Oct 2026 09:35:59 GMT",
+            "Server": "Kestrel",
+            "Location": "/",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_ms": 171.00000000209548
+        },
+        {
+          "label": "room",
+          "method": "GET",
+          "url": "http://127.0.0.1:4502/rooms/201306877",
+          "status": 200,
+          "headers": {
+            "Content-Length": "33205",
+            "Connection": "close",
+            "Content-Type": "text/html; charset=utf-8",
+            "Date": "Mon, 05 Oct 2026 09:35:59 GMT",
+            "Server": "Kestrel",
+            "Cache-Control": "max-age=0, private, must-revalidate",
+            "ETag": "W/\"f985f3a5a3d89683821f7266e3561c94\"",
+            "Vary": "Accept-Encoding",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 33205,
+          "sha256": "f985f3a5a3d89683821f7266e3561c9405c932e67d3c65ac705b1d87ca353391",
+          "elapsed_ms": 0.0
+        },
+        {
+          "label": "message-aot",
+          "method": "POST",
+          "url": "http://127.0.0.1:4502/rooms/201306877/messages",
+          "status": 200,
+          "headers": {
+            "Content-Length": "9604",
+            "Connection": "close",
+            "Content-Type": "text/vnd.turbo-stream.html; charset=utf-8",
+            "Date": "Mon, 05 Oct 2026 09:35:59 GMT",
+            "Server": "Kestrel",
+            "Vary": "Accept-Encoding",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 9604,
+          "sha256": "24e0a501ef252250b001155998c362c639bc2da8ea387b6ede50323cba40354c",
+          "elapsed_ms": 46.999999991385266
+        },
+        {
+          "label": "logout-aot",
+          "method": "DELETE",
+          "url": "http://127.0.0.1:4502/session",
+          "status": 302,
+          "headers": {
+            "Content-Length": "0",
+            "Connection": "close",
+            "Content-Type": "text/html; charset=utf-8",
+            "Date": "Mon, 05 Oct 2026 09:36:05 GMT",
+            "Server": "Kestrel",
+            "Location": "/",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_ms": 0.0
+        },
+        {
+          "label": "login_form",
+          "method": "GET",
+          "url": "http://127.0.0.1:4502/session/new",
+          "status": 200,
+          "headers": {
+            "Content-Length": "24827",
+            "Connection": "close",
+            "Content-Type": "text/html",
+            "Date": "Mon, 05 Oct 2026 09:36:05 GMT",
+            "Server": "Kestrel",
+            "Cache-Control": "max-age=0, private, must-revalidate",
+            "ETag": "W/\"3797b73e0a930682e346aa6f598d8287\"",
+            "Vary": "Accept-Encoding",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 24827,
+          "sha256": "3797b73e0a930682e346aa6f598d8287fd3157a8b1d71402750b4d74b94e7333",
+          "elapsed_ms": 0.0
+        },
+        {
+          "label": "login",
+          "method": "POST",
+          "url": "http://127.0.0.1:4502/session",
+          "status": 302,
+          "headers": {
+            "Content-Length": "0",
+            "Connection": "close",
+            "Content-Type": "text/html; charset=utf-8",
+            "Date": "Mon, 05 Oct 2026 09:36:05 GMT",
+            "Server": "Kestrel",
+            "Location": "/",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_ms": 172.0000000204891
+        },
+        {
+          "label": "room",
+          "method": "GET",
+          "url": "http://127.0.0.1:4502/rooms/201306877",
+          "status": 200,
+          "headers": {
+            "Content-Length": "42704",
+            "Connection": "close",
+            "Content-Type": "text/html; charset=utf-8",
+            "Date": "Mon, 05 Oct 2026 09:36:05 GMT",
+            "Server": "Kestrel",
+            "Cache-Control": "max-age=0, private, must-revalidate",
+            "ETag": "W/\"afde9b0d9b2d87f600cf73f35c3cffef\"",
+            "Vary": "Accept-Encoding",
+            "X-Version": "parity",
+            "X-Rev": "parity",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "bytes": 42704,
+          "sha256": "afde9b0d9b2d87f600cf73f35c3cffeff2a50323259767d98ebd467c90176a31",
+          "elapsed_ms": 0.0
+        }
+      ]
+    }
+  ],
+  "initial_startup_failure": {
+    "exit_code": 125,
+    "reason": "port4460 reserved by independent Identity family; no functional controls ran",
+    "preserved_runtime": "bench/parity/remediation/final/realtime_media/source-cache/mixed/runtime"
+  },
+  "historical_storage_evidence": "optimized-verified.json contains prior-image metadata9/native media57 controls; these were not repeated for this source-cache build",
+  "http_responses": 20,
+  "http_errors": 0
+}

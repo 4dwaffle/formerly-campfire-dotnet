@@ -1,0 +1,741 @@
+[
+  {
+    "path": "/up",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /up"
+  },
+  {
+    "path": "/session/new",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /session/new =\u003E Handle"
+  },
+  {
+    "path": "/session",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /session =\u003E Handle"
+  },
+  {
+    "path": "/first_run",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /first_run =\u003E Handle"
+  },
+  {
+    "path": "/join/{join_code}",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /join/{join_code} =\u003E Handle"
+  },
+  {
+    "path": "/account/edit",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /account/edit =\u003E Handle"
+  },
+  {
+    "path": "/account",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /account =\u003E Handle"
+  },
+  {
+    "path": "/account/users",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /account/users =\u003E Handle"
+  },
+  {
+    "path": "/account/users.turbo_stream",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /account/users.turbo_stream =\u003E Handle"
+  },
+  {
+    "path": "/account/users/{id:long}",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /account/users/{id:long} =\u003E Handle"
+  },
+  {
+    "path": "/account/bots",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /account/bots =\u003E Handle"
+  },
+  {
+    "path": "/account/bots/new",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /account/bots/new =\u003E Handle"
+  },
+  {
+    "path": "/account/bots/{id:long}/edit",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /account/bots/{id:long}/edit =\u003E Handle"
+  },
+  {
+    "path": "/account/bots/{id:long}",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /account/bots/{id:long} =\u003E Handle"
+  },
+  {
+    "path": "/account/bots/{id:long}/key",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /account/bots/{id:long}/key =\u003E Handle"
+  },
+  {
+    "path": "/account/join_code",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /account/join_code =\u003E Handle"
+  },
+  {
+    "path": "/account/custom_styles/edit",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /account/custom_styles/edit =\u003E Handle"
+  },
+  {
+    "path": "/account/custom_styles",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /account/custom_styles =\u003E Handle"
+  },
+  {
+    "path": "/users/{id:long}",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /users/{id:long} =\u003E Handle"
+  },
+  {
+    "path": "/users/{user_id}/profile",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /users/{user_id}/profile =\u003E Handle"
+  },
+  {
+    "path": "/users/{user_id:long}/ban",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /users/{user_id:long}/ban =\u003E Handle"
+  },
+  {
+    "path": "/session/transfers/{id}",
+    "methods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "name": "HTTP: GET, POST, PATCH, PUT, DELETE /session/transfers/{id} =\u003E Handle"
+  },
+  {
+    "path": "/cable",
+    "methods": [],
+    "name": "/cable"
+  },
+  {
+    "path": "/rails/active_storage/direct_uploads",
+    "methods": [
+      "POST"
+    ],
+    "name": "HTTP: POST /rails/active_storage/direct_uploads"
+  },
+  {
+    "path": "/rails/active_storage/disk/{token}",
+    "methods": [
+      "PUT"
+    ],
+    "name": "HTTP: PUT /rails/active_storage/disk/{token}"
+  },
+  {
+    "path": "/rails/active_storage/disk/{token}/{filename}",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rails/active_storage/disk/{token}/{filename}"
+  },
+  {
+    "path": "/rails/active_storage/blobs/redirect/{signedId}/{filename}",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rails/active_storage/blobs/redirect/{signedId}/{filename}"
+  },
+  {
+    "path": "/rails/active_storage/representations/redirect/{signedId}/{variation}/{filename}",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rails/active_storage/representations/redirect/{signedId}/{variation}/{filename}"
+  },
+  {
+    "path": "/rails/active_storage/blobs/proxy/{signedId}/{filename}",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rails/active_storage/blobs/proxy/{signedId}/{filename}"
+  },
+  {
+    "path": "/rails/active_storage/representations/proxy/{signedId}/{variation}/{filename}",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rails/active_storage/representations/proxy/{signedId}/{variation}/{filename}"
+  },
+  {
+    "path": "/users/{token}/avatar",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /users/{token}/avatar"
+  },
+  {
+    "path": "/users/{token}/avatar",
+    "methods": [
+      "DELETE"
+    ],
+    "name": "HTTP: DELETE /users/{token}/avatar"
+  },
+  {
+    "path": "/account/logo",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /account/logo"
+  },
+  {
+    "path": "/account/logo",
+    "methods": [
+      "DELETE"
+    ],
+    "name": "HTTP: DELETE /account/logo"
+  },
+  {
+    "path": "/users/{userId}/push_subscriptions",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /users/{userId}/push_subscriptions"
+  },
+  {
+    "path": "/users/{userId}/push_subscriptions",
+    "methods": [
+      "POST"
+    ],
+    "name": "HTTP: POST /users/{userId}/push_subscriptions"
+  },
+  {
+    "path": "/users/{userId}/push_subscriptions/{id:long}",
+    "methods": [
+      "DELETE"
+    ],
+    "name": "HTTP: DELETE /users/{userId}/push_subscriptions/{id:long}"
+  },
+  {
+    "path": "/users/{userId}/push_subscriptions/{id:long}/test_notifications",
+    "methods": [
+      "POST"
+    ],
+    "name": "HTTP: POST /users/{userId}/push_subscriptions/{id:long}/test_notifications"
+  },
+  {
+    "path": "/unfurl_link",
+    "methods": [
+      "POST"
+    ],
+    "name": "HTTP: POST /unfurl_link"
+  },
+  {
+    "path": "/webmanifest",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /webmanifest =\u003E RenderManifest"
+  },
+  {
+    "path": "/webmanifest.json",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /webmanifest.json =\u003E RenderManifest"
+  },
+  {
+    "path": "/service-worker",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /service-worker"
+  },
+  {
+    "path": "/qr_code/{id}",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /qr_code/{id}"
+  },
+  {
+    "path": "/",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /"
+  },
+  {
+    "path": "/rooms",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms"
+  },
+  {
+    "path": "/rooms/{id:long}",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/{id:long} =\u003E ShowRoom"
+  },
+  {
+    "path": "/rooms/{id:long}/@{messageId:long}",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/{id:long}/@{messageId:long} =\u003E ShowRoom"
+  },
+  {
+    "path": "/rooms/{id:long}",
+    "methods": [
+      "DELETE"
+    ],
+    "name": "HTTP: DELETE /rooms/{id:long}"
+  },
+  {
+    "path": "/rooms/opens/new",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/opens/new"
+  },
+  {
+    "path": "/rooms/opens/{id:long}/edit",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/opens/{id:long}/edit"
+  },
+  {
+    "path": "/rooms/opens/{id:long}",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/opens/{id:long}"
+  },
+  {
+    "path": "/rooms/opens",
+    "methods": [
+      "POST"
+    ],
+    "name": "HTTP: POST /rooms/opens"
+  },
+  {
+    "path": "/rooms/opens/{id:long}",
+    "methods": [
+      "PATCH",
+      "PUT"
+    ],
+    "name": "HTTP: PATCH, PUT /rooms/opens/{id:long}"
+  },
+  {
+    "path": "/rooms/opens/{id:long}",
+    "methods": [
+      "DELETE"
+    ],
+    "name": "HTTP: DELETE /rooms/opens/{id:long}"
+  },
+  {
+    "path": "/rooms/closeds/new",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/closeds/new"
+  },
+  {
+    "path": "/rooms/closeds/{id:long}/edit",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/closeds/{id:long}/edit"
+  },
+  {
+    "path": "/rooms/closeds/{id:long}",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/closeds/{id:long}"
+  },
+  {
+    "path": "/rooms/closeds",
+    "methods": [
+      "POST"
+    ],
+    "name": "HTTP: POST /rooms/closeds"
+  },
+  {
+    "path": "/rooms/closeds/{id:long}",
+    "methods": [
+      "PATCH",
+      "PUT"
+    ],
+    "name": "HTTP: PATCH, PUT /rooms/closeds/{id:long}"
+  },
+  {
+    "path": "/rooms/closeds/{id:long}",
+    "methods": [
+      "DELETE"
+    ],
+    "name": "HTTP: DELETE /rooms/closeds/{id:long}"
+  },
+  {
+    "path": "/rooms/directs/new",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/directs/new"
+  },
+  {
+    "path": "/rooms/directs/{id:long}/edit",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/directs/{id:long}/edit"
+  },
+  {
+    "path": "/rooms/directs",
+    "methods": [
+      "POST"
+    ],
+    "name": "HTTP: POST /rooms/directs"
+  },
+  {
+    "path": "/rooms/directs/{id:long}",
+    "methods": [
+      "DELETE"
+    ],
+    "name": "HTTP: DELETE /rooms/directs/{id:long}"
+  },
+  {
+    "path": "/rooms/{roomId:long}/settings",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/{roomId:long}/settings"
+  },
+  {
+    "path": "/users/{userId}/sidebar",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /users/{userId}/sidebar"
+  },
+  {
+    "path": "/rooms/{roomId:long}/involvement",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/{roomId:long}/involvement"
+  },
+  {
+    "path": "/rooms/{roomId:long}/involvement",
+    "methods": [
+      "PUT",
+      "PATCH"
+    ],
+    "name": "HTTP: PUT, PATCH /rooms/{roomId:long}/involvement"
+  },
+  {
+    "path": "/rooms/{roomId:long}/messages",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/{roomId:long}/messages =\u003E MessageIndex"
+  },
+  {
+    "path": "/rooms/{roomId:long}/messages/{id:long}",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/{roomId:long}/messages/{id:long} =\u003E ShowMessage"
+  },
+  {
+    "path": "/messages/{id:long}",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /messages/{id:long} =\u003E ShowMessage"
+  },
+  {
+    "path": "/rooms/{roomId:long}/messages/{id:long}/edit",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/{roomId:long}/messages/{id:long}/edit =\u003E EditMessage"
+  },
+  {
+    "path": "/messages/{id:long}/edit",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /messages/{id:long}/edit =\u003E EditMessage"
+  },
+  {
+    "path": "/rooms/{roomId:long}/messages",
+    "methods": [
+      "POST"
+    ],
+    "name": "HTTP: POST /rooms/{roomId:long}/messages =\u003E CreateMessage"
+  },
+  {
+    "path": "/rooms/{roomId:long}/messages/{id:long}",
+    "methods": [
+      "PATCH",
+      "PUT"
+    ],
+    "name": "HTTP: PATCH, PUT /rooms/{roomId:long}/messages/{id:long} =\u003E UpdateMessage"
+  },
+  {
+    "path": "/messages/{id:long}",
+    "methods": [
+      "PATCH",
+      "PUT"
+    ],
+    "name": "HTTP: PATCH, PUT /messages/{id:long} =\u003E UpdateMessage"
+  },
+  {
+    "path": "/rooms/{roomId:long}/messages/{id:long}",
+    "methods": [
+      "DELETE"
+    ],
+    "name": "HTTP: DELETE /rooms/{roomId:long}/messages/{id:long} =\u003E DestroyMessage"
+  },
+  {
+    "path": "/messages/{id:long}",
+    "methods": [
+      "DELETE"
+    ],
+    "name": "HTTP: DELETE /messages/{id:long} =\u003E DestroyMessage"
+  },
+  {
+    "path": "/rooms/{roomId:long}/refresh",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/{roomId:long}/refresh"
+  },
+  {
+    "path": "/searches",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /searches"
+  },
+  {
+    "path": "/searches",
+    "methods": [
+      "POST"
+    ],
+    "name": "HTTP: POST /searches"
+  },
+  {
+    "path": "/searches/clear",
+    "methods": [
+      "DELETE"
+    ],
+    "name": "HTTP: DELETE /searches/clear"
+  },
+  {
+    "path": "/autocompletable/users",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /autocompletable/users"
+  },
+  {
+    "path": "/messages/{messageId:long}/boosts",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /messages/{messageId:long}/boosts"
+  },
+  {
+    "path": "/messages/{messageId:long}/boosts/new",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /messages/{messageId:long}/boosts/new"
+  },
+  {
+    "path": "/messages/{messageId:long}/boosts",
+    "methods": [
+      "POST"
+    ],
+    "name": "HTTP: POST /messages/{messageId:long}/boosts =\u003E CreateBoost"
+  },
+  {
+    "path": "/messages/{messageId:long}/boosts/{id:long}",
+    "methods": [
+      "DELETE"
+    ],
+    "name": "HTTP: DELETE /messages/{messageId:long}/boosts/{id:long} =\u003E DestroyBoost"
+  },
+  {
+    "path": "/rooms/{roomId:long}/{bot_key}/messages",
+    "methods": [
+      "GET"
+    ],
+    "name": "HTTP: GET /rooms/{roomId:long}/{bot_key}/messages =\u003E MessageIndex"
+  },
+  {
+    "path": "/rooms/{roomId:long}/{bot_key}/messages",
+    "methods": [
+      "POST"
+    ],
+    "name": "HTTP: POST /rooms/{roomId:long}/{bot_key}/messages =\u003E CreateMessage"
+  },
+  {
+    "path": "/rooms/{roomId:long}/{bot_key}/messages/{id:long}",
+    "methods": [
+      "PATCH",
+      "PUT"
+    ],
+    "name": "HTTP: PATCH, PUT /rooms/{roomId:long}/{bot_key}/messages/{id:long} =\u003E UpdateMessage"
+  },
+  {
+    "path": "/rooms/{roomId:long}/{bot_key}/messages/{id:long}",
+    "methods": [
+      "DELETE"
+    ],
+    "name": "HTTP: DELETE /rooms/{roomId:long}/{bot_key}/messages/{id:long} =\u003E DestroyMessage"
+  },
+  {
+    "path": "/rooms/{roomId:long}/{bot_key}/messages/{messageId:long}/boosts",
+    "methods": [
+      "POST"
+    ],
+    "name": "HTTP: POST /rooms/{roomId:long}/{bot_key}/messages/{messageId:long}/boosts =\u003E CreateBoost"
+  },
+  {
+    "path": "/rooms/{roomId:long}/{bot_key}/messages/{messageId:long}/boosts/{id:long}",
+    "methods": [
+      "DELETE"
+    ],
+    "name": "HTTP: DELETE /rooms/{roomId:long}/{bot_key}/messages/{messageId:long}/boosts/{id:long} =\u003E DestroyBoost"
+  }
+]

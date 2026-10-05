@@ -1,0 +1,93 @@
+rack 3.2.6
+/usr/local/bundle/ruby/3.4.0/gems/rack-3.2.6/lib/rack/conditional_get.rb
+71:         modified_since >= last_modified
+72:     end
+73: 
+74:     # Return a Time object for the given string (which should be in RFC2822
+75:     # format), or nil if the string cannot be parsed.
+76:     def to_rfc2822(since)
+77:       # shortest possible valid date is the obsolete: 1 Nov 97 09:55 A
+78:       # anything shorter is invalid, this avoids exceptions for common cases
+79:       # most common being the empty string
+80:       if since && since.length >= 16
+/usr/local/bundle/ruby/3.4.0/gems/rack-3.2.6/lib/rack/deflater.rb
+46:     def call(env)
+47:       status, headers, body = response = @app.call(env)
+48: 
+49:       unless should_deflate?(env, status, headers, body)
+50:         return response
+51:       end
+52: 
+53:       request = Request.new(env)
+54: 
+55:       encoding = Utils.select_best_encoding(%w(gzip identity),
+56:                                             request.accept_encoding)
+57: 
+58:       # Set the Vary HTTP header.
+59:       vary = headers["vary"].to_s.split(",").map(&:strip)
+60:       unless vary.include?("*") || vary.any?{|v| v.downcase == 'accept-encoding'}
+61:         headers["vary"] = vary.push("Accept-Encoding").join(",")
+62:       end
+63: 
+64:       case encoding
+65:       when "gzip"
+66:         headers['content-encoding'] = "gzip"
+67:         headers.delete(CONTENT_LENGTH)
+68:         mtime = headers["last-modified"]
+69:         mtime = Time.httpdate(mtime).to_i if mtime
+70:         response[2] = GzipStream.new(body, mtime, @sync)
+71:         response
+72:       when "identity"
+73:         response
+74:       else # when nil
+75:         # Only possible encoding values here are 'gzip', 'identity', and nil
+76:         message = "An acceptable encoding for the requested resource #{request.fullpath} could not be found."
+77:         bp = Rack::BodyProxy.new([message]) { body.close if body.respond_to?(:close) }
+78:         [406, { CONTENT_TYPE => "text/plain", CONTENT_LENGTH => message.length.to_s }, bp]
+79:       end
+80:     end
+/usr/local/bundle/ruby/3.4.0/gems/rack-3.2.6/lib/rack/utils.rb
+274:     def select_best_encoding(available_encodings, accept_encoding)
+275:       # http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
+276: 
+277:       # Only process the first 16 encodings
+278:       accept_encoding = accept_encoding[0...16]
+279:       expanded_accept_encoding = []
+280:       wildcard_seen = false
+281: 
+282:       accept_encoding.each do |m, q|
+283:         preference = available_encodings.index(m) || available_encodings.size
+284: 
+285:         if m == "*"
+286:           unless wildcard_seen
+287:             (available_encodings - accept_encoding.map(&:first)).each do |m2|
+288:               expanded_accept_encoding << [m2, q, preference]
+289:             end
+290:             wildcard_seen = true
+291:           end
+292:         else
+293:           expanded_accept_encoding << [m, q, preference]
+294:         end
+295:       end
+296: 
+297:       encoding_candidates = expanded_accept_encoding
+298:         .sort do |(_, q1, p1), (_, q2, p2)|
+299:           if r = (q1 <=> q2).nonzero?
+300:             -r
+301:           else
+302:             (p1 <=> p2).nonzero? || 0
+303:           end
+304:         end
+305:         .map!(&:first)
+306: 
+307:       unless encoding_candidates.include?("identity")
+308:         encoding_candidates.push("identity")
+309:       end
+310: 
+311:       expanded_accept_encoding.each do |m, q|
+312:         encoding_candidates.delete(m) if q == 0.0
+313:       end
+314: 
+315:       (encoding_candidates & available_encodings)[0]
+316:     end
+thruster 0.1.23

@@ -1,0 +1,239 @@
+{
+  "instances": {
+    "rails": {
+      "base": "http://127.0.0.1:4450",
+      "container": "cf-dotnet-2691853bd374-app",
+      "volume": "cf-dotnet-2691853bd374-data",
+      "network": "cf-dotnet-2691853bd374",
+      "image": "ghcr.io/basecamp/once-campfire@sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "image_id": "sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "ready_ms": 4209.8786999995355,
+      "client_cpus": "12-15"
+    },
+    "dotnet": {
+      "base": "http://127.0.0.1:4451",
+      "container": "cf-dotnet-73f19aca2ba3-app",
+      "volume": "cf-dotnet-73f19aca2ba3-data",
+      "network": "cf-dotnet-73f19aca2ba3",
+      "image": "campfire-dotnet:rails-cache-jit",
+      "image_id": "sha256:04162e54726b372b6943124a6e641bfadd994c237b74e8ba10811738b5461161",
+      "ready_ms": 839.7562000027392,
+      "client_cpus": "12-15"
+    },
+    "aot": {
+      "base": "http://127.0.0.1:4452",
+      "container": "cf-dotnet-9c0105b9cc25-app",
+      "volume": "cf-dotnet-9c0105b9cc25-data",
+      "network": "cf-dotnet-9c0105b9cc25",
+      "image": "campfire-dotnet:rails-cache-aot",
+      "image_id": "sha256:276000739c8cdcd00dfb8e61bc9336a6394c57751cd74b9b5961a889ba8ae60c",
+      "ready_ms": 586.3874000206124,
+      "client_cpus": "12-15"
+    }
+  },
+  "rails_cache_configuration": {
+    "perform_caching": true,
+    "cache_class": "ActiveSupport::Cache::RedisCacheStore",
+    "cache_roundtrip": 123
+  },
+  "results": {
+    "rails": {
+      "initial": {
+        "message_version": "2026-10-05 09:44:15.508141",
+        "body": "<p>PARITY-CACHE-OLD</p>",
+        "body_version": "2026-10-05 09:44:15.507945",
+        "creator_id": 127326141,
+        "creator_name": "David",
+        "creator_version": "2026-01-02 16:00:00"
+      },
+      "final": {
+        "message_version": "2026-10-05 09:44:15.508141",
+        "body": "<p>PARITY-CACHE-NEW</p>",
+        "body_version": "2026-10-05 09:44:15.507945",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456"
+      },
+      "observations": {
+        "cache-warm-first": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"edd4143b0dc066c264c539e4b1b5ab7b\""
+        },
+        "cache-warm-second": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"edd4143b0dc066c264c539e4b1b5ab7b\""
+        },
+        "cache-after-creator-rename": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"edd4143b0dc066c264c539e4b1b5ab7b\""
+        },
+        "cache-after-same-version-body-edit": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"edd4143b0dc066c264c539e4b1b5ab7b\""
+        },
+        "cache-after-message-touch": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"edd4143b0dc066c264c539e4b1b5ab7b\""
+        }
+      },
+      "after_touch": {
+        "message_version": "2026-10-05 09:44:15.508141",
+        "body": "<p>PARITY-CACHE-NEW</p>",
+        "body_version": "2026-10-05 09:44:15.507945",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456"
+      },
+      "touch_changed_message_version": false,
+      "message_version_unchanged": true,
+      "rich_text_version_unchanged": true
+    },
+    "dotnet": {
+      "initial": {
+        "message_version": "2026-10-05 09:44:20.400769",
+        "body": "<p>PARITY-CACHE-OLD</p>",
+        "body_version": "2026-10-05 09:44:20.400769",
+        "creator_id": 127326141,
+        "creator_name": "David",
+        "creator_version": "2026-01-02 16:00:00"
+      },
+      "final": {
+        "message_version": "2026-10-05 09:44:20.400769",
+        "body": "<p>PARITY-CACHE-NEW</p>",
+        "body_version": "2026-10-05 09:44:20.400769",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456"
+      },
+      "observations": {
+        "cache-warm-first": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"204cfe097314aee50dda40888c78f722\""
+        },
+        "cache-warm-second": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"204cfe097314aee50dda40888c78f722\""
+        },
+        "cache-after-creator-rename": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"204cfe097314aee50dda40888c78f722\""
+        },
+        "cache-after-same-version-body-edit": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"204cfe097314aee50dda40888c78f722\""
+        },
+        "cache-after-message-touch": {
+          "old_body": false,
+          "new_body": true,
+          "old_creator": false,
+          "new_creator": true,
+          "model_etag": "W/\"77254fc84ab3e064638400f3b91ed014\""
+        }
+      },
+      "after_touch": {
+        "message_version": "2026-10-05 09:44:23.475685",
+        "body": "<p>PARITY-CACHE-NEW</p>",
+        "body_version": "2026-10-05 09:44:23.475685",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456"
+      },
+      "touch_changed_message_version": true,
+      "message_version_unchanged": true,
+      "rich_text_version_unchanged": true
+    },
+    "aot": {
+      "initial": {
+        "message_version": "2026-10-05 09:44:24.995593",
+        "body": "<p>PARITY-CACHE-OLD</p>",
+        "body_version": "2026-10-05 09:44:24.995593",
+        "creator_id": 127326141,
+        "creator_name": "David",
+        "creator_version": "2026-01-02 16:00:00"
+      },
+      "final": {
+        "message_version": "2026-10-05 09:44:24.995593",
+        "body": "<p>PARITY-CACHE-NEW</p>",
+        "body_version": "2026-10-05 09:44:24.995593",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456"
+      },
+      "observations": {
+        "cache-warm-first": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"8cd6db96dd50ae5a9ff3bfdfccf0eca4\""
+        },
+        "cache-warm-second": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"8cd6db96dd50ae5a9ff3bfdfccf0eca4\""
+        },
+        "cache-after-creator-rename": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"8cd6db96dd50ae5a9ff3bfdfccf0eca4\""
+        },
+        "cache-after-same-version-body-edit": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"8cd6db96dd50ae5a9ff3bfdfccf0eca4\""
+        },
+        "cache-after-message-touch": {
+          "old_body": false,
+          "new_body": true,
+          "old_creator": false,
+          "new_creator": true,
+          "model_etag": "W/\"b61c382b57edaa25a8cca563fb0b4404\""
+        }
+      },
+      "after_touch": {
+        "message_version": "2026-10-05 09:44:27.535711",
+        "body": "<p>PARITY-CACHE-NEW</p>",
+        "body_version": "2026-10-05 09:44:27.535711",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456"
+      },
+      "touch_changed_message_version": true,
+      "message_version_unchanged": true,
+      "rich_text_version_unchanged": true
+    }
+  }
+}

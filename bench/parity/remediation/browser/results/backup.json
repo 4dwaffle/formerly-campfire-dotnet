@@ -1,0 +1,284 @@
+{
+  "rails": {
+    "prepare": {
+      "command": [
+        "docker",
+        "exec",
+        "cf-dotnet-fb285e234738-app",
+        "/rails/hooks/pre-backup"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "snapshot": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--entrypoint",
+        "sqlite3",
+        "-v",
+        "cf-dotnet-fb285e234738-data:/data:ro",
+        "campfire-parity-dotnet",
+        "-json",
+        "file:/data/backups/production.sqlite3?immutable=1",
+        "PRAGMA integrity_check; SELECT count(*) AS messages FROM messages; SELECT count(*) AS browser_messages FROM message_search_index WHERE body MATCH '\"parity-remediation-browser-20261005\"';"
+      ],
+      "exit_code": 0,
+      "stdout": "[{\"integrity_check\":\"ok\"}]\n[{\"messages\":170}]\n[{\"browser_messages\":1}]\n",
+      "stderr": ""
+    },
+    "create": {
+      "command": [
+        "docker",
+        "volume",
+        "create",
+        "cf-parity-restore-rails-fb285e234738"
+      ],
+      "exit_code": 0,
+      "stdout": "cf-parity-restore-rails-fb285e234738\n",
+      "stderr": ""
+    },
+    "restore": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--user",
+        "0",
+        "--entrypoint",
+        "bash",
+        "-e",
+        "CAMPFIRE_STORAGE=/rails/storage",
+        "-v",
+        "cf-dotnet-fb285e234738-data:/source:ro",
+        "-v",
+        "cf-parity-restore-rails-fb285e234738:/rails/storage",
+        "ghcr.io/basecamp/once-campfire@sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+        "-c",
+        "cp -a /source/. /rails/storage/ && /rails/hooks/post-restore"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "verify": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--entrypoint",
+        "sqlite3",
+        "-v",
+        "cf-parity-restore-rails-fb285e234738:/data:ro",
+        "campfire-parity-dotnet",
+        "-json",
+        "file:/data/db/production.sqlite3?immutable=1",
+        "PRAGMA integrity_check; SELECT count(*) AS messages FROM messages;"
+      ],
+      "exit_code": 0,
+      "stdout": "[{\"integrity_check\":\"ok\"}]\n[{\"messages\":170}]\n",
+      "stderr": ""
+    },
+    "cleanup": {
+      "command": [
+        "docker",
+        "volume",
+        "rm",
+        "cf-parity-restore-rails-fb285e234738"
+      ],
+      "exit_code": 0,
+      "stdout": "cf-parity-restore-rails-fb285e234738\n",
+      "stderr": ""
+    }
+  },
+  "dotnet": {
+    "prepare": {
+      "command": [
+        "docker",
+        "exec",
+        "cf-dotnet-70d29a6caca6-app",
+        "/hooks/pre-backup"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "snapshot": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--entrypoint",
+        "sqlite3",
+        "-v",
+        "cf-dotnet-70d29a6caca6-data:/data:ro",
+        "campfire-parity-dotnet",
+        "-json",
+        "file:/data/backups/production.sqlite3?immutable=1",
+        "PRAGMA integrity_check; SELECT count(*) AS messages FROM messages; SELECT count(*) AS browser_messages FROM message_search_index WHERE body MATCH '\"parity-remediation-browser-20261005\"';"
+      ],
+      "exit_code": 0,
+      "stdout": "[{\"integrity_check\":\"ok\"}]\n[{\"messages\":170}]\n[{\"browser_messages\":1}]\n",
+      "stderr": ""
+    },
+    "create": {
+      "command": [
+        "docker",
+        "volume",
+        "create",
+        "cf-parity-restore-dotnet-70d29a6caca6"
+      ],
+      "exit_code": 0,
+      "stdout": "cf-parity-restore-dotnet-70d29a6caca6\n",
+      "stderr": ""
+    },
+    "restore": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--user",
+        "0",
+        "--entrypoint",
+        "bash",
+        "-e",
+        "CAMPFIRE_STORAGE=/rails/storage",
+        "-v",
+        "cf-dotnet-70d29a6caca6-data:/source:ro",
+        "-v",
+        "cf-parity-restore-dotnet-70d29a6caca6:/rails/storage",
+        "campfire-dotnet:remediation-jit",
+        "-c",
+        "cp -a /source/. /rails/storage/ && /hooks/post-restore"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "verify": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--entrypoint",
+        "sqlite3",
+        "-v",
+        "cf-parity-restore-dotnet-70d29a6caca6:/data:ro",
+        "campfire-parity-dotnet",
+        "-json",
+        "file:/data/db/production.sqlite3?immutable=1",
+        "PRAGMA integrity_check; SELECT count(*) AS messages FROM messages;"
+      ],
+      "exit_code": 0,
+      "stdout": "[{\"integrity_check\":\"ok\"}]\n[{\"messages\":170}]\n",
+      "stderr": ""
+    },
+    "cleanup": {
+      "command": [
+        "docker",
+        "volume",
+        "rm",
+        "cf-parity-restore-dotnet-70d29a6caca6"
+      ],
+      "exit_code": 0,
+      "stdout": "cf-parity-restore-dotnet-70d29a6caca6\n",
+      "stderr": ""
+    }
+  },
+  "aot": {
+    "prepare": {
+      "command": [
+        "docker",
+        "exec",
+        "cf-dotnet-be06bba4a7c1-app",
+        "/hooks/pre-backup"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "snapshot": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--entrypoint",
+        "sqlite3",
+        "-v",
+        "cf-dotnet-be06bba4a7c1-data:/data:ro",
+        "campfire-parity-dotnet",
+        "-json",
+        "file:/data/backups/production.sqlite3?immutable=1",
+        "PRAGMA integrity_check; SELECT count(*) AS messages FROM messages; SELECT count(*) AS browser_messages FROM message_search_index WHERE body MATCH '\"parity-remediation-browser-20261005\"';"
+      ],
+      "exit_code": 0,
+      "stdout": "[{\"integrity_check\":\"ok\"}]\n[{\"messages\":170}]\n[{\"browser_messages\":1}]\n",
+      "stderr": ""
+    },
+    "create": {
+      "command": [
+        "docker",
+        "volume",
+        "create",
+        "cf-parity-restore-aot-be06bba4a7c1"
+      ],
+      "exit_code": 0,
+      "stdout": "cf-parity-restore-aot-be06bba4a7c1\n",
+      "stderr": ""
+    },
+    "restore": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--user",
+        "0",
+        "--entrypoint",
+        "bash",
+        "-e",
+        "CAMPFIRE_STORAGE=/rails/storage",
+        "-v",
+        "cf-dotnet-be06bba4a7c1-data:/source:ro",
+        "-v",
+        "cf-parity-restore-aot-be06bba4a7c1:/rails/storage",
+        "campfire-dotnet:remediation-aot",
+        "-c",
+        "cp -a /source/. /rails/storage/ && /hooks/post-restore"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "verify": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--entrypoint",
+        "sqlite3",
+        "-v",
+        "cf-parity-restore-aot-be06bba4a7c1:/data:ro",
+        "campfire-parity-dotnet",
+        "-json",
+        "file:/data/db/production.sqlite3?immutable=1",
+        "PRAGMA integrity_check; SELECT count(*) AS messages FROM messages;"
+      ],
+      "exit_code": 0,
+      "stdout": "[{\"integrity_check\":\"ok\"}]\n[{\"messages\":170}]\n",
+      "stderr": ""
+    },
+    "cleanup": {
+      "command": [
+        "docker",
+        "volume",
+        "rm",
+        "cf-parity-restore-aot-be06bba4a7c1"
+      ],
+      "exit_code": 0,
+      "stdout": "cf-parity-restore-aot-be06bba4a7c1\n",
+      "stderr": ""
+    }
+  }
+}

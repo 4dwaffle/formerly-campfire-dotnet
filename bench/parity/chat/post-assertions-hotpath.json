@@ -1,0 +1,1265 @@
+{
+  "assertions": 110,
+  "passed": 98,
+  "failed": 12,
+  "checks": [
+    {
+      "app": "rails",
+      "name": "human-unicode Turbo create contract",
+      "expected": [
+        200,
+        true,
+        true
+      ],
+      "actual": [
+        200,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "human-unicode indexed plaintext",
+      "expected": "plain \u010cau \u2615\nsecond line",
+      "actual": "plain \u010cau \u2615\nsecond line",
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "human-unicode persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "bot-unicode bot create status",
+      "expected": 201,
+      "actual": 201,
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "bot-unicode indexed plaintext",
+      "expected": "plain \u010cau \u2615\nsecond line",
+      "actual": "plain \u010cau \u2615\nsecond line",
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "bot-unicode persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "human-ascii-strip Turbo create contract",
+      "expected": [
+        200,
+        true,
+        true
+      ],
+      "actual": [
+        200,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "human-ascii-strip indexed plaintext",
+      "expected": "plain\ntext",
+      "actual": "plain\ntext",
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "human-ascii-strip persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "bot-ascii-strip bot create status",
+      "expected": 201,
+      "actual": 201,
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "bot-ascii-strip indexed plaintext",
+      "expected": "plain\ntext",
+      "actual": "plain\ntext",
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "bot-ascii-strip persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "human-unicode-space Turbo create contract",
+      "expected": [
+        200,
+        true,
+        true
+      ],
+      "actual": [
+        200,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "human-unicode-space indexed plaintext",
+      "expected": "\u00a0plain\u00a0",
+      "actual": "\u00a0plain\u00a0",
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "human-unicode-space persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "bot-unicode-space bot create status",
+      "expected": 201,
+      "actual": 201,
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "bot-unicode-space indexed plaintext",
+      "expected": "\u00a0plain\u00a0",
+      "actual": "\u00a0plain\u00a0",
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "bot-unicode-space persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "human-cr Turbo create contract",
+      "expected": [
+        200,
+        true,
+        true
+      ],
+      "actual": [
+        200,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "human-cr indexed plaintext",
+      "expected": "a\nb\nc",
+      "actual": "a\nb\nc",
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "human-cr persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "bot-cr bot create status",
+      "expected": 201,
+      "actual": 201,
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "bot-cr indexed plaintext",
+      "expected": "a\nb\nc",
+      "actual": "a\nb\nc",
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "bot-cr persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "human-entities Turbo create contract",
+      "expected": [
+        200,
+        true,
+        true
+      ],
+      "actual": [
+        200,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "human-entities indexed plaintext",
+      "expected": "one & two \u2615",
+      "actual": "one & two \u2615",
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "human-entities persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "bot-entities bot create status",
+      "expected": 201,
+      "actual": 201,
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "bot-entities indexed plaintext",
+      "expected": "one & two \u2615",
+      "actual": "one & two \u2615",
+      "passed": true
+    },
+    {
+      "app": "rails",
+      "name": "bot-entities persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-unicode Turbo create contract",
+      "expected": [
+        200,
+        true,
+        true
+      ],
+      "actual": [
+        200,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-unicode indexed plaintext",
+      "expected": "plain \u010cau \u2615\nsecond line",
+      "actual": "plain \u010cau \u2615\nsecond line",
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-unicode persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-unicode bot create status",
+      "expected": 201,
+      "actual": 201,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-unicode indexed plaintext",
+      "expected": "plain \u010cau \u2615\nsecond line",
+      "actual": "plain \u010cau \u2615\nsecond line",
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-unicode persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-ascii-strip Turbo create contract",
+      "expected": [
+        200,
+        true,
+        true
+      ],
+      "actual": [
+        200,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-ascii-strip indexed plaintext",
+      "expected": "plain\ntext",
+      "actual": "plain\ntext",
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-ascii-strip persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-ascii-strip bot create status",
+      "expected": 201,
+      "actual": 201,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-ascii-strip indexed plaintext",
+      "expected": "plain\ntext",
+      "actual": "plain\ntext",
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-ascii-strip persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-unicode-space Turbo create contract",
+      "expected": [
+        200,
+        true,
+        true
+      ],
+      "actual": [
+        200,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-unicode-space indexed plaintext",
+      "expected": "\u00a0plain\u00a0",
+      "actual": "\u00a0plain\u00a0",
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-unicode-space persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-unicode-space bot create status",
+      "expected": 201,
+      "actual": 201,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-unicode-space indexed plaintext",
+      "expected": "\u00a0plain\u00a0",
+      "actual": "\u00a0plain\u00a0",
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-unicode-space persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-cr Turbo create contract",
+      "expected": [
+        200,
+        true,
+        true
+      ],
+      "actual": [
+        200,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-cr indexed plaintext",
+      "expected": "a\nb\nc",
+      "actual": "a\nb\nc",
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-cr persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-cr bot create status",
+      "expected": 201,
+      "actual": 201,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-cr indexed plaintext",
+      "expected": "a\nb\nc",
+      "actual": "a\nb\nc",
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-cr persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-entities Turbo create contract",
+      "expected": [
+        200,
+        true,
+        true
+      ],
+      "actual": [
+        200,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-entities indexed plaintext",
+      "expected": "one & two \u2615",
+      "actual": "one & two \u2615",
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-entities persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-entities bot create status",
+      "expected": 201,
+      "actual": 201,
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-entities indexed plaintext",
+      "expected": "one & two \u2615",
+      "actual": "one & two \u2615",
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-entities persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-unicode Turbo create contract",
+      "expected": [
+        200,
+        true,
+        true
+      ],
+      "actual": [
+        200,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-unicode indexed plaintext",
+      "expected": "plain \u010cau \u2615\nsecond line",
+      "actual": "plain \u010cau \u2615\nsecond line",
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-unicode persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-unicode bot create status",
+      "expected": 201,
+      "actual": 201,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-unicode indexed plaintext",
+      "expected": "plain \u010cau \u2615\nsecond line",
+      "actual": "plain \u010cau \u2615\nsecond line",
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-unicode persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-ascii-strip Turbo create contract",
+      "expected": [
+        200,
+        true,
+        true
+      ],
+      "actual": [
+        200,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-ascii-strip indexed plaintext",
+      "expected": "plain\ntext",
+      "actual": "plain\ntext",
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-ascii-strip persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-ascii-strip bot create status",
+      "expected": 201,
+      "actual": 201,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-ascii-strip indexed plaintext",
+      "expected": "plain\ntext",
+      "actual": "plain\ntext",
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-ascii-strip persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-unicode-space Turbo create contract",
+      "expected": [
+        200,
+        true,
+        true
+      ],
+      "actual": [
+        200,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-unicode-space indexed plaintext",
+      "expected": "\u00a0plain\u00a0",
+      "actual": "\u00a0plain\u00a0",
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-unicode-space persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-unicode-space bot create status",
+      "expected": 201,
+      "actual": 201,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-unicode-space indexed plaintext",
+      "expected": "\u00a0plain\u00a0",
+      "actual": "\u00a0plain\u00a0",
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-unicode-space persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-cr Turbo create contract",
+      "expected": [
+        200,
+        true,
+        true
+      ],
+      "actual": [
+        200,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-cr indexed plaintext",
+      "expected": "a\nb\nc",
+      "actual": "a\nb\nc",
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-cr persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-cr bot create status",
+      "expected": 201,
+      "actual": 201,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-cr indexed plaintext",
+      "expected": "a\nb\nc",
+      "actual": "a\nb\nc",
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-cr persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-entities Turbo create contract",
+      "expected": [
+        200,
+        true,
+        true
+      ],
+      "actual": [
+        200,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-entities indexed plaintext",
+      "expected": "one & two \u2615",
+      "actual": "one & two \u2615",
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-entities persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-entities bot create status",
+      "expected": 201,
+      "actual": 201,
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-entities indexed plaintext",
+      "expected": "one & two \u2615",
+      "actual": "one & two \u2615",
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-entities persisted rendering",
+      "expected": [
+        200,
+        true
+      ],
+      "actual": [
+        200,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-unicode original stored body",
+      "expected": "plain \u010cau \u2615\nsecond line",
+      "actual": "plain \u010cau \u2615\nsecond line",
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-unicode original stored body",
+      "expected": "plain \u010cau \u2615\nsecond line",
+      "actual": "plain \u010cau \u2615\nsecond line",
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-ascii-strip original stored body",
+      "expected": "plain\ntext",
+      "actual": "plain\ntext",
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-ascii-strip original stored body",
+      "expected": "plain\ntext",
+      "actual": "plain\ntext",
+      "passed": true
+    },
+    {
+      "app": "dotnet",
+      "name": "human-unicode-space original stored body",
+      "expected": "&nbsp;plain&nbsp;",
+      "actual": "\u00a0plain\u00a0",
+      "passed": false
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-unicode-space original stored body",
+      "expected": "&nbsp;plain&nbsp;",
+      "actual": "\u00a0plain\u00a0",
+      "passed": false
+    },
+    {
+      "app": "dotnet",
+      "name": "human-cr original stored body",
+      "expected": "a\nb\nc",
+      "actual": "a\r\nb\rc",
+      "passed": false
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-cr original stored body",
+      "expected": "a\nb\nc",
+      "actual": "a\r\nb\rc",
+      "passed": false
+    },
+    {
+      "app": "dotnet",
+      "name": "human-entities original stored body",
+      "expected": "one &amp; two \u2615",
+      "actual": "one &amp; two &#x2615;",
+      "passed": false
+    },
+    {
+      "app": "dotnet",
+      "name": "bot-entities original stored body",
+      "expected": "one &amp; two \u2615",
+      "actual": "one &amp; two &#x2615;",
+      "passed": false
+    },
+    {
+      "app": "aot",
+      "name": "human-unicode original stored body",
+      "expected": "plain \u010cau \u2615\nsecond line",
+      "actual": "plain \u010cau \u2615\nsecond line",
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-unicode original stored body",
+      "expected": "plain \u010cau \u2615\nsecond line",
+      "actual": "plain \u010cau \u2615\nsecond line",
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-ascii-strip original stored body",
+      "expected": "plain\ntext",
+      "actual": "plain\ntext",
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "bot-ascii-strip original stored body",
+      "expected": "plain\ntext",
+      "actual": "plain\ntext",
+      "passed": true
+    },
+    {
+      "app": "aot",
+      "name": "human-unicode-space original stored body",
+      "expected": "&nbsp;plain&nbsp;",
+      "actual": "\u00a0plain\u00a0",
+      "passed": false
+    },
+    {
+      "app": "aot",
+      "name": "bot-unicode-space original stored body",
+      "expected": "&nbsp;plain&nbsp;",
+      "actual": "\u00a0plain\u00a0",
+      "passed": false
+    },
+    {
+      "app": "aot",
+      "name": "human-cr original stored body",
+      "expected": "a\nb\nc",
+      "actual": "a\r\nb\rc",
+      "passed": false
+    },
+    {
+      "app": "aot",
+      "name": "bot-cr original stored body",
+      "expected": "a\nb\nc",
+      "actual": "a\r\nb\rc",
+      "passed": false
+    },
+    {
+      "app": "aot",
+      "name": "human-entities original stored body",
+      "expected": "one &amp; two \u2615",
+      "actual": "one &amp; two &#x2615;",
+      "passed": false
+    },
+    {
+      "app": "aot",
+      "name": "bot-entities original stored body",
+      "expected": "one &amp; two \u2615",
+      "actual": "one &amp; two &#x2615;",
+      "passed": false
+    }
+  ],
+  "results": {
+    "rails": {
+      "human-unicode": {
+        "id": 933434640,
+        "client_message_id": "parity-posttext-post-02-unicode",
+        "body": "plain \u010cau \u2615\nsecond line",
+        "indexed_body": "plain \u010cau \u2615\nsecond line"
+      },
+      "bot-unicode": {
+        "id": 933434641,
+        "client_message_id": "23d7c632-037f-4d84-9acf-ceec955ab59a",
+        "body": "plain \u010cau \u2615\nsecond line",
+        "indexed_body": "plain \u010cau \u2615\nsecond line"
+      },
+      "human-ascii-strip": {
+        "id": 933434642,
+        "client_message_id": "parity-posttext-post-02-ascii-strip",
+        "body": "plain\ntext",
+        "indexed_body": "plain\ntext"
+      },
+      "bot-ascii-strip": {
+        "id": 933434643,
+        "client_message_id": "f8c58718-36e4-4c38-8f9e-1714f20abf71",
+        "body": "plain\ntext",
+        "indexed_body": "plain\ntext"
+      },
+      "human-unicode-space": {
+        "id": 933434644,
+        "client_message_id": "parity-posttext-post-02-unicode-space",
+        "body": "&nbsp;plain&nbsp;",
+        "indexed_body": "\u00a0plain\u00a0"
+      },
+      "bot-unicode-space": {
+        "id": 933434645,
+        "client_message_id": "b94776d0-9045-4669-8974-fb2004fa5b97",
+        "body": "&nbsp;plain&nbsp;",
+        "indexed_body": "\u00a0plain\u00a0"
+      },
+      "human-cr": {
+        "id": 933434646,
+        "client_message_id": "parity-posttext-post-02-cr",
+        "body": "a\nb\nc",
+        "indexed_body": "a\nb\nc"
+      },
+      "bot-cr": {
+        "id": 933434647,
+        "client_message_id": "60379ac6-b0d0-48f2-abf2-3315c11e58de",
+        "body": "a\nb\nc",
+        "indexed_body": "a\nb\nc"
+      },
+      "human-entities": {
+        "id": 933434648,
+        "client_message_id": "parity-posttext-post-02-entities",
+        "body": "one &amp; two \u2615",
+        "indexed_body": "one & two \u2615"
+      },
+      "bot-entities": {
+        "id": 933434649,
+        "client_message_id": "19727c3c-bded-4c85-adeb-ea3211742845",
+        "body": "one &amp; two \u2615",
+        "indexed_body": "one & two \u2615"
+      }
+    },
+    "dotnet": {
+      "human-unicode": {
+        "id": 933434639,
+        "client_message_id": "parity-posttext-post-02-unicode",
+        "body": "plain \u010cau \u2615\nsecond line",
+        "indexed_body": "plain \u010cau \u2615\nsecond line"
+      },
+      "bot-unicode": {
+        "id": 933434640,
+        "client_message_id": "8c9a04f8-b7f6-4447-8dc4-2b5ea24e4959",
+        "body": "plain \u010cau \u2615\nsecond line",
+        "indexed_body": "plain \u010cau \u2615\nsecond line"
+      },
+      "human-ascii-strip": {
+        "id": 933434641,
+        "client_message_id": "parity-posttext-post-02-ascii-strip",
+        "body": "plain\ntext",
+        "indexed_body": "plain\ntext"
+      },
+      "bot-ascii-strip": {
+        "id": 933434642,
+        "client_message_id": "06d76eb2-d874-4106-a62e-f6ceeda1530d",
+        "body": "plain\ntext",
+        "indexed_body": "plain\ntext"
+      },
+      "human-unicode-space": {
+        "id": 933434643,
+        "client_message_id": "parity-posttext-post-02-unicode-space",
+        "body": "\u00a0plain\u00a0",
+        "indexed_body": "\u00a0plain\u00a0"
+      },
+      "bot-unicode-space": {
+        "id": 933434644,
+        "client_message_id": "32d48c96-ab38-4f39-960c-2aeb3c0ad540",
+        "body": "\u00a0plain\u00a0",
+        "indexed_body": "\u00a0plain\u00a0"
+      },
+      "human-cr": {
+        "id": 933434645,
+        "client_message_id": "parity-posttext-post-02-cr",
+        "body": "a\r\nb\rc",
+        "indexed_body": "a\nb\nc"
+      },
+      "bot-cr": {
+        "id": 933434646,
+        "client_message_id": "c513face-f10b-4e68-9565-e97d4c1a05cd",
+        "body": "a\r\nb\rc",
+        "indexed_body": "a\nb\nc"
+      },
+      "human-entities": {
+        "id": 933434647,
+        "client_message_id": "parity-posttext-post-02-entities",
+        "body": "one &amp; two &#x2615;",
+        "indexed_body": "one & two \u2615"
+      },
+      "bot-entities": {
+        "id": 933434648,
+        "client_message_id": "515e1b8a-9950-452b-ad48-b46abeb21075",
+        "body": "one &amp; two &#x2615;",
+        "indexed_body": "one & two \u2615"
+      }
+    },
+    "aot": {
+      "human-unicode": {
+        "id": 933434639,
+        "client_message_id": "parity-posttext-post-02-unicode",
+        "body": "plain \u010cau \u2615\nsecond line",
+        "indexed_body": "plain \u010cau \u2615\nsecond line"
+      },
+      "bot-unicode": {
+        "id": 933434640,
+        "client_message_id": "4d9d6ff2-5273-4ef4-90ff-371c60e6536f",
+        "body": "plain \u010cau \u2615\nsecond line",
+        "indexed_body": "plain \u010cau \u2615\nsecond line"
+      },
+      "human-ascii-strip": {
+        "id": 933434641,
+        "client_message_id": "parity-posttext-post-02-ascii-strip",
+        "body": "plain\ntext",
+        "indexed_body": "plain\ntext"
+      },
+      "bot-ascii-strip": {
+        "id": 933434642,
+        "client_message_id": "070da7b4-f300-4aba-b8d5-3998a857ab87",
+        "body": "plain\ntext",
+        "indexed_body": "plain\ntext"
+      },
+      "human-unicode-space": {
+        "id": 933434643,
+        "client_message_id": "parity-posttext-post-02-unicode-space",
+        "body": "\u00a0plain\u00a0",
+        "indexed_body": "\u00a0plain\u00a0"
+      },
+      "bot-unicode-space": {
+        "id": 933434644,
+        "client_message_id": "6cdb9960-204a-4510-8e39-fe8b83b5ec8c",
+        "body": "\u00a0plain\u00a0",
+        "indexed_body": "\u00a0plain\u00a0"
+      },
+      "human-cr": {
+        "id": 933434645,
+        "client_message_id": "parity-posttext-post-02-cr",
+        "body": "a\r\nb\rc",
+        "indexed_body": "a\nb\nc"
+      },
+      "bot-cr": {
+        "id": 933434646,
+        "client_message_id": "79265d55-b434-45ef-92da-de1d7c036faf",
+        "body": "a\r\nb\rc",
+        "indexed_body": "a\nb\nc"
+      },
+      "human-entities": {
+        "id": 933434647,
+        "client_message_id": "parity-posttext-post-02-entities",
+        "body": "one &amp; two &#x2615;",
+        "indexed_body": "one & two \u2615"
+      },
+      "bot-entities": {
+        "id": 933434648,
+        "client_message_id": "ac240b7d-3ad8-4b3f-8498-6dfa12b25b6f",
+        "body": "one &amp; two &#x2615;",
+        "indexed_body": "one & two \u2615"
+      }
+    }
+  }
+}

@@ -1,0 +1,479 @@
+{
+  "checked_utc": "2026-10-05T12:56:57.700678+00:00",
+  "manifest": "instances-hotpath.json",
+  "manifest_sha256": "98608e41e1543bd782e6dd50b34116ee41097731a5cb35d2d44e880b66117650",
+  "reported_runtime_source_sha256": "e2d3a6b2373625d956b72648f045835c4c112e9b0c31295a0a1ccaca3d40bf46",
+  "images": {
+    "rails": {
+      "base": "http://127.0.0.1:4450",
+      "container": "cf-dotnet-bbe83658762a-app",
+      "volume": "cf-dotnet-bbe83658762a-data",
+      "network": "cf-dotnet-bbe83658762a",
+      "image": "ghcr.io/basecamp/once-campfire@sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "image_id": "sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "ready_ms": 5428.138299961574,
+      "client_cpus": "12-15"
+    },
+    "dotnet": {
+      "base": "http://127.0.0.1:4451",
+      "container": "cf-dotnet-a5f71d4a21a2-app",
+      "volume": "cf-dotnet-a5f71d4a21a2-data",
+      "network": "cf-dotnet-a5f71d4a21a2",
+      "image": "campfire-dotnet:hotpath-jit",
+      "image_id": "sha256:e546b2f839cf3c86a515820159a6ada192005773ad86db09c91bcf9f308f623a",
+      "ready_ms": 853.3461000188254,
+      "client_cpus": "12-15"
+    },
+    "aot": {
+      "base": "http://127.0.0.1:4452",
+      "container": "cf-dotnet-9ec8fb22c381-app",
+      "volume": "cf-dotnet-9ec8fb22c381-data",
+      "network": "cf-dotnet-9ec8fb22c381",
+      "image": "campfire-dotnet:hotpath-aot",
+      "image_id": "sha256:dd2f3284584cc4c0f97a04a0065d4fba2cc423d38b576e5a5ea14dace2fce13a",
+      "ready_ms": 571.7709999880753,
+      "client_cpus": "12-15"
+    }
+  },
+  "gates": [
+    {
+      "file": "cache-assertions-hotpath.json",
+      "sha256": "96c6b36d301482ef24be8ffc03dbf1b7b13ed9b317caaf4e8732a4f5201b9844",
+      "assertions": 47,
+      "passed": 47,
+      "failed": 0
+    },
+    {
+      "file": "source-assertions-hotpath.json",
+      "sha256": "d04385e02a0ed292948c77af81c46793bcd5e94e9b2f1af81a96f65b75e4e679",
+      "assertions": 17,
+      "passed": 17,
+      "failed": 0
+    },
+    {
+      "file": "frame-assertions-hotpath.json",
+      "sha256": "3034e87a7d547878adac3f2b413fa2dfd7b96605577d80e0266f1b7d4f23b9f7",
+      "assertions": 22,
+      "passed": 22,
+      "failed": 0
+    },
+    {
+      "file": "compressed-assertions-hotpath.json",
+      "sha256": "1fa2e448b825df4fbab70ee31ea1ee6f089bfaf4f407d27f6aca7146dbe3fb4f",
+      "assertions": 120,
+      "passed": 120,
+      "failed": 0
+    },
+    {
+      "file": "post-assertions-hotpath.json",
+      "sha256": "720dbe71d25d054487071c39538e6d7bd18b714b72ef36d5cfa073ed2dc5751b",
+      "assertions": 110,
+      "passed": 98,
+      "failed": 12
+    }
+  ],
+  "historical_checker_or_precondition_gates": [
+    {
+      "file": "compressed-initial-assertions-hotpath.json",
+      "sha256": "f03e8d0d1b995f637979659e9ec99ef8264fe49d9b103b476ded949c007ec8dc",
+      "assertions": 120,
+      "passed": 111,
+      "failed": 9
+    },
+    {
+      "file": "frame-initial-assertions-hotpath.json",
+      "sha256": "2032d60e62f56e8ab23c41c5d6a07a94467d929ca5d28b7851afd139252cc3e7",
+      "assertions": 22,
+      "passed": 16,
+      "failed": 6
+    }
+  ],
+  "assertions": 316,
+  "passed": 304,
+  "failed": 12,
+  "response_records": [
+    {
+      "suite": "cache",
+      "app": "aot",
+      "count": 15,
+      "statuses": {
+        "200": 9,
+        "302": 6
+      },
+      "sha256": "e79e5d833eae300836c1bc9d47834d759da9d31430ad9455b11553d67ffb93d8",
+      "raw_path": "bench/parity/chat/runtime/hotpath/cache/aot/responses.json"
+    },
+    {
+      "suite": "cache",
+      "app": "dotnet",
+      "count": 15,
+      "statuses": {
+        "200": 9,
+        "302": 6
+      },
+      "sha256": "9e453de174b66ffbf0e8b9c955fdc281546e6ad5a65e76fe3c5cfc9a9f18a908",
+      "raw_path": "bench/parity/chat/runtime/hotpath/cache/dotnet/responses.json"
+    },
+    {
+      "suite": "cache",
+      "app": "rails",
+      "count": 15,
+      "statuses": {
+        "200": 9,
+        "302": 6
+      },
+      "sha256": "81252c3c8fe7a2e237f4b8afebccb4a2b375419e016ebed0475ad2cf1b91ff02",
+      "raw_path": "bench/parity/chat/runtime/hotpath/cache/rails/responses.json"
+    },
+    {
+      "suite": "compressed",
+      "app": "aot",
+      "count": 40,
+      "statuses": {
+        "200": 28,
+        "204": 1,
+        "302": 8,
+        "304": 2,
+        "422": 1
+      },
+      "sha256": "5898faca509f95796b1ad46fea0125bd952eda1a5325b8a9b053f913157440c2",
+      "raw_path": "bench/parity/chat/runtime/hotpath/compressed/aot/responses.json"
+    },
+    {
+      "suite": "compressed",
+      "app": "dotnet",
+      "count": 40,
+      "statuses": {
+        "200": 28,
+        "204": 1,
+        "302": 8,
+        "304": 2,
+        "422": 1
+      },
+      "sha256": "12d997cce8677f40b46e156e55af219674f6282f150eea59e28c0326e8a50680",
+      "raw_path": "bench/parity/chat/runtime/hotpath/compressed/dotnet/responses.json"
+    },
+    {
+      "suite": "compressed",
+      "app": "rails",
+      "count": 40,
+      "statuses": {
+        "200": 28,
+        "204": 1,
+        "302": 8,
+        "304": 2,
+        "422": 1
+      },
+      "sha256": "fdba983ea8a3c8f07e9a42b25b56b5eee28051b4f163fa5309897f46fca48415",
+      "raw_path": "bench/parity/chat/runtime/hotpath/compressed/rails/responses.json"
+    },
+    {
+      "suite": "compressed-02",
+      "app": "aot",
+      "count": 40,
+      "statuses": {
+        "200": 28,
+        "204": 1,
+        "302": 8,
+        "304": 2,
+        "422": 1
+      },
+      "sha256": "a53b0071a872587ce00bf045ef46bf13bc466a51194a98ab663faa46403e6f0d",
+      "raw_path": "bench/parity/chat/runtime/hotpath/compressed-02/aot/responses.json"
+    },
+    {
+      "suite": "compressed-02",
+      "app": "dotnet",
+      "count": 40,
+      "statuses": {
+        "200": 28,
+        "204": 1,
+        "302": 8,
+        "304": 2,
+        "422": 1
+      },
+      "sha256": "f529a247fab5fa871fbb8bb6562c5207c12e14a8886d3d4e980e41fbe395ffe5",
+      "raw_path": "bench/parity/chat/runtime/hotpath/compressed-02/dotnet/responses.json"
+    },
+    {
+      "suite": "compressed-02",
+      "app": "rails",
+      "count": 40,
+      "statuses": {
+        "200": 28,
+        "204": 1,
+        "302": 8,
+        "304": 2,
+        "422": 1
+      },
+      "sha256": "a9aa3a79f493d89b6fce99995d7e8d69c7d6968bd36b732cca17a23a7800b7db",
+      "raw_path": "bench/parity/chat/runtime/hotpath/compressed-02/rails/responses.json"
+    },
+    {
+      "suite": "frame",
+      "app": "aot",
+      "count": 5,
+      "statuses": {
+        "200": 3,
+        "302": 2
+      },
+      "sha256": "99ad5f819f970627e7c544490d81ec03999b18d5ba5b3d4a6bd81b808d674701",
+      "raw_path": "bench/parity/chat/runtime/hotpath/frame/aot/responses.json"
+    },
+    {
+      "suite": "frame",
+      "app": "dotnet",
+      "count": 5,
+      "statuses": {
+        "200": 3,
+        "302": 2
+      },
+      "sha256": "2c24abda8d3ff21357613f64184560e73973bb36f6bd98c4357b3283f724e1df",
+      "raw_path": "bench/parity/chat/runtime/hotpath/frame/dotnet/responses.json"
+    },
+    {
+      "suite": "frame",
+      "app": "rails",
+      "count": 5,
+      "statuses": {
+        "200": 3,
+        "302": 2
+      },
+      "sha256": "d816b19299ad6fea7b549c0ffb838de3e9a173d1712ce9b3381d54d16f7bb90a",
+      "raw_path": "bench/parity/chat/runtime/hotpath/frame/rails/responses.json"
+    },
+    {
+      "suite": "frame-02",
+      "app": "aot",
+      "count": 5,
+      "statuses": {
+        "200": 3,
+        "302": 2
+      },
+      "sha256": "90b189911a56f3e4d4f71fa33f0e2995b868428ccda3d919c95470acac85523e",
+      "raw_path": "bench/parity/chat/runtime/hotpath/frame-02/aot/responses.json"
+    },
+    {
+      "suite": "frame-02",
+      "app": "dotnet",
+      "count": 5,
+      "statuses": {
+        "200": 3,
+        "302": 2
+      },
+      "sha256": "1f8b1210b5128617d8cb64e02f424054a8c13dd6846353c048d1f9a2230cca0d",
+      "raw_path": "bench/parity/chat/runtime/hotpath/frame-02/dotnet/responses.json"
+    },
+    {
+      "suite": "frame-02",
+      "app": "rails",
+      "count": 5,
+      "statuses": {
+        "200": 3,
+        "302": 2
+      },
+      "sha256": "5100eaecb15a0c9862f612add9701267de0d9f12a7a2cb47c5a82c5d933b12d3",
+      "raw_path": "bench/parity/chat/runtime/hotpath/frame-02/rails/responses.json"
+    },
+    {
+      "suite": "frame-inputs",
+      "app": "aot",
+      "count": 9,
+      "statuses": {
+        "200": 5,
+        "302": 2,
+        "304": 2
+      },
+      "sha256": "ef9da05cb09a618246d1b80adbda8cd82b8106138749f966a25a5a3fedb10c06",
+      "raw_path": "bench/parity/chat/runtime/hotpath/frame-inputs/aot/responses.json"
+    },
+    {
+      "suite": "frame-inputs",
+      "app": "dotnet",
+      "count": 9,
+      "statuses": {
+        "200": 5,
+        "302": 2,
+        "304": 2
+      },
+      "sha256": "d63f2cfafd781cb2089bc25a70f6403ef3e06bbb91ec2f285a1463df9ea0be6f",
+      "raw_path": "bench/parity/chat/runtime/hotpath/frame-inputs/dotnet/responses.json"
+    },
+    {
+      "suite": "frame-inputs",
+      "app": "rails",
+      "count": 9,
+      "statuses": {
+        "200": 5,
+        "302": 2,
+        "304": 2
+      },
+      "sha256": "3134fba4ffe332ec689bb0ffb9c9b21b65a1d6b3b2f0c6367ac9af611e49ae22",
+      "raw_path": "bench/parity/chat/runtime/hotpath/frame-inputs/rails/responses.json"
+    },
+    {
+      "suite": "frame-inputs-02",
+      "app": "aot",
+      "count": 9,
+      "statuses": {
+        "200": 5,
+        "302": 2,
+        "304": 2
+      },
+      "sha256": "fb0718fcdba4f83418c31cc349572443dbb59d5d8b107ab617f7672d7c0784fa",
+      "raw_path": "bench/parity/chat/runtime/hotpath/frame-inputs-02/aot/responses.json"
+    },
+    {
+      "suite": "frame-inputs-02",
+      "app": "dotnet",
+      "count": 9,
+      "statuses": {
+        "200": 5,
+        "302": 2,
+        "304": 2
+      },
+      "sha256": "ce6ba86794eb7546d6179ee6c8cbfdc94c886c2a21a7301901decf48972986cf",
+      "raw_path": "bench/parity/chat/runtime/hotpath/frame-inputs-02/dotnet/responses.json"
+    },
+    {
+      "suite": "frame-inputs-02",
+      "app": "rails",
+      "count": 9,
+      "statuses": {
+        "200": 5,
+        "302": 2,
+        "304": 2
+      },
+      "sha256": "744624218a036379d942fda95bd5ee03096a6012e0409867347bfa5bf4bf340a",
+      "raw_path": "bench/parity/chat/runtime/hotpath/frame-inputs-02/rails/responses.json"
+    },
+    {
+      "suite": "post-02",
+      "app": "aot",
+      "count": 24,
+      "statuses": {
+        "200": 17,
+        "201": 5,
+        "302": 2
+      },
+      "sha256": "8c2dea98abff4d3132a3392960e0300dd81baba71b921b126aa24185edfc67a4",
+      "raw_path": "bench/parity/chat/runtime/hotpath/post-02/aot/responses.json"
+    },
+    {
+      "suite": "post-02",
+      "app": "dotnet",
+      "count": 24,
+      "statuses": {
+        "200": 17,
+        "201": 5,
+        "302": 2
+      },
+      "sha256": "6451ac361822050c62bcf0087d30be9758d90c6465de012ab46ce1598bae82f6",
+      "raw_path": "bench/parity/chat/runtime/hotpath/post-02/dotnet/responses.json"
+    },
+    {
+      "suite": "post-02",
+      "app": "rails",
+      "count": 24,
+      "statuses": {
+        "200": 17,
+        "201": 5,
+        "302": 2
+      },
+      "sha256": "c86e83b44318a034987a883531e86b46a2d368b1c3858b68156c20c93afd084c",
+      "raw_path": "bench/parity/chat/runtime/hotpath/post-02/rails/responses.json"
+    },
+    {
+      "suite": "source",
+      "app": "aot",
+      "count": 35,
+      "statuses": {
+        "200": 19,
+        "201": 1,
+        "302": 4,
+        "406": 6,
+        "500": 5
+      },
+      "sha256": "653f1e3dbb802329833657efb2f890fd22b6160cae8f59cd66e91b05ad64d375",
+      "raw_path": "bench/parity/chat/runtime/hotpath/source/aot/responses.json"
+    },
+    {
+      "suite": "source",
+      "app": "dotnet",
+      "count": 35,
+      "statuses": {
+        "200": 19,
+        "201": 1,
+        "302": 4,
+        "406": 6,
+        "500": 5
+      },
+      "sha256": "4a3f3e380f2f62d60ebd0b221368b7eedbffb273890ccbc3a4a06bc67642d8e6",
+      "raw_path": "bench/parity/chat/runtime/hotpath/source/dotnet/responses.json"
+    },
+    {
+      "suite": "source",
+      "app": "rails",
+      "count": 35,
+      "statuses": {
+        "200": 19,
+        "201": 1,
+        "302": 4,
+        "406": 6,
+        "500": 5
+      },
+      "sha256": "a37f1de485a72cd7b79919032be08e61299fedf86d1a1d210bc27fc65ece2afb",
+      "raw_path": "bench/parity/chat/runtime/hotpath/source/rails/responses.json"
+    }
+  ],
+  "captured_requests": 546,
+  "incomplete_response_bodies": [
+    {
+      "raw_path": "bench/parity/chat/runtime/hotpath/post/rails/bot-unicode.body",
+      "sha256": "29d14c28d41db9267a3577c0f8b834e86d4a99d2ed4d6a64db173e4cfc7f7950",
+      "bytes": 46,
+      "note": "Aborted probe retained a consumed response body without its complete status/header record."
+    },
+    {
+      "raw_path": "bench/parity/chat/runtime/hotpath/post/rails/david-home-room.body",
+      "sha256": "35a5bae8a0235814f770c4fef020d9ba17cd79c5a89f71f45c601ca3baaf2683",
+      "bytes": 38465,
+      "note": "Aborted probe retained a consumed response body without its complete status/header record."
+    },
+    {
+      "raw_path": "bench/parity/chat/runtime/hotpath/post/rails/david-home.body",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "note": "Aborted probe retained a consumed response body without its complete status/header record."
+    },
+    {
+      "raw_path": "bench/parity/chat/runtime/hotpath/post/rails/david-login-form.body",
+      "sha256": "5d3a177d4bfd236fb0f3394ccf17774094c58536deda5e688c020b57ebcf98e4",
+      "bytes": 25050,
+      "note": "Aborted probe retained a consumed response body without its complete status/header record."
+    },
+    {
+      "raw_path": "bench/parity/chat/runtime/hotpath/post/rails/david-login.body",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "note": "Aborted probe retained a consumed response body without its complete status/header record."
+    },
+    {
+      "raw_path": "bench/parity/chat/runtime/hotpath/post/rails/human-unicode-rendered.body",
+      "sha256": "c61c2b2bb66de25968677ac0c18b8e7faf572d7524cb2f20a1152ecc1271824b",
+      "bytes": 30011,
+      "note": "Aborted probe retained a consumed response body without its complete status/header record."
+    },
+    {
+      "raw_path": "bench/parity/chat/runtime/hotpath/post/rails/human-unicode.body",
+      "sha256": "2f8a57f32b46e95d27053faa7fc04cd3ba98eb2779dc3bb014bb7081c79130a5",
+      "bytes": 9504,
+      "note": "Aborted probe retained a consumed response body without its complete status/header record."
+    }
+  ],
+  "consumed_response_bodies_including_incomplete": 553,
+  "cache_probe": "cache-policy-hotpath.json",
+  "cache_probe_sha256": "ac4b3118a9199d00acd66391aa9660999b4c0f9da7a77a1d287e8ff74235ec2f",
+  "cleanup": "cleanup-hotpath.json",
+  "scope_note": "Frozen manifest images only. Expected error statuses are retained and asserted, including deliberate callback failures. These captures do not cover later host/codec changes and do not certify universal parity. Servers CPUs8-11 and SQL helpers12-15; Windows HTTP clients/shared Docker/I/O were not isolated. No transport exceptions occurred. Raw response and body captures remain under the ignored runtime directory."
+}

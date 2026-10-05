@@ -1,0 +1,99 @@
+{
+  "kind": "warm in-memory encode-only micro; no HTTP throughput claim",
+  "warmup_iterations_per_backend": 9105,
+  "warmup_elapsed_ms": 2000.1966,
+  "capture_sha256": "a3439ac51991fb826db76662a7fe52ea50a006e306fa5e4b1b36609280bb803e",
+  "decoded_bytes": 404478,
+  "segments": 686,
+  "fresh_dynamic_variants": 32,
+  "rounds": [
+    {
+      "round": 0,
+      "backend": "native-fragments",
+      "repetitions": 500,
+      "elapsed_ms": 22.5152,
+      "allocated_bytes": 36817040,
+      "encoded_bytes_sum": 15322484
+    },
+    {
+      "round": 0,
+      "backend": "managed-whole-coalesced32k",
+      "repetitions": 500,
+      "elapsed_ms": 74.7752,
+      "allocated_bytes": 80012816,
+      "encoded_bytes_sum": 18127453
+    },
+    {
+      "round": 1,
+      "backend": "managed-whole-coalesced32k",
+      "repetitions": 500,
+      "elapsed_ms": 74.87,
+      "allocated_bytes": 80012816,
+      "encoded_bytes_sum": 18127453
+    },
+    {
+      "round": 1,
+      "backend": "native-fragments",
+      "repetitions": 500,
+      "elapsed_ms": 21.4763,
+      "allocated_bytes": 36816816,
+      "encoded_bytes_sum": 15322484
+    },
+    {
+      "round": 2,
+      "backend": "native-fragments",
+      "repetitions": 500,
+      "elapsed_ms": 24.752,
+      "allocated_bytes": 36816816,
+      "encoded_bytes_sum": 15322484
+    },
+    {
+      "round": 2,
+      "backend": "managed-whole-coalesced32k",
+      "repetitions": 500,
+      "elapsed_ms": 69.389,
+      "allocated_bytes": 80012816,
+      "encoded_bytes_sum": 18127453
+    },
+    {
+      "round": 3,
+      "backend": "managed-whole-coalesced32k",
+      "repetitions": 500,
+      "elapsed_ms": 70.0055,
+      "allocated_bytes": 80012816,
+      "encoded_bytes_sum": 18127453
+    },
+    {
+      "round": 3,
+      "backend": "native-fragments",
+      "repetitions": 500,
+      "elapsed_ms": 22.9513,
+      "allocated_bytes": 36816816,
+      "encoded_bytes_sum": 15322484
+    },
+    {
+      "round": 4,
+      "backend": "native-fragments",
+      "repetitions": 500,
+      "elapsed_ms": 20.6551,
+      "allocated_bytes": 36816816,
+      "encoded_bytes_sum": 15322484
+    },
+    {
+      "round": 4,
+      "backend": "managed-whole-coalesced32k",
+      "repetitions": 500,
+      "elapsed_ms": 74.4015,
+      "allocated_bytes": 80012816,
+      "encoded_bytes_sum": 18127453
+    }
+  ],
+  "codec_file_sha256": {
+    "FragmentGzipEncoder.cs": "eebaf9fa172180e0ba8be183fff4449c0212954cd3973454c695a8c6a3f05b5c",
+    "FragmentDeflate.cs": "01f3c122eb41f1374d1706b02a26d08d2651d990960dfacdaa0d131801927d3c",
+    "FragmentHistory.cs": "3d073f5bfd30c21cb9678ab2db8b9940d0163df4415d8f0a672c282d4b84ac9f",
+    "FragmentBackreference.cs": "0ccc00a065f34ff109ebddd027068f9a7e99bd0ba7261fd567ee88984b424774",
+    "FragmentCompressionPlan.cs": "dc6dea8cd38f38083f175e0afeec29cd05ab719f0d71daf0ce82370389d6fbb4",
+    "native/fragment-deflate.c": "c18037b336bb5204833d34797adb4c88bf387c11b02acd75685068aefa3d7a43"
+  }
+}

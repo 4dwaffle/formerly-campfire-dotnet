@@ -1,0 +1,458 @@
+{
+  "instances": {
+    "rails": {
+      "base": "http://127.0.0.1:4450",
+      "container": "cf-dotnet-3eb9af1ca101-app",
+      "volume": "cf-dotnet-3eb9af1ca101-data",
+      "network": "cf-dotnet-3eb9af1ca101",
+      "image": "ghcr.io/basecamp/once-campfire@sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "image_id": "sha256:7197fff46e15d0dce69e0a16624df239e1b9bd069534dc28dec67ab7b6771672",
+      "ready_ms": 3859.2560999968555,
+      "client_cpus": "12-15"
+    },
+    "dotnet": {
+      "base": "http://127.0.0.1:4451",
+      "container": "cf-dotnet-806e807904a7-app",
+      "volume": "cf-dotnet-806e807904a7-data",
+      "network": "cf-dotnet-806e807904a7",
+      "image": "campfire-dotnet:rails-errors-v2-jit",
+      "image_id": "sha256:fc0c4f7ba1dbd5b19d22d6af892dfc5ddeb393ce86a57866f0666cde409bca94",
+      "ready_ms": 610.668799985433,
+      "client_cpus": "12-15"
+    },
+    "aot": {
+      "base": "http://127.0.0.1:4452",
+      "container": "cf-dotnet-e6ede400a415-app",
+      "volume": "cf-dotnet-e6ede400a415-data",
+      "network": "cf-dotnet-e6ede400a415",
+      "image": "campfire-dotnet:rails-errors-v2-aot",
+      "image_id": "sha256:0af416e9d6da2afa6e63dc3ef8136d66a481ce8cdfbf3e54a649a1a9db6e33f6",
+      "ready_ms": 445.01779999700375,
+      "client_cpus": "12-15"
+    }
+  },
+  "rails_cache_configuration": {
+    "perform_caching": true,
+    "cache_class": "ActiveSupport::Cache::RedisCacheStore",
+    "cache_roundtrip": 123
+  },
+  "results": {
+    "rails": {
+      "initial": {
+        "message_version": "2026-10-05 10:05:32.522414",
+        "client_message_id": "parity-cache-dependencies-target",
+        "body": "<p>PARITY-CACHE-OLD</p>",
+        "body_version": "2026-10-05 10:05:32.517979",
+        "creator_id": 127326141,
+        "creator_name": "David",
+        "creator_version": "2026-01-02 16:00:00",
+        "room_version": "2026-10-05 10:05:32.531661",
+        "indexed_body": "PARITY-CACHE-OLD",
+        "unread_state": "149087659:2026-10-05 10:05:32.504171:2026-10-05 10:05:32.539018|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:32.504171:2026-10-05 10:05:32.539018",
+        "blob_id": null
+      },
+      "final": {
+        "message_version": "2026-10-05 10:05:32.522414",
+        "client_message_id": "parity-cache-dependencies-target",
+        "body": "<p>PARITY-CACHE-NEW</p>",
+        "body_version": "2026-10-05 10:05:32.517979",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456",
+        "room_version": "2026-10-05 10:05:32.531661",
+        "indexed_body": "PARITY-CACHE-OLD",
+        "unread_state": "149087659:2026-10-05 10:05:32.504171:2026-10-05 10:05:32.539018|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:32.504171:2026-10-05 10:05:32.539018",
+        "blob_id": null
+      },
+      "observations": {
+        "cache-warm-first": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"cb196432efa82ae67fc7326026243006\""
+        },
+        "cache-warm-second": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"cb196432efa82ae67fc7326026243006\""
+        },
+        "cache-after-creator-rename": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"cb196432efa82ae67fc7326026243006\""
+        },
+        "cache-after-same-version-body-edit": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"cb196432efa82ae67fc7326026243006\""
+        },
+        "cache-after-no-op-update": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"cb196432efa82ae67fc7326026243006\""
+        },
+        "cache-after-message-touch": {
+          "old_body": false,
+          "new_body": true,
+          "old_creator": false,
+          "new_creator": true,
+          "model_etag": "W/\"6f43bba0d95a13d28716b23f02e5bac4\""
+        }
+      },
+      "after_noop": {
+        "message_version": "2026-10-05 10:05:32.522414",
+        "client_message_id": "parity-cache-dependencies-target",
+        "body": "<p>PARITY-CACHE-NEW</p>",
+        "body_version": "2026-10-05 10:05:32.517979",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456",
+        "room_version": "2026-10-05 10:05:32.531661",
+        "indexed_body": "PARITY-CACHE-NEW",
+        "unread_state": "149087659:2026-10-05 10:05:32.504171:2026-10-05 10:05:32.539018|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:32.504171:2026-10-05 10:05:32.539018",
+        "blob_id": null
+      },
+      "noop_changed_message_version": false,
+      "noop_changed_body_version": false,
+      "after_noop_fields": {
+        "message_version": "2026-10-05 10:05:32.522414",
+        "client_message_id": "parity-cache-dependencies-target",
+        "body": "<p>PARITY-CACHE-NEW</p>",
+        "body_version": "2026-10-05 10:05:32.517979",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456",
+        "room_version": "2026-10-05 10:05:32.531661",
+        "indexed_body": "PARITY-CACHE-NEW",
+        "unread_state": "149087659:2026-10-05 10:05:32.504171:2026-10-05 10:05:32.539018|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:32.504171:2026-10-05 10:05:32.539018",
+        "blob_id": null
+      },
+      "noop_state_unchanged": false,
+      "noop_non_index_state_unchanged": true,
+      "noop_indexed": true,
+      "noop_fields_state_unchanged": true,
+      "after_touch": {
+        "message_version": "2026-10-05 10:05:36.657475",
+        "client_message_id": "parity-cache-dependencies-target",
+        "body": "<p>PARITY-CACHE-NEW EDITED</p>",
+        "body_version": "2026-10-05 10:05:36.651269",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456",
+        "room_version": "2026-10-05 10:05:36.660712",
+        "indexed_body": "PARITY-CACHE-NEW EDITED",
+        "unread_state": "149087659:2026-10-05 10:05:32.504171:2026-10-05 10:05:32.539018|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:32.504171:2026-10-05 10:05:32.539018",
+        "blob_id": null
+      },
+      "touch_changed_message_version": true,
+      "real_edit_body_touched": true,
+      "real_edit_room_touched": true,
+      "real_edit_indexed": true,
+      "real_edit_unread_unchanged": true,
+      "after_client": {
+        "message_version": "2026-10-05 10:05:37.322202",
+        "client_message_id": "parity-cache-dependencies-target-changed",
+        "body": "<p>PARITY-CACHE-NEW EDITED</p>",
+        "body_version": "2026-10-05 10:05:36.651269",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456",
+        "room_version": "2026-10-05 10:05:37.329712",
+        "indexed_body": "PARITY-CACHE-NEW EDITED",
+        "unread_state": "149087659:2026-10-05 10:05:32.504171:2026-10-05 10:05:32.539018|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:32.504171:2026-10-05 10:05:32.539018",
+        "blob_id": null
+      },
+      "client_changed_message_version": true,
+      "client_changed_body_version": false,
+      "message_version_unchanged": true,
+      "rich_text_version_unchanged": true
+    },
+    "dotnet": {
+      "initial": {
+        "message_version": "2026-10-05 10:05:38.849005",
+        "client_message_id": "parity-cache-dependencies-target",
+        "body": "<p>PARITY-CACHE-OLD</p>",
+        "body_version": "2026-10-05 10:05:38.849005",
+        "creator_id": 127326141,
+        "creator_name": "David",
+        "creator_version": "2026-01-02 16:00:00",
+        "room_version": "2026-10-05 10:05:38.849005",
+        "indexed_body": "PARITY-CACHE-OLD",
+        "unread_state": "149087659:2026-10-05 10:05:38.849005:2026-10-05 10:05:38.898593|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:38.849005:2026-10-05 10:05:38.898593",
+        "blob_id": null
+      },
+      "final": {
+        "message_version": "2026-10-05 10:05:38.849005",
+        "client_message_id": "parity-cache-dependencies-target",
+        "body": "<p>PARITY-CACHE-NEW</p>",
+        "body_version": "2026-10-05 10:05:38.849005",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456",
+        "room_version": "2026-10-05 10:05:38.849005",
+        "indexed_body": "PARITY-CACHE-OLD",
+        "unread_state": "149087659:2026-10-05 10:05:38.849005:2026-10-05 10:05:38.898593|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:38.849005:2026-10-05 10:05:38.898593",
+        "blob_id": null
+      },
+      "observations": {
+        "cache-warm-first": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"38037058327cd138b228a793fc1d6b4e\""
+        },
+        "cache-warm-second": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"38037058327cd138b228a793fc1d6b4e\""
+        },
+        "cache-after-creator-rename": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"38037058327cd138b228a793fc1d6b4e\""
+        },
+        "cache-after-same-version-body-edit": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"38037058327cd138b228a793fc1d6b4e\""
+        },
+        "cache-after-no-op-update": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"38037058327cd138b228a793fc1d6b4e\""
+        },
+        "cache-after-message-touch": {
+          "old_body": false,
+          "new_body": true,
+          "old_creator": false,
+          "new_creator": true,
+          "model_etag": "W/\"2ddc801348ab48ac7c922a8584ca2c14\""
+        }
+      },
+      "after_noop": {
+        "message_version": "2026-10-05 10:05:38.849005",
+        "client_message_id": "parity-cache-dependencies-target",
+        "body": "<p>PARITY-CACHE-NEW</p>",
+        "body_version": "2026-10-05 10:05:38.849005",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456",
+        "room_version": "2026-10-05 10:05:38.849005",
+        "indexed_body": "PARITY-CACHE-NEW",
+        "unread_state": "149087659:2026-10-05 10:05:38.849005:2026-10-05 10:05:38.898593|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:38.849005:2026-10-05 10:05:38.898593",
+        "blob_id": null
+      },
+      "noop_changed_message_version": false,
+      "noop_changed_body_version": false,
+      "after_noop_fields": {
+        "message_version": "2026-10-05 10:05:38.849005",
+        "client_message_id": "parity-cache-dependencies-target",
+        "body": "<p>PARITY-CACHE-NEW</p>",
+        "body_version": "2026-10-05 10:05:38.849005",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456",
+        "room_version": "2026-10-05 10:05:38.849005",
+        "indexed_body": "PARITY-CACHE-NEW",
+        "unread_state": "149087659:2026-10-05 10:05:38.849005:2026-10-05 10:05:38.898593|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:38.849005:2026-10-05 10:05:38.898593",
+        "blob_id": null
+      },
+      "noop_state_unchanged": false,
+      "noop_non_index_state_unchanged": true,
+      "noop_indexed": true,
+      "noop_fields_state_unchanged": true,
+      "after_touch": {
+        "message_version": "2026-10-05 10:05:42.680102",
+        "client_message_id": "parity-cache-dependencies-target",
+        "body": "<p>PARITY-CACHE-NEW EDITED</p>",
+        "body_version": "2026-10-05 10:05:42.680102",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456",
+        "room_version": "2026-10-05 10:05:42.680102",
+        "indexed_body": "PARITY-CACHE-NEW EDITED",
+        "unread_state": "149087659:2026-10-05 10:05:38.849005:2026-10-05 10:05:38.898593|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:38.849005:2026-10-05 10:05:38.898593",
+        "blob_id": null
+      },
+      "touch_changed_message_version": true,
+      "real_edit_body_touched": true,
+      "real_edit_room_touched": true,
+      "real_edit_indexed": true,
+      "real_edit_unread_unchanged": true,
+      "after_client": {
+        "message_version": "2026-10-05 10:05:43.309920",
+        "client_message_id": "parity-cache-dependencies-target-changed",
+        "body": "<p>PARITY-CACHE-NEW EDITED</p>",
+        "body_version": "2026-10-05 10:05:42.680102",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456",
+        "room_version": "2026-10-05 10:05:43.309920",
+        "indexed_body": "PARITY-CACHE-NEW EDITED",
+        "unread_state": "149087659:2026-10-05 10:05:38.849005:2026-10-05 10:05:38.898593|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:38.849005:2026-10-05 10:05:38.898593",
+        "blob_id": null
+      },
+      "client_changed_message_version": true,
+      "client_changed_body_version": false,
+      "message_version_unchanged": true,
+      "rich_text_version_unchanged": true
+    },
+    "aot": {
+      "initial": {
+        "message_version": "2026-10-05 10:05:44.792404",
+        "client_message_id": "parity-cache-dependencies-target",
+        "body": "<p>PARITY-CACHE-OLD</p>",
+        "body_version": "2026-10-05 10:05:44.792404",
+        "creator_id": 127326141,
+        "creator_name": "David",
+        "creator_version": "2026-01-02 16:00:00",
+        "room_version": "2026-10-05 10:05:44.792404",
+        "indexed_body": "PARITY-CACHE-OLD",
+        "unread_state": "149087659:2026-10-05 10:05:44.792404:2026-10-05 10:05:44.794373|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:44.792404:2026-10-05 10:05:44.794373",
+        "blob_id": null
+      },
+      "final": {
+        "message_version": "2026-10-05 10:05:44.792404",
+        "client_message_id": "parity-cache-dependencies-target",
+        "body": "<p>PARITY-CACHE-NEW</p>",
+        "body_version": "2026-10-05 10:05:44.792404",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456",
+        "room_version": "2026-10-05 10:05:44.792404",
+        "indexed_body": "PARITY-CACHE-OLD",
+        "unread_state": "149087659:2026-10-05 10:05:44.792404:2026-10-05 10:05:44.794373|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:44.792404:2026-10-05 10:05:44.794373",
+        "blob_id": null
+      },
+      "observations": {
+        "cache-warm-first": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"c695172c48e7714e0655f54ab0034d66\""
+        },
+        "cache-warm-second": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"c695172c48e7714e0655f54ab0034d66\""
+        },
+        "cache-after-creator-rename": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"c695172c48e7714e0655f54ab0034d66\""
+        },
+        "cache-after-same-version-body-edit": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"c695172c48e7714e0655f54ab0034d66\""
+        },
+        "cache-after-no-op-update": {
+          "old_body": true,
+          "new_body": false,
+          "old_creator": true,
+          "new_creator": false,
+          "model_etag": "W/\"c695172c48e7714e0655f54ab0034d66\""
+        },
+        "cache-after-message-touch": {
+          "old_body": false,
+          "new_body": true,
+          "old_creator": false,
+          "new_creator": true,
+          "model_etag": "W/\"7a56785870060ea046e8e62d5847c969\""
+        }
+      },
+      "after_noop": {
+        "message_version": "2026-10-05 10:05:44.792404",
+        "client_message_id": "parity-cache-dependencies-target",
+        "body": "<p>PARITY-CACHE-NEW</p>",
+        "body_version": "2026-10-05 10:05:44.792404",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456",
+        "room_version": "2026-10-05 10:05:44.792404",
+        "indexed_body": "PARITY-CACHE-NEW",
+        "unread_state": "149087659:2026-10-05 10:05:44.792404:2026-10-05 10:05:44.794373|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:44.792404:2026-10-05 10:05:44.794373",
+        "blob_id": null
+      },
+      "noop_changed_message_version": false,
+      "noop_changed_body_version": false,
+      "after_noop_fields": {
+        "message_version": "2026-10-05 10:05:44.792404",
+        "client_message_id": "parity-cache-dependencies-target",
+        "body": "<p>PARITY-CACHE-NEW</p>",
+        "body_version": "2026-10-05 10:05:44.792404",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456",
+        "room_version": "2026-10-05 10:05:44.792404",
+        "indexed_body": "PARITY-CACHE-NEW",
+        "unread_state": "149087659:2026-10-05 10:05:44.792404:2026-10-05 10:05:44.794373|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:44.792404:2026-10-05 10:05:44.794373",
+        "blob_id": null
+      },
+      "noop_state_unchanged": false,
+      "noop_non_index_state_unchanged": true,
+      "noop_indexed": true,
+      "noop_fields_state_unchanged": true,
+      "after_touch": {
+        "message_version": "2026-10-05 10:05:48.435873",
+        "client_message_id": "parity-cache-dependencies-target",
+        "body": "<p>PARITY-CACHE-NEW EDITED</p>",
+        "body_version": "2026-10-05 10:05:48.435873",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456",
+        "room_version": "2026-10-05 10:05:48.435873",
+        "indexed_body": "PARITY-CACHE-NEW EDITED",
+        "unread_state": "149087659:2026-10-05 10:05:44.792404:2026-10-05 10:05:44.794373|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:44.792404:2026-10-05 10:05:44.794373",
+        "blob_id": null
+      },
+      "touch_changed_message_version": true,
+      "real_edit_body_touched": true,
+      "real_edit_room_touched": true,
+      "real_edit_indexed": true,
+      "real_edit_unread_unchanged": true,
+      "after_client": {
+        "message_version": "2026-10-05 10:05:49.107143",
+        "client_message_id": "parity-cache-dependencies-target-changed",
+        "body": "<p>PARITY-CACHE-NEW EDITED</p>",
+        "body_version": "2026-10-05 10:05:48.435873",
+        "creator_id": 127326141,
+        "creator_name": "PARITY-CREATOR-NEW",
+        "creator_version": "2030-01-01 00:00:00.123456",
+        "room_version": "2026-10-05 10:05:49.107143",
+        "indexed_body": "PARITY-CACHE-NEW EDITED",
+        "unread_state": "149087659:2026-10-05 10:05:44.792404:2026-10-05 10:05:44.794373|127326141:2026-03-02 15:40:00:2026-03-02 15:40:00|394959859:2026-10-05 10:05:44.792404:2026-10-05 10:05:44.794373",
+        "blob_id": null
+      },
+      "client_changed_message_version": true,
+      "client_changed_body_version": false,
+      "message_version_unchanged": true,
+      "rich_text_version_unchanged": true
+    }
+  }
+}
